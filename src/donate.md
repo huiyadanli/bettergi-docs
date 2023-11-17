@@ -1,0 +1,16 @@
+---
+title: 赞助
+icon: heart
+order: 100
+---
+
+BetterGI 是一个开源且免费的项目。
+
+您的支持是我更新维护这个工具的动力！
+
+## 爱发电
+
+[⚡爱发电@huiyadanli](https://afdian.net/@huiyadanli)
+
+## 微信
+![](assets/wechat.png =250x)
