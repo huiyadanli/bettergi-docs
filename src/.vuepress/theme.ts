@@ -5,16 +5,16 @@ import sidebar from "./sidebar.js";
 export default hopeTheme({
     hostname: "https://bgi.huiyadan.com",
     // pure: true,
-    author: {
-        name: "辉鸭蛋",
-        url: "https://github.com/huiyadanli",
-    },
+    // author: {
+    //     name: "辉鸭蛋",
+    //     url: "https://github.com/huiyadanli",
+    // },
 
     iconAssets: "fontawesome-with-brands",
 
     logo: "kirara.png",
 
-    repo: "babalae/bettergi-docs",
+    repo: "huiyadanli/bettergi-docs",
 
     docsDir: "src",
 
