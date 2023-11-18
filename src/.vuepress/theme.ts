@@ -14,7 +14,8 @@ export default hopeTheme({
 
     logo: "kirara.png",
 
-    repo: "huiyadanli/bettergi-docs",
+    repo: "babalae/better-genshin-impact",
+    docsRepo: "huiyadanli/bettergi-docs",
 
     docsDir: "src",
 
