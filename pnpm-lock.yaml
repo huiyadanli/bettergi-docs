@@ -8,6 +8,9 @@ devDependencies:
   '@vuepress/client':
     specifier: 2.0.0-rc.0
     version: registry.npmmirror.com/@vuepress/client@2.0.0-rc.0
+  '@vuepress/plugin-google-analytics':
+    specifier: 2.0.0-rc.0
+    version: registry.npmmirror.com/@vuepress/plugin-google-analytics@2.0.0-rc.0
   vue:
     specifier: ^3.3.8
     version: registry.npmmirror.com/vue@3.3.8
@@ -2886,6 +2889,20 @@ packages:
       '@vuepress/core': registry.npmmirror.com/@vuepress/core@2.0.0-rc.0
       '@vuepress/utils': registry.npmmirror.com/@vuepress/utils@2.0.0-rc.0
       execa: registry.npmmirror.com/execa@8.0.1
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - supports-color
+      - typescript
+    dev: true
+
+  registry.npmmirror.com/@vuepress/plugin-google-analytics@2.0.0-rc.0:
+    resolution: {integrity: sha512-rkYW2LGkLAfRFtaFWVPr1V2mS6hwgYhn2hLeJAF5xHlC3PcjCiSV0cqH7ooeCo+FBJUlCtMQ9N8iSNl63vd7VQ==, tarball: https://registry.npmmirror.com/@vuepress/plugin-google-analytics/-/plugin-google-analytics-2.0.0-rc.0.tgz}
+    name: '@vuepress/plugin-google-analytics'
+    version: 2.0.0-rc.0
+    dependencies:
+      '@vuepress/client': registry.npmmirror.com/@vuepress/client@2.0.0-rc.0
+      '@vuepress/core': registry.npmmirror.com/@vuepress/core@2.0.0-rc.0
+      '@vuepress/utils': registry.npmmirror.com/@vuepress/utils@2.0.0-rc.0
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
