@@ -11,3 +11,9 @@ order: 30
 
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)
 * [📥蓝奏云下载](https://wwmy.lanzouq.com/b00rs2msd)  密码:coco
+
+
+
+使用前请先阅读[使用文档(教程)](https://bgi.huiyadan.com/doc.html)
+
+遇到问题先看[常见问题(FAQ)](https://bgi.huiyadan.com/faq.html)
