@@ -192,7 +192,7 @@ order: 20
 
 ### 自定义打牌策略
 
-在软件当前目录的 `Config\AutoGeniusInvokation` 的文件夹下，复制一个策略示例txt文件，自行参考格式编辑即可，注意技能1~3是**从右往左数**的。软件会自动根据行动策略和当前对局情况来切换角色和使用技能。
+在软件当前目录的 `User\AutoGeniusInvokation` 的文件夹下，复制一个策略示例txt文件，自行参考格式编辑即可，注意技能1~3是**从右往左数**的。软件会自动根据行动策略和当前对局情况来切换角色和使用技能。
 
 如果你有更好的卡组策略、或者是某种情况下的针对解法，欢迎发[Issue](https://github.com/babalae/better-genshin-impact/issues)分享~
 
