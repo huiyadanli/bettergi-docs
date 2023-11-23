@@ -5,7 +5,7 @@ order: 20
 ---
 ::: info 全功能演示视频
 
-[https://b23.tv/pTzz4Ue](https://b23.tv/pTzz4Ue)
+[B站 - BV1b34y1w7ML](https://www.bilibili.com/video/BV1b34y1w7ML)
 
 :::
 ---
