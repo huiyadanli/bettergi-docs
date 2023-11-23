@@ -5,8 +5,7 @@ order: 20
 ---
 ::: info 全功能演示视频
 
-【BetterGI 更好的原神】自动化演示
-https://b23.tv/pTzz4Ue
+[https://b23.tv/pTzz4Ue](https://b23.tv/pTzz4Ue)
 
 :::
 ---
