@@ -12,7 +12,7 @@ order: 40
 
 请根据提示安装，否则无法启动软件。
 
-没有提示，也进不去？手动安装下载：[.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
+没有提示，也进不去？手动安装下载：[.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0)
 
 ### ❓使用自动拾取的时候能看到拾取的日志，但是没有按F键拾取？
 模拟操作部分可能被部分安全软件拦截，请加入白名单！已知 360安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
