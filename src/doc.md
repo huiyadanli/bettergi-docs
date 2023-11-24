@@ -5,7 +5,7 @@ order: 20
 ---
 ::: info 全功能演示视频
 
-[B站 - BV1b34y1w7ML](https://www.bilibili.com/video/BV1b34y1w7ML)
+<del>[B站 - BV1b34y1w7ML 已被锁定](https://www.bilibili.com/video/BV1b34y1w7ML)</del>
 
 :::
 ---
@@ -155,9 +155,7 @@ order: 20
 
 老版本：[genius-invokation-auto-toy](https://github.com/babalae/genius-invokation-auto-toy)
 
-演示视频：[📺BV1Lu4y1R7kM](https://www.bilibili.com/video/BV1Lu4y1R7kM/)
-
-<BiliBili bvid="BV1Lu4y1R7kM" />
+演示视频：<del>[📺BV1Lu4y1R7kM 已被锁定](https://www.bilibili.com/video/BV1Lu4y1R7kM/)</del>
 
 
 ### 简介
