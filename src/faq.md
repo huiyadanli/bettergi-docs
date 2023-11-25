@@ -8,7 +8,7 @@ order: 40
 
 提示如图：
 
-![install7.png](assets/install7.png)
+![](assets/install7.png)
 
 请根据提示安装，否则无法启动软件。
 
