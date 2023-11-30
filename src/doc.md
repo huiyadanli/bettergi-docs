@@ -3,10 +3,12 @@ title: 文档
 icon: book
 order: 20
 ---
-::: info 全功能演示视频
+::: info 提示
 
-<del>[B站 - BV1b34y1w7ML 已被锁定](https://www.bilibili.com/video/BV1b34y1w7ML)</del>
+<del>全功能演示视频:
+[B站 - BV1b34y1w7ML 已被锁定](https://www.bilibili.com/video/BV1b34y1w7ML)</del>
 
+QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138)
 :::
 ---
 # 启动
@@ -209,6 +211,8 @@ order: 20
 **首先你必须要有「王树瑞佑」小道具，并装备。这是须弥3级声望赠送道具。**
 
 站在对应伐木点后，在“独立任务”界面中配置好伐木次数，点击自动伐木的“启动”即可。
+
+支持所有 16:9 分辨率，推荐在 1280x720 分辨率下挂机使用。
 
 ### 推荐伐木点
 
