@@ -128,6 +128,8 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 老版本（无自动抛竿）：[genshin-fishing-toy](https://github.com/babalae/genshin-fishing-toy)
 
+**半自动钓鱼（提竿、拉条），所有地区都支持！请在关闭自动抛竿功能下使用**
+
 ### 自动抛竿
 
 当选项 “自动选择鱼饵并抛竿” 开启时，进入自动钓鱼后会立即寻找鱼的位置并选择饵料抛竿。
