@@ -21,6 +21,7 @@ order: 3
     * [F 连发](/doc.html#f%E8%BF%9E%E5%8F%91)
     * [那维莱特 - 转圈圈](/doc.html#%E9%82%A3%E7%BB%B4%E8%8E%B1%E7%89%B9-%E8%BD%AC%E5%9C%88%E5%9C%88)
     * [快速圣遗物强化](/doc.html#%E5%9C%A3%E9%81%97%E7%89%A9%E4%B8%80%E9%94%AE%E5%BC%BA%E5%8C%96)
+    * [一键购买](/doc.html#一键购买)
 
 ## 未来计划
 
