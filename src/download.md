@@ -17,3 +17,5 @@ order: 30
 使用前请先阅读[使用文档(教程)](https://bgi.huiyadan.com/doc.html)
 
 遇到问题先看[常见问题(FAQ)](https://bgi.huiyadan.com/faq.html)
+
+更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)

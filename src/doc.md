@@ -37,7 +37,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 自带一个遮罩窗口覆盖在游戏界面上，用于显示日志和图像识别结果。
 
-![遮罩示例](assets/mask.jpg)
+![遮罩示例](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01njMfVU1lhoDtEBCyG_!!2042484851.jpg)
 
 ## 截图方式
 提供三种截图方式供使用
@@ -143,7 +143,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 模型识别例图：
 
-![](assets/fish_rec.png)
+![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01JZLd8q1lhoDwPF4wo_!!2042484851.jpg)
 
 ## 快速传送
 
@@ -187,15 +187,15 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 1、首先你的牌组必须是 **【莫娜、砂糖、琴】** 或者 **【刻晴、雷电将军、甘雨】** （其他牌组可以参考下面的“自定义自动打牌策略”），顺序不能变，**带什么牌无所谓**。（[颠勺牌组玩法来源](https://www.bilibili.com/video/BV1ZP41197Ws)，雷神牌组来源NGA）
 
-![](assets/paizu1.png =400x)
+![](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01dZ2CXM1lhoDxzYt9q_!!2042484851.jpg =400x)
 
-![](assets/paizu2.png =400x)
+![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01PpAs5K1lhoDsLDBQW_!!2042484851.jpg =400x)
 
 2、 ⚠ **只支持 `1920x1080` 分辨率的游戏，其他 `16:9` 分辨率能用但是识别效果感人**
 
 3、在游戏内进入七圣召唤对局，到**初始手牌**界面，如下图：
 
-![](assets/cssp.png)
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01OR8onj1lhoDuK1JXB_!!2042484851.jpg)
 
 4、然后直接点击“开始”进行自动打牌，双手离开键盘鼠标。
 
@@ -208,7 +208,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 ## 自动伐木
 
-![](assets%2Fwood%2F9999wood.jpg)
+![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN014AeybI1lhoDsLGwSF_!!2042484851.jpg)
 
 
 改编自: [https://github.com/genshin-matrix/genshin-woodmen](https://github.com/genshin-matrix/genshin-woodmen)
@@ -227,7 +227,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 以下是比较高效的伐木点推荐。
 
-![高效伐木点推荐](assets/wood/usage_single.jpg)
+![高效伐木点推荐](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01NI66kB1lhoDsHI5xG_!!2042484851.jpg)
 
 # 操控辅助
 
@@ -245,7 +245,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 鼠标可以通过把侧键映射为对应的快捷键来实现使用（当然直接用宏更加方便）
 
-![](assets/zqq.gif)
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01LGoIqp1lhoDxzYHjp_!!2042484851.gif)
 
 ## 圣遗物一键强化
 
