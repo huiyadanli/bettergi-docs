@@ -4,11 +4,13 @@ icon: circle-question
 order: 40
 ---
 
+如果查看了本文档仍旧无法解决你的问题，可以在[Issue](https://github.com/babalae/better-genshin-impact/issues)查阅是否有相似问题，如果无相似问题可以通过Issue提问。
+
 ### ❓启动软件提示安装.NET 7 运行时？
 
 提示如图：
 
-![](assets/install7.png)
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN012MVMsp1lhoDtEX1bo_!!2042484851.jpg)
 
 请根据提示安装，否则无法启动软件。
 
@@ -28,6 +30,27 @@ order: 40
 
 ### ❓使用其他软件解锁120帧后软件失效？
 在启动页内尝试更换截图方式。
+
+### ❓Windows 11 下，无法使用 `BitBlt` 截图方式？
+参考：[#92](https://github.com/babalae/better-genshin-impact/issues/92) 设置后重试。但是修改这个设置后，可能会造成游戏性能下降。
+
+### ❓提示“PaddleOcr预热失败”应该如何解决？
+
+造成这个问题原因有很多种，以下罗列相关的解决方式，请自行判断，如果依旧无法解决，可以提[Issue](https://github.com/babalae/better-genshin-impact/issues)并附上报错截图。
+
+关于这个问题的更多讨论：[#132](https://github.com/babalae/better-genshin-impact/issues/132)
+
+* 情况一：把 BetterGI 解压到了桌面或者中文路径下可能会出现这个问题（大部分系统不会出现这个问题），请移动到英文路径下重试。 
+* 情况二：把系统编码修改成了 `UTF-8`，请修改回默认系统编码后重试。取消勾选下图中的选项即可。
+
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN015buXNA1lhoDy0eQNI_!!2042484851.png =400x)
+
+* 情况三：如下图提示 `onnxruntime.dll: FAIL, handle=0` 的情况下，请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+
+![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png =400x)
+
+* 情况四：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
+
 
 ### ❓为什么需要管理员权限？
 因为游戏是以管理员权限启动的，软件不以管理员权限启动的话没有权限模拟鼠标点击。

@@ -45,7 +45,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 * BitBlt
   * 兼容性最好，问题最少的方式，但是性能稍差，下面两个不能用的情况下使用这个。
   * 出现任何奇怪的问题的情况下优先尝试使用这个方式。
-  * **部分Win11由于显卡设置原因可能无法使用这个选项**
+  * **部分Win11由于显卡设置原因可能无法使用这个选项，[解决方案](https://github.com/babalae/better-genshin-impact/issues/92)**
 * WindowsGraphicsCapture（**云原神只能使用这种方式**）
   * 性能好
   * Win10 早期版本可能使用有问题

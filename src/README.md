@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 主页
-heroImage: /kirara.png
+heroImage: https://img.alicdn.com/imgextra/i2/2042484851/O1CN01Bn1Fzx1lhoDqQDAzj_!!2042484851.png
 bgImageStyle:
   background-attachment: fixed
 heroText: BetterGI · 更好的原神
@@ -78,10 +78,10 @@ highlights:
         details: 类似宏的操作，按键连发、那维莱特转圈圈等
         link: /doc.html#%E6%93%8D%E6%8E%A7%E8%BE%85%E5%8A%A9
 
-      - title: 圣遗物一键强化
-        icon: hammer
-        details: 圣遗物一键强化，快速跳过强化结果
-        link: http://localhost:8080/doc.html#%E5%9C%A3%E9%81%97%E7%89%A9%E4%B8%80%E9%94%AE%E5%BC%BA%E5%8C%96
+      - title: 自动伐木
+        icon: tree
+        details: 装备「王树瑞佑」后，自动挂机伐木
+        link: /doc.html#%E8%87%AA%E5%8A%A8%E4%BC%90%E6%9C%A8
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题强力驱动
