@@ -225,9 +225,21 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 ### 推荐伐木点
 
-以下是比较高效的伐木点推荐。
+#### 蒙德
 
-![高效伐木点推荐](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01NI66kB1lhoDsHI5xG_!!2042484851.jpg)
+<img src="./assets/wood/Mondstadt.jpg" alt="Mondstadt" />
+
+#### 璃月&稻妻
+
+<img src="./assets/wood/Liyue&Inazuma.jpg" alt="Liyue&Inazuma" />
+
+#### 须弥
+
+<img src="./assets/wood/Sumeru.jpg" alt="Sumeru" />
+
+#### 枫丹
+
+<img src="./assets/wood/Fontaine.jpg" alt="Fontaine" />
 
 # 操控辅助
 
