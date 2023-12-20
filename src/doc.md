@@ -227,19 +227,19 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 #### 蒙德
 
-![Mondstadt](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01pk664Q1lhoE0AGQSw_!!2042484851.jpg)
+![Mondstadt](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01uiB2Tb1lhoE3tb6zs_!!2042484851.jpg)
 
 #### 璃月&稻妻
 
-![Liyue&Inazuma](https://img.alicdn.com/imgextra/i1/2042484851/O1CN011mpYAR1lhoE13RCrm_!!2042484851.jpg)
+![Liyue&Inazuma](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01KH4u0V1lhoE14apoJ_!!2042484851.jpg)
 
 #### 须弥
 
-![Sumeru](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01fJBg2N1lhoE52OyIi_!!2042484851.jpg)
+![Sumeru](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01oUMgDo1lhoE13ziGQ_!!2042484851.jpg)
 
 #### 枫丹
 
-![Fontaine](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01WShXbh1lhoDs3PPSu_!!2042484851.jpg)
+![Fontaine](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01MVT1fI1lhoDyGoMGi_!!2042484851.jpg)
 
 # 操控辅助
 
