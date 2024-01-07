@@ -1,5 +1,5 @@
-import { sidebar } from "vuepress-theme-hope";
+import {sidebar} from "vuepress-theme-hope";
 
 export default sidebar({
-  "/": "structure",
+    "/": "structure",
 });

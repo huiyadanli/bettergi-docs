@@ -236,6 +236,14 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 ![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01MVT1fI1lhoDyGoMGi_!!2042484851.jpg)
 
+## 自动战斗
+
+见[自动战斗](/feats/domain.html)
+
+## 自动秘境
+
+见[自动秘境](/feats/domain.html)
+
 # 操控辅助
 
 ## 空格连发
@@ -253,6 +261,14 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 鼠标可以通过把侧键映射为对应的快捷键来实现使用（当然直接用宏更加方便）
 
 ![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01LGoIqp1lhoDxzYHjp_!!2042484851.gif)
+
+## 圣遗物一键强化
+
+设置快捷键后，点按可以快速强化圣遗物。原理是通过快速切换“详情”、“强化”页跳过强化结果展示。
+
+即便是 4.3 过后，这个功能还有用，继续保留。
+
+**不要长按，长按会长时间循环，导致程序无法切出。**
 
 ## 一键购买
 

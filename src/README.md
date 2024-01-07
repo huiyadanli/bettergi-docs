@@ -26,7 +26,7 @@ highlights:
     features:
       - title: 遮罩窗口
         icon: masks-theater
-        details: 自带一个遮罩窗口覆盖在游戏界面上，用于显示日志和图像识别结果
+        details: 自带一个遮罩窗口覆盖在游戏界面上，显示日志和识别结果
         link: /doc.html#%E9%81%AE%E7%BD%A9%E7%AA%97%E5%8F%A3
 
       - title: 多种图像捕获方式
@@ -60,7 +60,7 @@ highlights:
 
       - title: 自动重新派遣
         icon: magnifying-glass-dollar
-        details: 自动领取探索派遣奖励并重新派遣。可自定义派遣角色
+        details: 自动领取探索派遣奖励并重新派遣。
         link: /doc.html#%E8%87%AA%E5%8A%A8%E9%87%8D%E6%96%B0%E6%B4%BE%E9%81%A3
 
       - title: AI全自动钓鱼
@@ -70,7 +70,7 @@ highlights:
 
       - title: 自动七圣召唤
         icon: dice
-        details: 支持角色邀请、每周来客挑战、部分大世界NPC挑战，可自定义卡组
+        details: 支持角色邀请、每周来客、部分大世界挑战等，可自定义卡组
         link: /doc.html#%E8%87%AA%E5%8A%A8%E4%B8%83%E5%9C%A3%E5%8F%AC%E5%94%A4
 
       - title: 操控辅助
@@ -78,10 +78,30 @@ highlights:
         details: 类似宏的操作，按键连发、那维莱特转圈圈等
         link: /doc.html#%E6%93%8D%E6%8E%A7%E8%BE%85%E5%8A%A9
 
+      - title: 圣遗物一键强化
+        icon: hammer
+        details: 圣遗物一键强化，快速跳过强化结果
+        link: /doc.html#%E5%9C%A3%E9%81%97%E7%89%A9%E4%B8%80%E9%94%AE%E5%BC%BA%E5%8C%96
+    
+      - title: 快速传送
+        icon: location-dot
+        details: 地图上点击传送点后，自动点选传送
+        link: /doc.html#快速传送
+
       - title: 自动伐木
         icon: tree
         details: 装备「王树瑞佑」后，自动挂机伐木
         link: /doc.html#%E8%87%AA%E5%8A%A8%E4%BC%90%E6%9C%A8
+
+      - title: 自动战斗
+        icon: hand-fist
+        details: 识别配队并按照自定义战斗策略进行自动战斗
+        link: /feats/domain.html
+
+      - title: 自动秘境
+        icon: chess-knight
+        details: 基于钟离的全自动刷本功能，依赖于自动战斗
+        link: /feats/domain.html
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题强力驱动

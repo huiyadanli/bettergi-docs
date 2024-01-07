@@ -25,7 +25,7 @@ export default hopeTheme({
     // sidebar
     sidebar,
 
-    footer: "默认页脚",
+    footer: "Made with ❤ by huiyadanli",
 
     displayFooter: true,
 
