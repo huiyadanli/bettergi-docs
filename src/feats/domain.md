@@ -43,7 +43,7 @@ order: 10
 | 等待 | wait |  | 等待时间(s)，必填 | 程序等待 | `wait(0.5)` |
 | 冲刺 | dash |  | 冲刺时间(s)，选填 | 朝当前方向冲刺 | `dash`,`dash(2)` |
 | 跳跃 | jump | j |  | 跳跃一下 | `jump` |
-| 行走 | walk |  | 行走的方向，必填、行走的时间(s)，必填 | 按下w/a/s/d行走 | `walk(w,0.2)` |
+| 行走 | walk |  | 1. 行走的方向，必填 2. 行走的时间(s)，必填 | 按下w/a/s/d行走 | `walk(w,0.2)` |
 | 向前行走 | w |  | 行走的时间(s)，必填 | 按下w行走，等效于`walk(w,?)` | `w(0.2)` |
 | 向左行走 | a |  | 行走的时间(s)，必填 | 按下a行走，等效于`walk(a,?)` | `a(0.2)` |
 | 向后行走 | s |  | 行走的时间(s)，必填 | 按下s行走，等效于`walk(s,?)` | `s(0.2)` |
@@ -115,6 +115,23 @@ order: 10
 ```
 :::
 
+### 战斗策略脚本 - 高级语法
+
+战斗策略脚本中实际支持更多键鼠操作相关的语法，可以实现普通脚本语法所有功能，同时还可以实现更多高级的操作。
+
+| 名称 | 方法 | 参数 | 示例 |
+| ---- | ---- | ---- | ---- |
+| 鼠标按下 | mousedown | 鼠标按键left、right、middle，选填，不填默认left | `mousedown(left)`,`mousedown` |
+| 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mousedown` |
+| 鼠标单击 | click | 鼠标按键left、right、middle，选填，不填默认left | `click`,`click(middle)` |
+| 鼠标相对移动 | moveby | 1. 横向移动相对距离，必填。2. 纵向移动距离，必填 | `moveby(500,0)` |
+| 键盘按下 | keydown | 键盘按下键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(a)` |
+| 键盘松开 | keyup | 键盘松开键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(d)` |
+| 键盘点按 | keypress | 键盘点按键的名称，必填，[按键代码](/feats/keycodes.html) | `keypress(F1)` |
+
+示例:
+
+在释放元素战技后，按下 F1 吃球后 ESC 退出： `e,keypress(F1),wait(3),keypress(ESCAP)`
 
 ## 自动秘境
 
