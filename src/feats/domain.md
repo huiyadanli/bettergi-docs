@@ -119,19 +119,20 @@ order: 10
 
 战斗策略脚本中实际支持更多键鼠操作相关的语法，可以实现普通脚本语法所有功能，同时还可以实现更多高级的操作。
 
+
 | 名称 | 方法 | 参数 | 示例 |
 | ---- | ---- | ---- | ---- |
 | 鼠标按下 | mousedown | 鼠标按键left、right、middle，选填，不填默认left | `mousedown(left)`,`mousedown` |
 | 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mousedown` |
 | 鼠标单击 | click | 鼠标按键left、right、middle，选填，不填默认left | `click`,`click(middle)` |
-| 鼠标相对移动 | moveby | 1. 横向移动相对距离，必填。2. 纵向移动距离，必填 | `moveby(500,0)` |
+| 鼠标相对移动 | moveby | 1. X轴移动相对距离，向左转动为负数，向右为正数，必填。2. Y轴移动距离，向上转动为负数，向下为正数，必填 | `moveby(500,0)`,`moveby(100,-100)` |
 | 键盘按下 | keydown | 键盘按下键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(a)` |
 | 键盘松开 | keyup | 键盘松开键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(d)` |
 | 键盘点按 | keypress | 键盘点按键的名称，必填，[按键代码](/feats/keycodes.html) | `keypress(F1)` |
 
 示例:
 
-在释放元素战技后，按下 F1 吃球后 ESC 退出： `e,keypress(F1),wait(3),keypress(ESCAP)`
+在释放元素战技后，按下 F1 吃球后 ESC 退出： `e,wait(1),keypress(F1),wait(1),keypress(ESCAPE)`
 
 ## 自动秘境
 
