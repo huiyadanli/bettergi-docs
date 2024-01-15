@@ -9,6 +9,9 @@ order: 20
 [B站 - BV1b34y1w7ML 已被锁定](https://www.bilibili.com/video/BV1b34y1w7ML)</del>
 
 QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138)
+
+**本软件开源且免费，任何人都可以直接下载并使用，BetterGI 不会在任何平台对软件本体进行交易售卖、收取费用等活动（比如：咸鱼、淘宝）。如果你是花钱购买的本软件，请及时退款并举报商家。**
+
 :::
 ---
 # 启动
