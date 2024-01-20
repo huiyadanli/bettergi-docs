@@ -21,7 +21,7 @@ QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQ
 
 ## 系统环境
 
-首先要确认你的电脑系统环境是否满足 BetterGI 的运行要求。
+BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系统环境是否满足 BetterGI 的运行要求。
 
 推荐的电脑配置至少能够中画质60帧流畅游玩原神，否则部分功能的使用体验会较差。
 
