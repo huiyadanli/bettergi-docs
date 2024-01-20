@@ -44,7 +44,7 @@ order: 40
 
 关于这个问题的更多讨论：[#132](https://github.com/babalae/better-genshin-impact/issues/132)
 
-* 情况一：把 BetterGI 解压到了桌面或者中文路径下可能会出现这个问题（大部分系统不会出现这个问题），请移动到英文路径下重试。 
+* 情况一：把 BetterGI 解压到了桌面或者中文路径下可能会出现这个问题（大部分系统不会出现这个问题），**请移动到非桌面的全英文路径下重试**。 
 * 情况二：把系统编码修改成了 `UTF-8`，请修改回默认系统编码后重试。取消勾选下图中的选项即可。
 
 ![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN015buXNA1lhoDy0eQNI_!!2042484851.png =400x)
