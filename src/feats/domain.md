@@ -2,13 +2,17 @@
 title: 自动秘境
 order: 10
 ---
-::: important 重要
+::: warning 分辨率
 
 自动战斗、自动秘境功能目前**只支持 1920x1080 分辨率**
+
 自动战斗、自动秘境功能目前**只支持 1920x1080 分辨率**
+
 自动战斗、自动秘境功能目前**只支持 1920x1080 分辨率**
 
 :::
+
+---
 
 自动秘境中自带有自动战斗的功能，两者配置共用，自动战斗任务可以在秘境外被启用。
 
@@ -121,6 +125,8 @@ order: 10
 
 战斗策略脚本中实际支持更多键鼠操作相关的语法，可以实现普通脚本语法所有功能，同时还可以实现更多高级的操作。
 
+实际就是类似软件宏的操作。
+
 
 | 名称 | 方法 | 参数 | 示例 |
 | ---- | ---- | ---- | ---- |
@@ -134,7 +140,11 @@ order: 10
 
 示例:
 
-在释放元素战技后，按下 F1 吃球后 ESC 退出： `e,wait(1),keypress(F1),wait(1),keypress(ESCAPE)`
+* 在释放元素战技后，按下 F1 吃球后 ESC 退出： `e,wait(1),keypress(F1),wait(1),keypress(ESCAPE)`
+* 胡桃12A重： `e,wait(0.3),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),j,wait(0.52),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),j,wait(0.52),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),j,wait(0.52),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),dash,wait(0.1),charge(0.3),wait(0.1),j,wait(5)`
+* 滑步弓： `mousedown(left),wait(0.001),mouseup(left),wait(0.218),mousedown(left),wait(0.001),mouseup(left),wait(0.219),mousedown(left),wait(0.25),mouseup(left),wait(0.206)`
+* 可莉走A：`keydown(w),wait(0.08),attack(0.05),keyup(w),wait(0.2)`
+
 
 ## 自动秘境
 
