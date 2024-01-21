@@ -12,7 +12,7 @@ export default hopeTheme({
 
     iconAssets: "fontawesome-with-brands",
 
-    logo: "kirara.png",
+    logo: "https://img.alicdn.com/imgextra/i2/2042484851/O1CN01LQfLIG1lhoEZwz1Gt_!!2042484851.png",
 
     repo: "babalae/better-genshin-impact",
     docsRepo: "huiyadanli/bettergi-docs",
