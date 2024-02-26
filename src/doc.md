@@ -5,7 +5,8 @@ order: 20
 ---
 ::: tip 提示
 
-QQ交流群 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138)
+QQ交流群1 [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138) 
+QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaGb2hIsO3p4-DKdxBlReQ&authKey=X7rGdx4jbA%2Bs2Juotlov0cg57%2Bv8CwRdjMgYYsxPtdtkl5NKniJhbDILKhWCYS4B&noverify=0&group_code=906536632)
 
 本软件[**开源**](https://github.com/babalae/better-genshin-impact)且**免费**，任何人都可以直接下载并使用，BetterGI 不会在任何平台对软件本体进行交易售卖、收取费用等活动（比如：咸鱼、淘宝）。
 
