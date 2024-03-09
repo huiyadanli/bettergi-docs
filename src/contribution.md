@@ -46,12 +46,9 @@ BetterGI 当前处于快速开发迭代阶段，有大量[Issue](https://github.
 
 BetterGI 当前是使用的 [YOLOv8](https://github.com/ultralytics/ultralytics) 作为目标检测算法。
 
-目前有以下模型缺失数据集：
+鱼类模型仍在积极训练中~
 
-- 枫丹的部分鱼类
-- 须弥的部分鱼类
-
-如果你有一定的计算机基础，且有兴趣提供相关的游戏截图，可以加入AI模型训练群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) 。 （入群请注明来意）
+如果你有一定的计算机基础，且有兴趣提供相关的游戏截图或者参与打标，可以加入AI模型训练群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) 。 （入群请注明来意）
 
 数据集要求（随着训练的进行要求会逐渐变动）：
 分辨率必须是1920x1080 
