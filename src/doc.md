@@ -138,7 +138,7 @@ QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaG
 
 当选项 “自动选择鱼饵并抛竿” 开启时，进入自动钓鱼后会立即寻找鱼的位置并选择饵料抛竿。这个功能可能只能在 `16:9` 的分辨率下才能够正常使用。
 
-`0.26` 版本后支持全地区自动钓鱼,并使用来自 [HutaoFisher](https://github.com/myHuTao-qwq/HutaoFisher) 的先进抛竿技术(牛顿法相机标定+神经网络)
+`0.25.1` 版本后支持全地区自动钓鱼,并使用来自 [HutaoFisher](https://github.com/myHuTao-qwq/HutaoFisher) 的先进抛竿技术(牛顿法相机标定+神经网络)
 
 模型识别例图：
 
