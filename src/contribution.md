@@ -48,16 +48,12 @@ BetterGI 当前是使用的 [YOLOv8](https://github.com/ultralytics/ultralytics)
 
 鱼类模型仍在积极训练中~
 
-如果你有一定的计算机基础，且有兴趣提供相关的游戏截图或者参与打标，可以加入AI模型训练群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) 。 （入群请注明来意）
+如果你有一定的计算机基础，且有兴趣参与数据收集、清洗、打标，或者是算法优化，可以加入AI模型训练群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) 。 （入群请注明来意）
 
-数据集要求（随着训练的进行要求会逐渐变动）：
-分辨率必须是1920x1080 
-数据集可以使用 BetterGI 的截图功能进行截图，这个功能可以在 BetterGI 的设置页面开启，记得启用UID遮盖功能，然后配置好快捷键就可以使用了。
-1. 鱼池的相对位置、人物视角、环境光（时间），区分度越多越好。
-2. 鱼的类型越多越好（部分类型不需要继续增加），鱼的朝向越不同越好。
-3. 大部分图片必须是处于预备抛竿状态下的图片。至少有一张鱼与鱼竿重合的图片。
-4. 最好有红色鱼钩的图片，即落点不在鱼池内
-5. 最好有落点和鱼重合的图片
-6. 站在不同角度面向鱼池截图，同一种鱼不同角度的图越多越好
+当前有多种任务，都是基于HutaoFisher的原神钓鱼相关的AI训练
+1. 鱼本身的数据集采集整理以及分类打标
+2. 抛竿时鱼饵落点数据采集整理以及分类打标
+3. 一个咬钩分类器任务：找到比当前咬钩判断更好的分类器算法，内附示例数据集，要求解决语言必须为Python
+
 
 
