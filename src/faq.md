@@ -53,7 +53,11 @@ order: 40
 
 ![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png =400x)
 
-* 情况四：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
+* 情况四：如下图提示 `onnxruntime.dll: OK, handle=0`,但是 `mkldnn.dll: FAlL,handle=0` 的情况下，说明 ONNX 可能用不了，只能补充其他方式进行使用。**请不要和情况三混淆！**。进入 [wwk.lanzouq.com/ioU1f1tvgnwd](wwk.lanzouq.com/ioU1f1tvgnwd) 后，下载并解压，然后把里面的4个dll放到软件根目录，并覆盖。参考：[#283](https://github.com/babalae/better-genshin-impact/issues/283) 
+
+![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01PsmEhr1lhoG8SQ8tS_!!2042484851.png  =400x)
+
+* 情况五：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
 
 
 ### ❓为什么需要管理员权限？
