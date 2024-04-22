@@ -27,11 +27,13 @@ order: 10
 
 ### 配队识别失败？
 
+0.27版本已经解决识别率问题！
+
 可以直接在“独立任务”页设置“强制指定配队”，用逗号分割（中英文都可以），**注意必须使用角色的官方中文名！必须是4人队伍！**
 
 比如：`钟离，雷电将军，纳西妲，芙宁娜`
 
-琴、魈 这两个角色识别率很低（单个字识别不到），建议使用强制指定配队功能。
+~~琴、魈 这两个角色识别率很低（单个字识别不到），建议使用强制指定配队功能。~~（0.27版本已经解决识别问题）
 
 ### 战斗策略脚本编写
 
@@ -129,15 +131,15 @@ order: 10
 实际就是类似软件宏的操作。
 
 
-| 名称 | 方法 | 参数 | 示例 |
-| ---- | ---- | ---- | ---- |
-| 鼠标按下 | mousedown | 鼠标按键left、right、middle，选填，不填默认left | `mousedown(left)`,`mousedown` |
-| 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mousedown` |
-| 鼠标单击 | click | 鼠标按键left、right、middle，选填，不填默认left | `click`,`click(middle)` |
+| 名称 | 方法 | 参数 | 示例                                 |
+| ---- | ---- | ---- |------------------------------------|
+| 鼠标按下 | mousedown | 鼠标按键left、right、middle，选填，不填默认left | `mousedown(left)`,`mousedown`      |
+| 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mousedown`       |
+| 鼠标单击 | click | 鼠标按键left、right、middle，选填，不填默认left | `click`,`click(middle)`            |
 | 鼠标相对移动 | moveby | 1. X轴移动相对距离，向左转动为负数，向右为正数，必填。2. Y轴移动距离，向上转动为负数，向下为正数，必填 | `moveby(500,0)`,`moveby(100,-100)` |
-| 键盘按下 | keydown | 键盘按下键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(a)` |
-| 键盘松开 | keyup | 键盘松开键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(d)` |
-| 键盘点按 | keypress | 键盘点按键的名称，必填，[按键代码](/feats/keycodes.html) | `keypress(F1)` |
+| 键盘按下 | keydown | 键盘按下键的名称，必填，[按键代码](/feats/keycodes.html) | `keydown(a)`                       |
+| 键盘松开 | keyup | 键盘松开键的名称，必填，[按键代码](/feats/keycodes.html) | `keyup(d)`                         |
+| 键盘点按 | keypress | 键盘点按键的名称，必填，[按键代码](/feats/keycodes.html) | `keypress(F1)`                     |
 
 示例:
 
