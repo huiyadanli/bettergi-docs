@@ -49,9 +49,9 @@ QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaG
   * 出现任何奇怪的问题的情况下优先尝试使用这个方式。
   * **部分Win11由于显卡设置原因可能无法使用这个选项，[解决方案](https://github.com/babalae/better-genshin-impact/issues/92)**
 * WindowsGraphicsCapture（**云原神只能使用这种方式**）
-  * 性能好
-  * Win10 早期版本可能使用有问题
-  * 有缓存，可能出现奇怪的问题
+  * 性能较好
+  * Win10 早期版本会在游戏窗口上加上黄色边框
+  * 启用位图缓存功能时性能较差（此时比BitBlt卡，待优化），但能够保证获取到图片是最新的。不启用的情况下可能会出现奇怪的问题。
   * 在游戏长时间最小化休眠后通过此截图方式唤起，可能会导致游戏花屏，需要重启游戏。
   * `0.24` 版本后出现鼠标移动卡顿或者日志输出黑屏点击，请在“启动”页种关闭位图缓存，参考:[#286](https://github.com/babalae/better-genshin-impact/issues/286)
 * DwmGetDxSharedSurface
