@@ -148,6 +148,8 @@ QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaG
 
 ![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01JZLd8q1lhoDwPF4wo_!!2042484851.jpg)
 
+全自动钓鱼演示视频：[BV1gD421E7V9](https://www.bilibili.com/video/BV1gD421E7V9)
+
 ## 快速传送
 
 开启后，在地图上点击传送点，或者点击后出现的列表中存在传送点，会自动点击传送点并传送。（节约1~2下鼠标点击）
@@ -226,6 +228,9 @@ QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaG
 见[自动秘境](/feats/domain.html)
 
 # 操控辅助
+
+## 一键宏
+见[一键宏](/feats/onem.html)
 
 ## 空格连发
 
