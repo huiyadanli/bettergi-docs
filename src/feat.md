@@ -16,7 +16,7 @@ order: 3
     * [快速传送](/doc.html#快速传送)
 * 独立任务
     * [自动七圣召唤](/doc.html#%E8%87%AA%E5%8A%A8%E4%B8%83%E5%9C%A3%E5%8F%AC%E5%94%A4)
-    * [自动伐木](/doc.html#%E8%87%AA%E5%8A%A8%E4%BC%90%E6%9C%A8)
+    * [自动伐木](/feats/felling.html)
     * [自动战斗](/feats/domain.html)
     * [自动秘境](/feats/domain.html)
 * 操控辅助
