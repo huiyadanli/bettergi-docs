@@ -14,6 +14,7 @@ order: 3
     * [自动邀约](/doc.html#自动邀约)
     * [全自动钓鱼(AI)](/doc.html#%E5%85%A8%E8%87%AA%E5%8A%A8%E9%92%93%E9%B1%BC)
     * [快速传送](/doc.html#快速传送)
+    * [自动烹饪](/doc.html#自动烹饪)
 * 独立任务
     * [自动七圣召唤](/doc.html#%E8%87%AA%E5%8A%A8%E4%B8%83%E5%9C%A3%E5%8F%AC%E5%94%A4)
     * [自动伐木](/feats/felling.html)
