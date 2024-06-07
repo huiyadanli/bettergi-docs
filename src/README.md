@@ -36,7 +36,7 @@ highlights:
 
       - title: AI模型
         icon: robot
-        details: 集成 ONNXRuntime，YOLOv8识别、SVTR网络OCR等
+        details: 集成 ONNXRuntime，YOLOv8识别、多种OCR引擎等
 
       - title: 图形化界面
         icon: gamepad
@@ -102,6 +102,16 @@ highlights:
         icon: chess-knight
         details: 基于钟离的全自动刷本功能，依赖于自动战斗
         link: /feats/domain.html
+
+      - title: 一键宏
+        icon: bowl-rice
+        details: 按下快捷键识别角色并触发对应的宏配置
+        link: /feats/onem.html
+
+      - title: 自动烹饪
+        icon: bowl-rice
+        details: 自动在完美区域完成食物烹饪
+        link: /doc.html#自动烹饪
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题强力驱动
