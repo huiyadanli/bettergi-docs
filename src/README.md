@@ -104,7 +104,7 @@ highlights:
         link: /feats/domain.html
 
       - title: 一键宏
-        icon: bowl-rice
+        icon: scroll
         details: 按下快捷键识别角色并触发对应的宏配置
         link: /feats/onem.html
 
