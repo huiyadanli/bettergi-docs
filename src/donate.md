@@ -1,6 +1,6 @@
 ---
 title: 赞助
-icon: heart
+icon: person-praying
 order: 100
 ---
 

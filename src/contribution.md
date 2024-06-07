@@ -1,6 +1,6 @@
 ---
 title: 贡献、开发、AI
-icon: handshake-simple
+icon: heart
 order: 50
 ---
 
