@@ -1,6 +1,6 @@
 ---
 title: 赞助
-icon: person-praying
+icon: bowl-rice
 order: 100
 ---
 
