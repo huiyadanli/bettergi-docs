@@ -11,7 +11,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
 
-不知道下载哪个？第一次使用？请先阅读[快速上手](/quickstart.html)
+第一次使用？**请先阅读[快速上手](/quickstart.html)**
 
 具体功能的使用说明请看[使用文档](/doc.html)
 
@@ -20,7 +20,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 ---
 
 <details>
-<summary>Github 下载太慢怎么办？</summary>
+<summary><b>Github 下载太慢怎么办？</b></summary>
 
 可以使用下面的公益加速服务：
 
@@ -35,7 +35,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 ---
 
 <details>
-<summary>找不到下载文件的位置？不知道下载哪个文件/版本？</summary>
+<summary><b>找不到下载文件的位置？不知道下载哪个文件/版本？</b></summary>
 
 BetterGI 提供了两个版本，分别是<b>安装版</b>和<b>便携版</b>，两个版本除了打包与安装方式之外，无任何区别。
 
