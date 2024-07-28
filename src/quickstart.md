@@ -28,7 +28,7 @@ BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系�
 
 软件运行的必备条件：
 * Windows 10 或更高版本的64位系统
-* [.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0) （没有的话，启动程序，系统会提示下载安装）
+* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime) （没有的话，启动程序，系统会提示下载安装）
 
 ## 下载
 

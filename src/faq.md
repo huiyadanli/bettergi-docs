@@ -6,7 +6,7 @@ order: 40
 
 如果查看了本文档仍旧无法解决你的问题，可以在[Issue](https://github.com/babalae/better-genshin-impact/issues)查阅是否有相似问题，如果无相似问题可以通过Issue提问。
 
-### ❓启动软件提示安装.NET 7 运行时？
+### ❓启动软件提示安装.NET 运行时？
 
 提示如图：
 
@@ -14,7 +14,7 @@ order: 40
 
 请根据提示安装，否则无法启动软件。
 
-没有提示，也进不去？手动安装下载：[.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0)
+没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
 
 ### ❓使用自动拾取的时候能看到拾取的日志，但是没有按F键拾取？
 1. 请确认是以管理员权限启动软件。

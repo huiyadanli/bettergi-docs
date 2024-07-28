@@ -22,7 +22,7 @@ QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaG
 
 你的系统需要满足以下条件：
 * Windows 10 或更高版本的64位系统
-* [.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0) （没有的话，启动程序，系统会提示下载安装）
+* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime) （没有的话，启动程序，系统会提示下载安装）
 
 ::: warning 注意
 
