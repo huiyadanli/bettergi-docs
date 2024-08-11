@@ -18,7 +18,7 @@ actions:
 
 highlights:
   - header: 特性与自动化功能列表
-    description: 大概是最简单好用、功能繁多的原神自动化工具了。<a href="/feat.html#已有功能列表">更多功能添加中...</a>
+    description: 大概是最简单好用、功能最繁多的原神自动化工具了。<a href="/feat.html#已有功能列表">更多功能添加中...</a>
     image: /assets/image/box.svg
     bgImageStyle:
       background-repeat: repeat
