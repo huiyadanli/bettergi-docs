@@ -1,6 +1,6 @@
 ---
 title: 一键宏
-order: 20
+order: 9000
 ---
 
 ::: warning 分辨率
