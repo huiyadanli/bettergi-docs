@@ -7,6 +7,7 @@ order: 30
 BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)  ，👇找不到下载入口可以看下方说明👇
+* [📥小白 下载](http://124.220.32.20:9090/wp-content/uploads/2024/08/BetterGI_Setup_v0.32.1.exe)  ，🥰速度较慢不建议使用  
 * 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
