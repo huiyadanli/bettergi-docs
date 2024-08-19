@@ -103,6 +103,16 @@ highlights:
         details: 基于钟离的全自动刷本功能，依赖于自动战斗
         link: /feats/domain.html
 
+      - title: 自动寻路
+        icon: map-location
+        details: 基于小地图的自动寻路功能
+        link: /feats/pathing.html
+
+      - title: 键盘鼠标脚本
+        icon: keyboard
+        details: 录制与回放键盘鼠标脚本
+        link: /feats/kmscript.html
+
       - title: 一键宏
         icon: scroll
         details: 按下快捷键识别角色并触发对应的宏配置
