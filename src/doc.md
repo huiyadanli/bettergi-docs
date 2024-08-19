@@ -243,6 +243,14 @@ order: 20
 
 见[自动秘境](/feats/domain.html)
 
+## 自动寻路
+
+见[自动寻路](/feats/pathing.html)
+
+## 键盘鼠标脚本
+
+见[键盘鼠标脚本](/feats/kmscript.md)
+
 # 操控辅助
 
 ## 一键宏

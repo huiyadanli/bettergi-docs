@@ -20,6 +20,8 @@ order: 3
     * [自动伐木](/feats/felling.html)
     * [自动战斗](/feats/domain.html)
     * [自动秘境](/feats/domain.html)
+    * [自动寻路](/feats/auto_pathing.html)
+    * [键盘鼠标脚本](/feats/kmscript.html)
 * 操控辅助
     * [一键宏](/feats/onem.html)
     * [那维莱特 - 转圈圈](/doc.html#%E9%82%A3%E7%BB%B4%E8%8E%B1%E7%89%B9-%E8%BD%AC%E5%9C%88%E5%9C%88)
