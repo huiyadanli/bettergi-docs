@@ -7,8 +7,7 @@ order: 30
 BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)  ，👇找不到下载入口可以看下方说明👇
-* [📥小白下载（安装版）1](https://alist.linzefeng.top/d/mega/bgi/BetterGI_Setup_v0.33.2.exe?sign=ofbfGM1emQk31pujBKW9Zk0UGZMJNV-5RiYPzCNHd0g=:0)、[📥小白下载（便携版）1](https://alist.linzefeng.top/d/mega/bgi/BetterGI_v0.33.2.7z?sign=y7fNTHNXSm0S7CwzKLE4Yag82ORbTEdVfNqS0uyyu30=:0) ，
-* [📥小白下载（安装版）2](https://alist.acheng.net.cn/d/file/BetterGI_Setup_v0.33.2.exe?sign=_YjDYLPPMG0qQuueqWO_Au9PbnK0MIFGe8m8H3Ugweg=:0)、[📥小白下载（便携版）2](https://alist.acheng.net.cn/d/file/BetterGI_v0.33.2.7z?sign=mzOULVPeVKKoJJK8kP0NDVMFc4HVvt2xmVuvaWh_8rs=:0) ，
+* [📥小白下载（安装版）1](https://alist.linzefeng.top/d/mega/bgi/BetterGI_Setup_v0.34.1.exe?sign=-NvasvyREMj46v-QtbT9bNfxaTusC0eBzT8OEuOCUFw=:0)、[📥小白下载（便携版）1](https://alist.linzefeng.top/d/mega/bgi/BetterGI_v0.34.1.7z?sign=E_WTRDVv933HRM2OBQc72uBXVmjs8xJSt_OmpgwEzEA=:0) ，
 * 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
