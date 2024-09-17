@@ -9,7 +9,9 @@ order: 10
 
 :::
 
-BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V8 引擎，支持直接运行 Javascript 编写的脚本，并开放各类 BetterGI 的 API。
+BetterGI 内部有大量原神自动化基础能力的包装，并可以通过 Javascript 书写的脚本进行调用，JS脚本通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V8 引擎进行执行。
+
+期望最终能够做到自动启动原神并完成所有脚本任务后自动关机。
 
 所有脚本存储在软件根目录 `\Script` 路径下。脚本仓库：[bettergi-scripts](https://github.com/babalae/bettergi-scripts)。
 
@@ -38,3 +40,9 @@ BetterGI 通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V
   * 请确保运行时是琳妮特前台且拥有双风共鸣（元素共鸣需要四个角色组队触发，只带两个风系角色是没用的），且队伍中没有其他移速天赋加成的角色
 * **晶蝶抓不齐/狗粮没调查到/调查了不捡？**
   * 自动晶蝶和自动狗粮在走到目的地时没有任何图像识别，无法保证百分百获取
+
+## 附录
+
+全地图传送点坐标合集，也是软件内置的所有传送点。
+
+https://wwmy.lanzouq.com/b0fosbd9g 密码:coco

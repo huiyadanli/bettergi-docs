@@ -107,3 +107,8 @@ order: 20
 | `action` | 动作   | 表示在该位置执行的动作 <br> `stop_flying`：下落攻击，停止飞行，`move_mode = fly`的情况才有效  <br> `force_tp`：强制以当前的x,y坐标进行自动传送，`type = teleport`的情况才有效 <br> `pick_around`：在点位周围小幅度移动并拾取，适合圣遗物狗粮场景，`type = target`的情况才有效（开发中）  <br> `fight`：在此处直接执行自动战斗，`type = target`的情况才有效（开发中） |
 
 
+## 附录
+
+全地图传送点坐标合集，也是软件内置的所有传送点，如果传送位置不对可以对照这个图看下
+
+https://wwmy.lanzouq.com/b0fosbd9g 密码:coco
