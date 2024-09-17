@@ -105,7 +105,7 @@ highlights:
 
       - title: 地图追踪
         icon: map-location
-        details: 基于小地图的地图追踪功能
+        details: 基于小地图的路径追踪功能
         link: /autos/pathing.html
 
       - title: 键盘鼠标脚本
