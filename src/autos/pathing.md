@@ -11,7 +11,7 @@ order: 20
 
 :::
 
-路径追踪的核心功能参考自 [minimap](https://github.com/tignioj/minimap) 项目，[minimap](https://github.com/tignioj/minimap) 是一个完成度非常高原神自动采集工具，当然它的功能远不止这些，强烈推荐！
+✨ 路径追踪的核心功能参考自 [minimap](https://github.com/tignioj/minimap) 项目，[minimap](https://github.com/tignioj/minimap) 是一个完成度非常高原神自动采集工具，当然它的功能远不止这些，强烈推荐！
 
 ## 执行路径追踪任务
 
@@ -111,4 +111,4 @@ order: 20
 
 全地图传送点坐标合集，也是软件内置的所有传送点，如果传送位置不对可以对照这个图看下
 
-https://wwmy.lanzouq.com/b0fosbd9g 密码:coco
+[https://wwmy.lanzouq.com/b0fosbd9g](https://wwmy.lanzouq.com/b0fosbd9g) 密码:coco
