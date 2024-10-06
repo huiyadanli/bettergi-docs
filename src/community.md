@@ -15,6 +15,8 @@ order: 60
 
 交流群：
 
+有问题优先进新群，新群问问题更加容易得到解答。
+
 | 介绍                         | 入口        |
 |----------------------------| --------- |
 | 交流群2（需要使用bot的进这个群，满，偶尔有空位） | [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138) |
