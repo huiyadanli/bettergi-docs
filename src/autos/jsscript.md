@@ -150,7 +150,7 @@ keyUp("w");
   - `key` (`string`): 要按下并释放的键
 
 ### setGameMetrics(int width, int height, double dpi = 1)
-- 描述: 设置游戏的分辨率和DPI
+- 描述: 设置你编写脚本环境的游戏分辨率和DPI，在其他电脑上运行时，程序会自动适配。**游戏分辨率影响鼠标的绝对位置，也就是 `moveMouseTo` 方法，屏幕缩放影响鼠标的相对移动，也就是 `moveMouseBy` 方法。鼠标dpi大小不影响任何操作**
 - 参数:
   - `width` (`int`): 游戏宽度
   - `height` (`int`): 游戏高度
