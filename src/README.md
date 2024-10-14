@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 主页
-heroImage: https://img.alicdn.com/imgextra/i2/2042484851/O1CN01Bn1Fzx1lhoDqQDAzj_!!2042484851.png
+heroImage: https://img.alicdn.com/imgextra/i2/2042484851/O1CN019Sa1i51lhoJV6itTQ_!!2042484851.png
 bgImageStyle:
   background-attachment: fixed
 heroText: BetterGI · 更好的原神
@@ -18,7 +18,7 @@ actions:
 
 highlights:
   - header: 特性与自动化功能列表
-    description: 作者熬夜周更，为您添加了成吨功能。大概是最简单好用、功能繁多的原神自动化工具了。<a href="/feat.html#已有功能列表">更多功能添加中...</a>
+    description: 大概是最简单好用、功能最繁多的原神自动化工具了。<a href="/feat.html#已有功能列表">更多功能添加中...</a>
     image: /assets/image/box.svg
     bgImageStyle:
       background-repeat: repeat
@@ -36,7 +36,7 @@ highlights:
 
       - title: AI模型
         icon: robot
-        details: 集成 ONNXRuntime，YOLOv8识别、SVTR网络OCR等
+        details: 集成 ONNXRuntime，YOLOv8识别、多种OCR引擎等
 
       - title: 图形化界面
         icon: gamepad
@@ -102,6 +102,26 @@ highlights:
         icon: chess-knight
         details: 基于钟离的全自动刷本功能，依赖于自动战斗
         link: /feats/domain.html
+
+      - title: 地图追踪
+        icon: map-location
+        details: 基于小地图的路径追踪功能
+        link: /autos/pathing.html
+
+      - title: 键盘鼠标脚本
+        icon: keyboard
+        details: 录制与回放键盘鼠标脚本
+        link: /autos/kmscript.html
+
+      - title: 一键宏
+        icon: scroll
+        details: 按下快捷键识别角色并触发对应的宏配置
+        link: /feats/onem.html
+
+      - title: 自动烹饪
+        icon: bowl-rice
+        details: 自动在完美区域完成食物烹饪
+        link: /doc.html#自动烹饪
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题强力驱动

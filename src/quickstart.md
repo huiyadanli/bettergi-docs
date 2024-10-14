@@ -6,8 +6,7 @@ order: 4
 
 ::: tip 提示
 
-QQ交流群1（满） [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138) 
-QQ交流群2 [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaGb2hIsO3p4-DKdxBlReQ&authKey=X7rGdx4jbA%2Bs2Juotlov0cg57%2Bv8CwRdjMgYYsxPtdtkl5NKniJhbDILKhWCYS4B&noverify=0&group_code=906536632)
+[交流群](https://bgi.huiyadan.com/community.html) 
 
 本软件[**开源**](https://github.com/babalae/better-genshin-impact)且**免费**，任何人都可以直接下载并使用，BetterGI 不会在任何平台对软件本体进行交易售卖、收取费用等活动（比如：咸鱼、淘宝）。
 
@@ -28,24 +27,37 @@ BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系�
 
 软件运行的必备条件：
 * Windows 10 或更高版本的64位系统
-* [.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0) （没有的话，启动程序，系统会提示下载安装）
+* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime) （没有的话，启动程序，系统会提示下载安装）
 
 ## 下载
 
 当前有两个下载渠道，根据自己的网络自行选择：
 
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)
-* [📥蓝奏云下载](https://wwmy.lanzouq.com/b00rs2msd)  密码:coco
+* 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
 
 
 BetterGI 提供了两个版本，分别是**安装版**和**便携版**，两个版本除了打包与安装方式之外，无任何区别。
 
-![](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01cLBZ1Y1lhoEZP2Uq8_!!2042484851.png)
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01tf0mIZ1lhoHgJXyAU_!!2042484851.png)
 
-* **安装版**的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
-* **便携版**的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。如果你有一定的计算机基础，推荐使用这个版本。
+* **安装版**的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
+* **便携版**的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
 
 有更高版本号的情况下优先下载更高版本号的 BetterGI！
+
+<details>
+<summary>Github 下载太慢怎么办？</summary>
+
+可以使用下面的公益加速服务：
+
+[https://moeyy.cn/gh-proxy/](https://moeyy.cn/gh-proxy/)
+
+[https://github.abskoop.workers.dev/](https://github.abskoop.workers.dev/)
+
+[https://gitmirror.com/files.html](https://gitmirror.com/files.html)
+
+</details>
 
 ## 启动
 
@@ -97,6 +109,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 1. 左下角的日志中，是否有”交互或拾取“的日志输出？
     1. 如果没有，请在”启动“选项卡页，切换”[截图模式](/doc.html#截图方式)“
+        1. 所有截图方式都切换了依旧不行？请再次确认是否对游戏添加了滤镜（HDR、N卡滤镜等）
     2. 如果有，且持续输出日志，说明模拟操作的未执行成功，请以先确认是管理员权限启动的 BetterGI，然后关闭杀毒软件或把 BetterGI 添加至杀软白名单。
 2. [日志提示 "Some simulated input commands were not sent successfully..."，说明模拟操作被拦截，请关闭杀毒软件获添加白名单。](/faq.html#❓报错提示-some-simulated-input-commands-were-not-sent-successfully)
 

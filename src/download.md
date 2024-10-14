@@ -6,12 +6,14 @@ order: 30
 
 BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
-* [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)
-* [📥蓝奏云下载](https://wwmy.lanzouq.com/b00rs2msd)  密码:coco
+* [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)  ，👇找不到下载入口 or 下载慢 可以看下方说明👇
+* [📥小白下载（安装版）1](https://alist.linzefeng.top/d/mega/bgi/BetterGI_Setup_v0.34.1.exe?sign=-NvasvyREMj46v-QtbT9bNfxaTusC0eBzT8OEuOCUFw=:0)、[📥小白下载（便携版）1](https://alist.linzefeng.top/d/mega/bgi/BetterGI_v0.34.1.7z?sign=E_WTRDVv933HRM2OBQc72uBXVmjs8xJSt_OmpgwEzEA=:0) 
+* [📥小白下载（安装版）2](https://alist.acheng.net.cn/d/file/BetterGI_Setup_v0.34.1.exe?sign=12RJVRScpXev0orTLisoz_MxaF_lGW_s0Chqd5r3foY=:0)、[📥小白下载（便携版）2](https://alist.acheng.net.cn/d/file/BetterGI_v0.34.1.7z?sign=eYyN9haIz2vDzB-oyP7tqnaGsRXPQwUkyUoYN0ab1_Y=:0) 
+* 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
 
-第一次使用请先阅读[快速上手](/quickstart.html)
+第一次使用？**请先阅读[快速上手](/quickstart.html)**
 
 具体功能的使用说明请看[使用文档](/doc.html)
 
@@ -20,7 +22,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 ---
 
 <details>
-<summary>Github 下载太慢怎么办？</summary>
+<summary><b>Github 下载太慢怎么办？</b></summary>
 
 可以使用下面的公益加速服务：
 
@@ -35,14 +37,16 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 ---
 
 <details>
-<summary>应该下载哪个文件/版本？</summary>
+<summary><b>找不到下载文件的位置？不知道下载哪个文件/版本？</b></summary>
 
 BetterGI 提供了两个版本，分别是<b>安装版</b>和<b>便携版</b>，两个版本除了打包与安装方式之外，无任何区别。
 
-![](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01cLBZ1Y1lhoEZP2Uq8_!!2042484851.png)
+下载位置在更新日志下方：
 
-* **安装版**的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
-* **便携版**的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。如果你有一定的计算机基础，推荐使用这个版本。
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01tf0mIZ1lhoHgJXyAU_!!2042484851.png)
+
+* **安装版**的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
+* **便携版**的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
 
 有更高版本号的情况下优先下载更高版本号的 BetterGI！
 

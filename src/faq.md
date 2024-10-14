@@ -6,7 +6,7 @@ order: 40
 
 如果查看了本文档仍旧无法解决你的问题，可以在[Issue](https://github.com/babalae/better-genshin-impact/issues)查阅是否有相似问题，如果无相似问题可以通过Issue提问。
 
-### ❓启动软件提示安装.NET 7 运行时？
+### ❓启动软件提示安装.NET 运行时？
 
 提示如图：
 
@@ -14,7 +14,12 @@ order: 40
 
 请根据提示安装，否则无法启动软件。
 
-没有提示，也进不去？手动安装下载：[.NET 7 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/7.0)
+没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime)
+
+### ❓云原神无法使用？
+请注意当前只支持PC端云原神，**不支持网页版云原神**。使用时请注意：
+1. 只能使用 `WindowsGraphicsCapture` 的截图方式
+2. 云原神有三个窗口，可能自动识别到的窗口不正确，请使用“启动”也中的“手动选择窗口”功能来选择正确的云原神窗口
 
 ### ❓使用自动拾取的时候能看到拾取的日志，但是没有按F键拾取？
 1. 请确认是以管理员权限启动软件。
@@ -38,6 +43,13 @@ order: 40
 ### ❓Windows 11 下，无法使用 `BitBlt` 截图方式？
 参考：[#92](https://github.com/babalae/better-genshin-impact/issues/92) 设置后重试。但是修改这个设置后，可能会造成游戏性能下降。
 
+### ❓重启后程序被删除了是什么情况？
+卸载的时候由于文件被占用等问题，会下次重启后删除。（卸载程序会提示：“存在部分文件删除失败，这些文件将在下次重启后自动删除。”）
+
+如果你不重启，然后使用新的安装包进行覆盖安装就会出现此类情况。
+
+如果只是为了更新 BetterGI，直接覆盖安装即可，无需卸载后重新安装！
+
 ### ❓提示“PaddleOcr预热失败”应该如何解决？
 
 造成这个问题原因有很多种，以下罗列相关的解决方式，请自行判断，如果依旧无法解决，可以提[Issue](https://github.com/babalae/better-genshin-impact/issues)并附上报错截图。
@@ -53,7 +65,11 @@ order: 40
 
 ![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png =400x)
 
-* 情况四：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
+* 情况四：如下图提示 `onnxruntime.dll: OK, handle=0`,但是 `mkldnn.dll: FAlL, handle=0` 的情况下，说明 ONNX 可能用不了，只能补充其他方式进行使用。**请不要和情况三混淆！**。进入 [wwk.lanzouq.com/ioU1f1tvgnwd](https://wwk.lanzouq.com/ioU1f1tvgnwd) 后，下载并解压，然后把里面的4个dll放到软件根目录，并覆盖。参考：[#283](https://github.com/babalae/better-genshin-impact/issues/283) 
+
+![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01PsmEhr1lhoG8SQ8tS_!!2042484851.png  =400x)
+
+* 情况五：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
 
 
 ### ❓为什么需要管理员权限？
