@@ -13,17 +13,7 @@ BetterGI 内部有大量原神自动化基础能力的包装，并可以通过 J
 
 期望最终能够做到自动启动原神并完成所有脚本任务后自动关机。
 
-所有脚本存储在软件根目录 `\Script` 路径下。脚本仓库：[bettergi-scripts](https://github.com/babalae/bettergi-scripts)。
-
-
-## 当前已有脚本
-
-| 目录名            | 名称         | 描述                                                             | 作者                                           |
-| -------------- | ---------- | -------------------------------------------------------------- | -------------------------------------------- |
-| AutoCrystalfly | 自动采集晶蝶(枫丹) | BetterGI自带脚本，自动采集离传送点较近的晶蝶。请在队伍中务必携带早柚，使用成男/成女角色。并保证所有传送点都已经激活！ | [@huiyadanli](https://github.com/huiyadanli) |
-| JustTp         | 只是传送一下     | BetterGI自带脚本，只用于传送。方便在调度器配合键鼠脚本使用（[如何获取传送点位？](https://github.com/babalae/bettergi-scripts/issues/1)）                         | [@huiyadanli](https://github.com/huiyadanli) |
-| AutoArtifacts  | 自动狗粮       | 自动调查离传送点较近的狗粮。请使用琳妮特前台，双风共鸣。并保证所有传送点都已经激活！                     | [@HZYgrandma](https://github.com/HZYgrandma) |
-
+所有脚本存储在软件根目录 `User\JsScript` 路径下。脚本仓库：[bettergi-scripts-list](https://github.com/babalae/bettergi-scripts-list) ( repo/js 路径下)。脚本仓库在线版：[https://bgi.sh](https://bgi.sh)
 
 ## 常见问题
 
@@ -137,24 +127,24 @@ keyUp("w");
 ### keyDown(string key)
 - 描述: 按下指定的键
 - 参数:
-  - `key` (`string`): 要按下的键
+  - `key` (`string`): 要按下的键，具体可用参数见 [虚拟键代码表](/feats/keycodes.html)
 
 ### keyUp(string key)
 - 描述: 释放指定的键
 - 参数:
-  - `key` (`string`): 要释放的键
+  - `key` (`string`): 要释放的键，具体可用参数见 [虚拟键代码表](/feats/keycodes.html)
 
 ### keyPress(string key)
 - 描述: 按下并释放指定的键
 - 参数:
-  - `key` (`string`): 要按下并释放的键
+  - `key` (`string`): 要按下并释放的键，具体可用参数见 [虚拟键代码表](/feats/keycodes.html)
 
 ### setGameMetrics(int width, int height, double dpi = 1)
-- 描述: 设置你编写脚本环境的游戏分辨率和DPI，在其他电脑上运行时，程序会自动适配。**游戏分辨率影响鼠标的绝对位置，也就是 `moveMouseTo` 方法，屏幕缩放影响鼠标的相对移动，也就是 `moveMouseBy` 方法。鼠标dpi大小不影响任何操作**
+- 描述: 设置你编写脚本环境的游戏分辨率和DPI缩放，在其他电脑上运行时，程序会自动适配。**游戏分辨率影响鼠标的绝对位置，也就是 `moveMouseTo` 方法，屏幕缩放影响鼠标的相对移动，也就是 `moveMouseBy` 方法。鼠标dpi大小不影响任何操作**
 - 参数:
   - `width` (`int`): 游戏宽度
   - `height` (`int`): 游戏高度
-  - `dpi` (`double`): DPI缩放比例，默认为1
+  - `dpi` (`double`): DPI缩放比例，默认为1，假如你的显示器设置是150%缩放，那这个值就是1.5
 
 ### moveMouseBy(int x, int y)
 - 描述: 移动鼠标相对于当前位置的偏移量
