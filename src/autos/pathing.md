@@ -11,6 +11,8 @@ order: 20
 
 地图追踪支持大于等于 `1920x1080` 的 `16:9` 分辨率，太小的分辨率无法识别清小地图
 
+地图追踪在截图方式 `WindowsGraphicsCapture` 下表现很差，请使用 `BitBlt` ！
+
 :::
 
 ✨ 路径追踪的核心功能参考自 [minimap](https://github.com/tignioj/minimap) 项目，[minimap](https://github.com/tignioj/minimap) 是一个完成度非常高原神自动采集工具，当然它的功能远不止这些，强烈推荐！
