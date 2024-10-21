@@ -109,7 +109,7 @@ order: 20
 | `y` | Y 坐标 | 原神游戏内坐标系下的Y坐标                                                                                                                                                                                                                                                       |
 | `type` | 点位类型 | `teleport`：传送点，会触发自动传送操作 <br>`path`：途经点，粗略路过的点位 <br>`target`：目标点，精准经过的点位                                                                                                                                                                                            |
 | `move_mode` | 移动模式 | `walk`： 普通的行走模式，较远时会偶尔冲刺 <br> `fly`：不停的跳跃直到起飞 <br> `climb`：不会因为长时间在一个点导致触发自动避障（0.35.1新增）                                                                                                                                                                            |
-| `action` | 动作   | 表示在该位置执行的动作，和移动相关的动作，都会在精确到达点位后执行 <br> `stop_flying`：下落攻击，停止飞行，`move_mode = fly`的情况才有效  <br> `force_tp`：强制以当前的x,y坐标进行自动传送，`type = teleport`的情况才有效 <br> `nahida_collect`：使用纳西妲长按E技能进行收集 <br> ~~`pick_around`：在点位周围小幅度移动并拾取，适合圣遗物狗粮场景~~  <br> ~~`fight`：在此处直接执行自动战斗~~ |
+| `action` | 动作   | 表示在该位置执行的动作，和移动相关的动作，都会在精确到达点位后执行 <br> `stop_flying`：下落攻击，停止飞行，`move_mode = fly`的情况才有效  <br> `force_tp`：强制以当前的x,y坐标进行自动传送，`type = teleport`的情况才有效 <br> `nahida_collect`：使用纳西妲长按E技能进行收集 <br> `pick_around`：在点位周围小幅度移动并拾取，适合圣遗物狗粮场景(0.35.1存在) <br> `normal_attack`：普通攻击一下(0.35.1存在)  <br> `elemental_skill`：释放元素战技(0.35.1存在)  <br> `up_down_grab_leaf`：上下移动视角按T前往四叶印(0.35.1存在)  <br> ~~`fight`：在此处直接执行自动战斗~~ |
 
 
 ## 附录
