@@ -19,9 +19,7 @@ order: 1
 
 最终形态就是一条龙完成游戏后下线。
 
-## 如何使用调度器？
 
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113345126469254&bvid=BV1woyGYbESB&cid=26396460037&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
 
 
 
