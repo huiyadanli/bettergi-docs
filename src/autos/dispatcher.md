@@ -19,6 +19,9 @@ order: 1
 
 最终形态就是一条龙完成游戏后下线。
 
+## 如何使用调度器？
+<iframe height="498" width="510" src="assets/脚本仓库和调度器使用教程.mp4"></iframe>
+     
 
 
 
