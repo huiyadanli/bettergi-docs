@@ -131,7 +131,7 @@ order: 20
 | `electro_collect`   | 使用雷元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `anemo_collect`     | 使用风元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `up_down_grab_leaf` | 上下移动视角按T前往四叶印(0.35.1存在)。                                                                                                                                            |
-| ~~`fight`~~         | ~~在此处直接执行自动战斗（已废弃）。~~                                                                                                                                               |
+| ~~`fight`~~         | ~~在此处直接执行自动战斗（未实现）。~~                                                                                                                                               |
 
 ## 附录
 
