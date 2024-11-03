@@ -1,6 +1,6 @@
 ---
 title: 自动秘境
-order: 10
+order: 30
 ---
 ::: warning 分辨率
 

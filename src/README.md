@@ -103,11 +103,6 @@ highlights:
         details: 基于钟离的全自动刷本功能，依赖于自动战斗
         link: /feats/domain.html
 
-      - title: 地图追踪
-        icon: map-location
-        details: 基于小地图的路径追踪功能
-        link: /autos/pathing.html
-
       - title: 键盘鼠标脚本
         icon: keyboard
         details: 录制与回放键盘鼠标脚本
@@ -122,6 +117,11 @@ highlights:
         icon: bowl-rice
         details: 自动在完美区域完成食物烹饪
         link: /doc.html#自动烹饪
+
+      - title: 地图追踪
+        icon: map-location
+        details: 基于小地图的路径追踪功能，可以实现自动采集等
+        link: /autos/pathing.html
 
 copyright: false
 footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题强力驱动

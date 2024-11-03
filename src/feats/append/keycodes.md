@@ -1,6 +1,6 @@
 ---
 title: 虚拟键代码表
-order: 12
+order: 30
 ---
 
 本页面是 [战斗策略脚本 - 高级语法](/feats/domain.html) 、 [Javascript 脚本](/autos/jsscript.html) 中对应键盘相关方法入参的虚拟键代码表。
