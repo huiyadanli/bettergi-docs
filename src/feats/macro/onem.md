@@ -41,4 +41,4 @@ order: 10
 ]
 ```
 
-所有的脚本语法都和[自动战斗脚本语法](/feats/domain.html#战斗策略脚本编写)一致，且推荐只使用[高级语法](/feats/domain.html#战斗策略脚本-高级语法)。
+所有的脚本语法都和[自动战斗脚本语法](/feats/task/domain.html#战斗策略脚本编写)一致，且推荐只使用[高级语法](/feats/task/domain.html#战斗策略脚本-高级语法)。

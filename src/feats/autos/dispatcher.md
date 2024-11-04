@@ -9,7 +9,7 @@ order: 1
 
 :::
 
-用于调度 [Javascript 脚本](/autos/jsscript.html)、[自动寻路](/autos/pathing.html)、[键鼠录制](/autos/kmscript.html) 等功能与脚本。
+用于调度 [Javascript 脚本](/feats/autos/jsscript.html)、[自动寻路](/feats/autos/pathing.html)、[键鼠录制](/feats/autos/kmscript.html) 等功能与脚本。
 
 所有配置组信息存储在软件根目录 `\User\ScriptGroup` 路径下，一个配置组对应一个 JSON。
 
