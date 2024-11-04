@@ -27,14 +27,14 @@ BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系�
 
 软件运行的必备条件：
 * Windows 10 或更高版本的64位系统
-* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/latest/runtime) （没有的话，启动程序，系统会提示下载安装）
+* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.10-windows-x64-installer) （没有的话，启动程序，系统会提示下载安装）
 
 ## 下载
 
 当前有两个下载渠道，根据自己的网络自行选择：
 
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)
-* 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
+* [其他下载渠道见下载页](/download.html)
 
 
 BetterGI 提供了两个版本，分别是**安装版**和**便携版**，两个版本除了打包与安装方式之外，无任何区别。
@@ -109,7 +109,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 1. 左下角的日志中，是否有”交互或拾取“的日志输出？
     1. 如果没有，请在”启动“选项卡页，切换”[截图模式](/doc.html#截图方式)“。（【推荐】或者解决BitBlt截图方式不生效的问题：[解决方案](https://github.com/babalae/better-genshin-impact/issues/92)）
-        1. 所有截图方式都切换了依旧不行？请再次确认是否对游戏添加了滤镜（HDR、N卡滤镜等）
+        1. 所有截图方式都切换了依旧不行？请再次确认是否对游戏添加了滤镜（HDR、N卡滤镜等）。当前不存在所有截图方式都无法使用的情况，出现这种情况一定是你的操作有问题！
     2. 如果有，且持续输出日志，说明模拟操作的未执行成功，请以先确认是管理员权限启动的 BetterGI，然后关闭杀毒软件或把 BetterGI 添加至杀软白名单。
 2. [日志提示 "Some simulated input commands were not sent successfully..."，说明模拟操作被拦截，请关闭杀毒软件获添加白名单。](/faq.html#❓报错提示-some-simulated-input-commands-were-not-sent-successfully)
 
@@ -118,3 +118,19 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 其他各个功能如何使用可以查看[文档](/doc.html)。
 
 在使用过程中，如果遇到任何问题，可以先查看[常见问题](/faq.html)。
+
+## 三种截图方式的区别
+
+* BitBlt
+    * 兼容性最好，问题最少的方式，但是性能稍差，能用的情况下优先使用这个方式。
+    * 出现任何奇怪的问题的情况下优先尝试使用这个方式。
+    * **部分Win11由于显卡设置原因可能无法使用这个选项，[解决方案](https://github.com/babalae/better-genshin-impact/issues/92)，0.36 版本BetterGI启动后自动完成相关设置，此时请注意重启游戏**
+* WindowsGraphicsCapture（**云原神只能使用这种方式**）
+    * 需要 Windows 10 1903 及以上的系统版本才能使用。
+    * Windows 10 早期版本会在游戏窗口上加上黄色边框。
+    * 启用位图缓存功能时性能较差（此时比BitBlt卡，待优化），但能够保证获取到图片是最新的。不启用的情况下可能会出现奇怪的问题。
+    * 在游戏长时间最小化休眠后通过此截图方式唤起，可能会导致游戏花屏，需要重启游戏。
+    * `0.24` 版本后出现鼠标移动卡顿或者日志输出黑屏点击，请在“启动”页种关闭位图缓存，参考:[#286](https://github.com/babalae/better-genshin-impact/issues/286)
+* DwmGetDxSharedSurface（**不推荐使用**）
+    * 性能和WGC差不多
+    * 但是更加不稳定，可能出现奇怪的问题

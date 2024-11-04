@@ -4,8 +4,9 @@ icon: circle-question
 order: 40
 ---
 
-
 如果查看了本文档仍旧无法解决你的问题，可以在[Issue](https://github.com/babalae/better-genshin-impact/issues)查阅是否有相似问题，如果无相似问题可以通过Issue提问。
+
+查阅文档没有结果，也可以通过[用户社区](/community.html)进行提问
 
 ### ❓启动软件提示安装.NET 运行时？
 
@@ -84,4 +85,3 @@ order: 40
 ### ❓报错提示“Could not find a part of the path：............."
  **如果你是首次运行bgi**请先启动运行一次程序，若无法解决该问题，请手动添加相应的文件夹  
  **如果不会添加**请将文件删除干净，重新下载安装包，重新安装或解压，若仍然无法解决问题，请前往社区寻求帮助。 
-  

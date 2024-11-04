@@ -1,7 +1,7 @@
 ---
-title: 功能指引
+title: 用户手册
 icon: note-sticky
-order: 21
+order: 1
 index: false
-dir.order: 21
+dir.order: 1
 ---
