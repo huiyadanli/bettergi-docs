@@ -127,17 +127,17 @@ keyUp("w");
 ### keyDown(string key)
 - 描述: 按下指定的键
 - 参数:
-  - `key` (`string`): 要按下的键，具体可用参数见 [虚拟键代码表](/feats/keycodes.html)
+  - `key` (`string`): 要按下的键，具体可用参数见 [虚拟键代码表](/feats/append/keycodes.html)
 
 ### keyUp(string key)
 - 描述: 释放指定的键
 - 参数:
-  - `key` (`string`): 要释放的键，具体可用参数见 [虚拟键代码表](/feats/keycodes.html)
+  - `key` (`string`): 要释放的键，具体可用参数见 [虚拟键代码表](/feats/append/keycodes.html)
 
 ### keyPress(string key)
 - 描述: 按下并释放指定的键
 - 参数:
-  - `key` (`string`): 要按下并释放的键，具体可用参数见 [虚拟键代码表](/feats/keycodes.html)
+  - `key` (`string`): 要按下并释放的键，具体可用参数见 [虚拟键代码表](/feats/append/keycodes.html)
 
 ### setGameMetrics(int width, int height, double dpi = 1)
 - 描述: 设置你编写脚本环境的游戏分辨率和DPI缩放，在其他电脑上运行时，程序会自动适配。**游戏分辨率影响鼠标的绝对位置，也就是 `moveMouseTo` 方法，屏幕缩放影响鼠标的相对移动，也就是 `moveMouseBy` 方法。鼠标dpi大小不影响任何操作**
