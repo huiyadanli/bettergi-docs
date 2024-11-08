@@ -54,6 +54,7 @@ https://wwmy.lanzouq.com/b0fosbd9g 密码:coco
   "manifest_version": 1,
   "name": "传送并自动秘境", // 名称
   "version": "1.0", // 版本
+  "bgi_version": "0.36.1", // 适用于 BetterGI 的最低版本，BetterGI低于此版本会提示
   "description": "BetterGI自带脚本，用于传送后并执行自动秘境", // 描述
   // 作者信息
   "authors": [
