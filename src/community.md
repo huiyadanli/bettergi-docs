@@ -4,18 +4,13 @@ icon: comments
 order: 60
 ---
 
-技术群（有门槛，萌新请加交流群）：
+有问题优先进QQ频道或者新群，问题更加容易得到解答。
 
-| 介绍                                 | 入口        |
-|------------------------------------| --------- |
-| 交流群1，开发群，入群需要告知Github账号            | 894935931 |
-| 一个AI炼丹相关的群，进群需告知来意（干活群）            | [863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) |
-| BetterGI脚本作者群（BetterGI内的脚本制作者可以进群） | [764972801](https://qm.qq.com/q/wqgZhBJcPK) |
+**QQ频道：[pd72644221](https://pd.qq.com/s/e0isukk34)**
 
+---
 
 交流群：
-
-有问题优先进新群，新群问问题更加容易得到解答。
 
 | 介绍                         | 入口        |
 |----------------------------| --------- |
@@ -23,3 +18,13 @@ order: 60
 | 交流群3 （满，偶尔有空位）             | [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaGb2hIsO3p4-DKdxBlReQ&authKey=X7rGdx4jbA%2Bs2Juotlov0cg57%2Bv8CwRdjMgYYsxPtdtkl5NKniJhbDILKhWCYS4B&noverify=0&group_code=906536632) |
 | 交流群4 （满，偶尔有空位）                     | [644939404](https://qm.qq.com/q/eG3QIodqiA) |
 | 交流群5                       | [783846140](https://qm.qq.com/q/lVzxCCKEko) |
+
+
+技术群（有门槛，萌新请加QQ频道或者交流群）：
+
+| 介绍                                 | 入口        |
+|------------------------------------| --------- |
+| 交流群1，开发群，入群需要告知Github账号            | 894935931 |
+| 一个AI炼丹相关的群，进群需告知来意（干活群）            | [863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) |
+| BetterGI脚本作者群（BetterGI内的脚本制作者可以进群） | [764972801](https://qm.qq.com/q/wqgZhBJcPK) |
+
