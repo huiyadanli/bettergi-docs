@@ -153,7 +153,7 @@ order: 20
 | `anemo_collect`     | 使用风元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `up_down_grab_leaf` | 上下移动视角按T前往四叶印(0.35.1存在)。                                                                                                                                            |
 | `fight`             | 在此处直接执行自动战斗（0.36.4更新了结束方式）。                                                                                                                                         |
-| `combat_script`     | 可以直接执行[战斗策略脚本](/feats/task/domain.html#战斗策略脚本编写)，策略脚本需要填写在 `action_params` 中。<br>可以不指定角色名直接当前角色执行。请注意活用战斗策略的特性：不存在队伍中的角色对应的策略也不会执行（0.36.4新增）。                       |
+| `combat_script`     | 可以直接执行[战斗策略脚本](/feats/task/domain.html#战斗策略脚本编写)，策略脚本需要填写在 `action_params` 中。<br>当策略不指定角色名时，会直接使用当前角色执行策略脚本。<br>请注意活用战斗策略的特性：不存在队伍中的角色对应的策略也不会执行（0.36.4新增）。                       |
 
 ## 附录
 
