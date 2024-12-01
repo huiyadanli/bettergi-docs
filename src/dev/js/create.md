@@ -34,6 +34,14 @@ order: 10
 }
 ```
 
+还有一些不常用的属性：
+
+```
+  // 可以导入文件夹下的其他js类库，只支持 CommonJS
+  // 参考： https://github.com/microsoft/ClearScript/blob/master/ClearScriptTest/V8ModuleTest.cs 内的 js 写法。
+  "library": ['src']
+```
+
 ### main.js
 
 ```js
