@@ -147,7 +147,7 @@ order: 20
 | `stop_flying`       | 下落攻击，停止飞行，`move_mode = fly`的情况才有效。                                                                                                                                  |
 | `force_tp`          | 强制以当前的x,y坐标进行自动传送，`type = teleport`的情况才有效。                                                                                                                          |
 | `nahida_collect`    | 使用纳西妲长按E技能进行收集。                                                                                                                                                     |
-| `pick_around`       | 在点位周围小幅度移动并拾取，适合圣遗物狗粮场景(0.35.1存在)。                                                                                                                                  |
+| `pick_around`       | 在点位周围转圈移动，适合拾取等场景。`action_params` 可以填写数字，代表圈数，圈数越大拾取的范围也越大，不填默认为1                                                                                                                             |
 | `hydro_collect`     | 使用水元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `electro_collect`   | 使用雷元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `anemo_collect`     | 使用风元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
