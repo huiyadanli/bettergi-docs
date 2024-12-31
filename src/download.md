@@ -11,7 +11,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)  ，👇找不到下载入口 or 下载慢 可以看下方说明👇
 * [📥飞书下载](https://lcn33tlcifll.feishu.cn/drive/folder/LiSMf5SvPl91qrdJr8IccmUon7f) ，直接关闭登录窗口，无需登录直接下载
 * [📥椰羊下载1（安装版）](https://77.cocogoat.cn/dfs/bgi/0.38/BetterGI_Setup_v0.38.1.exe)、[📥椰羊下载1（便携版）](https://77.cocogoat.cn/dfs/bgi/0.38/BetterGI_v0.38.1.7z)
-* 需要右键点击链接，选择另存为：[📥椰羊下载2（安装版）](https://cd2-big.cocogoat.cn:11443/mirrors/bgi/BetterGI_Setup_v0.38.1.exe)、[📥椰羊下载2（便携版）](https://cd2-big.cocogoat.cn:11443/mirrors/bgi/BetterGI_v0.38.1.7z)
+* [📥椰羊下载2（安装版）](https://cd2-big.cocogoat.cn:11443/mirrors/bgi/BetterGI_Setup_v0.38.1.exe)、[📥椰羊下载2（便携版）](https://cd2-big.cocogoat.cn:11443/mirrors/bgi/BetterGI_v0.38.1.7z)
 * [📥小白下载2（便携版）](https://alist.linzefeng.top/d/mega/bgi/BetterGI_Setup_v0.38.1.exe?sign=AcFFjv-MiVqe-tKUW3lN3RhJxc0khVK05QTZ3qFY2C0=:0)、[📥小白下载2（便携版）](https://alist.linzefeng.top/d/mega/bgi/BetterGI_v0.38.1.7z?sign=-ZnpvO9eHWNxyBJXWGzWvduiQtBYOSOkyQWTP-jMtt4=:0)
 * 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
 
