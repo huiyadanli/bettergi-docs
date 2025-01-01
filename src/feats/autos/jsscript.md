@@ -3,12 +3,6 @@ title: Javascript 脚本
 order: 10
 ---
 
-::: warning 注意
-
-文档建设中
-
-:::
-
 BetterGI 内部有大量原神自动化基础能力的包装，并可以通过 Javascript 书写的脚本进行调用，JS脚本通过 [ClearScript](https://github.com/microsoft/ClearScript) 内置 V8 引擎进行执行。
 
 期望最终能够做到自动启动原神并完成所有脚本任务后自动关机。
