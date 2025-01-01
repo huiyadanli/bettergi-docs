@@ -15,7 +15,7 @@ order: 9010
 
 部分主题样式可以达到 100% 完成率（3倍速也可以）
 
-![](https://github.com/babalae/better-genshin-impact/assets/15783049/921a63e5-3e9b-488c-8906-7d8efca98fc6)
+![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01PfiyrF1lhoL8xevqE_!!2042484851.jpg)
 
 **识别思路来自群友 `@益蜘蛛` ，实现方法参考了另一位群友[@DR-lin-eng](https://github.com/DR-lin-eng)编写的自动音游程序：[genshin-auto-music]( https://github.com/DR-lin-eng/genshin-auto-music)**
 
