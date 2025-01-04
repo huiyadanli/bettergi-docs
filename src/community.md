@@ -14,10 +14,11 @@ order: 60
 
 | 介绍                         | 入口        |
 |----------------------------| --------- |
-| 交流群2（需要使用bot的进这个群，满，偶尔有空位） | [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138) |
+| 交流群2 （需要使用bot的进这个群，满，偶尔有空位） | [694769138](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=hneYjH2EgI1-pQI1em3uaVG7l-7vz8ye&authKey=q9lhYjjNQ6Tiw7uBvL1%2BWZZewa0%2B1H6PNFv1ETsQQBWlLpXqUx1bGeD7iK4iLfpv&noverify=0&group_code=694769138) |
 | 交流群3 （满，偶尔有空位）             | [906536632](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=_nmC8Neh7mZaGb2hIsO3p4-DKdxBlReQ&authKey=X7rGdx4jbA%2Bs2Juotlov0cg57%2Bv8CwRdjMgYYsxPtdtkl5NKniJhbDILKhWCYS4B&noverify=0&group_code=906536632) |
 | 交流群4 （满，偶尔有空位）                     | [644939404](https://qm.qq.com/q/eG3QIodqiA) |
-| 交流群5                       | [783846140](https://qm.qq.com/q/lVzxCCKEko) |
+| 交流群5 （满，偶尔有空位）                       | [783846140](https://qm.qq.com/q/lVzxCCKEko) |
+| 交流群6                       | [960900268](https://qm.qq.com/q/c2ohYmxzC8) |
 
 
 技术群（有门槛，萌新请加QQ频道或者交流群）：
