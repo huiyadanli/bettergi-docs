@@ -137,8 +137,8 @@ order: 30
 | 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mousedown`       |
 | 鼠标单击 | click | 鼠标按键left、right、middle，选填，不填默认left | `click`,`click(middle)`            |
 | 鼠标相对移动 | moveby | 1. X轴移动相对距离，向左转动为负数，向右为正数，必填。2. Y轴移动距离，向上转动为负数，向下为正数，必填 | `moveby(500,0)`,`moveby(100,-100)` |
-| 键盘按下 | keydown | 键盘按下键的名称，必填，[按键代码](/feats/append/keycodes.html) | `keydown(a)`                       |
-| 键盘松开 | keyup | 键盘松开键的名称，必填，[按键代码](/feats/append/keycodes.html) | `keyup(d)`                         |
+| 键盘按下 | keydown | 键盘按下键的名称，必填，[按键代码](/feats/append/keycodes.html) | `keydown(A)`                       |
+| 键盘松开 | keyup | 键盘松开键的名称，必填，[按键代码](/feats/append/keycodes.html) | `keyup(D)`                         |
 | 键盘点按 | keypress | 键盘点按键的名称，必填，[按键代码](/feats/append/keycodes.html) | `keypress(F1)`                     |
 
 示例:
