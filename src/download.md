@@ -8,10 +8,10 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
 如果你曾经使用的是安装版，当前推荐下载并使用椰羊提供的在线安装版： [BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)
 
-便携版和旧版安装版：
+便携版、旧版安装版、新版安装版见：
 
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)  ，👇找不到下载入口 or 下载慢 可以看下方说明👇
-* [📥飞书下载](https://lcn33tlcifll.feishu.cn/drive/folder/LiSMf5SvPl91qrdJr8IccmUon7f) ，直接关闭登录窗口，无需登录直接下载
+* [椰洋新版安装版](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe) 、 [椰洋新版安装版](https://77.cocogoat.cn/dfs/bgi/BetterGI.Install.exe)
 * 由于软件压缩体积超过 100M ， 不再提供蓝奏云下载
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
