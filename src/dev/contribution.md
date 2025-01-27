@@ -23,11 +23,11 @@ BetterGI 当前处于快速开发迭代阶段，有大量[Issue](https://github.
 
 #### 如何编译并运行整个工程？
 
-#### Visual Studio 2022
+##### Visual Studio 2022
 1. `git clone https://github.com/babalae/better-genshin-impact.git`
 2. 需要使用 [Visual Studio 2022](https://visualstudio.microsoft.com/zh-hans/downloads/) 打开本项目。
 
-#### Rider (推荐)
+##### Rider (推荐)
 1. `git clone https://github.com/babalae/better-genshin-impact.git`
 2. 推荐使用 [Rider](https://www.jetbrains.com/zh-cn/rider/) 打开本项目。速度快且免费！
 
