@@ -6,6 +6,8 @@ order: 30
 
 BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
+**新版在线安装版（BetterGI.OnlineInst.exe）和新版离线安装版（BetterGI.Install.exe），请不要在磁盘根目录执行，会无法打开！**
+
 如果你曾经使用的是安装版，当前推荐下载并使用椰羊提供的在线安装版： [BetterGI.OnlineInst.exe](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)
 
 便携版、旧版安装版、新版安装版见：
