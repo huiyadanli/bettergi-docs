@@ -5,7 +5,7 @@ order: 20
 ---
 ::: tip 提示
 
-[交流群](https://bgi.huiyadan.com/community.html) 
+[交流群](/community.html) 
 
 本软件[**开源**](https://github.com/babalae/better-genshin-impact)且**免费**，任何人都可以直接下载并使用，BetterGI 不会在任何平台对软件本体进行交易售卖、收取费用等活动（比如：咸鱼、淘宝）。
 

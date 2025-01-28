@@ -3,7 +3,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-    hostname: "https://bgi.huiyadan.com",
+    hostname: "https://bettergi.com",
     // pure: true,
     // author: {
     //     name: "辉鸭蛋",
