@@ -10,6 +10,8 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 * [📥小飞机网盘下载](https://share.feijipan.com/s/e7EJQqoY)
 * [📥飞书下载](https://lcn33tlcifll.feishu.cn/drive/folder/LiSMf5SvPl91qrdJr8IccmUon7f) ，直接关闭登录窗口，无需登录直接下载
 * [📥椰羊下载（新版在线安装版）](https://77.cocogoat.cn/dfs/bgi/BetterGI.OnlineInst.exe)
+* [📥小白下载1（新版离线安装版）](https://alist.linzefeng.top/d/mega/bgi/BetterGI.Install.0.41.0.exe?sign=Ta4oJu5ZMHFkkT2l91HwE5-nuMS5PX79B0uKyk7Gb6Y=:0) 、 [📥小白下载1（便携版）](https://alist.linzefeng.top/d/mega/bgi/BetterGI_Setup_v0.41.0.exe?sign=GsQm9s2MDR_w27Sjx9fqrrlsVuftBPkQ9GgDSXTulfY=:0) 、 [📥小白下载1（旧版安装版）](https://alist.linzefeng.top/d/mega/bgi/BetterGI_v0.41.0.7z?sign=hR7rc0VbebPOp7VKI_cbxhGztynDbAwfqawB3nl3_nU=:0)
+
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
 
