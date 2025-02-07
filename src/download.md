@@ -6,8 +6,6 @@ order: 30
 
 BetterGI 处于高速迭代时期，请及时下载最新的版本~
 
-**新版在线安装版（BetterGI.OnlineInst.exe）和新版离线安装版（BetterGI.Install.exe），请不要在磁盘根目录执行，会无法打开！**
-
 * [📥Github 下载](https://github.com/babalae/better-genshin-impact/releases)  ，👇找不到下载入口 or 下载慢 可以看下方说明👇
 * [📥小飞机网盘下载](https://share.feijipan.com/s/e7EJQqoY)
 * [📥飞书下载](https://lcn33tlcifll.feishu.cn/drive/folder/LiSMf5SvPl91qrdJr8IccmUon7f) ，直接关闭登录窗口，无需登录直接下载
