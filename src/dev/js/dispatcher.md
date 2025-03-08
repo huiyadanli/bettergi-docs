@@ -23,6 +23,8 @@ await dispatcher.runTask(new SoloTask("AutoFight"));
 await dispatcher.runTask(new SoloTask("AutoWood"));
 // 执行自动七圣召唤
 await dispatcher.runTask(new SoloTask("AutoGeniusInvokation"));
+// 执行自动钓鱼(0.43.0新增)
+await dispatcher.runTask(new SoloTask("AutoFishing"));
 ```
 
 ### addTimer(RealtimeTimer timer)

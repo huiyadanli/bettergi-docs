@@ -40,16 +40,16 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 <details>
 <summary><b>找不到下载文件的位置？不知道下载哪个文件/版本？</b></summary>
 
-BetterGI 提供在 Github 页面了两个版本，分别是<b>安装版</b>和<b>便携版</b>，两个版本除了打包与安装方式之外，无任何区别。
+BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b>便携版</b>，不同版本除了打包与安装方式之外，无任何区别。
 
 在本页面额外提供了另外的安装版本，具体区别见下方说明。
 
 下载位置在更新日志下方：
 
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01tf0mIZ1lhoHgJXyAU_!!2042484851.png)
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
 
-* **安装版（新在线版）** 的文件名是 `BetterGI.OnlineInst.exe`，自动选择优路线下载并安装。
-* **安装版（新离线版）** 的文件名是 `BetterGI.Install.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
+* **安装版（新在线版）** 的文件名是 `BetterGI.OnlineInst.exe`，自动选择优路线下载并安装。（当前只在本页面提供）
+* **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
 * **安装版** 的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
 * **便携版** 的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
 

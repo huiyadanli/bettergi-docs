@@ -1,6 +1,6 @@
 ---
 title: 自动音游
-order: 9010
+order: 50
 ---
 
 ::: warning 注意

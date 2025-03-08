@@ -37,12 +37,14 @@ BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系�
 * [其他下载渠道见下载页](/download.html)
 
 
-BetterGI 提供了两个版本，分别是**安装版**和**便携版**，两个版本除了打包与安装方式之外，无任何区别。
+BetterGI 在 Github 页面提供了多个版本，主要是**安装版**和**便携版**，不同版本除了打包与安装方式之外，无任何区别。
 
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01tf0mIZ1lhoHgJXyAU_!!2042484851.png)
 
-* **安装版**的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
-* **便携版**的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
+![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
+
+* **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
+* **安装版** 的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
+* **便携版** 的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
 
 有更高版本号的情况下优先下载更高版本号的 BetterGI！
 
