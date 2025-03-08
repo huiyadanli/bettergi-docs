@@ -9,6 +9,8 @@ order: 40
 
 该功能可以配合 JS脚本 与 地图追踪 功能实现自动前往鱼池并钓鱼的任务。
 
+不好用的话可以先尝试使用 [半自动钓鱼](/feats/timer/fish.html)。
+
 ### 自动抛竿
 
 `0.25.1` 版本后支持全地区自动钓鱼,并使用来自 [HutaoFisher](https://github.com/myHuTao-qwq/HutaoFisher) 的先进抛竿技术(牛顿法相机标定+神经网络)
