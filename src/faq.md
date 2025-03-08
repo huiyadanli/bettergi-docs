@@ -23,11 +23,24 @@ order: 40
 1. 只能使用 `WindowsGraphicsCapture` 的截图方式
 2. 云原神有三个窗口，可能自动识别到的窗口不正确，请使用“启动”页中的“手动选择窗口”功能来选择正确的云原神窗口
 
+### ❓以前好好的，突然所有功能不能用了？
+如果你使用的截图方式是 `BitBlt` ，大概率是 Win11 更新导致 窗口化游戏优化 自动开启。
+
+BetterGI 启动后会自动修改 窗口化游戏优化 为关闭状态，但是在原神启动状态下的修改是不会实时生效的，也就是说：**你只需要重启原神后重试即可！**
+
+更多相关内容可以见此Issue：[Win11下 BitBlt截图方式不可用的解决方法](https://github.com/babalae/better-genshin-impact/issues/92)
+
+
 ### ❓使用自动拾取的时候能看到拾取的日志，但是没有按F键拾取？
 1. 请确认是以管理员权限启动软件。
 2. 模拟操作部分可能被部分安全软件拦截，请关闭安全软件或加入白名单！已知 360安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
 
 ### ❓报错提示 "Some simulated input commands were not sent successfully..."
+
+早期版本提示 "Some simulated input commands were not sent successfully..."
+
+最新版本提示 "模拟键鼠消息发送失败！..."
+
 模拟操作部分可能被部分安全软件拦截，请关闭安全软件或加入白名单！已知 360安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
 
 ### ❓自动拾取可以使用，为什么自动剧情没反应？

@@ -113,7 +113,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
     1. 如果没有，请在”启动“选项卡页，切换”[截图模式](/doc.html#截图方式)“。（【推荐】或者解决BitBlt截图方式不生效的问题：[解决方案](https://github.com/babalae/better-genshin-impact/issues/92)）
         1. 所有截图方式都切换了依旧不行？请再次确认是否对游戏添加了滤镜（HDR、N卡滤镜等）。当前不存在所有截图方式都无法使用的情况，出现这种情况一定是你的操作有问题！
     2. 如果有，且持续输出日志，说明模拟操作的未执行成功，请以先确认是管理员权限启动的 BetterGI，然后关闭杀毒软件或把 BetterGI 添加至杀软白名单。
-2. [日志提示 "Some simulated input commands were not sent successfully..."，说明模拟操作被拦截，请关闭杀毒软件获添加白名单。](/faq.html#❓报错提示-some-simulated-input-commands-were-not-sent-successfully)
+2. [日志提示 "模拟键鼠消息发送失败！"，说明模拟操作被拦截，请关闭杀毒软件获添加白名单。](/faq.html#❓报错提示-some-simulated-input-commands-were-not-sent-successfully)
 
 **如果自动拾取功能正常，说明 BetterGI 已经可以正常工作了，享受 BetterGI 带来的便利吧！**
 
