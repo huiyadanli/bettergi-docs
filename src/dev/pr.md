@@ -85,7 +85,7 @@ order: 20
 
 `js` 代表js脚本
 
-`pathing` 代表路径追踪
+`pathing` 代表地图追踪
 
 `tcg` 代表七圣召唤脚本
 

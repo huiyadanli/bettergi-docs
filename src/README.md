@@ -115,7 +115,7 @@ highlights:
 
       - title: 地图追踪
         icon: map-location
-        details: 基于小地图的路径追踪功能，可以实现自动采集等
+        details: 基于小地图的地图追踪功能，可以实现自动采集等
         link: /feats/autos/pathing.html
 
       - title: 键鼠录制脚本
