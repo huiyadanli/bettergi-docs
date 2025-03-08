@@ -6,7 +6,7 @@ order: 60
 
 有问题优先进QQ频道或者新群，问题更加容易得到解答。
 
-**QQ频道：[pd72644221](https://pd.qq.com/s/e0isukk34)**
+**QQ频道：[bettergiv1](https://pd.qq.com/s/e0isukk34)**
 
 ---
 
