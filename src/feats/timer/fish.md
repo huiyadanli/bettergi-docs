@@ -13,5 +13,7 @@ order: 30
 
 `0.43.0` 版本后，全自动钓鱼拆分到独立任务，实时任务中，详情请看 [全自动钓鱼](/feats/task/fish.html)
 
+`0.43.0` 版本后，半自动钓鱼要求1080P以上的分辨率
+
 老版本（无自动抛竿）：[genshin-fishing-toy](https://github.com/babalae/genshin-fishing-toy)
 
