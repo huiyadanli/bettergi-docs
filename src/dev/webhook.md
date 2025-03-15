@@ -11,7 +11,12 @@ order: 40
 * 飞书通知
 * 邮件通知
 * websocket通知
-
+* dingding通知
+* telegram通知
+* 企业微信通知
+* Bark通知
+* xxtui通知  
+*更多通知即将适配中......*
 ## Webhook 请求体
 
 
@@ -23,10 +28,11 @@ order: 40
   "result": "Success",
   "timestamp": "2025-02-01 12:34:56",
   "screenshot": "base64EncodedImageString",
-  "message": "自动秘境结束"
+  "message": "自动秘境结束",
+  "send_to": "userid"
 }
 ```
-
+(send_to功能用于给指定人发送信息，目前只有webhook支持，其他通知不包含此功能)  
 ## 事件列表
 
 * `notify.test` : 测试通知
@@ -60,4 +66,21 @@ order: 40
 当你获得这些内容后，就可以在设置中填写这些内容了。  
 配置完毕后发送测试通知，当邮箱接收到通知时，说明配置成功。  
 测试通知示例如下:  
-![img.png](../assets\smtp.jpg)
+![img.png](../assets/notice/smtp.jpg)  
+
+## 钉钉通知配置教程
+钉钉通知也是通过webhook进行连接的，首先你需要了解并获得如下内容：  
+* `webhookurl`：钉钉机器人的webhook地址，可以在钉钉群中添加机器人后获得  
+* `secret`：钉钉机器人的secret，可以在钉钉群中添加机器人后获得  
+具体获得webhookurl和secret的方法请参考官方文档  
+
+[获得webhookurl](https://open.dingtalk.com/document/orgapp/custom-bot-to-send-group-chat-messages)  
+[获得secret](https://open.dingtalk.com/document/orgapp/customize-robot-security-settings)
+
+secret就是钉钉安全选项中的加签密钥，填写在设置中即可。
+![](https://help-static-aliyun-doc.aliyuncs.com/assets/img/zh-CN/1834868071/p768494.png)
+**注意！！在选择加密方式时候只需要选择加签即可，不需要选择其他任何选项！否则会导致通知失败！**  
+配置完毕后发送测试通知，当钉钉群中收到通知时，说明配置成功。  
+测试通知示例如下:
+![img.png](../assets/notice/ddsecret.png)
+
