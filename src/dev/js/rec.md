@@ -234,12 +234,10 @@ for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，�
   - `dh` (`double`): 高度
 - 返回: 包含剪裁区域的新 `ImageRegion`
 
-### Find(RecognitionObject ro, Action<Region>? successAction, Action? failAction)
+### Find(RecognitionObject ro)
 - 描述: 在区域内查找识别对象
 - 参数:
   - `ro` (`RecognitionObject`): 识别对象参数（OCR、模板匹配等），具体看下方对应对象文档
-  - `successAction` (`Action<Region>`): 成功时的回调（可为空）
-  - `failAction` (`Action`): 失败时的回调（可为空）
 - 返回: 表示找到区域的 `Region`
 - 支持:
   - 模板匹配 `RecognitionTypes.TemplateMatch`
@@ -247,12 +245,10 @@ for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，�
   - OCR 识别 `RecognitionTypes.Ocr`
   - 颜色范围和 OCR `RecognitionTypes.ColorMatch`
 
-### FindMulti(RecognitionObject ro, Action<List<Region>>? successAction, Action? failAction)
+### FindMulti(RecognitionObject ro)
 - 描述: 查找多个识别对象实例
 - 参数:
   - `ro` (`RecognitionObject`): 识别对象参数（OCR、模板匹配等），具体看下方对应对象文档
-  - `successAction` (`Action<List<Region>>`): 成功时的回调（可为空）
-  - `failAction` (`Action`): 失败时的回调（可为空）
 - 返回: 找到的 `Region` 列表
 - 支持:
   - 模板匹配（多个返回） `RecognitionTypes.TemplateMatch`
