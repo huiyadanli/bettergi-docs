@@ -3,6 +3,8 @@ title: 图像识别与OCR
 order: 41
 ---
 
+# 使用示例
+
 ## 截图
 
 使用全局方法 `captureGameRegion()` 就可以获取 `ImageRegion` 图像。
