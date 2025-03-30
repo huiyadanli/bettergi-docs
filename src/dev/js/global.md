@@ -88,4 +88,4 @@ keyUp("w");
 
 ### captureGameRegion()
 - 返回类型: `ImageRegion`
-- 描述: 捕获游戏区域的图像
+- 描述: 捕获游戏区域的图像，用于图像识别，具体见 [图像识别与OCR](/dev/js/rec.html)
