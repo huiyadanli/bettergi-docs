@@ -1,8 +1,3 @@
-# 修改后的原神相关文档
-
-我将为您重新生成一份包含大地图操作部分的文档，保持原格式并优化表达。
-
-```markdown:c:\Users\root\Documents\BetterGI\better-genshin-impact\docs\api\genshin.md
 ---
 title: 原神相关
 order: 40
