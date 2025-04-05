@@ -11,10 +11,10 @@ order: 30
 
 ## 文件读取方法
 
-### 1. 同步读取文本 - ReadTextSync
+### 1. 同步读取文本 - readTextSync
 
 ```javascript
-const content = file.ReadTextSync(path);
+const content = file.readTextSync(path);
 ```
 
 **参数说明：**
@@ -27,21 +27,21 @@ const content = file.ReadTextSync(path);
 ```javascript
 // 同步读取文本文件
 try {
-  const content = file.ReadTextSync("test/example.txt");
+  const content = file.readTextSync("test/example.txt");
   log.info(`文件内容: ${content}`);
 } catch (error) {
   log.error(`读取文件失败: ${error}`);
 }
 ```
 
-### 2. 异步读取文本 - ReadText
+### 2. 异步读取文本 - readText
 
 ```javascript
 // Promise方式
-const content = await file.ReadText(path);
+const content = await file.readText(path);
 
 // 回调方式
-await file.ReadText(path, callback);
+await file.readText(path, callback);
 ```
 
 **参数说明：**
@@ -58,7 +58,7 @@ Promise方式：
 ```javascript
 (async function() {
   try {
-    const content = await file.ReadText("test/async-example.txt");
+    const content = await file.readText("test/async-example.txt");
     log.info(`异步读取内容: ${content}`);
   } catch (error) {
     log.error(`异步读取失败: ${error}`);
@@ -69,7 +69,7 @@ Promise方式：
 回调方式：
 ```javascript
 (async function() {
-  await file.ReadText("test/callback-example.txt", (error, content) => {
+  await file.readText("test/callback-example.txt", (error, content) => {
     if (error) {
       log.error(`读取失败: ${error}`);
     } else {
@@ -79,10 +79,10 @@ Promise方式：
 })();
 ```
 
-### 3. 同步读取图像 - ReadImageMatSync (0.44新增)
+### 3. 同步读取图像 - readImageMatSync (0.44新增)
 
 ```javascript
-const mat = file.ReadImageMatSync(path);
+const mat = file.readImageMatSync(path);
 ```
 
 **参数说明：**
@@ -94,7 +94,7 @@ const mat = file.ReadImageMatSync(path);
 **示例：**
 ```javascript
 try {
-  const imageMat = file.ReadImageMatSync("images/example.png");
+  const imageMat = file.readImageMatSync("images/example.png");
   log.info(`图像尺寸: ${imageMat.width}x${imageMat.height}`);
   // 进行图像处理...
 } catch (error) {
@@ -110,7 +110,7 @@ try {
   function syncReadTextExample() {
     try {
       const path = "test/example.txt";
-      const content = file.ReadTextSync(path);
+      const content = file.readTextSync(path);
       log.info(`同步读取文本成功，内容: ${content}`);
     } catch (error) {
       log.error(`同步读取文本失败: ${error}`);
@@ -121,7 +121,7 @@ try {
   async function asyncReadTextExample() {
     try {
       const path = "test/async-example.txt";
-      const content = await file.ReadText(path);
+      const content = await file.readText(path);
       log.info(`异步读取文本成功，内容: ${content}`);
     } catch (error) {
       log.error(`异步读取文本失败: ${error}`);
@@ -132,7 +132,7 @@ try {
   async function callbackReadTextExample() {
     const path = "test/callback-example.txt";
     
-    await file.ReadText(path, (error, content) => {
+    await file.readText(path, (error, content) => {
       if (error) {
         log.error(`回调读取文本失败: ${error}`);
       } else {
@@ -145,7 +145,7 @@ try {
   function readImageExample() {
     try {
       const path = "images/example.png";
-      const imageMat = file.ReadImageMatSync(path);
+      const imageMat = file.readImageMatSync(path);
       log.info(`读取图像成功，尺寸: ${imageMat.width}x${imageMat.height}`);
       
       // 图像处理示例
@@ -170,10 +170,10 @@ try {
 ```
 ## 文件写入方法 (0.44.3 新增)
 
-### 1. 同步写入 - WriteTextSync
+### 1. 同步写入 - writeTextSync
 
 ```javascript
-const result = file.WriteTextSync(path, content, append);
+const result = file.writeTextSync(path, content, append);
 ```
 
 **参数说明：**
@@ -187,20 +187,20 @@ const result = file.WriteTextSync(path, content, append);
 **示例：**
 ```javascript
 // 覆盖写入
-const result1 = file.WriteTextSync("test/example.txt", "这是覆盖写入的内容");
+const result1 = file.writeTextSync("test/example.txt", "这是覆盖写入的内容");
 
 // 追加写入
-const result2 = file.WriteTextSync("test/example.txt", "这是追加的内容", true);
+const result2 = file.writeTextSync("test/example.txt", "这是追加的内容", true);
 ```
 
-### 2. 异步写入 - WriteText
+### 2. 异步写入 - writeText
 
 ```javascript
 // Promise方式
-const result = await file.WriteText(path, content, append);
+const result = await file.writeText(path, content, append);
 
 // 回调方式
-await file.WriteText(path, content, callback, append);
+await file.writeText(path, content, callback, append);
 ```
 
 **参数说明：**
@@ -219,13 +219,13 @@ Promise方式：
 ```javascript
 (async function() {
   // 覆盖写入
-  const result1 = await file.WriteText("test/async-example.txt", "异步写入的内容");
+  const result1 = await file.writeText("test/async-example.txt", "异步写入的内容");
   if (result1) {
     log.info("异步写入成功");
   }
   
   // 追加写入
-  const result2 = await file.WriteText("test/async-example.txt", "异步追加的内容", true);
+  const result2 = await file.writeText("test/async-example.txt", "异步追加的内容", true);
   if (result2) {
     log.info("异步追加成功");
   }
@@ -235,7 +235,7 @@ Promise方式：
 回调方式：
 ```javascript
 (async function() {
-  await file.WriteText("test/callback-example.txt", "使用回调的内容", (error, result) => {
+  await file.writeText("test/callback-example.txt", "使用回调的内容", (error, result) => {
     if (error) {
       log.error(`写入失败: ${error}`);
     } else {
@@ -244,7 +244,7 @@ Promise方式：
   });
   
   // 追加模式
-  await file.WriteText("test/callback-example.txt", "追加的内容", (error, result) => {
+  await file.writeText("test/callback-example.txt", "追加的内容", (error, result) => {
     if (error) {
       log.error(`追加失败: ${error}`);
     } else {
@@ -273,7 +273,7 @@ Promise方式：
     }
     
     // 追加内容
-    const appendResult = file.WriteTextSync(path, "\n这是追加的内容", true);
+    const appendResult = file.writeTextSync(path, "\n这是追加的内容", true);
     if (appendResult) {
       log.info("同步追加内容成功");
     }
@@ -285,12 +285,12 @@ Promise方式：
     const path = "test/async-example.txt";
     
     try {
-      const result = await file.WriteText(path, content);
+      const result = await file.writeText(path, content);
       if (result) {
         log.info("异步文件写入成功");
         
         // 追加内容
-        const appendResult = await file.WriteText(path, "\n这是异步追加的内容", true);
+        const appendResult = await file.writeText(path, "\n这是异步追加的内容", true);
         if (appendResult) {
           log.info("异步追加内容成功");
         }
@@ -305,7 +305,7 @@ Promise方式：
     const content = "这是使用回调的测试内容";
     const path = "test/callback-example.txt";
     
-    await file.WriteText(path, content, (error, result) => {
+    await file.writeText(path, content, (error, result) => {
       if (error) {
         log.error(`回调写入失败: ${error}`);
       } else {
@@ -331,14 +331,14 @@ Promise方式：
     
     try {
       // 读取文件
-      let content = await file.ReadText(path);
+      let content = await file.readText(path);
       log.info(`原始内容: ${content}`);
       
       // 修改内容
       content += "\n添加的新内容 - " + new Date().toLocaleString();
       
       // 写回文件
-      const writeResult = await file.WriteText(path, content);
+      const writeResult = await file.writeText(path, content);
       if (writeResult) {
         log.info("修改并写回成功");
       } else {
@@ -349,7 +349,7 @@ Promise方式：
       
       // 如果文件不存在，创建新文件
       const newContent = "这是新创建的文件 - " + new Date().toLocaleString();
-      const createResult = await file.WriteText(path, newContent);
+      const createResult = await file.writeText(path, newContent);
       if (createResult) {
         log.info("创建新文件成功");
       }
