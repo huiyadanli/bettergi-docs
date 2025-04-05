@@ -33,16 +33,16 @@ await genshin.moveMapTo(1000, 1000, '璃月');
 
 ```js
 // 获取游戏窗口宽度
-const width = genshin.Width;
+const width = genshin.width;
 
 // 获取游戏窗口高度
-const height = genshin.Height;
+const height = genshin.height;
 
 // 获取游戏窗口相对于1080P的缩放比例
-const scaleTo1080PRatio = genshin.ScaleTo1080PRatio;
+const scaleTo1080PRatio = genshin.scaleTo1080PRatio;
 
 // 获取系统屏幕的DPI缩放比例
-const dpiScale = genshin.ScreenDpiScale;
+const dpiScale = genshin.screenDpiScale;
 ```
 
 ## 传送
@@ -67,17 +67,17 @@ const dpiScale = genshin.ScreenDpiScale;
 
 ```js
 // 使用数值坐标传送
-await genshin.Tp(1000.5, 2000.8);
+await genshin.tp(1000.5, 2000.8);
 
 // 使用字符串坐标传送
-await genshin.Tp("1000.5", "2000.8");
+await genshin.tp("1000.5", "2000.8");
 
 // 强制传送
-await genshin.Tp(1000.5, 2000.8, true);
-await genshin.Tp("1000.5", "2000.8", true);
+await genshin.tp(1000.5, 2000.8, true);
+await genshin.tp("1000.5", "2000.8", true);
 
 // 传送到指定七天神像
-await genshin.TpToStatueOfTheSeven();
+await genshin.tpToStatueOfTheSeven();
 ```
 
 ## 大地图操作（0.44.3 新增）
@@ -131,24 +131,24 @@ await genshin.TpToStatueOfTheSeven();
   - `InvalidOperationException`: 当不在主界面时抛出此异常
 ```
 // 移动大地图到指定坐标
-await genshin.MoveMapTo(1000, 2000);
+await genshin.moveMapTo(1000, 2000);
 
 // 指定国家并移动大地图到指定坐标
-await genshin.MoveMapTo(1000, 2000, "璃月");
+await genshin.moveMapTo(1000, 2000, "璃月");
 
 // 获取当前大地图缩放等级
-const zoomLevel = genshin.GetBigMapZoomLevel();
+const zoomLevel = genshin.getBigMapZoomLevel();
 
 // 设置大地图缩放等级
-await genshin.SetBigMapZoomLevel(3.5);
+await genshin.setBigMapZoomLevel(3.5);
 
-// 获取当前在大地图上的位置坐标
-const bigMapPosition = genshin.GetPositionFromBigMap();
-console.log(`当前大地图坐标: X=${bigMapPosition.X}, Y=${bigMapPosition.Y}`);
+// 获取当前在大地图上的位置坐标，确保调用之前在大地图界面
+const bigMapPosition = genshin.getPositionFromBigMap();
+log.info(`当前大地图坐标: X=${bigMapPosition.X}, Y=${bigMapPosition.Y}`);
 
-// 获取当前在小地图上的位置坐标
-const miniMapPosition = genshin.GetPositionFromMap();
-console.log(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`);
+// 获取当前在小地图上的位置坐标，确保调用之前在主界面
+const miniMapPosition = genshin.getPositionFromMap();
+log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`);
 ```
 ## 队伍与界面操作
 
