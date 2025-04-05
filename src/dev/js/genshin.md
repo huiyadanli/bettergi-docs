@@ -14,7 +14,7 @@ await genshin.tp('9041.2890625', '-2421.4799804688');
 await genshin.moveMapTo(1000, 1000, '璃月');
 ```
 
-
+## 基本信息
 ### width
 - 类型: `int`
 - 描述: 游戏宽度
@@ -31,6 +31,21 @@ await genshin.moveMapTo(1000, 1000, '璃月');
 - 类型: `double`
 - 描述: 系统屏幕的DPI缩放比例
 
+```js
+// 获取游戏窗口宽度
+const width = genshin.Width;
+
+// 获取游戏窗口高度
+const height = genshin.Height;
+
+// 获取游戏窗口相对于1080P的缩放比例
+const scaleTo1080PRatio = genshin.ScaleTo1080PRatio;
+
+// 获取系统屏幕的DPI缩放比例
+const dpiScale = genshin.ScreenDpiScale;
+```
+
+## 传送
 ### tp(string x, string y)
 - 返回类型: `Task`
 - 描述: 传送到指定位置
@@ -45,8 +60,27 @@ await genshin.moveMapTo(1000, 1000, '璃月');
   - `x` (`string`): 目标位置的X坐标
   - `y` (`string`): 目标位置的Y坐标
   - `force` (`bool`): 是否强制传送
+  
+### tpToStatueOfTheSeven()
+- 返回类型: `Task`
+- 描述: 传送到用户指定的七天神像，0.44.2 新增
 
-## 大地图操作
+```js
+// 使用数值坐标传送
+await genshin.Tp(1000.5, 2000.8);
+
+// 使用字符串坐标传送
+await genshin.Tp("1000.5", "2000.8");
+
+// 强制传送
+await genshin.Tp(1000.5, 2000.8, true);
+await genshin.Tp("1000.5", "2000.8", true);
+
+// 传送到指定七天神像
+await genshin.TpToStatueOfTheSeven();
+```
+
+## 大地图操作（0.44.3 新增）
 
 ### moveMapTo(int x, int y, string? forceCountry = null)
 - 返回类型: `Task`
@@ -73,10 +107,49 @@ await genshin.moveMapTo(1000, 1000, '璃月');
 - 参数:
   - `zoomLevel` (`double`): 目标缩放等级，范围 1.0-6.0
 
-### tpToStatueOfTheSeven()
-- 返回类型: `Task`
-- 描述: 传送到用户指定的七天神像
+### getPositionFromBigMap()
+- 返回类型: `Point2f`
+- 描述: 获取当前在大地图上的位置坐标
+- 备注:
+  - 需要在大地图界面使用此方法
+  - 返回的坐标使用游戏内坐标系统
+  - 可用于获取当前角色在大地图上的精确位置
+  - 返回的Point2f结构体包含X和Y属性，分别表示横纵坐标
+- 参数: 无
 
+### getPositionFromMap()
+- 返回类型: `Point2f`
+- 描述: 获取当前在小地图上的位置坐标
+- 备注:
+  - 只能在主界面使用，非主界面会抛出异常
+  - 通过识别小地图上的角色位置获取坐标
+  - 返回的坐标已转换为游戏世界坐标系统
+  - 可用于实时获取角色在游戏世界中的位置
+  - 如果识别失败可能会抛出异常
+- 参数: 无
+- 异常:
+  - `InvalidOperationException`: 当不在主界面时抛出此异常
+```
+// 移动大地图到指定坐标
+await genshin.MoveMapTo(1000, 2000);
+
+// 指定国家并移动大地图到指定坐标
+await genshin.MoveMapTo(1000, 2000, "璃月");
+
+// 获取当前大地图缩放等级
+const zoomLevel = genshin.GetBigMapZoomLevel();
+
+// 设置大地图缩放等级
+await genshin.SetBigMapZoomLevel(3.5);
+
+// 获取当前在大地图上的位置坐标
+const bigMapPosition = genshin.GetPositionFromBigMap();
+console.log(`当前大地图坐标: X=${bigMapPosition.X}, Y=${bigMapPosition.Y}`);
+
+// 获取当前在小地图上的位置坐标
+const miniMapPosition = genshin.GetPositionFromMap();
+console.log(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`);
+```
 ## 队伍与界面操作
 
 ### switchParty(string partyName)
