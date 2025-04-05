@@ -49,7 +49,7 @@ await file.readText(path, callback);
 - `callback`: 回调函数，格式为 `function(error, content)`
 
 **返回值：**
-- Promise方式：返回Promise<string>，表示文件的内容
+- Promise方式：返回 `Promise<string>`，表示文件的内容
 - 回调方式：通过回调函数返回内容
 
 **示例：**
@@ -210,7 +210,7 @@ await file.writeText(path, content, callback, append);
 - `callback`: 回调函数，格式为 `function(error, result)`
 
 **返回值：**
-- Promise方式：返回Promise<boolean>，表示写入是否成功
+- Promise方式：返回 `Promise<boolean>`，表示写入是否成功
 - 回调方式：通过回调函数返回结果
 
 **示例：**
