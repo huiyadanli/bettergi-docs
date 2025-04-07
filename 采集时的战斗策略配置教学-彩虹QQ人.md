@@ -50,8 +50,10 @@
 
 ![使用自定义战斗策略](src/assets/pathing/user_defined_pathing_teach_8.png)
 
+### 4.最终路线录制呈现
+
+![最终路线录制呈现](src/assets/pathing/user_defined_pathing_teach_9.png)
+
 ​	以上就是在地图追踪功能中使用自定义的战斗策略教程，希望对正在看此教程的你有所帮助。
 
 ​	最后，祝自己十连双金，单抽奇迹。
-
-![最终路线录制呈现](src/assets/pathing/user_defined_pathing_teach_9.png)
