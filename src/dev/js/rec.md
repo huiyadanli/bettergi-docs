@@ -341,7 +341,7 @@ for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，�
 - 描述: 创建模板匹配识别对象（推荐使用）
 - 参数:
   - `mat` (`Mat`): 模板图像
-- 返回: 新的板匹配 `RecognitionObject` 对象
+- 返回: 新的模板匹配 `RecognitionObject` 对象
 
 ### TemplateMatch(Mat mat, double x, double y, double w, double h)
 - 描述: 创建带区域的模板匹配识别对象（推荐使用）
