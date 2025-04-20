@@ -4,6 +4,11 @@ icon: comments
 order: 60
 ---
 
+
+官方B站账号：[BetterGI](https://space.bilibili.com/3546777483479879) ，欢迎关注，内有视频教程。
+
+---
+
 有问题优先进QQ频道（推荐频道发帖）或者新群，问题更加容易得到解答。
 
 **QQ频道：[bettergiv1](https://pd.qq.com/s/e0isukk34)**
