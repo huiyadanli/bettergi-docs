@@ -1,8 +1,9 @@
 ---
-title: 通知
+title: 配置通知渠道
 order: 40
 ---
 
+用于 JavaScript 脚本的通知API请[前往对应页面查看](/dev/js/notification.html)
 
 ## 支持通知方式
 
@@ -17,8 +18,8 @@ order: 40
 * Bark通知
 * xxtui通知  
 *更多通知即将适配中......*
-## Webhook 请求体
 
+## Webhook 请求体
 
 示例：
 
@@ -189,8 +190,9 @@ async def startup():
     driver.server_app.mount('/', app)
     logger.info(f'Mounted to {config.report_route}')
 
-```  
-config  
+```
+
+config
 ```python
 from typing import Optional, List, Union
 from pydantic import BaseModel, Extra
