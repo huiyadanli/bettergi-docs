@@ -1,6 +1,6 @@
 ---
 title: 开源生态
-icon: square-github
+icon: file-code
 order: 60
 ---
 
