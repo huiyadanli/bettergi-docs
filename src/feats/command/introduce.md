@@ -1,6 +1,6 @@
 ---
 title: 命令行启动
-icon: rocket
+# icon: rocket
 order: 1
 author:   [{
     name: "Because66666",
