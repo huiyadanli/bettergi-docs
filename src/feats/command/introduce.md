@@ -37,7 +37,7 @@ start bettergi://startOneDragon
 BetterGI.exe start --startGroups 切换队伍 关闭游戏
 ```
 >解释：<br>
-`切换队伍 关闭游戏`是你的调度器中**任务**的名字，多个任务执行使用空格分割。
+`切换队伍 关闭游戏`是你的全自动-调度器中**配置组**的名字，多个任务执行使用空格分割。
 
 目前仍未找到--startGroups的适用于URL自定义协议的启动方式。经过多次尝试失败。
 
