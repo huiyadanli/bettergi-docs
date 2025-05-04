@@ -45,3 +45,5 @@ order: 20
   * [Javascript 脚本](/feats/autos/jsscript.html)
   * [地图追踪](/feats/autos/pathing.html)
   * [键鼠录制](/feats/autos/kmscript.html)
+* 命令行
+  * [命令行启动](/feats/command/introduce.html)
