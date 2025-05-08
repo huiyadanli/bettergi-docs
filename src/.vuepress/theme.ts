@@ -10,8 +10,6 @@ export default hopeTheme({
     //     url: "https://github.com/huiyadanli",
     // },
 
-    iconAssets: "fontawesome-with-brands",
-
     logo: "https://img.alicdn.com/imgextra/i2/2042484851/O1CN01LQfLIG1lhoEZwz1Gt_!!2042484851.png",
 
     repo: "babalae/better-genshin-impact",
@@ -40,11 +38,88 @@ export default hopeTheme({
         editLink: "在 GitHub 上编辑此页",
     },
 
+    markdown: {
+        align: true,
+        attrs: true,
+        tasklist: true,
+
+        // install chart.js before enabling it
+        // chart: true,
+
+        codeTabs: true,
+
+        // insert component easily
+        // component: true,
+
+        demo: true,
+
+        // install echarts before enabling it
+        // echarts: true,
+
+
+        // install flowchart.ts before enabling it
+        // flowchart: true,
+
+        // gfm requires mathjax-full to provide tex support
+        // gfm: true,
+
+        imgLazyload: true,
+        imgSize: true,
+        include: true,
+
+        // install katex before enabling it
+        // katex: true,
+
+        // install mathjax-full before enabling it
+        // mathjax: true,
+
+        mark: true,
+
+        // install mermaid before enabling it
+        // mermaid: true,
+
+        playground: {
+            presets: ["ts", "vue"],
+        },
+
+        // install reveal.js before enabling it
+        // revealJs: {
+        //   plugins: ["highlight", "math", "search", "notes", "zoom"],
+        // },
+
+        stylize: [
+            {
+                matcher: "Recommended",
+                replacer: ({tag}) => {
+                    if (tag === "em")
+                        return {
+                            tag: "Badge",
+                            attrs: {type: "tip"},
+                            content: "Recommended",
+                        };
+                },
+            },
+        ],
+        sub: true,
+        sup: true,
+        tabs: true,
+        vPre: true,
+
+    },
+
+
     plugins: {
+        icon:{
+            assets: "fontawesome-with-brands",
+        },
         components: {
             components: [
                 "BiliBili",
             ]
+        },
+        slimsearch:{
+            indexContent: true,
+            suggestion: true,
         },
 
         // You should generate and use your own comment service
@@ -57,79 +132,6 @@ export default hopeTheme({
         // },
 
         readingTime : false,
-
-        // All features are enabled for demo, only preserve features you need here
-        mdEnhance: {
-            align: true,
-            attrs: true,
-            tasklist: true,
-
-            // install chart.js before enabling it
-            // chart: true,
-
-            codetabs: true,
-
-            // insert component easily
-            // component: true,
-
-            demo: true,
-
-            // install echarts before enabling it
-            // echarts: true,
-
-            figure: true,
-
-            // install flowchart.ts before enabling it
-            // flowchart: true,
-
-            // gfm requires mathjax-full to provide tex support
-            // gfm: true,
-
-            imgLazyload: true,
-            imgSize: true,
-            include: true,
-
-            // install katex before enabling it
-            // katex: true,
-
-            // install mathjax-full before enabling it
-            // mathjax: true,
-
-            mark: true,
-
-            // install mermaid before enabling it
-            // mermaid: true,
-
-            playground: {
-                presets: ["ts", "vue"],
-            },
-
-            // install reveal.js before enabling it
-            // revealJs: {
-            //   plugins: ["highlight", "math", "search", "notes", "zoom"],
-            // },
-
-            stylize: [
-                {
-                    matcher: "Recommended",
-                    replacer: ({tag}) => {
-                        if (tag === "em")
-                            return {
-                                tag: "Badge",
-                                attrs: {type: "tip"},
-                                content: "Recommended",
-                            };
-                    },
-                },
-            ],
-            sub: true,
-            sup: true,
-            tabs: true,
-            vPre: true,
-
-            // install @vue/repl before enabling it
-            // vuePlayground: true,
-        },
 
         // uncomment these if you want a pwa
         // pwa: {
