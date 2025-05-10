@@ -11,10 +11,14 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vuepress/client": "2.0.0-rc.0",
-    "@vuepress/plugin-google-analytics": "2.0.0-rc.0",
-    "vue": "^3.3.8",
-    "vuepress": "2.0.0-rc.0",
-    "vuepress-theme-hope": "2.0.0-rc.0"
-  }
+    "@vuepress/bundler-vite": "2.0.0-rc.22",
+    "@vuepress/plugin-google-analytics": "2.0.0-rc.98",
+    "@vuepress/plugin-search": "2.0.0-rc.102",
+    "@vuepress/plugin-slimsearch": "2.0.0-rc.102",
+    "sass-embedded": "^1.87.0",
+    "vue": "^3.5.13",
+    "vuepress": "2.0.0-rc.22",
+    "vuepress-theme-hope": "2.0.0-rc.86"
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }
