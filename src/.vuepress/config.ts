@@ -1,5 +1,6 @@
-import {defineUserConfig} from "vuepress";
-import {googleAnalyticsPlugin} from "@vuepress/plugin-google-analytics";
+import { defineUserConfig } from "vuepress";
+import { googleAnalyticsPlugin } from "@vuepress/plugin-google-analytics";
+import { viteBundler } from "@vuepress/bundler-vite";
 import theme from "./theme.js";
 
 export default defineUserConfig({
@@ -9,8 +10,11 @@ export default defineUserConfig({
   title: "BetterGI·更好的原神",
   description: "BetterGI·更好的原神 - 文档",
 
-  theme,
-
+  theme: theme,
+  bundler: viteBundler({
+    viteOptions: {},
+    vuePluginOptions: {},
+  }),
   // Enable it with pwa
   // shouldPrefetch: false,
 
@@ -32,6 +36,6 @@ export default defineUserConfig({
   plugins: [
     googleAnalyticsPlugin({
       id: "G-MZ2XRRCKV2",
-    })
-  ]
+    }),
+  ],
 });
