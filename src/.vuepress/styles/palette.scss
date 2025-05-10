@@ -1,2 +1,19 @@
 // you can change colors here
-$theme-color: #4096d8;
+@use './config.scss' as config;
+
+// font
+$vp-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+  Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", STHeiti,
+  "Microsoft YaHei", SimSun, sans-serif !default;
+$vp-font-heading: Georgia Pro, Crimson, Georgia, -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+  "Droid Sans", "Helvetica Neue", STHeiti, "Microsoft YaHei", SimSun, sans-serif !default;
+$vp-font-mono: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !default;
+
+$vp-c-bg: (
+    light: #ffffff, 
+    dark: #0d1117,
+);
+
+$vp-c-accent: config.$theme-color;
+$vp-c-accent-bg: config.$theme-color;
