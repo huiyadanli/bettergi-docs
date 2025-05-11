@@ -10,7 +10,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 * [📥小飞机网盘下载](https://share.feijipan.com/s/e7EJQqoY)
 * [📥飞书下载](https://lcn33tlcifll.feishu.cn/drive/folder/LiSMf5SvPl91qrdJr8IccmUon7f) ，直接关闭登录窗口，无需登录直接下载
 * [🎫已有 Mirror酱 CDK？前往 Mirror酱 高速下载](https://mirrorchyan.com/zh/projects?rid=BGI)
-* [📥椰羊下载（在线安装版）](https://steambird.cocogoat.cn/bgi/BetterGI.OnlineInst.exe)
+* [📥在线安装包下载](https://steambird.pub/-/bgi/BetterGI.OnlineInst.exe)
 
 
 更新日志： [Github Release](https://github.com/babalae/better-genshin-impact/releases)
