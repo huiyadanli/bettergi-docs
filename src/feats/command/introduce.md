@@ -25,11 +25,14 @@ start bettergi://start
 1. 使用一条龙
 
 ```bash
-bettergi.exe startOneDragon
-```
-
-```bash
+# 执行 BetterGI 一条龙页面上选定的配置
+BetterGI.exe startOneDragon
+BetterGI.exe --startOneDragon
 start bettergi://startOneDragon
+
+# 执行给定的一条龙配置（如果找不到就用页面上选定的）
+BetterGI.exe startOneDragon <配置名称>
+BetterGI.exe --startOneDragon <配置名称>
 ```
 
 2. 使用调度器
