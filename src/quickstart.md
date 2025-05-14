@@ -84,7 +84,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 * 游戏得是中文，不支持其他语言（The game language only supports Chinese）
 * 游戏窗口大小是 `1920x1080`，全屏或者窗口化都行（这个是推荐分辨率，支持所有功能，实际大部分功能 16:9 分辨率都支持），具体支持情况请查阅[文档](/doc.html)
 * 游戏亮度请保持默认
-* 不能有任何游戏画面滤镜（ReShade、N卡滤镜等）
+* 不能有任何游戏画面滤镜（HDR、N卡滤镜等）
 * 在游戏 DirectX 层无其他遮盖元素，比如： 显示 FPS 的 MSI Afterburner 可能会遮盖一些识别要素，导致功能无法使用
 
 ![设置1080P与默认亮度](https://img.alicdn.com/imgextra/i3/2042484851/O1CN013Dbv971lhoEc70FrM_!!2042484851.jpg)
@@ -131,8 +131,9 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 * DwmGetDxSharedSurface
     * 使用 Windows 未公开 API 获取 DWM 合成时的窗口贴图。
     * 性能最好，理论上截图结果和 BitBlt 相同。
+    * 未公开 API，稳定性不保证，可能会出现奇怪的问题。
 * WindowsGraphicsCapture（**云原神只能使用这种方式**）
-    * 使用 Windows 提供的截屏 API 获取窗口截图。
+    * 使用 Windows 提供的截图 API 获取窗口截图。
     * 需要 Windows 10 1903 及以上的系统版本才能使用。
     * 获取 DWM 合成后的结果，可以捕获到硬件叠加层，支持云原神。
     * Windows 10 会在游戏窗口上加上黄色边框，Windows 11 没有。
