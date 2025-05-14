@@ -27,7 +27,7 @@ BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系�
 
 软件运行的必备条件：
 * Windows 10 或更高版本的64位系统
-* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.10-windows-x64-installer) （没有的话，启动程序，系统会提示下载安装）
+* [.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.16-windows-x64-installer) （没有的话，启动程序，系统会提示下载安装）
 
 ## 下载
 
@@ -71,8 +71,8 @@ BetterGI 在 Github 页面提供了多个版本，主要是**安装版**和**便
 
 ### 常见问题
 
-* [❓双击软件后没有反应？](/faq.html#❓启动软件提示安装-net-7-运行时)
-* [❓弹出英文提示 "You must install or update .NET to run this application."，怎么办？](/faq.html#❓启动软件提示安装-net-7-运行时)
+* [❓双击软件后没有反应？](/faq.html#❓启动软件提示安装-net-运行时)
+* [❓弹出英文提示 "You must install or update .NET to run this application."，怎么办？](/faq.html#❓启动软件提示安装-net-运行时)
 * [❓提示“PaddleOcr预热失败”应该如何解决？](/faq.html#❓提示-paddleocr预热失败-应该如何解决)
 
 ### 更好的原神，启动！
@@ -82,7 +82,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 首先第一步，启动你的原神客户端，然后确认并修改以下设置：
 
 * 游戏得是中文，不支持其他语言（The game language only supports Chinese）
-* 游戏窗口大小是 `1920x1080`，全屏或者窗口化都行（这个是推荐分辨率，支持所有功能，实际大部分功能 16:9 分辨率都支持）,具体支持情况请查阅[文档](/doc.html)
+* 游戏窗口大小是 `1920x1080`，全屏或者窗口化都行（这个是推荐分辨率，支持所有功能，实际大部分功能 16:9 分辨率都支持），具体支持情况请查阅[文档](/doc.html)
 * 游戏亮度请保持默认
 * 不能有任何游戏画面滤镜（ReShade、N卡滤镜等）
 * 在游戏 DirectX 层无其他遮盖元素，比如： 显示 FPS 的 MSI Afterburner 可能会遮盖一些识别要素，导致功能无法使用
@@ -101,7 +101,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 ## 测试功能是否正常
 
-启动完成后，无论你要使用哪个[功能](/feat.html)，先通过“[自动拾取](/doc.html#自动拾取)”功能测试一下配置是否无误。**测试完成后再去使用其他功能！**
+启动完成后，无论你要使用哪个[功能](/doc.html#功能指引)，先通过“[自动拾取](/feats/timer/pick.html)”功能测试一下配置是否无误。**测试完成后再去使用其他功能！**
 
 首先在“实时任务”选项卡中确认“自动拾取”功能是处于开启状态下，默认是开启的。
 
