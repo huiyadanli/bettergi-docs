@@ -13,4 +13,4 @@ BetterGI 是一个开源且免费的项目。
 [⚡爱发电@huiyadanli](https://afdian.com/a/huiyadanli)
 
 ## 微信
-![](assets/wechat.jpg =250x)
+<img src="assets/wechat.jpg" width="250px"  alt=""/>

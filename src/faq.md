@@ -87,15 +87,17 @@ BGI提供了一个选项，开启后即可正常计时，该选项位于“同�
 * 情况一：把 BetterGI 解压到了桌面或者中文路径下可能会出现这个问题（大部分系统不会出现这个问题），**请移动到非桌面的全英文路径下重试**。 
 * 情况二：把系统编码修改成了 `UTF-8`，请修改回默认系统编码后重试。取消勾选下图中的选项即可。
 
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN015buXNA1lhoDy0eQNI_!!2042484851.png =400x)
+<img src="https://img.alicdn.com/imgextra/i3/2042484851/O1CN015buXNA1lhoDy0eQNI_!!2042484851.png" width="400"  alt=""/>
 
 * 情况三：如下图提示 `onnxruntime.dll: FAIL, handle=0` 的情况下，请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 
-![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png =400x)
+<img src="https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png" width="400"  alt=""/>
+
 
 * 情况四：如下图提示 `onnxruntime.dll: OK, handle=0`,但是 `mkldnn.dll: FAlL, handle=0` 的情况下，说明 ONNX 可能用不了，只能补充其他方式进行使用。**请不要和情况三混淆！**。进入 [wwk.lanzouq.com/ioU1f1tvgnwd](https://wwk.lanzouq.com/ioU1f1tvgnwd) 后，下载并解压，然后把里面的4个dll放到软件根目录，并覆盖。参考：[#283](https://github.com/babalae/better-genshin-impact/issues/283) 
 
-![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01PsmEhr1lhoG8SQ8tS_!!2042484851.png  =400x)
+<img src="https://img.alicdn.com/imgextra/i2/2042484851/O1CN01PsmEhr1lhoG8SQ8tS_!!2042484851.png" width="400"  alt=""/>
+
 
 * 情况五：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
 
