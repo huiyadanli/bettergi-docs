@@ -38,7 +38,13 @@ await dispatcher.runTask(new SoloTask("AutoFishing"));
   - `soloTask` (`SoloTask`): 独立任务对象
 - 返回类型: `Task`
 
-#### AutoFishing 自动钓鱼
+### getLinkedCancellationToken()
+- 描述: （0.45.3新增）获取一个取消令牌，用于在多线程场景下取消任务
+- 返回类型: `CancellationToken`
+
+## 相关任务对象
+
+### AutoFishing 自动钓鱼
 
 - 参数:
   - `fishingTimePolicy` (`int`): 昼夜策略，钓全天的鱼、还是只钓白天或夜晚的鱼（全天：0、白天：1、夜晚：2）
