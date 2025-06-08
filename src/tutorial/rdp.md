@@ -32,8 +32,8 @@
   - Win + R → 输入 `lusrmgr.msc` → 回车
 - 添加用户到远程桌面用户组
   - 在左侧导航窗格中，展开 本地用户和组>组。
-  - 在右侧窗格中，右键单击“Remote Desktop Users”，选择“属性”。
-  - 点击“添加”，输入要添加的用户名，然后点击“检查名称”以验证用户名。
+  - 在右侧窗格中，右键单击 `Remote Desktop Users`，选择`属性`。
+  - 点击 `添加`，输入要添加的用户名，然后点击 `检查名称` 以验证用户名。
   - 确认无误后，点击“确定”完成添加。
 ![4fef15c6dcf691a46a21dd8631274e7c](https://github.com/user-attachments/assets/1d50ffa5-f4a8-4cf8-8082-ad3304356883)
 
@@ -66,27 +66,27 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 - 打开 RDP_CnC.exe 程序界面；
 
 ![e29ee002ec82e835cb606666fb37837d](https://github.com/user-attachments/assets/a44f3aa8-e88c-4f9b-b58b-99f2c51b785e)
-- 点击  Restart TermService 按钮（该操作将重启远程桌面服务）；
-- 在分辨率设置中选择合适的分辨率（建议设置为 1920x1080 以适配BetterGI 对分辨率的需求），这将打开远程连接的登录界面；
+- 点击  `Restart TermService` 按钮（该操作将重启远程桌面服务）；
+- 在分辨率设置中选择合适的分辨率（建议设置为 1920x1080 以适配 `BetterGI` 对分辨率的需求），这将打开远程连接的登录界面；
 
 ![9025a354be4cc6c3cbaa1c62f0cd565c](https://github.com/user-attachments/assets/f8977348-fd52-4947-a485-da6f48daa1ae)
 
-- 输入远程ip：127.0.0.2 (本地回环地址，指向本机，可选择 127.0.0.2- 127.0.0.254 )，输入预先创建的用户名和密码，点击确认。
+- 输入远程ip：`127.0.0.2` (本地回环地址，指向本机，可选择 `127.0.0.2`- `127.0.0.254`)，输入预先创建的用户名和密码，点击确认。
 - 成功连接后，将进入新建用户的独立桌面环境。若失败，请检查前面的所有步骤。
 ### 使用第三方远程桌面软件
-如 1Remote, SimpleRemote，可能会有更优秀的表现，请自行探索。
+如 `1Remote`, `SimpleRemote`，可能会有更优秀的表现，请自行探索。
 
 ## 免责声明
 本教程仅用于技术研究及合法多用户协作场景，请遵守微软远程桌面协议（RDP）许可条款。滥用可能导致系统安全风险或违反用户协议。
 
 Q&A: 
-1. termsrv ver. 为空如何确定自己的版本？找到版本之后如何确定自己的版本是否支持？
-- 找到 C:\Windows\System32\termsrv.dll 文件，右键属性，选择详细信息，产品版本即是 `termsrv ver.` 。
-- 使用任意文本编辑器打开 C:\Program Files\RDP Wrapper\rdpwrap.ini，搜索对应的版本号，如果有说明你的 Windows 版本是支持的，如果没有请移步 Q&A 2.
+1. `termsrv ver.` 为空如何确定自己的版本？找到版本之后如何确定自己的版本是否支持？
+- 找到 `C:\Windows\System32\termsrv.dll` 文件，右键属性，选择详细信息，产品版本即是 `termsrv ver.` 。
+- 使用任意文本编辑器打开 `C:\Program Files\RDP Wrapper\rdpwrap.ini`，搜索对应的版本号，如果有说明你的 Windows 版本是支持的，如果没有请移步 Q&A 2.
 
-2.  RDP Wrapper 提示 Not Support 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
-- 首先尝试点击 RDP_CnC.exe 中的 Update INI ，这会通过直连 github 尝试更新  `rdpwrap.ini` 文件。若失败，尝试从 github 上下载最新的 [rdpwrap.ini] (github.com/sebaxakerhtc/rdpwrap.ini) 替换 C:\Program Files\RDP Wrapper\rdpwrap.ini文件。
-- 若如果通过 Q&A 1. 中的方法确定新的  rdpwrap.ini 文件中仍然是不支持的 Windows 版本，尝试使用工具 。使用方法，下载解压之后，在下载的目录打开 cmd，
+2.  RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
+- 首先尝试点击 `RDP_CnC.exe` 中的 `Update INI` ，这会通过直连 github 尝试更新  `rdpwrap.ini` 文件。若失败，尝试从 github 上下载最新的 [rdpwrap.ini] (github.com/sebaxakerhtc/rdpwrap.ini) 替换 C:\Program Files\RDP Wrapper\rdpwrap.ini文件。
+- 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd，
 
 运行以下命令：
 ```bash
