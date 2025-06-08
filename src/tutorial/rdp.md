@@ -86,20 +86,34 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 ## Q&A: 
 1. `termsrv ver.` 为空如何确定自己的版本？找到版本之后如何确定自己的版本是否支持？
 - 找到 `C:\Windows\System32\termsrv.dll` 文件，右键属性，选择详细信息，产品版本即是 `termsrv ver.` 。
+
+![43c41ae564d5bfc01ba7150af9d41d1e](https://github.com/user-attachments/assets/eac4d80e-ad29-4231-ad57-9e6eaea41c68)
 - 使用任意文本编辑器打开 `C:\Program Files\RDP Wrapper\rdpwrap.ini`，搜索对应的版本号，如果有说明你的 Windows 版本是支持的，如果没有请移步 Q&A 2.
+
+![c4446d5cfe832d4eafac3f184d64ac77](https://github.com/user-attachments/assets/4b838090-7866-465f-883d-1be7d2407048)
 
 2.  RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
 - 首先尝试点击 `RDP_CnC.exe` 中的 `Update INI` ，这会通过直连 github 尝试更新  `rdpwrap.ini` 文件。若失败，尝试从 github 上下载最新的 [rdpwrap.ini](https://github.com/sebaxakerhtc/rdpwrap.ini) 替换 `C:\Program Files\RDP Wrapper\rdpwrap.ini` 文件。
-- 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd，运行以下命令：
+- 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd：
+
+![b86fca0b04eee4ef9d47b2b370f1c572](https://github.com/user-attachments/assets/e1b542ec-700b-414b-96c9-d00a963caebe)
+
+- 运行以下命令：
 ```bash
 .\RDPWrapOffsetFinder.exe C:\Windows\System32\termsrv.dll
 ```
 把生成的文本复制粘贴放到 `rdpwrap.ini` 的末尾，**然后再文件末尾添加一个回车**。再次尝试连接本地远程。该工具并不能处理所有情况，出现问题请向 RDP Wrapper 的官方社区求助。
 
 3. 连接远程桌面时出现提示【用户帐户限制(例如，时间限制)会阻止你登录。请与系统管理员或技术支持联系以获取帮助。】怎么办？
+
+![87b89bc678de68fc850eb3f72e2e8b7b](https://github.com/user-attachments/assets/03140d9b-b843-4442-b5dd-4219b9e4c5d2)
+
 - 发生原因是未设置新用户的密码，可以通过以下两种方法之一解决。
   - 删除原账户，重新建立有密码的账户，重新尝试登录。（推荐）
   - 修改本地安全设置。Win + R → 输入 `secpol.msc` → 回车。导航到以下路径：安全设置 → 本地策略 → 安全选项 → 账户: 使用空密码的本地帐户只允许进行控制台登录。修改为 已禁用。
+
+![79a500a6872b69efe09540933817b0b4](https://github.com/user-attachments/assets/54415f20-fff9-4810-9e02-a5141ea34403)
+
 
 4. 为什么使用本地远程玩游戏的时候无法转动视角？
 - 正常现象。远程桌面软件都用的是绝对鼠标逻辑，减少需要发生的包数目。
