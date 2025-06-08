@@ -2,7 +2,7 @@
 [RDP Wrapper CnC](https://github.com/sebaxakerhtc/rdpwrap) 是一个开源工具，用于在 Windows 系统上启用多用户远程桌面连接（RDP），适用于 Windows 7/8/10/11 系统。
 
 ## 下载软件
-从 GitHub 仓库下载最新版本，进入 Releases 页面下载 `RDPW_Installer.exe`，以防**安装过程中出现错误**或者将来不再使用 RDP Wrapper CnC ，可以下载 `RDPW_Uninstaller.exe`。
+从 GitHub 仓库下载最新版本，进入 [Releases](https://github.com/sebaxakerhtc/rdpwrap/releases/tag/v1.8.9.9) 页面下载 `RDPW_Installer.exe`，以防**安装过程中出现错误**或者将来不再使用 RDP Wrapper CnC ，可以下载 `RDPW_Uninstaller.exe`。
 ## 安装软件
 ### 安装前准备
 该软件容易被部分安全软件误伤，所以在安装之前一定要保证**临时禁用**所有安全软件（包括 Defender），完成后再重新启用。
