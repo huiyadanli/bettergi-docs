@@ -38,6 +38,7 @@
   - 在右侧窗格中，右键单击 `Remote Desktop Users`，选择`属性`。
   - 点击 `添加`，输入要添加的用户名，然后点击 `检查名称` 以验证用户名。
   - 确认无误后，点击“确定”完成添加。
+
 ![4fef15c6dcf691a46a21dd8631274e7c](https://github.com/user-attachments/assets/1d50ffa5-f4a8-4cf8-8082-ad3304356883)
 
 ##  修改组策略
@@ -46,7 +47,8 @@
 - “允许用户通过远程桌面服务远程连接”：`已启用`。
 - “限制连接数”：设置为允许的最大并发用户数（建议大于`3`）。
 - “将远程桌面服务用户限制到单独的远程桌面服务会话”：`禁用`（可选）。
-- ![image](https://github.com/user-attachments/assets/868ef0af-928b-4acd-8bba-4743d38e6b14)
+
+![image](https://github.com/user-attachments/assets/868ef0af-928b-4acd-8bba-4743d38e6b14)
 
 ### 家庭版 (专业版也可以使用这种方法)
 使用 `PowerShell` 修改组策略，Win + R → 输入 `powershell` → 回车，输入下面三个命令完成修改：
@@ -88,9 +90,7 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 
 2.  RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
 - 首先尝试点击 `RDP_CnC.exe` 中的 `Update INI` ，这会通过直连 github 尝试更新  `rdpwrap.ini` 文件。若失败，尝试从 github 上下载最新的 [rdpwrap.ini](https://github.com/sebaxakerhtc/rdpwrap.ini) 替换 `C:\Program Files\RDP Wrapper\rdpwrap.ini` 文件。
-- 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd，
-
-运行以下命令：
+- 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd，运行以下命令：
 ```bash
 .\RDPWrapOffsetFinder.exe C:\Windows\System32\termsrv.dll
 ```
