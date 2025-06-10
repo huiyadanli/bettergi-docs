@@ -10,7 +10,7 @@ BetterGI 处于高速迭代时期，请及时下载最新的版本~
 * [📥小飞机网盘下载](https://share.feijipan.com/s/e7EJQqoY)
 * [📥飞书下载](https://lcn33tlcifll.feishu.cn/drive/folder/LiSMf5SvPl91qrdJr8IccmUon7f) ，直接关闭登录窗口，无需登录直接下载
 * [📥安装版备用下载](https://bettergi.download.starcuber.com/BetterGI.Install.0.45.1.exe)、 [📥便携版备用下载](https://bettergi.download.starcuber.com/BetterGI_v0.45.1.7z)
-* [🎫已有 Mirror酱 CDK？前往 Mirror酱 高速下载](https://mirrorchyan.com/zh/projects?rid=BGI&source=docs)
+* [🎫已有 Mirror酱 CDK？前往 Mirror酱 高速下载](https://mirrorchyan.com/zh/projects?rid=BGI&source=bgi-docs)
 * [📥在线安装包下载](https://steambird.pub/-/bgi/BetterGI.OnlineInst.exe)
 
 
