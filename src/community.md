@@ -25,7 +25,8 @@ order: 60
 | 交流群5 （满，偶尔有空位）                      | [783846140](https://qm.qq.com/q/lVzxCCKEko) |
 | 交流群6 （满，偶尔有空位）                      | [960900268](https://qm.qq.com/q/c2ohYmxzC8) |
 | 交流群7 （满，偶尔有空位）                      | [1029539994](https://qm.qq.com/q/vCOphnHFK2) |
-| 交流群8                       | [1036100501](https://qm.qq.com/q/fvRNqEbFyo) |
+| 交流群8 （满，偶尔有空位）                      | [1036100501](https://qm.qq.com/q/fvRNqEbFyo) |
+| 交流群9                       | [1053273766](https://qm.qq.com/q/qtocsOXnIQ) |
 
 
 技术群（有门槛，萌新请加QQ频道或者交流群）：
