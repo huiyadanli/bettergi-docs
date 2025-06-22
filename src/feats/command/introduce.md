@@ -34,7 +34,7 @@ BetterGI.exe startOneDragon
 BetterGI.exe --startOneDragon
 start bettergi://startOneDragon
 
-# 执行给定的一条龙配置（如果找不到就用页面上选定的）
+# 执行给定的一条龙配置（如果找不到就用页面上选定的）（需要 0.45.3 及以上版本）
 BetterGI.exe startOneDragon <配置名称>
 BetterGI.exe --startOneDragon <配置名称>
 ```
@@ -48,9 +48,6 @@ BetterGI.exe --startGroups 切换队伍 关闭游戏
 
 目前仍未找到--startGroups的适用于URL自定义协议的启动方式。经过多次尝试失败。
 
-:::info
-以上命令均由[Because66666](https://github.com/Because66666)在betterGI的0.44.4版本上测试通过。之后可能有版本变动。
-:::
 
 ## 三、参考的批处理文件命令（保存为`run_script.bat`）
 
