@@ -91,7 +91,7 @@ BGI提供了一个选项，开启后即可正常计时，该选项位于“同�
 
 * 情况三：
     * case1:提示 `onnxruntime.dll: FAIL, handle=0` 的情况下，请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-    * case2:提示 Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A) 的情况下，也请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+    * **case2:提示 Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A) 的情况下，也请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)**
 
 <img src="https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png" width="400"  alt=""/>
 
