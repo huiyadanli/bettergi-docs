@@ -9,6 +9,14 @@ BetterGI 内部有大量原神自动化基础能力的包装，并可以通过 J
 
 所有脚本存储在软件根目录 `User\JsScript` 路径下。脚本仓库：[bettergi-scripts-list](https://github.com/babalae/bettergi-scripts-list) ( repo/js 路径下)。脚本仓库在线版：[https://bgi.sh](https://bgi.sh)
 
+## 使用示例
+
+有些js自带设置，需要用户在使用前进行设置，我们以地脉花为例
+
+点击配置器，加入对应js脚本，然后右键单击，出现菜单栏后，再点击修改js脚本自定义配置
+
+设置完成后，点击关闭即可保存配置。
+
 ## 常见问题
 
 * **运行键鼠脚本时候方向有较大偏差？**(JS自动采集晶蝶调用了键鼠脚本)
