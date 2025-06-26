@@ -1,5 +1,5 @@
 ---
-title: 自动秘境
+title: 自动战斗与秘境
 order: 30
 ---
 ::: warning 分辨率
