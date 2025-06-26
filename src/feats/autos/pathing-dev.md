@@ -94,11 +94,11 @@ order: 20
 | `force_tp`          | 强制以当前的x,y坐标进行自动传送，`type = teleport`的情况才有效。                                                                                                                          |
 | `nahida_collect`    | 使用纳西妲长按E技能进行收集。                                                                                                                                                     |
 | `pick_around`       | 在点位周围转圈移动，适合拾取等场景。`action_params` 可以填写数字，代表圈数，圈数越大拾取的范围也越大，不填默认为1                                                                                                   |
-| `hydro_collect`     | 使用水元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
-| `electro_collect`   | 使用雷元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
-| `anemo_collect`     | 使用风元素力收集(0.35.5存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
-| `pyro_collect`      | 使用火元素力收集(0.43.0存在)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
-| `up_down_grab_leaf` | 上下移动视角按T前往四叶印(0.35.1存在)。                                                                                                                                            |
+| `hydro_collect`     | 使用水元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
+| `electro_collect`   | 使用雷元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
+| `anemo_collect`     | 使用风元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
+| `pyro_collect`      | 使用火元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
+| `up_down_grab_leaf` | 上下移动视角按T前往四叶印(感谢群友@秋云的翻新)。                                                                                                                                            |
 | `fight`             | 在此处直接执行自动战斗（0.36.4更新了结束方式），此 `action` 的点位一定会按照`path`类型的点位进行执行。                                                                                                      |
 | `combat_script`     | 可以直接执行[战斗策略脚本](/feats/task/domain.html#战斗策略脚本编写)，策略脚本需要填写在 `action_params` 中。<br>当策略不指定角色名时，会直接使用当前角色执行策略脚本。<br>请注意活用战斗策略的特性：不存在队伍中的角色对应的策略也不会执行（0.36.4新增）。         |
 | `log_output`        | 在遮罩窗口输出INF级别的日志。`action_params`中填写预期的日志输出。注：在移动到目标点之前输出日志，`type = teleport` 时不支持此action。(0.40.0新增)                                                                  |           
