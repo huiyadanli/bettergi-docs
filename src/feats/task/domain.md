@@ -155,7 +155,7 @@ order: 30
 
 请站在秘境门口或者在进入秘境时候启动”自动秘境“功能，启动后自动刷本直到用光体力结束（OCR识别浓缩树脂数量的准确率不高，建议保留20以上的体力保证能够自动循环刷取，或者手动设置刷取次数）。当然也可以在设置中配置刷取次数。
 
-![站在秘境门口启动（推荐）](https://img.alicdn.com/imgextra/i2/2042484851/O1CN016CLDxN1lhoELu85HD_!!2042484851.jpg  =400x)
+![站在秘境门口启动（推荐）](https://img.alicdn.com/imgextra/i2/2042484851/O1CN016CLDxN1lhoELu85HD_!!2042484851.jpg_400x400)
 
 ![或在进入秘境时候启动（方便周日选材料）](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01CXj1yP1lhoEfFHn0G_!!2042484851.jpg)
 
