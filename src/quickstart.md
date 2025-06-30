@@ -39,8 +39,7 @@ BetterGI 只支持 Windows 系统，不支持手机，首先要确认你的系�
 
 BetterGI 在 Github 页面提供了多个版本，主要是**安装版**和**便携版**，不同版本除了打包与安装方式之外，无任何区别。
 
-
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
+![快速上手1-版本说明](https://github.com/user-attachments/assets/63f72caa-220d-4fc0-94a3-b4c511cf0e6c)
 
 * **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
 * **安装版** 的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。
@@ -93,7 +92,8 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 **如果你使用的是云原神，或者你的电脑中存在多个原神，或者你需要通过其他启动器启动原神，请关闭“同时启动原神”的功能。**
 
-![点击启动按钮](https://img.alicdn.com/imgextra/i4/2042484851/O1CN01QlDwQP1lhoEclOeIJ_!!2042484851.png)
+![bgi界面](https://github.com/user-attachments/assets/dc0dd579-4f2d-4238-986f-54f63691eaf7)
+
 
 启动后，会自动激活原神窗口，等待窗口左下角刷出日志后，BetterGI 完成启动。
 

@@ -30,13 +30,15 @@ order: 1
 通过以下任意一种方式可以访问脚本仓库：
 
 1. 使用内置仓库：在 `BetterGI` 中依次点击 `全自动` - `地图追踪` - `脚本仓库` 。
-   
-![image](https://github.com/user-attachments/assets/58f49a84-9dec-485c-a103-b312f325b74d)
+
+![调度器-1如何进入脚本仓库](https://github.com/user-attachments/assets/f04cf9e5-7adb-4789-9e36-6054be5977ec)
 
 **第一次使用脚本仓库请先点击更新！**
 **仓库不会自己更新！请手动点击更新按钮**
-更新完成后，再打开脚本仓库，如果下载失败，请点击重置（即删除脚本仓库）再次重试。
 
+![调度器2-更新脚本仓库](https://github.com/user-attachments/assets/b64a7a40-d378-46a8-b7ed-95c3eec5c0b6)
+
+更新完成后，再打开脚本仓库，如果下载失败，请点击重置（即删除脚本仓库）再次重试。
 
 2. 使用在线仓库： 使用浏览器访问 [bgi.sh](https://bgi.sh) 使用在线仓库。
 
@@ -44,7 +46,7 @@ order: 1
 
 在 `BetterGI` 依次点击 `设置`，找到手动导入本地脚本仓库（zip格式），点击右侧 `导入`。
 
-![image](https://github.com/user-attachments/assets/ebf8261c-393b-446e-ba05-56d8191393ed)
+![调度器-2 1脚本仓库本地导入](https://github.com/user-attachments/assets/0ab5fc2d-0357-4031-a84d-2bfd8a5109f6)
 
 在弹出的界面选择 `本地仓库文件`，点击 `打开`。然后依次点击 `全自动` - `地图追踪` - `脚本仓库` 使用本地仓库。
 
@@ -54,11 +56,11 @@ order: 1
 #### 2.2 订阅脚本
 进入脚本仓库之后你将看到类似以下界面，中间红框部分是仓库刷新时间，请确保日期是最新的，如果不是，请返回开头更新脚本仓库。
 
-![image](https://github.com/user-attachments/assets/6bd94dbc-088b-492f-b69b-a1be57b01f06)
+![调度器-4脚本仓库更新时间](https://github.com/user-attachments/assets/6574b7d8-fde4-4af1-930c-3c06fdff73ba)
 
 找到所需要的脚本，红框部分包含了所有种类的脚本，这里以地图追踪为例。点击右侧 订阅。（其他三种也是点击订阅即可下载）
 
-![image](https://github.com/user-attachments/assets/41433eaf-cae8-4602-82f1-9f8bb9d3b7ef)
+![调度器-3脚本仓库介绍](https://github.com/user-attachments/assets/6c68677f-dc72-4a21-bdc9-79fe91efbfcc)
 
 在弹出的界面点击 `确认导入`。如果是使用在线仓库，需要回到 `BetterGI` 主界面之后才会弹出此界面。
 
@@ -66,6 +68,5 @@ order: 1
 
 此时 `BetterGI` 的 `全自动` - `地图追踪` - `脚本仓库` 出现你订阅的脚本，js与键鼠脚本同理。
 
-![image](https://github.com/user-attachments/assets/68ff7fd8-47ef-4934-8845-3950fddc99c7)
-
+![调度器-2 1脚本导入实例](https://github.com/user-attachments/assets/193ed6e5-5000-4db1-ab9f-ddae50b2a2b0)
 
