@@ -17,12 +17,16 @@ order: 10
 * Paddle: 支持全文字的识别，识别较为稳定，占用CPU少，速度比Yap慢（但是暂时无法使用GPU模式）
 * [Yap](https://github.com/Alex-Beng/Yap): 针对原神交互与拾取相关的文字专门进行训练的模型，已知内容识别精准，速度快，占用CPU较高，可以使用GPU推理来解决卡顿的问题
 
+![自动拾取1 1](https://github.com/user-attachments/assets/96659cad-3329-4300-8a63-f1ed9cc002d6)
+
 ### 黑白名单设置
 
 可以通过黑白名单排除选项，不在黑名单的选项默认会按下 F。白名单优先级高于黑名单，逻辑如下
 
 1. 识别到的文本在白名单内，无论是否在黑名单内存在，且无论图标是什么，都会按下 F
 2. 识别到的文本在黑名单内，且不存在于白名单，不会按下 F 。
+
+![黑白名单设置](https://github.com/user-attachments/assets/0492339c-ea08-4c22-ab26-4cf36d3fcff2)
 
 ### 自定义拾取按键
 
