@@ -15,7 +15,11 @@ BetterGI 内部有大量原神自动化基础能力的包装，并可以通过 J
 
 点击配置器，加入对应js脚本，然后右键单击，出现菜单栏后，再点击修改js脚本自定义配置
 
+![调度器js(1)](https://github.com/user-attachments/assets/8f40cc3d-3b4b-4bdb-a38e-165cb9ae3d41)
+
 设置完成后，点击关闭即可保存配置。
+
+![调度器js-2](https://github.com/user-attachments/assets/037b1c67-202b-4db1-8736-cb9ed907edd9)
 
 ## 常见问题
 
