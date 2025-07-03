@@ -26,7 +26,7 @@ order: 10
 1. 识别到的文本在白名单内，无论是否在黑名单内存在，且无论图标是什么，都会按下 F
 2. 识别到的文本在黑名单内，且不存在于白名单，不会按下 F 。
 
-![黑白名单设置](https://github.com/user-attachments/assets/0492339c-ea08-4c22-ab26-4cf36d3fcff2)
+![81f09c26701b074027423c9b2991f74d](https://github.com/user-attachments/assets/70333c8f-c997-46f2-b0ac-84f97473ba43)
 
 ### 自定义拾取按键
 
