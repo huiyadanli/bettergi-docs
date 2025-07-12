@@ -1,4 +1,4 @@
-<img width="1029" height="854" alt="image" src="https://github.com/user-attachments/assets/5b87e559-7b14-4f67-847b-209aa7f4cc9d" />---
+
 title: 全局方法
 order: 20
 ---
