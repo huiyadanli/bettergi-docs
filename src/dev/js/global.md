@@ -1,4 +1,4 @@
----
+<img width="1029" height="854" alt="image" src="https://github.com/user-attachments/assets/5b87e559-7b14-4f67-847b-209aa7f4cc9d" />---
 title: 全局方法
 order: 20
 ---
@@ -89,3 +89,6 @@ keyUp("w");
 ### captureGameRegion()
 - 返回类型: `ImageRegion`
 - 描述: 捕获游戏区域的图像，用于图像识别，具体见 [图像识别与OCR](/dev/js/rec.html)
+
+### inputText(string text)
+- 描述：在输入框输入文本，需要确保输入框处于激活状态
