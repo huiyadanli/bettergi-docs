@@ -117,6 +117,10 @@ await genshin.tpToStatueOfTheSeven();
   - 返回的Point2f结构体包含X和Y属性，分别表示横纵坐标
 - 参数: 无
 
+### getCameraOrientation()
+- 返回类型：`float`
+- 描述：需要在主界面使用，获取当前的视角朝向的角度值。以水平轴向右为0度，逆时针方向角度递增。
+
 ### getPositionFromMap()
 - 返回类型: `Point2f`
 - 描述: 获取当前在小地图上的位置坐标
