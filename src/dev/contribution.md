@@ -31,7 +31,7 @@ BetterGI 当前处于快速开发迭代阶段，有大量[Issue](https://github.
 1. `git clone https://github.com/babalae/better-genshin-impact.git`
 2. 推荐使用 [Rider](https://www.jetbrains.com/zh-cn/rider/) 打开本项目。速度快且免费！
 
-请注意当前 `/Asset` 目录下的部分文件过大，比如地图特征数据（300M+），需要手动从 Release 包中获取并拷贝至对应的编译目录下，软件才能够正常运行对应的功能。（当前仅影响地图追踪、自动传送相关功能）
+~~请注意当前 `/Asset` 目录下的部分文件过大，比如地图特征数据（300M+），需要手动从 Release 包中获取并拷贝至对应的编译目录下，软件才能够正常运行对应的功能。（当前仅影响地图追踪、自动传送相关功能）~~ （已经内置）
 
 ##### 如何通过 Github Action 直接构建完整包？
 
