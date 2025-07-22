@@ -76,7 +76,7 @@ if %errorlevel% equ 0 (
 )
 
 :: 执行BetterGI.exe程序
-.\BetterGI.exe start --startGroups 切换队伍 使用配置组执行一条龙 采钻石矿 关闭游戏
+.\BetterGI.exe --startGroups 切换队伍 使用配置组执行一条龙 采钻石矿 关闭游戏
 
 
 :: 取消系统静音
