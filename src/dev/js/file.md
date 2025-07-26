@@ -409,7 +409,7 @@ log.info(`当前路径是否为文件夹: ${isFolder}`); // 本示例的file.isF
 
 ## 文件读取与目录相关操作组合示例（实际应用）
 
-以下示例中提及的 ```sha256To8()``` 方法 和 ```JSON文件``` 未在此处给出，本实例仅提供一种**文件读取**与**目录相关操作**结合的实际应用(本代码段可在JS脚本: AutoPathingLoader-MultiUser 的 main.js 中找到)
+以下示例中提及的 ```sha256To8()``` 方法 和 ```JSON文件``` 未在此处给出，本示例仅提供一种**文件读取**与**目录相关操作**结合的实际应用(本代码段可在JS脚本: AutoPathingLoader-MultiUser 的 main.js 中找到)
 
 ```javascript
 (async function () {
