@@ -80,7 +80,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 第一步，启动你的原神客户端，然后确认并修改以下设置：
 
-* 游戏语言必须为简体中文，暂不支持其他语言（The game language only supports Chinese）
+* 游戏语言必须为简体中文，暂不支持其他语言（The game language only supports Simplified Chinese.）
 * 游戏窗口大小是 `1920x1080`，全屏或者窗口化都行（这个是推荐分辨率，支持所有功能，实际大部分功能 16:9 分辨率都支持），具体支持情况请查阅[文档](/doc.html)
 * 游戏亮度请保持默认
 * 不能有任何游戏画面滤镜（HDR、N卡滤镜等）
