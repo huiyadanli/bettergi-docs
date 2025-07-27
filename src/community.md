@@ -27,6 +27,7 @@ order: 60
 | 交流群7 （满，偶尔有空位）                      | [1029539994](https://qm.qq.com/q/vCOphnHFK2) |
 | 交流群8 （满，偶尔有空位）                      | [1036100501](https://qm.qq.com/q/fvRNqEbFyo) |
 | 交流群9                       | [1053273766](https://qm.qq.com/q/qtocsOXnIQ) |
+| 交流群10                       | [1051494685](https://qm.qq.com/q/TPQtZlgraU) |
 
 
 技术群（有门槛，萌新请加QQ频道或者交流群）：
