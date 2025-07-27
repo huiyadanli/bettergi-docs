@@ -50,7 +50,7 @@ highlights:
 
       - title: 自动剧情
         icon: forward
-        details: 快速跳过文本，自动选择对话选项，跳过黑屏，关闭书页显示等
+        details: 可快速跳过文本，自动选择对话选项，跳过黑屏，关闭书页弹窗显示等
         link: /feats/timer/skip.html
 
       - title: 每日委托奖励
@@ -60,7 +60,7 @@ highlights:
 
       - title: 自动重新派遣
         icon: magnifying-glass-dollar
-        details: 自动领取探索派遣奖励并重新派遣。
+        details: 可自动领取探索派遣奖励并重新派遣
         link: /feats/timer/skip.html#%E8%87%AA%E5%8A%A8%E9%87%8D%E6%96%B0%E6%B4%BE%E9%81%A3
 
       - title: AI全自动钓鱼
@@ -75,17 +75,17 @@ highlights:
 
       - title: 操控辅助
         icon: file-code
-        details: 类似宏的操作，按键连发、那维莱特转圈圈等
+        details: 类似宏的操作，支持按键连发、那维莱特转圈圈等
         link: /feats/macro/other.html
 
       - title: 圣遗物一键强化
         icon: hammer
-        details: 圣遗物一键强化，快速跳过强化结果
+        details: 支持圣遗物一键强化，快速跳过强化结果
         link: /feats/macro/other.html#%E5%9C%A3%E9%81%97%E7%89%A9%E4%B8%80%E9%94%AE%E5%BC%BA%E5%8C%96
     
       - title: 快速传送
         icon: location-dot
-        details: 地图上点击传送点后，自动点选传送
+        details: 支持在地图上点击传送点后，自动点选传送
         link: /feats/timer/tp.html
 
       - title: 自动伐木
@@ -95,7 +95,7 @@ highlights:
 
       - title: 自动战斗
         icon: hand-fist
-        details: 识别配队并按照自定义战斗策略进行自动战斗
+        details: 支持识别配队并按照自定义战斗策略进行自动战斗
         link: /feats/task/domain.html
 
       - title: 自动秘境
@@ -105,17 +105,17 @@ highlights:
 
       - title: 一键宏
         icon: scroll
-        details: 按下快捷键识别角色并触发对应的宏配置
+        details: 支持按下快捷键识别角色并触发对应的宏配置
         link: /feats/macro/onem.html
 
       - title: 自动烹饪
         icon: bowl-rice
-        details: 自动在完美区域完成食物烹饪
+        details: 可自动在完美区域完成食物烹饪
         link: /feats/timer/cook.html
 
       - title: 地图追踪
         icon: map-location
-        details: 基于小地图的地图追踪功能，可以实现自动采集、锄地等
+        details: 基于小地图的地图追踪功能，可实现自动采集、锄地等
         link: /feats/autos/pathing.html
 
       - title: 键鼠录制脚本
