@@ -320,6 +320,53 @@ Promise方式：
   await callbackWriteExample();
 })();
 ```
+## 文件目录相关方法 (0.45.1 新增)
+
+### 1. 单级子目录读取 - readPathSync
+
+```javascript
+let allPaths = file.readPathSync(path);
+```
+
+**参数说明：**
+- `path`: 要读取的文件夹路径（字符串）
+
+**返回值：**
+- 字符串数组（需要二次转换为JavaScript的标准数组）
+
+**示例：**
+```javascript
+// 读取指定路径下所有文件和文件夹的路径（非递归）
+let allPaths = file.readPathSync(path);
+
+// 将返回值转换为标准数组
+allPaths = Array.from(allPaths);
+
+log.info(`当前目录下的内容: ${allPaths.join(" ")}`);
+```
+
+### 2. 判断路径是否为文件夹 - isFolder
+
+```javascript
+let isFolder = file.isFolder(path);
+```
+
+**参数说明：**
+- `path`: 要判断的文件夹/文件夹路径（字符串）
+
+**返回值：**
+- 布尔值(boolean)
+	**true** 表示传入的路径指向一个**文件夹**
+	**false** 表示传入的路径指向一个**文件**
+
+**示例：**
+```javascript
+let p = "D:/转生成为雷电将军 然后天下无敌.txt"
+
+const isFolder = file.isFolder(path);
+
+log.info(`当前路径是否为文件夹: ${isFolder}`); // 本示例的file.isFlase的返回值为 false
+```
 
 ## 文件读写组合示例
 
@@ -359,6 +406,54 @@ Promise方式：
   await readModifyWriteExample();
 })();
 ```
+
+## 文件读取与目录相关操作组合示例（实际应用）
+
+以下示例中提及的 ```sha256To8()``` 方法 和 ```JSON文件``` 未在此处给出，本示例仅提供一种**文件读取**与**目录相关操作**结合的实际应用(本代码段可在JS脚本: AutoPathingLoader-MultiUser 的 main.js 中找到)
+
+```javascript
+(async function () {
+  /**
+     * 异步计算指定文件夹中所有 JSON 文件内容的 SHA-256 哈希值（返回8位数字字符串）(附带JS版号)。
+     *
+     * 该方法执行步骤如下：
+     * 1. 调用 file.readPathSync() 读取指定文件夹下所有文件和文件夹的路径（非递归）。
+     * 2. 使用 Array.from() 将返回值转换为标准数组。
+     * 3. 过滤出所有非文件夹且文件名以 ".json" 结尾的路径。
+     * 4. 将这些 JSON 文件内容读取后合并成一个总体字符串。
+     * 5. 调用自定义的 sha256To8() 方法生成并返回 8 位数字的哈希值。
+     * 6. 如果没有符合条件的 JSON 文件，返回 "00000000"。
+     *
+     * @param {string} path - 文件夹路径（相对于根目录）。
+     * @returns {Promise<string>} 返回一个 Promise，其解析结果为8位数字格式的哈希值字符串。
+     */
+    async function getSha256FromPath(path) {
+        // 读取指定路径下所有文件和文件夹的路径（非递归）
+        let allPaths = file.readPathSync(path);
+
+        // 将返回值转换为标准数组，以确保可以使用 filter 方法
+        allPaths = Array.from(allPaths);
+
+        // 过滤出所有非文件夹且以 ".json" 结尾的文件路径
+        const jsonPaths = allPaths.filter(p => !file.isFolder(p) && p.endsWith(".json"));
+
+        // 读取JS版号
+        const version = JSON.parse(file.readTextSync("manifest.json"))["version"];
+        
+        // 如果有符合条件的文件，读取并合并文件内容后计算哈希
+        if (jsonPaths.length > 0) {
+            const combinedContent = jsonPaths
+                .map(p => file.readTextSync(p))
+                .join('');
+            return sha256To8(version + combinedContent);
+        } else {
+            // 如果没有符合条件的文件，则返回 "00000000"
+            return "00000000";
+        }
+    }
+})();
+```
+
 ## 注意事项
 
 1. **路径安全**：所有路径都会被规范化和验证，确保不会访问到根目录以外的文件
@@ -377,3 +472,5 @@ Promise方式：
 5. **文件大小限制**：写入内容不能超过999MB
 
 6. **目录创建**：如果文件所在目录不存在，会自动创建
+
+7. **目录读取**：```file.readPathSync(path)``` 读取到的目录数组建议使用 ```Array.from()``` 处理后再使用
