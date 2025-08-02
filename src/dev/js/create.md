@@ -30,7 +30,12 @@ order: 10
   // 自定义配置
   "settings_ui": "settings.json",
   // 入口文件
-  "main": "main.js"
+  "main": "main.js",
+  // 需要保留的文件路径（支持正则表达式与通配符）
+  "saved_files": [
+    data/*.txt,
+    user_data.txt
+  ]
 }
 ```
 
