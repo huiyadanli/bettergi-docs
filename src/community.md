@@ -5,17 +5,19 @@ order: 60
 ---
 
 
-官方B站账号：[BetterGI](https://space.bilibili.com/3546777483479879) ，欢迎关注，内有视频教程。
+### 📺官方B站账号：[BetterGI](https://space.bilibili.com/3546777483479879) ，欢迎关注，内有视频教程。
 
 ---
 
 有问题优先进QQ频道（推荐频道发帖）或者新群，问题更加容易得到解答。
 
-**QQ频道：[bettergiv1](https://pd.qq.com/s/e0isukk34)**
+**💬QQ频道：[bettergiv1](https://pd.qq.com/s/e0isukk34)**
 
 ---
 
 交流群：
+
+**重复多次加群，可能导致被移出所有相关群！**
 
 | 介绍                         | 入口        |
 |----------------------------| --------- |
