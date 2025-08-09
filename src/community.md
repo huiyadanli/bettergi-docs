@@ -38,5 +38,5 @@ order: 60
 |------------------------------------| --------- |
 | 交流群1，开发群，入群需要告知Github账号            | 894935931 |
 | 一个AI炼丹相关的群，进群需告知来意（干活群）            | [863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) |
-| BetterGI脚本作者群（BetterGI内的脚本制作者可以进群,进群时需要在进群理由附上所做的脚本名字，方便审核） | [764972801](https://qm.qq.com/q/wqgZhBJcPK) |
+
 
