@@ -104,6 +104,8 @@ order: 20
 | `log_output`        | 在遮罩窗口输出INF级别的日志。`action_params`中填写预期的日志输出。注：在移动到目标点之前输出日志，`type = teleport` 时不支持此action。(0.40.0新增)                                                                  |           
 | `fishing`           | 执行钓鱼(0.43.0存在)                                                                                                                                                      |           |
 | `set_time`          |  设置时间。`action_params`中填写格式：`HH:MM` 或 `HH:MM:<bool>`，bool值可以指定是否使用快速调整时间，默认是 `true`，如 `06:00:true` 表示使用快速调整时间的方式调整时间到早上六点（0.44.0存在）|
+| `use_gadget`        |  使用小道具(<kbd>Z</kbd>)，默认会等待CD。`action_params` 填写 not_wait 则不等待，直接使用小道具 |
+
 
 ## 编辑器中自定义战斗策略的教程
 
