@@ -78,7 +78,23 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 - 输入远程ip：`127.0.0.2` (本地回环地址，指向本机，可选择 `127.0.0.2`- `127.0.0.254`)，输入预先创建的用户名和密码，点击确认。
 - 成功连接后，将进入新建用户的独立桌面环境。若失败，请检查前面的所有步骤。
 ### 使用第三方远程桌面软件
-如 `1Remote`, `SimpleRemote`，可能会有更优秀的表现，请自行探索。
+如 `1Remote`, `SimpleRemote`，下面以 [1Remote](https://1remote.org/zh-cn/) 为例，演示连接过程。
+
+![1Remote主界面](https://github.com/user-attachments/assets/e17cc9db-9fcc-400c-a6f5-5dfacfd3c759)
+
+点击图中的加号，选择 `添加`。不出意外你能看到以下界面：
+
+![1Remote添加界面](https://github.com/user-attachments/assets/b27935a5-93f3-4972-96d8-9b73c8e2d4f5)
+
+根据喜好命名、选择图标和颜色之后，往下滚动页面，输入用户名，密码和远程ip: `127.0.0.2`，分辨率选择自定义分辨率（拉伸），1920*1080。如图：
+
+![1](https://github.com/user-attachments/assets/69ea322a-eaad-40e3-94c7-5aa0e6b5b57a)
+
+![12](https://github.com/user-attachments/assets/92d18db7-1264-4cbc-bbcd-0531bcd353a3)
+
+点击 `添加` 或者 `保存` 即可。随后在主界面双击你刚刚创建的本地远程连接，点击 `确定` 即可成功连接
+
+[123](https://github.com/user-attachments/assets/7e3defe8-40e3-4ea3-b764-09bce4c565fd)
 
 ## 免责声明
 本教程仅用于技术研究及合法多用户协作场景，请遵守微软远程桌面协议（RDP）许可条款。滥用可能导致系统安全风险或违反用户协议。
@@ -127,7 +143,10 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 7. 我想关闭屏幕省电，但是关闭屏幕之后不运行了怎么办？
 - 使用 HDMI 线连接显示器。笔记本用户请自行探索。
 
+8. 使用本地远程时频繁出现以下提醒怎么办？
+![错误提示](https://github.com/user-attachments/assets/7f64ad91-6846-4de1-a464-1aac073362df)
 
+在脚本仓库订阅 `1Remote_RDP_Autoreconnection` 参考其中的 `README.md` 配置。
 
 
 
