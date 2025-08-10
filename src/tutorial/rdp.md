@@ -94,7 +94,7 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 
 点击 `添加` 或者 `保存` 即可。随后在主界面双击你刚刚创建的本地远程连接，点击 `确定` 即可成功连接
 
-[123](https://github.com/user-attachments/assets/7e3defe8-40e3-4ea3-b764-09bce4c565fd)
+![123](https://github.com/user-attachments/assets/7e3defe8-40e3-4ea3-b764-09bce4c565fd)
 
 ## 免责声明
 本教程仅用于技术研究及合法多用户协作场景，请遵守微软远程桌面协议（RDP）许可条款。滥用可能导致系统安全风险或违反用户协议。
