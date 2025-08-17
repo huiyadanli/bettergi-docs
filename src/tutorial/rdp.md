@@ -1,6 +1,9 @@
 # 本地远程多用户后台挂机指南
 [RDP Wrapper CnC](https://github.com/sebaxakerhtc/rdpwrap) 是一个开源工具，用于在 Windows 系统上启用多用户远程桌面连接（RDP），适用于 Windows 7/8/10/11 系统。
 
+## 重要提示
+- 强烈不建议使用**任何第三方 Windows 系统修改**工具（包括所谓“优化大师”“一键精简”“系统瘦身”“预装软件移除”等工具）。此类工具极易导致本教程完全失效、关键功能异常或稳定性问题。
+
 ## 下载软件
 从 GitHub 仓库下载最新版本，进入 [Releases](https://github.com/sebaxakerhtc/rdpwrap/releases/tag/v1.8.9.9) 页面下载 `RDPW_Installer.exe`，以防**安装过程中出现错误**或者将来不再使用 RDP Wrapper CnC ，可以下载 `RDPW_Uninstaller.exe`。
 ## 安装软件
@@ -9,7 +12,7 @@
 ### 开始安装
 右键以管理员身份运行 `RDPW_Installer.exe`，并等待控制台应用（黑色窗口）结束，此程序会自动安装并配置多用户远程桌面连接。
 ### 安装结束后检查
-安装结束后在桌面生成快捷方式，并在 `C:\Program Files\RDP Wrapper` (无法修改安装目录) 目录下生成五个文件，进入下一步之前请检查文件是否完整，如果不完整请检查你的 第一步 **安装前的准备** 是否完成。
+安装结束后在桌面生成快捷方式，并在 `C:\Program Files\RDP Wrapper` (无法修改安装目录，请不要自行尝试) 目录下生成五个文件，进入下一步之前请检查文件是否完整，如果不完整请检查你的 第一步 **安装前的准备** 是否完成。
 
 ![0f4d85a4df1de53e9928c2a497a0b734](https://github.com/user-attachments/assets/adfc54d2-b86c-45fd-9ab3-03c235ad1e59)
 
