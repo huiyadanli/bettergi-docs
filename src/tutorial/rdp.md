@@ -44,29 +44,7 @@
 
 ![4fef15c6dcf691a46a21dd8631274e7c](https://github.com/user-attachments/assets/1d50ffa5-f4a8-4cf8-8082-ad3304356883)
 
-##  修改组策略
-### 专业版
-打开组策略编辑器：Win + R → 输入 `gpedit.msc` → 回车。导航到以下路径：计算机配置 > 管理模板 > Windows 组件 > 远程桌面服务 > 远程桌面会话主机 > 连接，修改以下设置。
-- “允许用户通过远程桌面服务远程连接”：`已启用`。
-- “限制连接数”：设置为允许的最大并发用户数（建议大于`3`）。
-- “将远程桌面服务用户限制到单独的远程桌面服务会话”：`禁用`（可选）。
 
-![image](https://github.com/user-attachments/assets/868ef0af-928b-4acd-8bba-4743d38e6b14)
-
-### 家庭版 (专业版也可以使用这种方法)
-使用 `PowerShell` 修改组策略，Win + R → 输入 `powershell` → 回车，输入下面三个命令完成修改：
-- 设置 "允许用户通过使用远程桌面服务进行远程连接" 为启用：
-```PowerShell
-Set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server" -Name "fDenyTSConnections" -Value 0
-```
-- 设置限制连接的数量为 999999：
-```PowerShell
-Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server" -Name "MaxInstanceCount" -Value 999999
-```
-- 设置 "将远程桌面服务用户限制到单独的远程桌面服务会话" 为禁用：
-```PowerShell
-Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Services" -Name "fSingleSessionPerUser" -Value 0
-```
 ## 启动本地远程连接
 ### 使用RDP_CnC 打开windows自带的本地远程
 完成上述配置后，您可通过以下简易步骤建立远程连接：
@@ -128,8 +106,10 @@ Set-ItemProperty -Path "HKLM:\Software\Policies\Microsoft\Windows NT\Terminal Se
 ![87b89bc678de68fc850eb3f72e2e8b7b](https://github.com/user-attachments/assets/03140d9b-b843-4442-b5dd-4219b9e4c5d2)
 
 - 发生原因是未设置新用户的密码，可以通过以下两种方法之一解决。
-  - 删除原账户，重新建立有密码的账户，重新尝试登录。（推荐）
-  - 修改本地安全设置。Win + R → 输入 `secpol.msc` → 回车。导航到以下路径：安全设置 → 本地策略 → 安全选项 → 账户: 使用空密码的本地帐户只允许进行控制台登录。修改为 已禁用。
+  - 删除原账户，重新建立有密码的账户，重新尝试登录（推荐）。
+  - 修改本地安全设置（强烈不推荐，存在重大安全风险）。Win + R → 输入 `secpol.msc` → 回车。导航到以下路径：安全设置 → 本地策略 → 安全选项 → 账户: 使用空密码的本地帐户只允许进行控制台登录。修改为 已禁用。
+
+
 
 ![79a500a6872b69efe09540933817b0b4](https://github.com/user-attachments/assets/54415f20-fff9-4810-9e02-a5141ea34403)
 
