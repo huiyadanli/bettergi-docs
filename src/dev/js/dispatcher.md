@@ -63,13 +63,14 @@ await dispatcher.runTask(new SoloTask("AutoFishing", { "fishingTimePolicy": 0 })
 ```
 
 
-### AutoEat 自动吃食物(0.48.0以后版本即将新增)
-
+### AutoEat 自动吃食物
+(0.48.0以后版本即将新增)  
 - 参数:
   - `foodName` (`string`): 食物名称，查找并吃该名称食物，不区分“美味的”等前缀
   - `foodEffectType` (`int`): 食物效果类型（攻击：1、冒险：2、防御：3），会按调度器配置吃对应类型的食物
   - 注意`foodName`和`foodEffectType`参数二选一，不可同时传递  
 
+只支持单次使用的Buff类食物，不支持使用时须要选角色、多次确认的食物  
 支持的食物取决于[GetGridIcons](https://bettergi.com/feats/task/getGridIcons.html)已训练的数据  
 另请关注背包界面背景对识别的干扰
 
@@ -80,5 +81,5 @@ await dispatcher.runTask(new SoloTask("AutoFishing", { "fishingTimePolicy": 0 })
 await dispatcher.runTask(new SoloTask("AutoEat", { "foodName": "炸萝卜丸子" }));
 
 // 使用调度器配置吃指定类型
-await dispatcher.runTask(new SoloTask("AutoFishing", { "foodEffectType": 1 }));
+await dispatcher.runTask(new SoloTask("AutoEat", { "foodEffectType": 1 }));
 ```
