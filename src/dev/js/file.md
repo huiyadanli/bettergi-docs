@@ -276,14 +276,14 @@ const ra = captureGameRegion();
 const mat = ra.DeriveCrop(100, 200, 300, 150);
 const result = file.writeImageSync("test/image.png", mat);
 // const ok = file.writeImageSync("test/image", mat); // 实际保存为 test/image.png
-if (ok) {
+if (result) {
   log.info("保存图片成功");
 }
 ```
 
 指定为 JPG 保存：
 ```javascript
-const ok2 = file.writeImageSync("test/photo.jpg", mat);
+const result = file.writeImageSync("test/photo.jpg", mat);
 ```
 
 **说明：**
