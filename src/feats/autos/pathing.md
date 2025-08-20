@@ -182,3 +182,9 @@ order: 20
 ## 附录
 - ✨ 地图追踪的核心功能参考自 [minimap](https://github.com/tignioj/minimap)
 项目，[minimap](https://github.com/tignioj/minimap) 是一个完成度非常高原神自动采集工具，当然它的功能远不止这些，强烈推荐！
+
+## 制作你的地图追踪脚本
+
+想自己录制并制作地图追踪脚本？请参考开发者文档：
+
+- [地图追踪任务制作（开发者）](/dev/pathing-dev.html)
