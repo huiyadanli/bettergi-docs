@@ -72,6 +72,8 @@ await dispatcher.runTask(new SoloTask("AutoFishing", { "fishingTimePolicy": 0 })
 
 只支持单次使用的Buff类食物，不支持使用时须要选角色、多次确认的食物  
 支持的食物取决于[GetGridIcons](https://bettergi.com/feats/task/getGridIcons.html)已训练的数据  
+支持的食物清单详见[训练集原型特征.csv](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/GetGridIcons/%E8%AE%AD%E7%BB%83%E9%9B%86%E5%8E%9F%E5%9E%8B%E7%89%B9%E5%BE%81.csv)  
+
 另请关注背包界面背景对识别的干扰
 
 示例：
