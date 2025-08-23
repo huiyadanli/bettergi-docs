@@ -21,19 +21,62 @@ order: 60
 
 **先启动截图器，然后启动分解圣遗物**，启动后程序会自动逐行点击圣遗物并对右侧的属性卡片进行文字识别，进而筛选出满足匹配规则的圣遗物
 
-匹配规则是由“正则表达式”确定的。
+匹配规则是由运行JavaScript确定的。
 
-举个例子，`(?=[\S\s]*攻击力\+[\d]*\n)(?=[\S\s]*防御力\+[\d]*\n)`这样的一串正则表达式将会匹配到：既有“攻击力+数字”，又有“防御力+数字”属性的圣遗物
+JavaScript接受`ArtifactStat`作为入参；必须对`Output`赋值一个布尔值作为返回，`true`代表匹配成功否则失败  
 
-“正则表达式”是一种丰俭由人的简易方案，就像游戏自带的锁定功能，有的玩家可能设定了很多自动锁定规则，但有的玩家却觉得那是个配置的地狱。以后也有可能会升级到更好的方案
+#### ArtifactStat类结构：  
+└─ Properties  
+    ├─ `Name` : `String` 名称  
+    ├─ `MainAffix` : `Affix` 主词缀  
+    ├─ `MinorAffixes` : `Affix[]` 副词缀数组  
+    └─ `Level` : `Number` 等级  
+
+#### Affix类结构：  
+└─ Properties  
+    ├─ `Type` : `String` 词缀类型  
+    └─ `Value` : `Number` 词缀值  
+
+#### Affix的Type：  
+| 值 | 含义 |
+|---------|---------|
+| ATK | 攻击力 |
+| ATKPercent | 攻击力（百分比） |
+| DEF | 防御力 |
+| DEFPercent | 防御力（百分比） |
+| HP | 生命值 |
+| HPPercent | 生命值（百分比） |
+| CRITRate | 暴击率 |
+| CRITDMG | 暴击伤害 |
+| ElementalMastery | 元素精通 |
+| EnergyRecharge | 元素充能效率 |
+| HealingBonus | 治疗加成 |
+| PhysicalDMGBonus | 物理伤害加成 |
+| PyroDMGBonus | 火元素伤害加成 |
+| HydroDMGBonus | 水元素伤害加成 |
+| DendroDMGBonus | 草元素伤害加成 |
+| ElectroDMGBonus | 雷元素伤害加成 |
+| AnemoDMGBonus | 风元素伤害加成 |
+| CryoDMGBonus | 冰元素伤害加成 |
+| GeoDMGBonus | 岩元素伤害加成 |
+
+举个例子，以下JS可以匹配副词条中既有“攻击力+数字”，又有“防御力+数字”属性的圣遗物：
+```js
+(async function (artifact) {
+    var hasATK = Array.from(artifact.MinorAffixes).some(affix => affix.Type == 'ATK');
+    var hasDEF = Array.from(artifact.MinorAffixes).some(affix => affix.Type == 'DEF');
+    Output = hasATK && hasDEF;
+})(ArtifactStat);
+```
+
 
 **关于测试窗口**
 
-在原神中打开分解圣遗物界面，再打开测试窗口，就能看到圣遗物右侧的属性卡片的文字识别效果和正则表达式匹配结果
+在原神中打开分解圣遗物界面，再打开测试窗口，就能看到圣遗物右侧的属性卡片的文字识别效果和JavaScript匹配结果
 
-可以在测试窗口看到目前能从属性卡片上识别到所有信息，包括圣遗物名称、部位名、各种属性
+可以在测试窗口看到目前能从属性卡片上OCR识别到所有信息
 
-如果你写了新的正则表达式，想测试匹配规则是否正确，这是个很便捷的测试手段
+如果你想测试匹配规则是否正确，这是个很便捷的测试手段
 
 **关于最大检查数量**
 
