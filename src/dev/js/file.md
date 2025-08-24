@@ -170,7 +170,7 @@ try {
 ```
 ## 文件写入方法 (0.44.3 新增)
 
-### 1. 同步写入 - writeTextSync
+### 1. 同步写入文本 - writeTextSync
 
 ```javascript
 const result = file.writeTextSync(path, content, append);
@@ -193,7 +193,7 @@ const result1 = file.writeTextSync("test/example.txt", "这是覆盖写入的内
 const result2 = file.writeTextSync("test/example.txt", "这是追加的内容", true);
 ```
 
-### 2. 异步写入 - writeText
+### 2. 异步写入文本 - writeText
 
 ```javascript
 // Promise方式
@@ -254,6 +254,42 @@ Promise方式：
 })();
 ```
 
+### 3. 同步保存图片 - writeImageSync (0.48.2 新增) 
+
+```javascript
+const result = await file.writeImageSync(path, mat);
+```
+
+**参数说明：**
+- `path`: 文件路径（字符串，可不带扩展名；不带时将自动追加 `.png`）
+- `mat`: 要保存的图片（OpenCV Mat 矩阵）
+
+**返回值：**
+- 布尔值，表示保存是否成功
+
+**示例：**
+
+无扩展名时自动以 PNG 保存：
+```javascript
+// 文件路径重复则覆盖原图
+const ra = captureGameRegion();
+const mat = ra.DeriveCrop(100, 200, 300, 150);
+const result = file.writeImageSync("test/image.png", mat);
+// const ok = file.writeImageSync("test/image", mat); // 实际保存为 test/image.png
+if (result) {
+  log.info("保存图片成功");
+}
+```
+
+指定为 JPG 保存：
+```javascript
+const result = file.writeImageSync("test/photo.jpg", mat);
+```
+
+**说明：**
+- 支持的图片扩展名：`.png`, `.jpg`, `.jpeg`, `.bmp`, `.tiff`, `.webp`
+- 目标目录不存在时会自动创建
+- 同名文件将被覆盖
 
 
 ## 完整示例
@@ -467,10 +503,18 @@ log.info(`当前路径是否为文件夹: ${isFolder}`); // 本示例的file.isF
    - 默认以彩色模式(ImreadModes.Color)读取图像
 
 4. **文件扩展名限制**：只允许写入以下扩展名的文件：
-   - .txt, .json, .log, .csv, .xml, .html, .css
+   - 文本/数据：`.txt`, `.json`, `.log`, `.csv`, `.xml`, `.html`, `.css`
+   - 图片：`.png`, `.jpg`, `.jpeg`, `.bmp`, `.tiff`, `.webp`
 
 5. **文件大小限制**：写入内容不能超过999MB
 
 6. **目录创建**：如果文件所在目录不存在，会自动创建
 
 7. **目录读取**：```file.readPathSync(path)``` 读取到的目录数组建议使用 ```Array.from()``` 处理后再使用
+
+8. **图片保存**：
+   - `writeImageSync(path, mat)` 为同步方法，返回布尔值
+   - `path` 不带扩展名时将自动追加 `.png`
+   - 仅允许保存为：`.png`, `.jpg`, `.jpeg`, `.bmp`, `.tiff`, `.webp`
+   - 目标目录不存在会自动创建；同名文件将被覆盖
+
