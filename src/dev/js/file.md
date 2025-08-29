@@ -257,7 +257,7 @@ Promise方式：
 ### 3. 同步保存图片 - writeImageSync (0.48.2 新增) 
 
 ```javascript
-const result = await file.writeImageSync(path, mat);
+const result = file.writeImageSync(path, mat);
 ```
 
 **参数说明：**
@@ -273,9 +273,9 @@ const result = await file.writeImageSync(path, mat);
 ```javascript
 // 文件路径重复则覆盖原图
 const ra = captureGameRegion();
-const mat = ra.DeriveCrop(100, 200, 300, 150);
-const result = file.writeImageSync("test/image.png", mat);
-// const ok = file.writeImageSync("test/image", mat); // 实际保存为 test/image.png
+const mat = ra.DeriveCrop(100, 200, 300, 150).SrcMat;
+const result = file.WriteImageSync("test/image.png", mat);
+// const ok = file.WriteImageSync("test/image", mat); // 实际保存为 test/image.png
 if (result) {
   log.info("保存图片成功");
 }
@@ -283,7 +283,7 @@ if (result) {
 
 指定为 JPG 保存：
 ```javascript
-const result = file.writeImageSync("test/photo.jpg", mat);
+const result = file.WriteImageSync("test/photo.jpg", mat);
 ```
 
 **说明：**
@@ -513,8 +513,9 @@ log.info(`当前路径是否为文件夹: ${isFolder}`); // 本示例的file.isF
 7. **目录读取**：```file.readPathSync(path)``` 读取到的目录数组建议使用 ```Array.from()``` 处理后再使用
 
 8. **图片保存**：
-   - `writeImageSync(path, mat)` 为同步方法，返回布尔值
+   - `WriteImageSync(path, mat)` 为同步方法，返回布尔值
    - `path` 不带扩展名时将自动追加 `.png`
    - 仅允许保存为：`.png`, `.jpg`, `.jpeg`, `.bmp`, `.tiff`, `.webp`
    - 目标目录不存在会自动创建；同名文件将被覆盖
+
 
