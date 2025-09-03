@@ -98,7 +98,7 @@ order: 23
 | `electro_collect`   | 使用雷元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `anemo_collect`     | 使用风元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `pyro_collect`      | 使用火元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
-| `up_down_grab_leaf` | 上下移动视角按T前往四叶印(0.44后重置)。                                                                                                                                            |
+| `up_down_grab_leaf` | 上下移动视角按T前往四叶印，该动作将忽略所有移动方式和点位类型，强行把点位视作朝向点，四叶印操作会在完成朝向动作之后执行，并只基于飞行图标出现检测是否完成四叶印动作。(0.44后重置)。                                                                                                                                            |
 | `fight`             | 在此处直接执行自动战斗（0.36.4更新了结束方式），此 `action` 的点位一定会按照`path`类型的点位进行执行。                                                                                                      |
 | `combat_script`     | 可以直接执行[战斗策略脚本](/feats/task/domain.html#战斗策略脚本编写)，策略脚本需要填写在 `action_params` 中。<br>当策略不指定角色名时，会直接使用当前角色执行策略脚本。<br>请注意活用战斗策略的特性：不存在队伍中的角色对应的策略也不会执行（0.36.4新增）。         |
 | `log_output`        | 在遮罩窗口输出INF级别的日志。`action_params`中填写预期的日志输出。注：在移动到目标点之前输出日志，`type = teleport` 时不支持此action。(0.40.0新增)                                                                  |           
@@ -153,5 +153,6 @@ order: 23
 全地图传送点坐标合集，如果传送位置不对可以对照这个图看下。（最高到5.0版本，且和当前软件内置的传送点合集有区别）
 
 [https://wwmy.lanzouq.com/b0fosbd9g](https://wwmy.lanzouq.com/b0fosbd9g) 密码:coco
+
 
 
