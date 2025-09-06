@@ -90,6 +90,12 @@ keyUp("w");
 - 返回类型: `ImageRegion`
 - 描述: 捕获游戏区域的图像，用于图像识别，具体见 [图像识别与OCR](/dev/js/rec.html)
 
+
+### inputText(string text)
+- 描述: 输入文本
+- 参数:
+  - `text` (`string`): 文本
+
 ### inputText(string text)
 - 描述：在输入框输入文本，需要确保输入框处于激活状态
 

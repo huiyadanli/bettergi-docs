@@ -162,6 +162,10 @@ log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`
 - 参数:
   - `partyName` (`string`): 队伍界面自定义的队伍名称
 
+### clearPartyCache()
+- 返回类型: 无返回
+- 描述: 清空路径追踪期间生成的队伍缓存
+
 ### blessingOfTheWelkinMoon()
 - 返回类型: `Task`
 - 描述: 自动点击空月祝福
@@ -207,4 +211,5 @@ log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`
 ### relogin()
 - 返回类型: `Task`
 - 描述: 返回到登录界面并重新开门进入游戏（0.44新增）
-```
+
+
