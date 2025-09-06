@@ -13,10 +13,10 @@ order: 40
 
 手动导入的下载地址列表：
 
-- 实时最新的仓库： https://r2-script.bettergi.com/github_mirror/main.zip  
-- 蓝奏云（不是最新的）： https://wwmy.lanzouq.com/b0fprlncj  密码:hfy6
+- 实时最新的仓库： [https://r2-script.bettergi.com/github_mirror/main.zip](https://r2-script.bettergi.com/github_mirror/main.zip)
+- 蓝奏云（不是最新的）： [https://wwmy.lanzouq.com/b0fprlncj](https://wwmy.lanzouq.com/b0fprlncj)  密码:hfy6
 
 
 ## 在线版仓库
 
-https://bgi.sh/
+[https://bgi.sh/](https://bgi.sh/)
