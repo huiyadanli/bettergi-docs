@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 主页
-heroImage: https://img.alicdn.com/imgextra/i2/2042484851/O1CN01Bn1Fzx1lhoDqQDAzj_!!2042484851.png
+heroImage: https://img.alicdn.com/imgextra/i4/2042484851/O1CN01tYajJx1lhoP9R0FAL_!!2042484851.png
 bgImageStyle:
   background-attachment: fixed
 heroText: BetterGI · 更好的原神
