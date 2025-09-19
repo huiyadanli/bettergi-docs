@@ -71,6 +71,11 @@ BetterGI 启动后会自动修改 窗口化游戏优化 为关闭状态，但是
 #### ❓自动拾取可以使用，为什么自动剧情没反应？
 游戏内的自动剧情功能打开时，BetterGI 的自动剧情才会启用。也就是游戏左上角的“自动”按钮处于“播放中”状态。
 
+#### ❓为何软件会闪退？
+可能是js脚本造成的内存逸出，可以通过添加虚拟内存解决。
+<img width="1588" height="864" alt="3d106513480b034afdd8ac87ad17042c" src="https://github.com/user-attachments/assets/fdde4313-b6e1-4132-afd9-7b8cef23e7ab" />
+
+
 
 ### 4.报错相关
 #### ❓报错提示 "Some simulated input commands were not sent successfully..."
