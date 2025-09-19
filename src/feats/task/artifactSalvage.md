@@ -60,12 +60,30 @@ JavaScript接受`ArtifactStat`作为入参；必须对`Output`赋值一个布尔
 | CryoDMGBonus | 冰元素伤害加成 |
 | GeoDMGBonus | 岩元素伤害加成 |
 
-举个例子，以下JS可以匹配副词条中既有“攻击力+数字”，又有“防御力+数字”属性的圣遗物：
+举一些例子：
+
+匹配副词条中既有“攻击力+数字”，又有“防御力+数字”属性的圣遗物：
+
 ```js
+(async function (artifact) {
     var hasATK = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'ATK');
     var hasDEF = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'DEF');
     Output = hasATK && hasDEF;
+})(ArtifactStat);
 ```
+
+定义“生命值+数字”、“攻击力+数字”和“防御力+数字”为 *无效副词条* 。匹配包含两个以上 *无效副词条* 圣遗物：
+
+```js
+(async function (artifact) {
+  const uselessMinorAffixesCount = Array.from(artifact.MinorAffixes).reduce((prev, curr) => {
+    return (curr.Type == 'ATK' || curr.Type == 'DEF' || curr.Type == 'HP') ? prev + 1 : prev;
+  }, 0);
+  Output = (uselessMinorAffixesCount >= 2);
+})(ArtifactStat);
+```
+
+请注意：**头尾两行（函数声明和调用）必须原封不动地保留！！！**
 
 ### 关于按套装筛选
 
@@ -91,8 +109,17 @@ JavaScript接受`ArtifactStat`作为入参；必须对`Output`赋值一个布尔
 
 ### 关于扫描完成
 
-扫描筛选完成后，保险起见并不会自动点击分解，这时你可以使用游戏内自带的筛选“已选择”，来看到并复查被筛选出的圣遗物，如果确认无误，请手动点击确认分解
+扫描筛选完成后，保险起见并**不会自动点击分解**，这时你可以使用游戏内自带的筛选“已选择”，来看到并复查被筛选出的圣遗物，如果确认无误，请手动点击确认分解
 
+### 常见问题
+
+Q: 是否能识别灰色的 未激活副词条（原神6.0新特性）？
+
+A: 可以。
+
+Q: 报错 `识别失败，跳过当前圣遗物："未找到主词条对应的行"` 怎么办？
+
+A: 将 `设置 -> OCR配置 -> PaddleOCR模型` 改为 `V5Auto`。
 
 ### 演示
 
