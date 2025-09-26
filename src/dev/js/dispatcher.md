@@ -64,7 +64,7 @@ await dispatcher.runTask(new SoloTask("AutoFishing", { "fishingTimePolicy": 0 })
 
 
 ### AutoEat 自动吃食物
-(0.49.0新增)  
+(推荐先尝试仓库中的[使用料理JS脚本](https://github.com/babalae/bettergi-scripts-list/tree/main/repo/js/%E4%BD%BF%E7%94%A8%E6%96%99%E7%90%86)，该方案利用了游戏自带的筛选功能，更为实用)  
 - 参数:
   - `foodName` (`string`): 食物名称，查找并吃该名称食物，不区分“美味的”等前缀
   - `foodEffectType` (`int`): 食物效果类型（攻击：1、冒险：2、防御：3），会按调度器配置吃对应类型的食物
@@ -86,8 +86,7 @@ await dispatcher.runTask(new SoloTask("AutoEat", { "foodName": "炸萝卜丸子"
 await dispatcher.runTask(new SoloTask("AutoEat", { "foodEffectType": 1 }));
 ```
 
-### CountInventoryItem 背包物品计数
-(即将新增)  
+### CountInventoryItem 背包物品计数 
 - 参数:
   - `gridScreenName` (`string`): 背包标签名，支持的值如下  
     | 值 | 标签名 |
@@ -100,8 +99,13 @@ await dispatcher.runTask(new SoloTask("AutoEat", { "foodEffectType": 1 }));
     | PreciousItems | 贵重道具 |
     | Furnishings | 摆设 |
   - `itemName` (`string`): 单个物品名称，验证是否受支持详见[训练集原型特征.csv](https://github.com/babalae/bettergi-libraries/blob/main/BetterGI.Assets.Model/Assets/Model/Item/items.csv)
+  - `itemNames` (`Array<string>`): 物品名称数组
+  - 注意`itemName`和`itemNames`参数二选一，不可同时传递 
 - 方法返回参数:
-  - `int` 数量
+  - `int` 数量（如果传入了`itemName`）  
+    如果没有找到，则为-1；如果找到了但数字识别失败，则为-2
+  - `Dict<string, int>` 一个可以当作字典操作的对象，键是物品名称，值是数量（如果传入了`itemNames`）  
+    如果某个元素没有找到，则不会存在对应的键值；如果找到了但数字识别失败，则为-2
 
 另请关注背包界面背景对识别的干扰，如果游戏画面干扰导致识别失败，可参考[GetGridIcons](https://bettergi.com/feats/task/getGridIcons.html)调整并重试
 
@@ -111,4 +115,7 @@ await dispatcher.runTask(new SoloTask("AutoEat", { "foodEffectType": 1 }));
 // 按名称
 const result = await dispatcher.runTask(new SoloTask("CountInventoryItem", { "gridScreenName": "Food", "itemName": "炸萝卜丸子" }));
 log.Info(`数量: ${JSON.stringify(result)}`);
+
+const resultDict = await dispatcher.runTask(new SoloTask("CountInventoryItem", { "gridScreenName": "Food", "itemNames": ["鸡豆花", "超级至尊披萨"] }));
+log.Info(`鸡豆花 数量: ${JSON.stringify(resultDict["鸡豆花"])}`);
 ```
