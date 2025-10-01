@@ -48,7 +48,7 @@ BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b
 
 BetterGI 需要安装 .NET 8 运行时才能运行，请根据提示安装，否则无法启动软件。
 
-没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-aspnetcore-8.0.20-windows-x64-installer)
+没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer)
 
 #### ❓无论是自动拾取，还是自动剧情都没反应，也没有日志打印。
 在启动页内尝试更换截图方式。
