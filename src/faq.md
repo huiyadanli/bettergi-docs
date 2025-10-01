@@ -21,6 +21,8 @@ order: 40
 
 [https://gitmirror.com/files.html](https://gitmirror.com/files.html)
 
+或者更换其他下载方式。
+
 #### ❓找不到下载文件的位置？不知道下载哪个文件/版本？
 BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b>便携版</b>，不同版本除了打包与安装方式之外，无任何区别。
 
@@ -38,15 +40,15 @@ BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b
 有更高版本号的情况下优先下载更高版本号的 BetterGI！
 
 ### 2.怎么启动？
-#### ❓启动软件提示安装.NET运行时？
+#### ❓启动软件提示`You must install .NET Desktop Runtime to run this application`？
 
 提示如图：
 
 ![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN012MVMsp1lhoDtEX1bo_!!2042484851.jpg)
 
-请根据提示安装，否则无法启动软件。
+BetterGI 需要安装 .NET 8 运行时才能运行，请根据提示安装，否则无法启动软件。
 
-没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.16-windows-x64-installer)
+没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-aspnetcore-8.0.20-windows-x64-installer)
 
 #### ❓无论是自动拾取，还是自动剧情都没反应，也没有日志打印。
 在启动页内尝试更换截图方式。
@@ -72,13 +74,12 @@ BetterGI 启动后会自动修改 窗口化游戏优化 为关闭状态，但是
 游戏内的自动剧情功能打开时，BetterGI 的自动剧情才会启用。也就是游戏左上角的“自动”按钮处于“播放中”状态。
 
 #### ❓为何软件会闪退？
-可能是js脚本造成的内存逸出，可以通过添加虚拟内存解决。
-<img width="1588" height="864" alt="3d106513480b034afdd8ac87ad17042c" src="https://github.com/user-attachments/assets/fdde4313-b6e1-4132-afd9-7b8cef23e7ab" />
-
-
+一般为内存不足导致的，可能是js脚本造成的内存溢出。  
+最简单的解决方法是添加内存，当然也可以通过添加虚拟内存解决。  
+![](https://github.com/user-attachments/assets/fdde4313-b6e1-4132-afd9-7b8cef23e7ab)
 
 ### 4.报错相关
-#### ❓报错提示 "Some simulated input commands were not sent successfully..."
+#### ❓报错提示 "Some simulated input commands were not sent successfully..." 或 "模拟键鼠消息发送失败！..."
 
 早期版本提示 "Some simulated input commands were not sent successfully..."
 
