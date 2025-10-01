@@ -1,8 +1,9 @@
 # 本地远程多用户后台挂机指南
 [RDP Wrapper CnC](https://github.com/sebaxakerhtc/rdpwrap) 是一个开源工具，用于在 Windows 系统上启用多用户远程桌面连接（RDP），适用于 Windows 7/8/10/11 系统。
 
-## 重要提示
-- 强烈不建议使用**任何第三方 Windows 系统修改**工具（包括所谓“优化大师”“一键精简”“系统瘦身”“预装软件移除”等工具）。此类工具极易导致本教程完全失效、关键功能异常或稳定性问题。
+::: important
+强烈不建议使用**任何第三方 Windows 系统修改**工具（包括所谓“优化大师”“一键精简”“系统瘦身”“预装软件移除”等工具）。此类工具极易导致本教程完全失效、关键功能异常或稳定性问题。
+:::
 
 ## 下载软件
 从 GitHub 仓库下载最新版本，进入 [Releases](https://github.com/sebaxakerhtc/rdpwrap/releases/tag/v1.8.9.9) 页面下载 `RDPW_Installer.exe`，以防**安装过程中出现错误**或者将来不再使用 RDP Wrapper CnC ，可以下载 `RDPW_Uninstaller.exe`。
@@ -36,7 +37,7 @@
 ## 添加新用户到远程桌面用户组（可选）
 - 你在 **建立 Windows 新用户** 步骤中，如果没有授予管理员权限，才需要进行该操作。
 - 打开本地用户和组：
-  - Win + R → 输入 `lusrmgr.msc` → 回车
+  - `Win` + `R` → 输入 `lusrmgr.msc` → 回车
 - 添加用户到远程桌面用户组
   - 在左侧导航窗格中，展开 本地用户和组>组。
   - 在右侧窗格中，右键单击 `Remote Desktop Users`，选择`属性`。
@@ -57,7 +58,7 @@
 
 ![9025a354be4cc6c3cbaa1c62f0cd565c](https://github.com/user-attachments/assets/f8977348-fd52-4947-a485-da6f48daa1ae)
 
-- 输入远程ip：`127.0.0.2` (本地回环地址，指向本机，可选择 `127.0.0.2`- `127.0.0.254`)，输入预先创建的用户名和密码，点击确认。
+- 输入远程ip：`127.0.0.2` (本地回环地址，指向本机，可选择 `127.0.0.2`- `127.0.0.254`，不能用 `127.0.0.1`)，输入预先创建的用户名和密码，点击确认。
 - 成功连接后，将进入新建用户的独立桌面环境。若失败，请检查前面的所有步骤。
 ### 使用第三方远程桌面软件
 如 `1Remote`, `SimpleRemote`，下面以 [1Remote](https://1remote.org/zh-cn/) 为例，演示连接过程。
@@ -82,7 +83,7 @@
 本教程仅用于技术研究及合法多用户协作场景，请遵守微软远程桌面协议（RDP）许可条款。滥用可能导致系统安全风险或违反用户协议。
 
 ## Q&A: 
-1. `termsrv ver.` 为空如何确定自己的版本？找到版本之后如何确定自己的版本是否支持？
+### 1. `termsrv ver.` 为空如何确定自己的版本？找到版本之后如何确定自己的版本是否支持？
 - 找到 `C:\Windows\System32\termsrv.dll` 文件，右键属性，选择详细信息，产品版本即是 `termsrv ver.` 。
 
 ![43c41ae564d5bfc01ba7150af9d41d1e](https://github.com/user-attachments/assets/eac4d80e-ad29-4231-ad57-9e6eaea41c68)
@@ -90,7 +91,7 @@
 
 ![c4446d5cfe832d4eafac3f184d64ac77](https://github.com/user-attachments/assets/4b838090-7866-465f-883d-1be7d2407048)
 
-2.  RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
+### 2.  RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
 - 首先尝试点击 `RDP_CnC.exe` 中的 `Update INI` ，这会通过直连 github 尝试更新  `rdpwrap.ini` 文件。若失败，尝试从 github 上下载最新的 [rdpwrap.ini](https://github.com/sebaxakerhtc/rdpwrap.ini) 替换 `C:\Program Files\RDP Wrapper\rdpwrap.ini` 文件。
 - 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd：
 
@@ -102,32 +103,42 @@
 ```
 把生成的文本复制粘贴放到 `rdpwrap.ini` 的末尾，**然后再文件末尾添加一个回车**。再次尝试连接本地远程。该工具并不能处理所有情况，出现问题请向 RDP Wrapper 的官方社区求助。
 
-3. 连接远程桌面时出现提示【用户帐户限制(例如，时间限制)会阻止你登录。请与系统管理员或技术支持联系以获取帮助。】怎么办？
+### 3. 连接远程桌面时出现提示【用户帐户限制(例如，时间限制)会阻止你登录。请与系统管理员或技术支持联系以获取帮助。】怎么办？
 
 ![87b89bc678de68fc850eb3f72e2e8b7b](https://github.com/user-attachments/assets/03140d9b-b843-4442-b5dd-4219b9e4c5d2)
 
 - 发生原因是未设置新用户的密码，可以通过以下两种方法之一解决。
   - 删除原账户，重新建立有密码的账户，重新尝试登录（推荐）。
-  - 修改本地安全设置（强烈不推荐，存在重大安全风险）。Win + R → 输入 `secpol.msc` → 回车。导航到以下路径：安全设置 → 本地策略 → 安全选项 → 账户: 使用空密码的本地帐户只允许进行控制台登录。修改为 已禁用。
-
-
+  - 修改本地安全设置（强烈不推荐，存在重大安全风险）。`Win` + `R` → 输入 `secpol.msc` → 回车。导航到以下路径：安全设置 → 本地策略 → 安全选项 → 账户: 使用空密码的本地帐户只允许进行控制台登录。修改为 已禁用。
 
 ![79a500a6872b69efe09540933817b0b4](https://github.com/user-attachments/assets/54415f20-fff9-4810-9e02-a5141ea34403)
 
+### 4. 提示`与此计算机的连接数量是有限的，现在已经使用所有连接`
+- 这是因为默认情况下，Windows 允许每个用户最多连接 1 个会话。
+- 通过修改组策略可以增加允许的会话数量。
+- 打开组策略编辑器：`Win` + `R` → 输入 `gpedit.msc` → 回车。导航到以下路径：计算机配置 > 管理模板 > Windows 组件 > 远程桌面服务 > 远程桌面会话主机 > 连接，
+- 将 **限制连接数** 设置为允许的最大并发用户数（最大999999，建议大于3）。
+- 可选，**将远程桌面服务用户限制到单独的远程桌面服务会话**：`禁用`。
+![image](https://github.com/user-attachments/assets/868ef0af-928b-4acd-8bba-4743d38e6b14)
+- 系统是家庭版没有组策略？也可以使用 `PowerShell` 修改组策略，`Win` + `R` → 输入 `powershell` → 回车，输入下面的命令完成修改：
+  ```PowerShell
+  Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server" -Name "MaxInstanceCount" -Value 999999
+  ```
+  - 可以将999999修改为其他数字，建议大于3。
 
-4. 为什么使用本地远程玩游戏的时候无法转动视角？
+### 5. 为什么使用本地远程玩游戏的时候无法转动视角？
 - 正常现象。远程桌面软件都用的是绝对鼠标逻辑，减少需要发生的包数目。
 
-5. 为什么最小化窗口之后出现问题？
+### 6. 为什么最小化窗口之后出现问题？
 - 不要最小化。放在第二桌面，或者放在副屏（或虚拟屏幕），或者用其他窗口挡住。
 
-6. 远程桌面怎么 Win 和 Alt + Tab 等组合键？
+### 7. 远程桌面怎么 `Win` 和 `Alt` + `Tab` 等组合键？
 - 全屏才能使用这些组合键。如果你的屏幕是 4K 或者 2K，请尝试以全屏方式启动本地远程桌面，也可通过虚拟屏幕工具获得你想要的分辨率，将窗口放在能全屏的窗口内。
 
-7. 我想关闭屏幕省电，但是关闭屏幕之后不运行了怎么办？
-- 使用 HDMI 线连接显示器。笔记本用户请自行探索。
+### 8. 我想关闭屏幕省电，但是关闭屏幕之后不运行了怎么办？
+- 使用 HDMI 线连接显示器。笔记本用户可以使用显卡欺骗器或虚拟屏幕工具。
 
-8. 使用本地远程时频繁出现以下提醒怎么办？
+### 9. 使用本地远程时频繁出现以下提醒怎么办？
 ![错误提示](https://github.com/user-attachments/assets/7f64ad91-6846-4de1-a464-1aac073362df)
 
 在脚本仓库订阅 `1Remote_RDP_Autoreconnection` 参考其中的 `README.md` 配置。
