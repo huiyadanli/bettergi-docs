@@ -175,44 +175,33 @@ _在没有错误日志的情况下诊断任何问题无异于闭眼开车  —�
 > 在更新BetterGI时，如果你担心你的设置等记录丢失，请提前备份此文件夹（使用安装器安装的BetterGI通常不会有此问题）  
 
 #### 5.1 AutoFight
-这里存储的是BetterGI内置的、你订阅的或你编写的战斗策略，关于战斗策略的部分请查看[战斗策略脚本编写](/feats/task/domain.html#战斗策略脚本编写)  
+这里存储的是BetterGI内置的、你订阅的或你编写的`战斗策略`，关于`战斗策略`的部分请查看[战斗策略脚本编写](/feats/task/domain.html#战斗策略脚本编写)。  
 这些文件会在你选择战斗策略时出现在你的下拉列表里。
 
 #### 5.2 AutoGeniusInvokation
+这里存储的是`七圣召唤策略`，关于`七圣召唤策略`的部分请查看[自动七圣召唤](/feats/task/tcg.html)。  
 
+#### 5.3 AutoPathing
+这里存储的是`地图追踪`的路径文件，也就是你在本地仓库订阅后，BetterGI将路径复制过来的位置，具体的`地图追踪`讲解请查看[地图追踪](/feats/autos/pathing.html)以及[地图追踪制作](/dev/pathing-dev.html)。
 
-#### 5.3 AutoLeyLineOutcrop
+#### 5.4 JsScript
+这里存储的是`Javascript脚本`，同`地图追踪`，也是你在本地仓库订阅后，BetterGI将脚本复制过来的地方。略有不同的是，部分脚本作者配置了需要保存的文件，你运行脚本后生成的一些运行记录会被作者保存下来，方便下次运行时根据记录做出一些判断，因此，请不要随意删除你脚本文件的文件夹，你会丢失一些宝贵的数据。  
+由于Js脚本的自由度较高，bug产生的概率也较高，关于这部分，可以查看[Javascript 脚本](/feats/autos/jsscript.html)下的常见问题。  
 
+#### 5.5 KeyMouseScript
+有的用户可能会使用`录制回放`的功能，这里便存储了你录制的键鼠操作json文件，这部分知识点较少，但你仍然可以阅读[键鼠录制](/feats/autos/kmscript.html)学习使用。  
 
-#### 5.4 AutoPathing
+#### 5.6 OneDragon
+这个文件夹内的解释非常简单，仅存储了`一条龙`的配置信息，也就是你的各个选项设置，以及你添加的`一条龙`任务名称。  
 
+#### 5.7 ScriptGroup
+这个文件夹下的文件是你经常会用到的，也就是调度器内每个任务的配置文件。当你给某个任务设置了队伍切换、生存位、行走位、自定义设置等选项后，都会保存到这里。  
 
-#### 5.5 AutoSkip
+#### 5.8 avatar_macro.json
+这个文件是角色`一键宏`配置文件，你在`辅助操控`-`一键宏（按角色）`中配置的信息会存储在这里。具体信息请查看[一键宏文档](/feats/macro/onem.html)。  
 
+#### 5.9 config.json
+除了本文提及的局部设置外（脚本和路径设置具有独立性，因此是分开存储的），所有BetterGI的整体设置都储存在这个文件中。由于设置项过多，这里不展开讲解，日常使用过程中一般不会用到这个文件。  
 
-#### 5.6 JsScript
-
-
-#### 5.7 KeyMouseScript
-
-
-#### 5.8 OneDragon
-
-
-#### 5.9 records
-
-
-#### 5.10 ScriptGroup
-
-
-#### 5.11 avatar_macro.json
-
-
-#### 5.12 config.json
-
-
-#### 5.13 pick_black_lists.json
-
-
-#### 5.14 pick_white_lists.json
-
+#### 5.10 pick_black_lists.json & pick_white_lists.json
+黑白名单配置，除软件自带的黑白名单外，你自己设置的黑白名单便存储在这里。
