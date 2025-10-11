@@ -146,6 +146,54 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 在使用过程中，难免会遇到需要修改或打开本地文件的情况，本节将为你讲解BetterGI常用本地文件的位置与作用。
 
+常用文件结构如下：  
+```
+ 📁 BetterGI  
+  ├─ 📁 Assets  
+  │   ├─ 📁 Config  
+  │   ├─ 📁 Map  
+  │   ├─ 📁 Model  
+  │   └─ 📁 Web  
+  │  
+  ├─ 📁 log  
+  │   ├─ 📄 better-genshin-impact20250908.log  
+  │   ├─ 📄 better-genshin-impact20250909.log  
+  │   └─ 📄 ... (超过21天自动删除)  
+  │  
+  ├─ 📁 Repos  
+  │   ├─ 📁 bettergi-scripts-list-git  
+  │   └─ 📄 repo_updated.json  
+  │  
+  └─ 📁 User  
+      ├─ 📁 AutoFight  
+      │   └─ 📄 *.txt  
+      │
+      ├─ 📁 AutoGeniusInvokation  
+      │   └─ 📄 *.txt  
+      │
+      ├─ 📁 AutoPathing  
+      │   └─ 📁 路径文件夹  
+      │
+      ├─ 📁 JsScript  
+      │   └─ 📁 脚本文件夹  
+      │
+      ├─ 📁 KeyMouseScript  
+      │   └─ 📄 *.json  
+      │
+      ├─ 📁 OneDragon  
+      │   └─ 📄 默认配置.json  
+      │
+      ├─ 📁 ScriptGroup  
+      │   └─ 📄 自定义调度器.json  
+      │
+      ├─ 📄 avatar_macro.json  
+      ├─ 📄 config.json  
+      ├─ 📄 pick_black_lists.json  
+      └─ 📄 pick_white_lists.json  
+```
+
+下文将对这个目录结构中较重要的部分进行讲解。
+
 ### 1. BetterGI  
 这个文件夹是你的BetterGI安装目录即本地存储文件夹，具体位置根据你的安装位置决定。如果你不记得你装在哪儿了，可以右键你桌面的快捷打开方式图标，查看里面的索引位置。  
 有的用户这里的目录是`BetterGI/BetterGI/xxx`，有的则是`BetterGI/xxx`，这并不会影响你的使用，不同的目录的产生原因是安装方式不同所致。  
