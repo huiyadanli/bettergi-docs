@@ -21,8 +21,8 @@ order: 40
 
 ## 在线版仓库
 
-链接：[https://s.bettergi.com/](https://s.bettergi.com/)
-> 旧版域名bgi.sh已进入过期保护，将在未来重新回归作为主要在线仓库地址，请注意更换使用
+地址：[https://bgi.sh/](https://bgi.sh/)  
+备用地址：[https://s.bettergi.com/](https://s.bettergi.com/)  
 
 在使用`在线仓库`订阅脚本时，请确保你的`本地仓库`已更新为最新版，即左下角的最近更新时间与`本地仓库`一致。
 
