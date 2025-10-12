@@ -65,25 +65,19 @@ JavaScript接受`ArtifactStat`作为入参；必须对`Output`赋值一个布尔
 匹配副词条中既有“攻击力+数字”，又有“防御力+数字”属性的圣遗物：
 
 ```js
-(async function (artifact) {
-    var hasATK = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'ATK');
-    var hasDEF = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'DEF');
-    Output = hasATK && hasDEF;
-})(ArtifactStat);
+var hasATK = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'ATK');
+var hasDEF = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'DEF');
+Output = hasATK && hasDEF;
 ```
 
 定义“生命值+数字”、“攻击力+数字”和“防御力+数字”为 *无效副词条* 。匹配包含两个及以上 *无效副词条* 的圣遗物：
 
 ```js
-(async function (artifact) {
-  const uselessMinorAffixesCount = Array.from(artifact.MinorAffixes).reduce((prev, curr) => {
-    return (curr.Type == 'ATK' || curr.Type == 'DEF' || curr.Type == 'HP') ? prev + 1 : prev;
-  }, 0);
-  Output = (uselessMinorAffixesCount >= 2);
-})(ArtifactStat);
+const uselessMinorAffixesCount = Array.from(artifact.MinorAffixes).reduce((prev, curr) => {
+  return (curr.Type == 'ATK' || curr.Type == 'DEF' || curr.Type == 'HP') ? prev + 1 : prev;
+}, 0);
+Output = (uselessMinorAffixesCount >= 2);
 ```
-
-请注意：**头尾两行（函数声明和调用）必须原封不动地保留！！！**
 
 ### 关于按套装筛选
 
