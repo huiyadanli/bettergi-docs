@@ -7,7 +7,7 @@ BetterGI 内部有大量原神自动化基础能力的包装，并可以通过 J
 
 期望最终能够做到自动启动原神并完成所有脚本任务后自动关机。
 
-所有脚本存储在软件根目录 `User\JsScript` 路径下。脚本仓库：[bettergi-scripts-list](https://github.com/babalae/bettergi-scripts-list) ( repo/js 路径下)。脚本仓库在线版：[https://bgi.sh](https://bgi.sh)
+所有脚本存储在软件根目录 `User\JsScript` 路径下。脚本仓库：[bettergi-scripts-list](https://github.com/babalae/bettergi-scripts-list) ( repo/js 路径下)。  
 
 ## 使用示例
 
