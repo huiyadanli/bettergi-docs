@@ -22,9 +22,15 @@ order: 40
 ## 在线版仓库
 
 地址：[https://bgi.sh/](https://bgi.sh/)  
-备用地址：[https://s.bettergi.com/](https://s.bettergi.com/)  
+备用地址：[https://s.bettergi.com/](https://s.bettergi.com/)
 
-在使用`在线仓库`订阅脚本时，请确保你的`本地仓库`已更新为最新版，即左下角的最近更新时间与`本地仓库`一致。
+::: warning 注意
+
+在使用在线仓库订阅脚本时，请确保你的本地仓库已更新为最新版，即左下角的最近更新时间与本地仓库一致。  
+在线仓库仅是一个页面，显示的是来自云端仓库中的最新数据，当你订阅脚本时，仅仅是复制了该脚本的文件路径，
+由BetterGI在本地已经下载的脚本仓库中复制对应的脚本文件至你的[User](/feats/append/files.html)文件夹下。因此，使用时确保本地仓库为最新版**至关重要**！
+
+:::
 
 ## 使用教程
 
@@ -220,3 +226,16 @@ order: 40
 1. `本地仓库`页面的`README`文件内容从本地文件中直接获取，加载较快
 2. `在线仓库`页面的`README`文件从`Github`仓库通过网络获取，可能会出现超时
 3. 在本页面的`README`渲染中，进行过一些特殊处理，也提供了个别额外功能，供开发者使用。在编写`README`时，可以在`markdown`语句中通过`iframe`引入你自己的`html`文件以达到内嵌的效果，但由于跨域限制，只能在`本地仓库`页面使用。使用时，请将`html`文件放置在你的资源目录中，通过`iframe`调用它。相信配合`iframe`你能进一步发挥`README`的功能性。
+
+
+## 常见问题
+
+#### ❓为什么我脚本仓库页面打开是空白的，也没有报错?
+如果没有任何报错，只有白屏或黑屏，那极大概率是你的webview2需要更新（安装）了。请前往[webview2官网](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2?ch=1&form=MA13LH#download)，点击第一个卡片中的download以下载。  
+成功下载好更新程序后，请务必使用管理员方式运行，否则即使显示完成了也无法成功更新！
+
+#### ❓更新仓库报错"The process cannot access the file 'pack_git2_xxxxxxx' because it is being used by another process."
+更新仓库过程中请不要关闭界面，耐心等待进度完成，否则就可能会触发此类文件占用情况。遇到这种情况时，只需要关闭你的BGI，然后重新打开，更新仓库即可。
+
+#### ❓更新仓库报错"failed to connect to github.com"
+如果你不是一名魔法师，请不要选择github作为你的更新渠道，因为这不是国内平台，连接不稳定。

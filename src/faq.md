@@ -177,7 +177,3 @@ BGI提供了一个选项，开启后即可正常计时，该选项位于“同�
 #### ❓XXX角色能够识别了吗？XXX功能能用了吗？
 针对本体的角色识别、自动钓鱼、地图识别等功能，如出现bug或原神版本更新有新资源，问题较大的几乎都会在下一次更新中新增或修复，请查看[更新日志](https://github.com/babalae/better-genshin-impact/releases)以确定是否有你想要的东西。  
 若你在相关社区（QQ群或QQ频道）中，也可以通过群公告与频道公告查看。
-
-#### ❓为什么我脚本仓库页面打开是空白的，也没有报错?
-如果任何报错没有，只有白屏或黑屏，那极大概率是你的webview2需要更新（安装）了。请前往[webview2官网](https://developer.microsoft.com/zh-cn/microsoft-edge/webview2?ch=1&form=MA13LH#download)，点击第一个卡片中的download以下载。  
-成功下载好更新程序后，请务必使用管理员方式运行，否则不会更新成功！
