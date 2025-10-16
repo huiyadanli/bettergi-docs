@@ -33,8 +33,9 @@ order: 20
   * [自动伐木](/feats/task/felling.html)
   * [自动战斗](/feats/task/domain.html)
   * [自动秘境](/feats/task/domain.html)
-  * [自动音游](/feats/task/music.html)
   * [全自动钓鱼(AI)](/feats/task/fish.html)
+  * [自动音游](/feats/task/music.html)
+  * [分解圣遗物](/feats/autos/task/artifactSalvage.html)
 * 辅助操控
   * [一键宏](/feats/macro/onem.html)
   * [那维莱特 - 转圈圈](/feats/macro/other.html#%E9%82%A3%E7%BB%B4%E8%8E%B1%E7%89%B9-%E8%BD%AC%E5%9C%88%E5%9C%88)
@@ -45,5 +46,10 @@ order: 20
   * [Javascript 脚本](/feats/autos/jsscript.html)
   * [地图追踪](/feats/autos/pathing.html)
   * [键鼠录制](/feats/autos/kmscript.html)
+  * [脚本仓库](/feats/autos/srepo.html)
 * 命令行
   * [命令行启动](/feats/command/introduce.html)
+* 附录
+  * [分辨率支持](/feats/append/resolution.html) 
+  * [虚拟键代码表](/feats/append/keycodes.html)
+  * [本地文件](/feats/append/files.html) 
