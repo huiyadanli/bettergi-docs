@@ -44,12 +44,12 @@
 
 ### 电脑打开【[企业微信网页版后台](https://work.weixin.qq.com/wework_admin/frame#/profile/wxPlugin)】
 
-##### 用`企业微信`扫码登录，选择你`新建的企业名` 
+##### 用`企业微信`扫码登录，选择你`新建的企业名`
 
 ------
 
 <img style="zoom:200%;" alt="IMG10" src="https://github.com/user-attachments/assets/248f97dd-1fe3-4888-9180-0699222c420c" />
-  
+
 
 ### 只想使用`普通微信`的用户，就可以卸载`企业微信`，用企业微信的用户，就可以切回自己工作的企业
 

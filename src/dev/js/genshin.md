@@ -60,6 +60,20 @@ const dpiScale = genshin.screenDpiScale;
   - `x` (`string`): 目标位置的X坐标
   - `y` (`string`): 目标位置的Y坐标
   - `force` (`bool`): 是否强制传送
+
+### tp(double x, double y, string mapName, bool force)
+- 返回类型: `Task`
+- 描述: 传送到指定位置（指定地图）
+- 参数:
+  - `x` (`double`): 目标位置的X坐标
+  - `y` (`double`): 目标位置的Y坐标
+  - `mapName` (`string`): 地图名称，支持以下值：
+    - `"Teyvat"` - 提瓦特大陆
+    - `"TheChasm"` - 层岩巨渊
+    - `"Enkanomiya"` - 渊下宫
+    - `"SeaOfBygoneEras"` - 旧日之海
+    - `"AncientSacredMountain"` - 远古圣山
+  - `force` (`bool`): 是否强制传送
   
 ### tpToStatueOfTheSeven()
 - 返回类型: `Task`
@@ -133,6 +147,51 @@ await genshin.tpToStatueOfTheSeven();
 - 参数: 无
 - 异常:
   - `InvalidOperationException`: 当不在主界面时抛出此异常
+
+### getPositionFromMap(string mapName, int cacheTimeMs)
+- 返回类型: `Point2f`
+- 描述: 获取当前在小地图上的位置坐标（带缓存）
+- 参数:
+  - `mapName` (`string`): 地图名称，支持以下值：
+    - `"Teyvat"` - 提瓦特大陆
+    - `"TheChasm"` - 层岩巨渊
+    - `"Enkanomiya"` - 渊下宫
+    - `"SeaOfBygoneEras"` - 旧日之海
+    - `"AncientSacredMountain"` - 远古圣山
+  - `cacheTimeMs` (`int`): 缓存时间，单位毫秒，默认900ms
+- 备注:
+  - 如果缓存时间内有匹配成功的坐标优先返回缓存坐标
+  - 否则调用NavigationInstance的getPositionStable
+
+### getPositionFromMap(string mapName, float x, float y)
+- 返回类型: `Point2f`
+- 描述: 获取当前在小地图上的位置坐标（局部匹配）
+- 参数:
+  - `mapName` (`string`): 地图名称，支持以下值：
+    - `"Teyvat"` - 提瓦特大陆
+    - `"TheChasm"` - 层岩巨渊
+    - `"Enkanomiya"` - 渊下宫
+    - `"SeaOfBygoneEras"` - 旧日之海
+    - `"AncientSacredMountain"` - 远古圣山
+  - `x` (`float`): 世界坐标x
+  - `y` (`float`): 世界坐标y
+- 备注:
+  - 局部匹配，需要世界坐标，在坐标附近匹配
+  - 失败不进行全局匹配
+
+### moveIndependentMapTo(int x, int y, string mapName, string? forceCountry)
+- 返回类型: `Task`
+- 描述: 移动独立大地图到指定坐标
+- 参数:
+  - `x` (`int`): 目标X坐标
+  - `y` (`int`): 目标Y坐标
+  - `mapName` (`string`): 指定要移动的大地图，支持以下值：
+    - `"Teyvat"` - 提瓦特大陆
+    - `"TheChasm"` - 层岩巨渊
+    - `"Enkanomiya"` - 渊下宫
+    - `"SeaOfBygoneEras"` - 旧日之海
+    - `"AncientSacredMountain"` - 远古圣山
+  - `forceCountry` (`string?`): 强制指定移动大地图时先切换的国家，默认为null
 ```
 // 移动大地图到指定坐标
 await genshin.moveMapTo(1000, 2000);

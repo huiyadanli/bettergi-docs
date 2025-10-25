@@ -11,6 +11,8 @@ order: 41
 
 再通过 `ImageRegion` 内自带的 `find`、`findMulti` 找图、OCR等操作
 
+⚠️请注意，当你在使用获取图像相关的接口时，务必关注**Dispose**方法的使用，如高频调用图像获取，可能会造成**内存溢出**等严重后果！
+
 ### captureGameRegion()
 - 返回类型: `ImageRegion`
 - 描述: 捕获游戏区域的图像
@@ -183,6 +185,10 @@ for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，�
 - 描述: 检查区域是否为空
 - 返回: `bool` 类型，表示区域是否为空
 
+### Dispose()
+- 描述: 释放区域占用的资源
+- 备注: 建议在使用完区域对象后调用此方法释放内存
+
 
 # ImageRegion 类
 
@@ -253,6 +259,10 @@ for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，�
 - 支持:
   - 模板匹配（多个返回） `RecognitionTypes.TemplateMatch`
   - OCR 识别（多个返回） `RecognitionTypes.Ocr`
+
+### Dispose()
+- 描述: 释放图像区域占用的资源
+- 备注: 建议在使用完图像区域对象后调用此方法释放内存
 
   
 # RecognitionObject 类
@@ -361,3 +371,160 @@ for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，�
   - `w` (`double`): 宽度
   - `h` (`double`): 高度
 - 返回: 新的OCR区域的 `RecognitionObject` 对象
+
+## Mat 类
+
+OpenCV Mat 矩阵对象，用于图像处理。
+
+### 属性
+
+### Width
+- 类型: `int`
+- 描述: 图像宽度
+
+### Height
+- 类型: `int`
+- 描述: 图像高度
+
+### Channels
+- 类型: `int`
+- 描述: 图像通道数
+
+### 方法
+
+### Dispose()
+- 描述: 释放 Mat 对象占用的内存资源
+- 备注: 建议在使用完 Mat 对象后调用此方法释放内存
+
+### CvtColor(ColorConversionCodes code)
+- 描述: 转换图像颜色空间
+- 参数:
+  - `code` (`ColorConversionCodes`): 颜色转换代码
+- 返回: 新的 Mat 对象
+
+### Threshold(double thresh, double maxval, ThresholdTypes type)
+- 描述: 图像阈值处理
+- 参数:
+  - `thresh` (`double`): 阈值
+  - `maxval` (`double`): 最大值
+  - `type` (`ThresholdTypes`): 阈值类型
+- 返回: 新的 Mat 对象
+
+## Point2f 类
+
+表示二维浮点坐标点。
+
+### 属性
+
+### X
+- 类型: `float`
+- 描述: X 坐标
+
+### Y
+- 类型: `float`
+- 描述: Y 坐标
+
+### 构造函数
+
+### Point2f(float x, float y)
+- 描述: 创建指定坐标的点
+- 参数:
+  - `x` (`float`): X 坐标
+  - `y` (`float`): Y 坐标
+
+## 完整示例
+
+```js
+(async function() {
+  try {
+    // 获取游戏截图
+    const captureRegion = captureGameRegion();
+    
+    // 进行图像处理
+    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.ColorConversionCodes.BGR2GRAY);
+    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.ThresholdTypes.Binary);
+    
+    // 获取坐标
+    const position = genshin.getPositionFromMap();
+    log.info(`当前位置: X=${position.X}, Y=${position.Y}`);
+    
+    // 释放资源
+    grayMat.Dispose();
+    threshold.Dispose();
+    captureRegion.Dispose();
+    
+  } catch (error) {
+    log.error(`图像处理失败: ${error.message}`);
+  }
+})();
+```
+
+## OpenCvSharp 类
+
+OpenCV 图像处理库的 JavaScript 接口。
+
+### 常用常量
+
+### ColorConversionCodes
+- 描述: 颜色转换代码枚举
+- 常用值:
+  - `BGR2GRAY` - BGR转灰度
+  - `BGR2RGB` - BGR转RGB
+  - `BGR2HSV` - BGR转HSV
+
+### ThresholdTypes
+- 描述: 阈值处理类型枚举
+- 常用值:
+  - `Binary` - 二值化
+  - `BinaryInv` - 反向二值化
+  - `Trunc` - 截断
+
+### TemplateMatchModes
+- 描述: 模板匹配算法枚举
+- 常用值:
+  - `CCoeffNormed` - 归一化相关系数
+  - `CCorrNormed` - 归一化相关
+  - `SQDiffNormed` - 归一化平方差
+
+## 完整示例
+
+```js
+(async function() {
+  try {
+    // 获取游戏截图
+    const captureRegion = captureGameRegion();
+    
+    // 进行图像处理
+    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.ColorConversionCodes.BGR2GRAY);
+    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.ThresholdTypes.Binary);
+    
+    // 模板匹配
+    const template = file.readImageMatSync("assets/template.png");
+    const recognitionObject = RecognitionObject.TemplateMatch(template);
+    const result = captureRegion.Find(recognitionObject);
+    
+    if (!result.IsEmpty()) {
+      log.info(`找到目标，位置: (${result.X}, ${result.Y})`);
+      result.Click();
+    }
+    
+    // 释放资源
+    grayMat.Dispose();
+    threshold.Dispose();
+    template.Dispose();
+    captureRegion.Dispose();
+    
+  } catch (error) {
+    log.error(`图像处理失败: ${error.message}`);
+  }
+})();
+```
+
+## 注意事项
+
+1. **内存管理**：使用完 Mat 对象后务必调用 `Dispose()` 方法释放内存
+2. **资源释放**：ImageRegion 和 Region 对象也需要调用 `Dispose()` 方法
+3. **坐标系统**：Point2f 使用浮点坐标，精度更高
+4. **图像处理**：Mat 对象支持各种 OpenCV 图像处理操作
+5. **错误处理**：建议使用 try-catch 处理可能的异常
+6. **常量使用**：使用 OpenCvSharp 常量进行图像处理操作

@@ -48,7 +48,7 @@
 
 
 ## 启动本地远程连接
-### 使用 RDP_CnC 打开windows自带的本地远程
+### 使用RDP_CnC 打开windows自带的本地远程
 完成上述配置后，您可通过以下简易步骤建立远程连接：
 - 打开 RDP_CnC.exe 程序界面；
 
@@ -91,7 +91,7 @@
 
 ![c4446d5cfe832d4eafac3f184d64ac77](https://github.com/user-attachments/assets/4b838090-7866-465f-883d-1be7d2407048)
 
-### 2. RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
+### 2.  RDP Wrapper 提示 `Not Support` 、通过 Q&A 1. 确定自己的版本不受支持或者更新Windows版本之后 RDP Wrapper 不再可用怎么办？
 - 首先尝试点击 `RDP_CnC.exe` 中的 `Update INI` ，这会通过直连 github 尝试更新  `rdpwrap.ini` 文件。若失败，尝试从 github 上下载最新的 [rdpwrap.ini](https://github.com/sebaxakerhtc/rdpwrap.ini) 替换 `C:\Program Files\RDP Wrapper\rdpwrap.ini` 文件。
 - 若如果通过 Q&A 1. 中的方法确定新的  `rdpwrap.ini` 文件中仍然是不支持的 Windows 版本，尝试使用工具 [RDPWrapOffsetFinder](https://github.com/llccd/RDPWrapOffsetFinder)。使用方法，下载解压之后，在下载的目录打开 cmd：
 
@@ -140,10 +140,8 @@
 
 ### 9. 使用本地远程时频繁出现以下提醒怎么办？
 ![错误提示](https://github.com/user-attachments/assets/7f64ad91-6846-4de1-a464-1aac073362df)
-- 在脚本仓库订阅 `1Remote_RDP_Autoreconnection` 参考其中的 `README.md` 配置。
 
-### 10. 在 RDP 环境下执行地图追踪时，转视角大幅度摆动或接近路径点不精准怎么办？
-- 请在游戏设置中关闭垂直同步并将帧速率设置为 60FPS，地图追踪需在 60FPS 下运行。使用 RDP 时，默认的帧率限制为 30FPS 若在游戏设置中开启了 `垂直同步` 选项，即使游戏内帧率设置为 60FPS，游戏也将以 RDP 默认的 30FPS 而非期望中的 60FPS 作为最大帧速率。
+在脚本仓库订阅 `1Remote_RDP_Autoreconnection` 参考其中的 `README.md` 配置。
 
 
 

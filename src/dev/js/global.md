@@ -86,6 +86,11 @@ keyUp("w");
 ### middleButtonUp()
 - 描述: 释放鼠标中键
 
+### verticalScroll(int scrollAmountInClicks)
+- 描述: 垂直滚动鼠标滚轮
+- 参数:
+  - `scrollAmountInClicks` (`int`): 滚动量，正数向上滚动，负数向下滚动
+
 ### captureGameRegion()
 - 返回类型: `ImageRegion`
 - 描述: 捕获游戏区域的图像，用于图像识别，具体见 [图像识别与OCR](/dev/js/rec.html)
