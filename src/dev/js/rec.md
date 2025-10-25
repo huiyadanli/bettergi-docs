@@ -11,6 +11,8 @@ order: 41
 
 再通过 `ImageRegion` 内自带的 `find`、`findMulti` 找图、OCR等操作
 
+⚠️请注意，当你在使用获取图像相关的接口时，务必关注**Dispose**方法的使用，如高频调用图像获取，可能会造成**内存溢出**等严重后果！
+
 ### captureGameRegion()
 - 返回类型: `ImageRegion`
 - 描述: 捕获游戏区域的图像
