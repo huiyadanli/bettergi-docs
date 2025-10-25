@@ -5,9 +5,10 @@ order: 60
 
 ## 任务调度 dispatcher
 
-### runTask()
+提供任务调度功能，支持实时任务和独立任务的执行。实时任务会在后台持续运行，而独立任务是前台单独执行的任务。  
+> 具体的[实时任务](#实时任务-realtimetimer)与[独立任务](#独立任务-solotask)配置已在下文给出
 
-调度实时任务和独立任务
+### 基本用法
 
 ```js
 // 启用自动拾取的实时任务
@@ -27,20 +28,270 @@ await dispatcher.runTask(new SoloTask("AutoGeniusInvokation"));
 await dispatcher.runTask(new SoloTask("AutoFishing"));
 ```
 
+## 方法
+
 ### addTimer(RealtimeTimer timer)
-- 描述: 添加实时任务
+- 描述: 添加实时任务，会清理之前的所有任务
 - 参数:
   - `timer` (`RealtimeTimer`): 实时任务触发器
+- 异常: 如果任务名称为空或添加失败会抛出异常
+
+### addTrigger(RealtimeTimer timer)
+- 描述: 添加实时任务，不会清理之前的任务
+- 参数:
+  - `timer` (`RealtimeTimer`): 实时任务触发器
+- 异常: 如果任务名称为空或添加失败会抛出异常
+
+### clearAllTriggers()
+- 描述: 清理所有实时任务
+- 参数: 无
 
 ### runTask(SoloTask soloTask)
 - 描述: 运行独立任务
 - 参数:
   - `soloTask` (`SoloTask`): 独立任务对象
 - 返回类型: `Task`
+- 异常: 如果任务对象为空或任务名称未知会抛出异常
 
 ### getLinkedCancellationToken()
 - 描述: （0.45.3新增）获取一个取消令牌，用于在多线程场景下取消任务
 - 返回类型: `CancellationToken`
+
+## 实时任务 RealtimeTimer
+
+实时任务会在后台持续运行，支持多种任务类型。
+
+### 构造函数
+
+### RealtimeTimer()
+- 描述: 创建空的实时任务对象
+
+### RealtimeTimer(string name)
+- 描述: 创建指定名称的实时任务
+- 参数:
+  - `name` (`string`): 任务名称
+
+### RealtimeTimer(string name, object config)
+- 描述: 创建带配置的实时任务
+- 参数:
+  - `name` (`string`): 任务名称
+  - `config` (`object`): 任务配置对象
+
+### 属性
+
+### Name
+- 类型: `string`
+- 描述: 实时任务名称
+
+### Interval
+- 类型: `int`
+- 描述: 任务执行间隔，单位毫秒，默认50ms
+
+### Config
+- 类型: `object`
+- 描述: 任务配置对象
+
+### 支持的任务类型
+
+#### AutoPick
+- 描述: 自动拾取任务，自动按F拾取掉落物、点击调查点、开宝箱等
+- 配置参数(Config):
+  - `forceInteraction` (`bool`): 是否强制交互，默认false
+    - `true`: 无视文本和图标，遇到F就点击
+    - `false`: 根据文本和图标判断是否点击F
+  - `textList` (`string[]`): 需要按F的文本列表，例如：
+    - `["F", "拾取", "对话", "调查", "开启"]` - 包含这些文本的选项会按F
+    - `["F"]` - 只按包含"F"的选项
+    - `[]` - 空数组，使用默认行为
+
+#### 其他实时任务
+以下任务类型仅支持实时模式，不支持配置参数：
+- **AutoSkip**: 自动跳过对话任务，自动跳过剧情对话、过场动画等
+- **AutoEat**: 自动吃食物任务，自动使用食物恢复生命值
+- **AutoWood**: 自动伐木任务，自动砍伐树木获取木材
+- **AutoFight**: 自动战斗任务，自动执行战斗操作
+- **AutoDomain**: 自动秘境任务，自动执行秘境挑战
+- **AutoFishing**: 自动钓鱼任务，自动执行钓鱼操作
+- **AutoGeniusInvokation**: 自动七圣召唤任务，自动执行七圣召唤对局
+
+## 独立任务 SoloTask
+
+独立任务是一次性执行的任务，支持多种任务类型和配置参数。
+
+### 构造函数
+
+### SoloTask(string name)
+- 描述: 创建指定名称的独立任务
+- 参数:
+  - `name` (`string`): 任务名称
+
+### SoloTask(string name, object config)
+- 描述: 创建带配置的独立任务
+- 参数:
+  - `name` (`string`): 任务名称
+  - `config` (`object`): 任务配置对象
+
+### 属性
+
+### Name
+- 类型: `string`
+- 描述: 独立任务名称
+
+### Config
+- 类型: `object`
+- 描述: 任务配置对象
+
+### 支持的任务类型
+
+#### 基础任务（无配置参数）
+- **AutoDomain**: 自动秘境任务
+- **AutoFight**: 自动战斗任务  
+- **AutoWood**: 自动伐木任务
+
+#### 配置任务（支持参数配置）
+
+##### AutoFishing
+- 描述: 自动钓鱼任务
+- 配置参数:
+  - `fishingTimePolicy` (`int`): 钓鱼时间策略，0=全天，1=白天，2=夜晚
+  - `throwRodTimeOutTimeoutSeconds` (`int`): 抛竿超时时间（秒）
+  - `wholeProcessTimeoutSeconds` (`int`): 整个任务超时时间（秒）
+
+##### AutoEat
+- 描述: 自动吃食物任务
+- 配置参数:
+  - `foodName` (`string`): 食物名称
+  - `foodEffectType` (`int`): 食物效果类型，1=攻击，2=冒险，3=防御
+  - 注意：`foodName` 和 `foodEffectType` 二选一
+
+##### AutoGeniusInvokation
+- 描述: 自动七圣召唤任务
+- 配置参数:
+  - `strategy` (`string`): 策略内容
+
+##### CountInventoryItem
+- 描述: 背包物品计数任务
+- 配置参数:
+  - `gridScreenName` (`string`): 背包标签名
+  - `itemName` (`string`): 单个物品名称
+  - `itemNames` (`string[]`): 物品名称数组
+  - 注意：`itemName` 和 `itemNames` 二选一
+
+## 完整示例
+
+### 实时任务示例
+
+```js
+(async function() {
+  try {
+    // 创建自动拾取任务（带配置）
+    const autoPickTimer = new RealtimeTimer("AutoPick", {
+      "forceInteraction": true,
+      "textList": ["F", "拾取", "对话", "调查"]
+    });
+    
+    // 创建自动跳过任务（无配置）
+    const autoSkipTimer = new RealtimeTimer("AutoSkip");
+    
+    // 添加到调度器（会清理之前的所有任务）
+    dispatcher.addTimer(autoPickTimer);
+    log.info("自动拾取任务已启动");
+    
+    // 等待一段时间
+    await sleep(30000);
+    
+    // 切换到自动跳过任务
+    dispatcher.addTimer(autoSkipTimer);
+    log.info("自动跳过任务已启动");
+    
+    // 等待一段时间
+    await sleep(20000);
+    
+    // 清理所有任务
+    dispatcher.clearAllTriggers();
+    log.info("所有实时任务已停止");
+    
+  } catch (error) {
+    log.error(`实时任务执行失败: ${error.message}`);
+  }
+})();
+```
+
+### 独立任务示例
+
+```js
+(async function() {
+  try {
+    // 执行自动秘境
+    log.info("开始执行自动秘境");
+    await dispatcher.runTask(new SoloTask("AutoDomain"));
+    log.info("自动秘境完成");
+    
+    // 执行自动钓鱼
+    log.info("开始执行自动钓鱼");
+    await dispatcher.runTask(new SoloTask("AutoFishing", {
+      "fishingTimePolicy": 0,
+      "throwRodTimeOutTimeoutSeconds": 30,
+      "wholeProcessTimeoutSeconds": 300
+    }));
+    log.info("自动钓鱼完成");
+    
+    // 执行自动吃食物
+    log.info("开始执行自动吃食物");
+    await dispatcher.runTask(new SoloTask("AutoEat", {
+      "foodName": "炸萝卜丸子"
+    }));
+    log.info("自动吃食物完成");
+    
+    // 计数背包物品
+    log.info("开始计数背包物品");
+    const result = await dispatcher.runTask(new SoloTask("CountInventoryItem", {
+      "gridScreenName": "Food",
+      "itemName": "炸萝卜丸子"
+    }));
+    log.info(`炸萝卜丸子数量: ${result}`);
+    
+  } catch (error) {
+    log.error(`独立任务执行失败: ${error.message}`);
+  }
+})();
+```
+
+### 混合使用示例
+
+```js
+(async function() {
+  try {
+    // 启动实时任务
+    dispatcher.addTimer(new RealtimeTimer("AutoPick"));
+    log.info("实时拾取任务已启动");
+    
+    // 执行独立任务
+    await dispatcher.runTask(new SoloTask("AutoDomain"));
+    log.info("自动秘境完成");
+    
+    // 继续执行其他独立任务
+    await dispatcher.runTask(new SoloTask("AutoFight"));
+    log.info("自动战斗完成");
+    
+    // 清理实时任务
+    dispatcher.clearAllTriggers();
+    log.info("所有任务完成");
+    
+  } catch (error) {
+    log.error(`任务执行失败: ${error.message}`);
+  }
+})();
+```
+
+## 注意事项
+
+1. **任务间隔**：实时任务默认50ms间隔，可根据需要调整
+2. **资源管理**：使用完后建议清理任务，避免内存泄漏
+3. **配置参数**：不同任务类型支持不同的配置参数
+4. **错误处理**：建议使用try-catch处理可能的异常
+5. **任务切换**：使用 `addTimer()` 会清理之前的任务，使用 `addTrigger()` 不会
+6. **性能影响**：实时任务会持续占用系统资源，建议在不需要时及时清理
 
 ## 相关任务对象
 
