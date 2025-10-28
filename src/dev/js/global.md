@@ -41,6 +41,14 @@ keyUp("w");
   - `height` (`int`): 游戏高度
   - `dpi` (`double`): DPI缩放比例，默认为1，假如你的显示器设置是150%缩放，那这个值就是1.5
 
+### getGameMetrics()
+- 描述: 获取脚本环境的游戏分辨率和DPI缩放
+- 返回类型：`number[]`
+- 示例：
+```js
+	var [width, height, dpi] = getGameMetrics();
+```
+
 ### moveMouseBy(int x, int y)
 - 描述: 移动鼠标相对于当前位置的偏移量
 - 参数:
