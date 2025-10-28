@@ -26,6 +26,12 @@ await dispatcher.runTask(new SoloTask("AutoWood"));
 await dispatcher.runTask(new SoloTask("AutoGeniusInvokation"));
 // 执行自动钓鱼(0.43.0新增)
 await dispatcher.runTask(new SoloTask("AutoFishing"));
+
+//执行自动秘境，支持传入参数
+await dispatcher.runAutoDomainTask(new AutoDomainParam());
+
+// 执行自动战斗，支持传入参数
+await dispatcher.runAutoFightTask(new AutoFightParam());
 ```
 
 ## 方法
@@ -56,6 +62,20 @@ await dispatcher.runTask(new SoloTask("AutoFishing"));
 ### getLinkedCancellationToken()
 - 描述: （0.45.3新增）获取一个取消令牌，用于在多线程场景下取消任务
 - 返回类型: `CancellationToken`
+
+### runAutoDomainTask()
+- 描述: 运行 独立任务-自动秘境
+- 参数:
+  - `param` (`AutoDomainParam`): 自动秘境参数对象
+  - `customCt ` (`CancellationToken`): 取消令牌（可选，默认null）
+- 异常: 如果参数对象为空会抛出异常
+
+### runAutoFightTask()
+- 描述: 运行 独立任务-自动战斗
+- 参数:
+  - `param` (`AutoFightParam`): 自动战斗参数对象
+  - `customCt ` (`CancellationToken`): 取消令牌（可选，默认null）
+- 异常: 如果参数对象为空会抛出异常
 
 ## 实时任务 RealtimeTimer
 
@@ -370,3 +390,62 @@ log.Info(`数量: ${JSON.stringify(result)}`);
 const resultDict = await dispatcher.runTask(new SoloTask("CountInventoryItem", { "gridScreenName": "Food", "itemNames": ["鸡豆花", "超级至尊披萨"] }));
 log.Info(`鸡豆花 数量: ${JSON.stringify(resultDict["鸡豆花"])}`);
 ```
+
+### AutoDomainParam 自动秘境参数对象
+默认使用本体设置的参数，但轮次是9999，可以初始化之后修改
+- 参数:
+  - `domainRoundNum`(`int`):(可选)默认为0,初始化时被重置为9999
+- 初始化之后的参数:
+  - `DomainRoundNum`(`int`): 秘境刷取轮数,0表示9999轮
+  - `PartyName`(`string`): 队伍名称
+  - `DomainName`(`string`):秘境名称
+  - `SundaySelectedValue`(`string`):限时副本全开时，副本在秘境UI上的序号（注意类型是string）
+  - `AutoArtifactSalvage`(`bool`):结束后是否自动分解圣遗物
+  - `MaxArtifactStar`(`string`):分解圣遗物的最大星级（注意类型是string）
+  - `SpecifyResinUse`(`bool`):是否指定树脂的使用次数
+  - `OriginalResinUseCount`(`int`):使用原粹树脂刷取副本次数
+  - `CondensedResinUseCount`(`int`):使用浓缩树脂刷取副本次数
+  - `TransientResinUseCount`(`int`):使用须臾树脂刷取副本次数
+  - `FragileResinUseCount`(`int`):使用脆弱树脂刷取副本次数
+- 方法:
+  - `SetCombatStrategyPath（）`：**设置要使用的战斗策略**
+    - 参数：
+      - `strategyName`(`string`) 同本体设置的格式，如："`群友分享\四神队(进阶版)`",为空则使用本体设置。可填"`根据队伍自动选择`"。
+
+  - `SetResinPriorityList()`：**设置使用树脂优先级的列表**
+    - 参数：`priorities`(`string[]`)
+      - `原粹树脂`|`浓缩树脂`|`须臾树脂`|`脆弱树脂` ：没有做参数校验，务必保证名称填写正确。
+
+### AutoFightParam 自动战斗参数对象
+默认使用本体设置的参数，可以初始化之后修改
+ - 参数：
+ - `strategyName`(`string`|`null`): （可选）设置要使用的战斗策略,例：`群友分享\四神队(进阶版)`
+ - 初始化之后的参数：
+   - `Timeout`(`int`): 战斗超时设置（单位：秒）
+   - `FightFinishDetectEnabled`(`bool`): 启用自动检测战斗结束
+   - `FinishDetectConfig.FastCheckEnabled`(`bool`): 启用更快检查战斗结束
+   - `FinishDetectConfig.FastCheckParams`(`string`): 更快检查结束战斗参数
+   - `FinishDetectConfig.CheckEndDelay`(`string`): 检查战斗结束的延时
+   - `FinishDetectConfig.BeforeDetectDelay`(`string`): 按键触发后检查延时（单位：秒，默认0.45秒）
+   - `FinishDetectConfig.RotateFindEnemyEnabled`(`bool`): 是否启用旋转寻找敌人
+   - `PickDropsAfterFightEnabled`(`bool`): 启用战斗后拾取掉落物
+   - `PickDropsAfterFightSeconds`(`int`): 自动拾取掉落物市场（单位：秒）
+   - `KazuhaPickupEnabled`(`bool`): 是否启用万叶拾取模式
+   - `ActionSchedulerByCd`(`string`): 根据技能CD优化出招人员
+   - `GuardianAvatar`(`string`): 盾奶角色配置（序号）
+   - `GuardianAvatarHold`(`bool`): 是否长按盾奶角色技能
+   - 还有几个参数因为0.52界面改了，忘了原本对应的功能，感兴趣可以去看本体代码
+
+``
+``
+
+``
+
+``
+
+
+
+``
+
+
+## dd
