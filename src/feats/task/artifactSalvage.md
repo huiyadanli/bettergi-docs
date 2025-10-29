@@ -65,8 +65,8 @@ JavaScript接受`ArtifactStat`作为入参；必须对`Output`赋值一个布尔
 匹配副词条中既有“攻击力+数字”，又有“防御力+数字”属性的圣遗物：
 
 ```js
-var hasATK = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'ATK');
-var hasDEF = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'DEF');
+const hasATK = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'ATK');
+const hasDEF = Array.from(ArtifactStat.MinorAffixes).some(affix => affix.Type == 'DEF');
 Output = hasATK && hasDEF;
 ```
 

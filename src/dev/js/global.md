@@ -46,7 +46,7 @@ keyUp("w");
 - 返回类型：`number[]`
 - 示例：
 ```js
-	var [width, height, dpi] = getGameMetrics();
+	const [width, height, dpi] = getGameMetrics();
 ```
 
 ### moveMouseBy(int x, int y)
@@ -117,7 +117,7 @@ keyUp("w");
 - 通过图像识别获取当前队伍角色，需要确保调用函数时位于主界面，并且是四人满编队伍。0.47.3 存在
 - 示例：
 ```js
-	var avatars = getAvatars();
+	const avatars = getAvatars();
 	for (let i=0; i<avatars.length; i++){
 		log.info(`第 ${i+1} 个角色为 ${avatars[i]}`);
 	}
