@@ -417,35 +417,38 @@ log.Info(`鸡豆花 数量: ${JSON.stringify(resultDict["鸡豆花"])}`);
       - `原粹树脂`|`浓缩树脂`|`须臾树脂`|`脆弱树脂` ：没有做参数校验，务必保证名称填写正确。
 
 ### AutoFightParam 自动战斗参数对象
-默认使用本体设置的参数，可以初始化之后修改
+默认使用本体设置的参数，可以初始化之后修改，按照设置界面上的顺序列出
  - 参数：
- - `strategyName`(`string`|`null`): （可选）设置要使用的战斗策略,例：`群友分享\四神队(进阶版)`
+   - `strategyName`(`string`|`null`): （可选）设置要使用的战斗策略,例：`群友分享\四神队(进阶版)`
  - 初始化之后的参数：
+   - `ActionSchedulerByCd`(`string`): 根据技能CD优化出招人员，例：`白术;钟离,12`
+   - 自动检测战斗结束
+     - `FightFinishDetectEnabled`(`bool`):启用自动检测战斗结束
+       - `FinishDetectConfig.FastCheckEnabled`(`bool`):  启用更快检查战斗结束
+         - `FinishDetectConfig.FastCheckParams`(`string`):  更快检查结束战斗参数
+       - `FinishDetectConfig.BeforeDetectDelay`(`string`): 按键触发后检查延时（单位：秒）
+       - `FinishDetectConfig.RotateFindEnemyEnabled`(`bool`): 启用旋转寻找敌人
+         - `CheckBeforeBurst`(`bool`):Q前检测
+         - `IsFirstCheck`(`bool`):尝试面敌
+         - `RotaryFactor`(`int`): 旋转速度
+       - `FinishDetectConfig.CheckEndDelay`(`string`):  检查战斗结束的延时
+     
+   - 盾奶位角色优先释放技能
+     - `GuardianAvatar`(`string`): 盾奶位角色在队伍中的位置（序号）
+     - `GuardianCombatSkip`(`bool`):E元素战技。 Q / E任一为`true`则禁用该角色战斗策略，并按对应值自动释放Q / E
+     - `BurstEnabled`(`bool`):Q元素爆发
+     - `GuardianAvatarHold`(`bool`): 是否长按盾奶角色技能
+   - 自动拾取掉落物
+     - `PickDropsAfterFightEnabled`(`bool`): 启用战斗后拾取掉落物
+     - `PickDropsAfterFightSeconds`(`int`): 自动拾取掉落物的时长（单位：秒）
+     - `KazuhaPickupEnabled`(`bool`): 聚集材料动作 （如果存在 `琴` / `万叶`）
+       - `QinDoublePickUp`(`bool`):角色 `琴` 二次拾取
+     - `BattleThresholdForLoot`（`int`）:拾取战斗人次阈值
+     - `OnlyPickEliteDropsMode`(`string`): 仅拾取精英掉落，仅支持以下两个参数,关闭可填 `Close`
+       - **有效值：**
+         - `AllowAutoPickupForNonElite` ：非精英允许自动拾取
+         - `DisableAutoPickupForNonElite`：非精英关闭自动拾取
+     - `KazuhaPartyName`(`string`):含有万叶的队伍名
    - `Timeout`(`int`): 战斗超时设置（单位：秒）
-   - `FightFinishDetectEnabled`(`bool`): 启用自动检测战斗结束
-   - `FinishDetectConfig.FastCheckEnabled`(`bool`): 启用更快检查战斗结束
-   - `FinishDetectConfig.FastCheckParams`(`string`): 更快检查结束战斗参数
-   - `FinishDetectConfig.CheckEndDelay`(`string`): 检查战斗结束的延时
-   - `FinishDetectConfig.BeforeDetectDelay`(`string`): 按键触发后检查延时（单位：秒，默认0.45秒）
-   - `FinishDetectConfig.RotateFindEnemyEnabled`(`bool`): 是否启用旋转寻找敌人
-   - `PickDropsAfterFightEnabled`(`bool`): 启用战斗后拾取掉落物
-   - `PickDropsAfterFightSeconds`(`int`): 自动拾取掉落物市场（单位：秒）
-   - `KazuhaPickupEnabled`(`bool`): 是否启用万叶拾取模式
-   - `ActionSchedulerByCd`(`string`): 根据技能CD优化出招人员
-   - `GuardianAvatar`(`string`): 盾奶角色配置（序号）
-   - `GuardianAvatarHold`(`bool`): 是否长按盾奶角色技能
-   - 还有几个参数因为0.52界面改了，忘了原本对应的功能，感兴趣可以去看本体代码
+   - `SwimmingEnabled`(`bool`):战斗中游泳检测
 
-``
-``
-
-``
-
-``
-
-
-
-``
-
-
-## dd
