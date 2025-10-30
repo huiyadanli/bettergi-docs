@@ -450,19 +450,7 @@ log.Info(`鸡豆花 数量: ${JSON.stringify(resultDict["鸡豆花"])}`);
          - `DisableAutoPickupForNonElite`：非精英关闭自动拾取
      - `KazuhaPartyName`(`string`):含有万叶的队伍名
    - `Timeout`(`int`): 战斗超时设置（单位：秒）
-   - `FightFinishDetectEnabled`(`bool`): 启用自动检测战斗结束
-   - `FinishDetectConfig.FastCheckEnabled`(`bool`): 启用更快检查战斗结束
-   - `FinishDetectConfig.FastCheckParams`(`string`): 更快检查结束战斗参数
-   - `FinishDetectConfig.CheckEndDelay`(`string`): 检查战斗结束的延时
-   - `FinishDetectConfig.BeforeDetectDelay`(`string`): 按键触发后检查延时（单位：秒，默认0.45秒）
-   - `FinishDetectConfig.RotateFindEnemyEnabled`(`bool`): 是否启用旋转寻找敌人
-   - `PickDropsAfterFightEnabled`(`bool`): 启用战斗后拾取掉落物
-   - `PickDropsAfterFightSeconds`(`int`): 自动拾取掉落物市场（单位：秒）
-   - `KazuhaPickupEnabled`(`bool`): 是否启用万叶拾取模式
-   - `ActionSchedulerByCd`(`string`): 根据技能CD优化出招人员
-   - `GuardianAvatar`(`string`): 盾奶角色配置（序号）
-   - `GuardianAvatarHold`(`bool`): 是否长按盾奶角色技能
    - `SwimmingEnabled`(`bool`):战斗中游泳检测
-   - 还有几个参数因为0.52界面改了，忘了原本对应的功能，感兴趣可以去看本体代码
+
 
 
