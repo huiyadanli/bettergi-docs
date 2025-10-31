@@ -267,6 +267,22 @@ log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`
 - 参数:
   - `fishingTimePolicy` (`int`): 钓鱼时间策略，默认为0
 
+### setTime(int hour, int minute, bool skip = false)
+- 返回类型: `Task`
+- 描述: 将派蒙页时钟调整到指定的游戏内时间
+- 参数:
+  - `hour` (`int`): 指定的小时，如设置6就调整到6点，24小时制
+  - `minute` (`int`): 指定的分钟，如设置30就调整到30分
+  - `skip` (`bool`): 是否跳过调整动画（目前跳过后暂时无法生效），默认为否
+
+### setTime(string hour, string minute, bool skip = false)
+- 返回类型: `Task`
+- 描述: 将派蒙页时钟调整到指定的游戏内时间
+- 参数:
+  - `hour` (`string`): 指定的小时，如设置"6"就调整到6点，24小时制
+  - `minute` (`string`): 指定的分钟，如设置"30"就调整到30分
+  - `skip` (`bool`): 是否跳过调整动画（目前跳过后暂时无法生效），默认为否
+
 ### relogin()
 - 返回类型: `Task`
 - 描述: 返回到登录界面并重新开门进入游戏（0.44新增）
