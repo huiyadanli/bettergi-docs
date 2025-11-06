@@ -114,17 +114,7 @@
 ![79a500a6872b69efe09540933817b0b4](https://github.com/user-attachments/assets/54415f20-fff9-4810-9e02-a5141ea34403)
 
 ### 4. 提示`与此计算机的连接数量是有限的，现在已经使用所有连接`
-- 这是因为默认情况下，Windows 允许每个用户最多连接 1 个会话。
-- 通过修改组策略可以增加允许的会话数量。
-- 打开组策略编辑器：`Win` + `R` → 输入 `gpedit.msc` → 回车。导航到以下路径：计算机配置 > 管理模板 > Windows 组件 > 远程桌面服务 > 远程桌面会话主机 > 连接，
-- 将 **限制连接数** 设置为允许的最大并发用户数（最大999999，建议大于3）。
-- 可选，**将远程桌面服务用户限制到单独的远程桌面服务会话**：`禁用`。
-![image](https://github.com/user-attachments/assets/868ef0af-928b-4acd-8bba-4743d38e6b14)
-- 系统是家庭版没有组策略？也可以使用 `PowerShell` 修改组策略，`Win` + `R` → 输入 `powershell` → 回车，输入下面的命令完成修改：
-  ```PowerShell
-  Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server" -Name "MaxInstanceCount" -Value 999999
-  ```
-  - 可以将999999修改为其他数字，建议大于3。
+- 参考Q&A 2。
 
 ### 5. 为什么使用本地远程玩游戏的时候无法转动视角？
 - 正常现象。远程桌面软件都用的是绝对鼠标逻辑，减少需要发生的包数目。
