@@ -4,10 +4,9 @@ icon: circle-question
 order: 40
 ---
 
-如果查看了本文档仍旧无法解决你的问题，可以在[Issue](https://github.com/babalae/better-genshin-impact/issues)查阅是否有相似问题，如果无相似问题可以通过Issue提问。
+如果查看了本文档仍旧无法解决你的问题，可以在[Issue](https://github.com/babalae/better-genshin-impact/issues)查阅是否有相似问题，如果无相似问题可以通过 Issue 提问。
 
 查阅文档没有结果，也可以通过[用户社区](/community.html)进行提问
-
 
 ### 1.怎么下载？
 
@@ -15,15 +14,18 @@ order: 40
 
 可以使用下面的公益加速服务：
 
-[https://moeyy.cn/gh-proxy/](https://moeyy.cn/gh-proxy/)
+[https://github.akams.cn/](https://github.akams.cn/)
 
-[https://github.abskoop.workers.dev/](https://github.abskoop.workers.dev/)
+[https://ghfile.geekertao.top/](https://ghfile.geekertao.top/)
 
-[https://gitmirror.com/files.html](https://gitmirror.com/files.html)
+[https://github.dpik.top/](https://github.dpik.top/)
+
+[https://gh.dpik.top/](https://gh.dpik.top/)
 
 或者更换其他下载方式。
 
-#### ❓找不到下载文件的位置？不知道下载哪个文件/版本？
+#### ❓ 找不到下载文件的位置？不知道下载哪个文件/版本？
+
 BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b>便携版</b>，不同版本除了打包与安装方式之外，无任何区别。
 
 在本页面额外提供了另外的安装版本，具体区别见下方说明。
@@ -32,15 +34,16 @@ BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b
 
 ![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
 
-* **安装版（新在线版）** 的文件名是 `BetterGI.OnlineInst.exe`，自动选择优路线下载并安装。（当前只在本页面提供）
-* **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
-* ~~**安装版** 的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。~~ （已不再提供）
-* **便携版** 的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
+- **安装版（新在线版）** 的文件名是 `BetterGI.OnlineInst.exe`，自动选择优路线下载并安装。（当前只在本页面提供）
+- **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
+- ~~**安装版** 的文件名是 `BetterGI_Setup_v版本号.exe`，安装后会自动在开始菜单创建快捷方式。如果你不知道解压缩是什么操作，请使用这个版本。~~ （已不再提供）
+- **便携版** 的文件名是 `BetterGI_v版本号.7z` （老版本是`zip`压缩包），解压并运行 `BetterGI.exe` 即可。
 
 有更高版本号的情况下优先下载更高版本号的 BetterGI！
 
 ### 2.怎么启动？
-#### ❓启动软件提示`You must install .NET Desktop Runtime to run this application`？
+
+#### ❓ 启动软件提示`You must install .NET Desktop Runtime to run this application`？
 
 提示如图：
 
@@ -50,58 +53,70 @@ BetterGI 需要安装 .NET 8 运行时才能运行，请根据提示安装，否
 
 没有提示，也进不去？手动安装下载：[.NET 8 运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer)
 
-#### ❓无论是自动拾取，还是自动剧情都没反应，也没有日志打印。
+#### ❓ 无论是自动拾取，还是自动剧情都没反应，也没有日志打印。
+
 在启动页内尝试更换截图方式。
 
 ### 3.无法使用
-#### ❓云原神无法使用？
-请注意当前只支持PC端云原神，**不支持网页版云原神**。使用时请注意：
+
+#### ❓ 云原神无法使用？
+
+请注意当前只支持 PC 端云原神，**不支持网页版云原神**。使用时请注意：
+
 1. 只能使用 `WindowsGraphicsCapture` 的截图方式
 2. 云原神有三个窗口，可能自动识别到的窗口不正确，请使用“启动”页中的“手动选择窗口”功能来选择正确的云原神窗口
 
-#### ❓以前好好的，突然所有功能不能用了？
+#### ❓ 以前好好的，突然所有功能不能用了？
+
 如果你使用的截图方式是 `BitBlt` ，大概率是 Win11 更新导致 窗口化游戏优化 自动开启。
 
 BetterGI 启动后会自动修改 窗口化游戏优化 为关闭状态，但是在原神启动状态下的修改是不会实时生效的，也就是说：**你只需要重启原神后重试即可！**
 
-更多相关内容可以见此Issue：[Win11下 BitBlt截图方式不可用的解决方法](https://github.com/babalae/better-genshin-impact/issues/92)
+更多相关内容可以见此 Issue：[Win11 下 BitBlt 截图方式不可用的解决方法](https://github.com/babalae/better-genshin-impact/issues/92)
 
-#### ❓使用自动拾取的时候能看到拾取的日志，但是没有按F键拾取？
+#### ❓ 使用自动拾取的时候能看到拾取的日志，但是没有按 F 键拾取？
+
 1. 请确认是以管理员权限启动软件。
-2. 模拟操作部分可能被部分安全软件拦截，请关闭安全软件或加入白名单！已知 360安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
+2. 模拟操作部分可能被部分安全软件拦截，请关闭安全软件或加入白名单！已知 360 安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
 
-#### ❓自动拾取可以使用，为什么自动剧情没反应？
+#### ❓ 自动拾取可以使用，为什么自动剧情没反应？
+
 游戏内的自动剧情功能打开时，BetterGI 的自动剧情才会启用。也就是游戏左上角的“自动”按钮处于“播放中”状态。
 
-#### ❓为何软件会闪退？
-一般为内存不足导致的，可能是js脚本造成的内存溢出。  
+#### ❓ 为何软件会闪退？
+
+一般为内存不足导致的，可能是 js 脚本造成的内存溢出。  
 最简单的解决方法是添加内存，当然也可以通过添加虚拟内存解决。  
 ![](https://github.com/user-attachments/assets/fdde4313-b6e1-4132-afd9-7b8cef23e7ab)
 
-#### ❓B服登录卡住，无法使用自动伐木/好感？
-在非官服场景下，像B服这种登录窗口属于内嵌窗口，会因为windows系统缩放倍率发生微小变化，如果是登录页面点不到登录按钮的情况，请把你的系统缩放倍率改为100%。
+#### ❓B 服登录卡住，无法使用自动伐木/好感？
 
-#### ❓为什么我运行软件后没有反应，一条龙或脚本无法运行？
-请确保你的原神没有被其他悬浮窗软件遮挡，例如显示显卡温度、cpu温度、cpu占用等悬浮窗，这些窗口会遮挡游戏内容影响识别，能不开尽量不要开启。
+在非官服场景下，像 B 服这种登录窗口属于内嵌窗口，会因为 windows 系统缩放倍率发生微小变化，如果是登录页面点不到登录按钮的情况，请把你的系统缩放倍率改为 100%。
+
+#### ❓ 为什么我运行软件后没有反应，一条龙或脚本无法运行？
+
+请确保你的原神没有被其他悬浮窗软件遮挡，例如显示显卡温度、cpu 温度、cpu 占用等悬浮窗，这些窗口会遮挡游戏内容影响识别，能不开尽量不要开启。
 
 ### 4.报错相关
 
-#### ❓更新提示 "创建下载会话失败:Error: DFS2 metadata not loaded"
-如下图，出现这个提示时，表示新版本才刚刚发布，新版BGI的资源还未开始分发，也就是还没上传到服务器。等待作者上传好后便可以再次运行安装程序更新了。  
+#### ❓ 更新提示 "创建下载会话失败:Error: DFS2 metadata not loaded"
+
+如下图，出现这个提示时，表示新版本才刚刚发布，新版 BGI 的资源还未开始分发，也就是还没上传到服务器。等待作者上传好后便可以再次运行安装程序更新了。  
 ![资源未上传](assets/faq/no_DSF2.png)
 
-#### ❓报错提示 "Some simulated input commands were not sent successfully..." 或 "模拟键鼠消息发送失败！..."
+#### ❓ 报错提示 "Some simulated input commands were not sent successfully..." 或 "模拟键鼠消息发送失败！..."
 
 早期版本提示 "Some simulated input commands were not sent successfully..."
 
 最新版本提示 "模拟键鼠消息发送失败！..."
 
-模拟操作部分可能被部分安全软件拦截，请关闭安全软件或加入白名单！已知 360安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
+模拟操作部分可能被部分安全软件拦截，请关闭安全软件或加入白名单！已知 360 安全卫士、提高了拦截强度的 WindowsDefender 会拦截部分类型的模拟点击。
 
-#### ❓任务结束后提示"没有检测到Starward协议注册"
-[Starward](https://github.com/Scighost/Starward)是一款米哈游旗下游戏的第三方启动器，该启动器内有游戏时间记录功能，当使用Starward的自定义启动程序启动BGI时，计时功能会失效。
+#### ❓ 任务结束后提示"没有检测到 Starward 协议注册"
 
-BGI提供了一个选项，开启后即可正常计时，该选项位于“同时启动原神”下。
+[Starward](https://github.com/Scighost/Starward)是一款米哈游旗下游戏的第三方启动器，该启动器内有游戏时间记录功能，当使用 Starward 的自定义启动程序启动 BGI 时，计时功能会失效。
+
+BGI 提供了一个选项，开启后即可正常计时，该选项位于“同时启动原神”下。
 
 如果你没有安装 Starward 并开启了这个选项，就会出现这个提示。
 
@@ -111,74 +126,85 @@ BGI提供了一个选项，开启后即可正常计时，该选项位于“同�
 
 ![](https://img.alicdn.com/imgextra/i1/2042484851/O1CN01OhV0qp1lhoMyxY401_!!2042484851.jpg)
 
-#### ❓首次启动时，任意功能没反应/七圣召唤卡卡在“选择初始手牌”/自动钓鱼没有“进入自动钓鱼”日志
-在启动页内尝试更换截图方式。可以先测试自动拾取，完全没日志打印的话，换截图方式重试。不断的打印物品日志但是不按F拾取的话，请关闭安全软件。
+#### ❓ 首次启动时，任意功能没反应/七圣召唤卡卡在“选择初始手牌”/自动钓鱼没有“进入自动钓鱼”日志
 
-#### ❓使用其他软件解锁120帧后软件失效？
+在启动页内尝试更换截图方式。可以先测试自动拾取，完全没日志打印的话，换截图方式重试。不断的打印物品日志但是不按 F 拾取的话，请关闭安全软件。
+
+#### ❓ 使用其他软件解锁 120 帧后软件失效？
+
 在启动页内尝试更换截图方式。
 
 #### ❓Windows 11 下，无法使用 `BitBlt` 截图方式？
+
 参考：[#92](https://github.com/babalae/better-genshin-impact/issues/92) 设置后重试。但是修改这个设置后，可能会造成游戏性能下降。
 
-#### ❓提示“PaddleOcr预热失败”应该如何解决？
+#### ❓ 提示“PaddleOcr 预热失败”应该如何解决？
 
 造成这个问题原因有很多种，以下罗列相关的解决方式，请自行判断，如果依旧无法解决，可以提[Issue](https://github.com/babalae/better-genshin-impact/issues)并附上报错截图。
 
 关于这个问题的更多讨论：[#132](https://github.com/babalae/better-genshin-impact/issues/132)
 
-* 情况一：把 BetterGI 解压到了桌面或者中文路径下可能会出现这个问题（大部分系统不会出现这个问题），**请移动到非桌面的全英文路径下重试**。
-* 情况二：把系统编码修改成了 `UTF-8`，请修改回默认系统编码后重试。取消勾选下图中的选项即可。
+- 情况一：把 BetterGI 解压到了桌面或者中文路径下可能会出现这个问题（大部分系统不会出现这个问题），**请移动到非桌面的全英文路径下重试**。
+- 情况二：把系统编码修改成了 `UTF-8`，请修改回默认系统编码后重试。取消勾选下图中的选项即可。
 
 <img src="https://img.alicdn.com/imgextra/i3/2042484851/O1CN015buXNA1lhoDy0eQNI_!!2042484851.png" width="400"  alt=""/>
 
-* 情况三：
-    * case1:提示 `onnxruntime.dll: FAIL, handle=0` 的情况下，请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
-    * **case2:提示 Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A) 的情况下，也请安装VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)**
+- 情况三：
+  - case1:提示 `onnxruntime.dll: FAIL, handle=0` 的情况下，请安装 VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+  - **case2:提示 Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A) 的情况下，也请安装 VC++运行库，官方下载地址：[vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)**
 
 <img src="https://img.alicdn.com/imgextra/i1/2042484851/O1CN01IZWCZS1lhoDsGexCV_!!2042484851.png" width="400"  alt=""/>
 
-
-* 情况四：如下图提示 `onnxruntime.dll: OK, handle=0`,但是 `mkldnn.dll: FAlL, handle=0` 的情况下，说明 ONNX 可能用不了，只能补充其他方式进行使用。**请不要和情况三混淆！**。进入 [wwk.lanzouq.com/ioU1f1tvgnwd](https://wwk.lanzouq.com/ioU1f1tvgnwd) 后，下载并解压，然后把里面的4个dll放到软件根目录，并覆盖。参考：[#283](https://github.com/babalae/better-genshin-impact/issues/283)
+- 情况四：如下图提示 `onnxruntime.dll: OK, handle=0`,但是 `mkldnn.dll: FAlL, handle=0` 的情况下，说明 ONNX 可能用不了，只能补充其他方式进行使用。**请不要和情况三混淆！**。进入 [wwk.lanzouq.com/ioU1f1tvgnwd](https://wwk.lanzouq.com/ioU1f1tvgnwd) 后，下载并解压，然后把里面的 4 个 dll 放到软件根目录，并覆盖。参考：[#283](https://github.com/babalae/better-genshin-impact/issues/283)
 
 <img src="https://img.alicdn.com/imgextra/i2/2042484851/O1CN01PsmEhr1lhoG8SQ8tS_!!2042484851.png" width="400"  alt=""/>
 
+- 情况五：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
 
-* 情况五：缺失 windows sdk 也有可能出现这个报错，官方下载安装地址：[windows-sdk](https://developer.microsoft.com/zh-cn/windows/downloads/windows-sdk/)
+#### ❓ 报错提示“Could not find a part of the path：............."
 
-#### ❓报错提示“Could not find a part of the path：............."
-**如果你是首次运行bgi**请先启动运行一次程序，若无法解决该问题，请手动添加相应的文件夹  
+**如果你是首次运行 bgi**请先启动运行一次程序，若无法解决该问题，请手动添加相应的文件夹  
 **如果不会添加**请将文件删除干净，重新下载安装包，重新安装或解压，若仍然无法解决问题，请前往社区寻求帮助。
 
 #### ❓Error: NO_HASH_ALGO_ERR: No hash algorithm specified。
-解决方案：关掉后重试一次，手动运行BetterGl.update.exe（此时打开软件应该已经是最新版了）。如果还是不行，可以直接重新下载安装包安装。
+
+解决方案：关掉后重试一次，手动运行 BetterGl.update.exe（此时打开软件应该已经是最新版了）。如果还是不行，可以直接重新下载安装包安装。
 
 #### ❓Unable to load DLL 'onnxruntime'or one of its dependencies: 动态链接库(DLL)初始化例程失败。(0x8007045A)。
-解决方案：请安装VC++运行库，官方下载地址： https://aka.ms/vs/17/release/vc_redist.x64.exe
 
+解决方案：请安装 VC++运行库，官方下载地址： https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 ### 5.其他
-#### ❓重启后程序被删除了是什么情况？
+
+#### ❓ 重启后程序被删除了是什么情况？
+
 卸载的时候由于文件被占用等问题，会下次重启后删除。（卸载程序会提示：“存在部分文件删除失败，这些文件将在下次重启后自动删除。”）
 
 如果你不重启，然后使用新的安装包进行覆盖安装就会出现此类情况。
 
 如果只是为了更新 BetterGI，直接覆盖安装即可，无需卸载后重新安装！
 
-#### ❓为什么需要管理员权限？
+#### ❓ 为什么需要管理员权限？
+
 因为游戏是以管理员权限启动的，软件不以管理员权限启动的话没有权限模拟鼠标点击。
 
-软件双击打开会有UAC以管理员权限启动提示，如果无提示请 右键——以管理员权限启动 ，否则可能无法正常使用 BetterGI 。
+软件双击打开会有 UAC 以管理员权限启动提示，如果无提示请 右键——以管理员权限启动 ，否则可能无法正常使用 BetterGI 。
 
-#### ❓会不会封号？
-理论上不会被封。 **BetterGI 不会做出任何修改游戏文件、读写游戏内存等任何危害游戏本体的行为，单纯依靠视觉算法和模拟操作实现。** 但是mhy是自由的，用户条款上明确说明第三方软件/模拟操作是封号理由之一。当前方案还是存在被检测的可能。只能说请低调使用，请不要跳脸官方。  
+#### ❓ 会不会封号？
 
-#### ❓原神窗口花屏，出现竖条纹。
+理论上不会被封。 **BetterGI 不会做出任何修改游戏文件、读写游戏内存等任何危害游戏本体的行为，单纯依靠视觉算法和模拟操作实现。** 但是 mhy 是自由的，用户条款上明确说明第三方软件/模拟操作是封号理由之一。当前方案还是存在被检测的可能。只能说请低调使用，请不要跳脸官方。
+
+#### ❓ 原神窗口花屏，出现竖条纹。
+
 偶发性问题，可以用鼠标拖动游戏窗口晃一下。
 
-#### ❓为什么提示没有找到原神窗口
-在你确保使用了非云原神的情况下，可以先尝试手动指定原神窗口：
-* 手动指定窗口的位置在启动页下拉启动按钮的菜单中可以找到  
+#### ❓ 为什么提示没有找到原神窗口
 
-#### ❓XXX角色能够识别了吗？XXX功能能用了吗？
-针对本体的角色识别、自动钓鱼、地图识别等功能，如出现bug或原神版本更新有新资源，问题较大的几乎都会在下一次更新中新增或修复，请查看[更新日志](https://github.com/babalae/better-genshin-impact/releases)以确定是否有你想要的东西。  
-若你在相关社区（QQ群或QQ频道）中，也可以通过群公告与频道公告查看。
+在你确保使用了非云原神的情况下，可以先尝试手动指定原神窗口：
+
+- 手动指定窗口的位置在启动页下拉启动按钮的菜单中可以找到
+
+#### ❓XXX 角色能够识别了吗？XXX 功能能用了吗？
+
+针对本体的角色识别、自动钓鱼、地图识别等功能，如出现 bug 或原神版本更新有新资源，问题较大的几乎都会在下一次更新中新增或修复，请查看[更新日志](https://github.com/babalae/better-genshin-impact/releases)以确定是否有你想要的东西。  
+若你在相关社区（QQ 群或 QQ 频道）中，也可以通过群公告与频道公告查看。
