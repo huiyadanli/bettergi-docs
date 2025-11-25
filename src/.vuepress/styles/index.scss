@@ -1,1 +1,21 @@
 // place your custom styles here
+
+.vp-feature-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vp-feature-title .vp-icon{
+    width: 8rem;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.vp-feature-item.link:hover::before {
+    content: "➜";
+    display: block;
+    float: right;
+    position: absolute;
+    right: 1rem;
+}
