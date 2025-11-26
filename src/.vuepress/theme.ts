@@ -10,7 +10,7 @@ export default hopeTheme({
     //     url: "https://github.com/huiyadanli",
     // },
 
-    logo: "https://img.alicdn.com/imgextra/i2/2042484851/O1CN01LQfLIG1lhoEZwz1Gt_!!2042484851.png",
+    logo: "https://img.alicdn.com/imgextra/i3/2042484851/O1CN01BafDLu1lhoP3xOqGQ_!!2042484851.png",
 
     repo: "babalae/better-genshin-impact",
     docsRepo: "huiyadanli/bettergi-docs",

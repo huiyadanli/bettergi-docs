@@ -1,4 +1,8 @@
-# 本地远程多用户后台挂机指南
+---
+title: 本地远程多用户后台挂机指南
+order: 4
+---
+
 [RDP Wrapper CnC](https://github.com/sebaxakerhtc/rdpwrap) 是一个开源工具，用于在 Windows 系统上启用多用户远程桌面连接（RDP），适用于 Windows 7/8/10/11 系统。
 
 ::: important
