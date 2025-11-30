@@ -122,3 +122,30 @@ keyUp("w");
 		log.info(`第 ${i+1} 个角色为 ${avatars[i]}`);
 	}
 ```
+
+## 类型提示
+
+当开发脚本没有代码提示时，可以下载 [bettergi.d.ts](https://github.com/babalae/bettergi-scripts-list/blob/main/bettergi.d.ts) 到自己的JS文件夹根目录下。
+
+如果是 `Jetbrains` 的编辑器，它会自动识别根目录的 `bettergi.d.ts` 并进行代码提示，而 `vscode` 需要进行相关配置。
+
+### 通用方法
+
+如果编辑器无法自动识别，那么可以在 `main.js` 顶部添加：`/// <reference path="bettergi.d.ts" />`
+
+如下样例：
+```js
+/// <reference path="bettergi.d.ts" />
+
+(async function () {
+  // 所有的代码必须由 async function 包裹
+})();
+```
+
+以上配置能解决大部分编辑器没有提示的问题。
+
+::: warning
+
+脚本提交到中央仓库前请删除相关配置。
+
+:::
