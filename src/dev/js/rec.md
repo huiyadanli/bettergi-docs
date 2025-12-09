@@ -22,7 +22,7 @@ order: 41
 举例，模板匹配：
 ```js
 // 定义识别对象
-const paimonMenuRo = RecognitionObject.TemplateMatch(file.ReadImageMatSync("assets/paimon_menu.png"), 0, 0, genshin.width / 3.0, genshin.width / 5.0);
+const paimonMenuRo = RecognitionObject.TemplateMatch(file.ReadImageMatSync("assets/paimon_menu.png"), 0, 0, 640, 216);
 
 /**
  * 返回主界面，这里只做demo演示
