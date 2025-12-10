@@ -13,6 +13,8 @@ order: 20
 :::
 ---
 
+**文档现已拆分至[用户手册](/feats/)（见页面左侧侧边栏底部）。本页面仅作用户手册目录用途。若由于更新不及时或其他bug导致本页面内容与用户手册冲突，请以用户手册为准。**
+
 ## 新手上路
 
 如果你是第一次使用，请先阅读 [快速开始](/quickstart.html)
@@ -33,7 +35,8 @@ order: 20
   * [自动伐木](/feats/task/felling.html)
   * [自动战斗](/feats/task/domain.html)
   * [自动秘境](/feats/task/domain.html)
-  * [全自动钓鱼(AI)](/feats/task/fish.html)
+  * [自动幽境危战](/feats/task/stygian.html)
+  * [全自动钓鱼](/feats/task/fish.html)
   * [自动音游](/feats/task/music.html)
   * [分解圣遗物](/feats/autos/task/artifactSalvage.html)
 * 辅助操控
