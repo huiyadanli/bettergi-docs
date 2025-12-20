@@ -8,7 +8,7 @@ order: 20
 
 在剧情对话中，会快速模拟按下空格键跳过文本（可以开关此功能，喜欢听剧情语音的请关闭此功能），并在出现选项的时候自动选择选项（可以配置默认选哪个选项）。
 
-![自动剧情](https://github.com/user-attachments/assets/02c9464e-3e4e-4080-b82f-d46dd963f90a)
+![自动剧情](./assets/skip_autoskip.png)
 
 选项默认选择最后一项，可以通过配置修改为选择第一项或者随机选择。
 
@@ -29,13 +29,13 @@ order: 20
 
 自动剧情功能开启的情况下对话 凯瑟琳 ，如果存在橙色文字（有奖励待领取），会自动选择“领取『每日委托』奖励”/自动重新派遣探索。
 
-<img width="1125" height="750" alt="7ab566094042fbf68fc441a421b1707f" src="https://github.com/user-attachments/assets/dfda11e7-94b0-4d8d-8826-648569bbe7f6" />
+<img width="1125" height="750" alt="7ab566094042fbf68fc441a421b1707f" src="./assets/skip_kaiselin.png" />
 
 ### 自动邀约
 
 自动剧情开启的情况下此功能才会生效，自动选择邀约选项。
 
-<img width="1125" height="750" alt="57f96e017b9e60601fe84537c1c99383" src="https://github.com/user-attachments/assets/ac0e18d7-d997-4574-b4b3-2bb476f9828c" />
+<img width="1125" height="750" alt="57f96e017b9e60601fe84537c1c99383" src="./assets/skip_invitation.png" />
 
 > 若自动邀约文本无法运行，请提issue。
 > 自动邀约文本均为人工录入，可能会存在错漏，欢迎各位在使用过程中提出建议，我们会尽快修复。
