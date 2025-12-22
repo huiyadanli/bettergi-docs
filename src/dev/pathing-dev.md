@@ -150,10 +150,7 @@ order: 23
 
 ## 附录
 
-全地图传送点坐标合集，如果传送位置不对可以对照这个图看下。(最高到5.0版本，且和当前软件内置的传送点合集有区别)
+坐标汇总json文件：
 
-[https://wwmy.lanzouq.com/b0fosbd9g](https://wwmy.lanzouq.com/b0fosbd9g) 密码:coco
-
-
-
+[https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json)
 
