@@ -123,4 +123,4 @@ highlights:
         details: 录制与回放键盘鼠标脚本
         link: /feats/autos/kmscript.html
 copyright: false
-footer: <div class="adwork-net adwork-auto" data-id="1013" data-mode="staging"></div>
+footer: <div class="adwork-net adwork-auto" data-id="1013"></div>
