@@ -123,4 +123,4 @@ highlights:
         details: 录制与回放键盘鼠标脚本
         link: /feats/autos/kmscript.html
 copyright: false
-footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题强力驱动
+footer: <div class="adwork-net adwork-auto" data-id="1013" data-mode="staging"></div>
