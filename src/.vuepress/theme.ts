@@ -23,7 +23,7 @@ export default hopeTheme({
     // sidebar
     sidebar,
 
-    footer: "Made with ❤ by huiyadanli",
+    footer: '<div class="adwork-net adwork-auto" data-id="1013" data-mode="staging"></div>',
 
     displayFooter: true,
 
