@@ -50,7 +50,7 @@ highlights:
 
       - title: 自动剧情
         icon: https://img.alicdn.com/imgextra/i3/2042484851/O1CN01MZsE1Z1lhoQEOUCdE_!!2042484851.png
-        details: 快速跳过文本，自动选择对话选项，跳过黑屏，关闭书页显示等
+        details: 快速点击对话，自动选择对话选项，跳过黑屏，关闭书页显示等
         link: /feats/timer/skip.html
 
       - title: 每日委托奖励
