@@ -10,7 +10,11 @@ KeyMouseHook 类用于将键鼠事件回调暴露给 JavaScript 层，允许 JS 
 ## 获取对象
 
 ```javascript
-// keyMouseHook 已初始化，可直接使用
+// 需手动初始化 keyMouseHook
+const keyMouseHook = new KeyMouseHook()
+
+//脚本结束前，记得释放资源！
+keyMouseHook.dispose()
 ```
 
 ## 方法说明
@@ -35,12 +39,12 @@ KeyMouseHook 类用于将键鼠事件回调暴露给 JavaScript 层，允许 JS 
 ```javascript
 // 注册键盘按下事件，仅返回KeyCode
 keyMouseHook.OnKeyDown(function(keyCode) {
-    log.info("Key down:", keyCode);
+    log.info("Key down:{keyCode}", keyCode);
 });
 
 // 注册键盘释放事件，返回完整KeyData（包含组合键）
 keyMouseHook.OnKeyUp(function(keyData) {
-    log.info("Key up:", keyData);
+    log.info("Key up:{keyData}", keyData);
 }, false);
 ```
 
@@ -52,7 +56,7 @@ keyMouseHook.OnKeyUp(function(keyData) {
 
 **参数**：
 - `callback`：回调函数，接收三个参数：
-    - `button`：字符串类型，表示按下的鼠标按钮（Left, Right, Middle）
+    - `button`：字符串类型，表示按下的鼠标按钮（Left, Right, Middle等按键）
     - `x`：数字类型，表示鼠标的 X 坐标
     - `y`：数字类型，表示鼠标的 Y 坐标
 
@@ -124,11 +128,11 @@ keyMouseHook.RemoveAllListeners();
 ```javascript
 // 注册键盘事件
 keyMouseHook.OnKeyDown(function(keyData) {
-    log.info("Key down:", keyData);
+    log.info("Key down:{keyData}", keyData);
     
     // 检测组合键
     if (keyData.includes("Control") && keyData.includes("V")) {
-        log.info("Ctrl+V 被按下");
+        log.info("Ctrl 和 V 被按下"); //注意这里并不代表只有这两个键被按下
     }
     
     // 检测单个按键
@@ -139,7 +143,7 @@ keyMouseHook.OnKeyDown(function(keyData) {
 });
 
 keyMouseHook.OnKeyUp(function(keyData) {
-    log.info("Key up:", keyData);
+    log.info("Key up:{keyData}", keyData);
 });
 
 // 注册鼠标事件
@@ -169,15 +173,17 @@ keyMouseHook.OnMouseWheel(function(delta, x, y) {
 - 建议根据实际需求调整间隔时间，避免过高频率影响性能
 
 ### 返回值
-- 键盘事件：`useCodeOnly=true` 时返回单个按键字符串（如"Escape"），`useCodeOnly=false` 时返回包含组合键的字符串（如"Control, V"）
+- 键盘事件：`useCodeOnly=true` 时返回单个按键字符串（如"Escape"），`useCodeOnly=false` 时返回包含组合键的字符串（如"V, Control"）
 - 鼠标事件：返回坐标和按钮信息
 
 ### 多个回调
 - 支持为同一个事件注册多个回调函数，所有注册的回调都会被依次执行
 
 ### 资源释放
-- 在不需要监听事件时，建议调用 `RemoveAllListeners()` 方法移除所有监听器
-- 当JS脚本停止运行时，系统会自动清除所有回调
+- 在脚本结束时，一定要调用 `Dispose()` ！！！
+- 在脚本结束时，一定要调用 `Dispose()` ！！！
+- 在脚本结束时，一定要调用 `Dispose()` ！！！
+- 当JS脚本停止运行时，如果未释放资源，会打印一个错误日志，**大部分情况**下会自动释放资源，但**仍建议**手动释放！
 
 
 
@@ -192,3 +198,4 @@ keyMouseHook.OnMouseWheel(function(delta, x, y) {
 | 鼠标移动 | OnMouseMove | callback, interval | 200 |
 | 鼠标滚轮 | OnMouseWheel | callback | - |
 | 通用 | RemoveAllListeners | - | - |
+| 通用 | Dispose | - | - |
