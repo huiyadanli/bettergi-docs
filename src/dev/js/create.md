@@ -82,3 +82,94 @@ order: 10
   }
 ]
 ```
+
+- **类型为```input-text```时**
+
+![img.png](../../assets/create/input-text.png)
+
+```js
+{
+    "name": "exampleValueName",
+    "type": "input-text",
+    "label": "示例标签名",
+	"default": "默认填充文本"
+}
+```
+如果不含```default```键，则js的默认读取值为```undefined```
+
+如果存在值，则值的类型为```String```
+
+- **类型为```select```时**
+
+![img.png](../../assets/create/select.png)
+
+```js
+{
+    "name": "exampleValueName",
+    "type": "select",
+    "label": "示例标签名",
+    "options": [
+      "选项一",
+      "选项二"
+    ]
+	"default": "选项一"
+}
+```
+如果不含```default```键，则js的默认读取值为```undefined```
+
+```default```的值必须为```options```列表中的一项，否则js的默认读取值为```undefined```
+
+如果存在值，则值的类型为```String```
+
+- **类型为```checkbox```时**
+
+![img.png](../../assets/create/checkbox.png)
+
+```js
+{
+    "name": "exampleValueName",
+    "type": "checkbox",
+    "label": "示例标签名",
+	"default": false
+}
+```
+如果不含```default```键，则js的默认读取值为```false```
+
+如果存在值，则值的类型为```boolean```
+
+- **类型为```multi-checkbox```时**
+
+![img.png](../../assets/create/multi-checkbox.png)
+
+```js
+{
+    "name": "exampleValueName",
+    "type": "multi-checkbox",
+    "label": "示例标签名",
+	"options": [
+      "选项一",
+      "选项二",
+	  "选项三"
+    ]
+	"default": [
+      "选项一",
+      "选项三"
+    ]
+}
+```
+无论是否存在选项被勾选，JS读取的值为C#的```List<string>```对象，需要使用```Array.from()```将其转换为适配JS的```object```
+
+**注意：** 如果使用了```default```，则必须按照上述格式，即使仅设置一个默认项
+
+附: [Array.from()使用方法示例](https://bettergi.com/dev/js/file.html#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E7%BB%84%E5%90%88%E7%A4%BA%E4%BE%8B-%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8) (对于以上代码框内的定义，前述语句的括号内填入settings.exampleValueName即可)
+
+- **类型为```separator```时**
+
+![img.png](../../assets/create/separator.png)
+
+```js
+{
+    "type":"separator"
+}
+```
+仅有以上一种用法，用作分隔符，为了在不同类别、目的的选项之间提供一个视觉上的缓冲
