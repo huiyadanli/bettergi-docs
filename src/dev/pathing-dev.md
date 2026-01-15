@@ -67,13 +67,18 @@ order: 23
 
 解释：
 
-- `info` 对象包含了基础信息(当前除了展示没啥用)
+- `info` 对象包含了基础信息
 
-| 字段名      | 描述   | 详细信息                          |
-|----------|------|-------------------------------|
-| `name`   | 名称   | 建议和文件名一致                      |
-| `type`   | 路径类型 | 当前此字段除了展示无作用 <br>`collect`：采集 |
-| `author` | 作者   | 作者信息                          |
+| 字段名 | 描述 | 详细信息 |
+|--------|------|----------|
+| `name` | 名称 | 建议和文件名一致 |
+| `description` | 描述 | 任务的详细描述信息（可选） |
+| `author` | 作者 | 作者信息 |
+| `version` | 版本 | 任务文件的版本号（可选） |
+| `bgiVersion` | BetterGI 版本 | 制作时 BetterGI 的版本，用于兼容性检查（可选） |
+| `tags` | 标签 | 字符串数组，用于展示 |
+| `mapName` | 地图名称 | 默认为 `Teyvat`（提瓦特大陆） |
+| `mapMatchMethod` | 地图匹配方式 | `SIFT`：特征匹配，暂不支持分层地图<br>`TemplateMatch`：支持分层地图<br> 不填写默认以软件内设置为准，填写则优先以地图追踪的地图匹配方式为准 |
 
 - `positions` 数组包含了一系列的对象，每个对象代表一个游戏内位置和相关的动作信息。
 
@@ -153,4 +158,5 @@ order: 23
 坐标汇总json文件：
 
 [https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json)
+
 
