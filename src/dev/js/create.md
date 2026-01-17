@@ -35,19 +35,17 @@ order: 10
   "saved_files": [
     "data/*.txt",
     "user_data.txt"
+  ],
+  //模块搜索路径，可以配置多个，不允许/字符开头
+  "library": [
+    ".",
+    "src",
+    "./module"
   ]
 }
 ```
 
-还有一些不常用的属性：
-
-```
-  // 可以导入文件夹下的其他js类库，只支持 CommonJS
-  // 参考： https://github.com/microsoft/ClearScript/blob/master/ClearScriptTest/V8ModuleTest.cs 内的 js 写法。
-  "library": ['src']
-```
-
-### main.js
+### main
 
 ```js
 (async function () {
@@ -55,7 +53,18 @@ order: 10
 })();
 ```
 
-### settings.json
+### library
+
+
+- 支持js中使用ES6 Module语法导入其他模块，不支持CommonJS
+- 语法参考：
+  - **导入：** https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import
+  - **导出：** https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/export
+
+ - 另外 `import()` 在ClearScript中是实验性功能且在BGI中未开启，暂不支持动态导入。
+
+
+### settings_ui
 
 用于在 BetterGI 的调度器中配置变量
 
