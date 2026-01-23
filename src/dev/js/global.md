@@ -101,7 +101,7 @@ keyUp("w");
 
 ### captureGameRegion()
 - 返回类型: `ImageRegion`
-- 描述: 捕获游戏区域的图像，用于图像识别，具体见 [图像识别与OCR](/dev/js/rec.html)
+- 描述: 捕获游戏区域的图像，用于图像识别。当游戏分辨率大于 1080P 时，返回的图像会自动缩放至 1920x1080；小于等于 1080P 时保持原始尺寸。具体见 [图像识别与OCR](/dev/js/rec.html)
 
 
 ### inputText(string text)
