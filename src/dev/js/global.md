@@ -19,6 +19,10 @@ keyUp("w");
 - 参数:
   - `millisecondsTimeout` (`int`): 休眠时间，单位为毫秒
 
+### getVersion()
+- 返回类型: `string`
+- 描述: 获取当前使用的bgi版本号（0.55.1新增）
+
 ### keyDown(string key)
 - 描述: 按下指定的键
 - 参数:

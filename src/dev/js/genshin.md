@@ -285,6 +285,9 @@ log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`
 
 ### relogin()
 - 返回类型: `Task`
-- 描述: 返回到登录界面并重新开门进入游戏（0.44新增）
+- 描述: 返回到登录界面并重新开门进入游戏
 
+### wonderlandCycle()
+- 返回类型: `Task`
+- 描述: 进入到千星奇域大厅并返回提瓦特（0.55.1新增）
 
