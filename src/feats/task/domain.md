@@ -135,7 +135,7 @@ order: 30
 | 名称 | 方法 | 参数 | 示例                                 |
 | ---- | ---- | ---- |------------------------------------|
 | 鼠标按下 | mousedown | 鼠标按键left、right、middle，选填，不填默认left | `mousedown(left)`,`mousedown`      |
-| 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mousedown`       |
+| 鼠标松开 | mouseup | 鼠标按键left、right、middle，选填，不填默认left | `mouseup(right)`,`mouseup`       |
 | 鼠标单击 | click | 鼠标按键left、right、middle，选填，不填默认left | `click`,`click(middle)`            |
 | 鼠标相对移动 | moveby | 1. X轴移动相对距离，向左转动为负数，向右为正数，必填。2. Y轴移动距离，向上转动为负数，向下为正数，必填 | `moveby(500,0)`,`moveby(100,-100)` |
 | 滚轮滚动  | scroll | 滚轮滚动的格数，向下为正数，向上为负数，必填                                  | `scroll(1)`            |
