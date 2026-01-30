@@ -61,7 +61,43 @@ order: 10
   - **导入：** https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import
   - **导出：** https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/export
 
- - 另外 `import()` 在ClearScript中是实验性功能且在BGI中未开启，暂不支持动态导入。
+ - 另外 
+   - `import()` 在ClearScript中是实验性功能且在BGI中未开启，暂不支持动态导入。
+   - `packages` 为工具类与公用资源文件目录，请勿将`packages`作为你的依赖文件目录。
+
+
+#### 依赖引用与编写规范
+
+
+仅针对`packages`（工具类与公用资源文件）进行以下说明：
+
+##### 1、导入依赖
+
+依赖引用时仅支持以下语法（ESM标准语法，不区分单引号与双引号）
+
+```js
+import { isInMainUI } from "../../../packages/utils/tool.js";
+import paimon from "../../../packages/assets/imgs/paimon_menu.png";
+```
+
+##### 2、编写工具函数
+
+工具类请在`packages/utils`目录下编写，可引用同级目录的其他文件。暂不支持引用上级目录的js文件。  
+引入的资源文件请务必使用`../assets/xxx`取上级资源目录，运行脚本时，BGI会自动将import对象转为字符串类型的地址。
+
+```js
+import paimon from "../assets/imgs/paimon_menu.png";
+// 上面的import语句最终相当于 const paimon = "packages/assets/imgs/paimon_menu.png";
+
+async function isInMainUI() {
+  log.info(paimon);
+  const imgMat = file.readImageMatSync(paimon);
+  const result = await findImage(imgMat, 0, 0, 1920, 1080);
+  return !!result;
+}
+
+export { isInMainUI };
+```
 
 
 ### settings_ui
