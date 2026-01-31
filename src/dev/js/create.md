@@ -82,18 +82,18 @@ import paimon from "../../../packages/assets/imgs/paimon_menu.png";
 
 ##### 2、编写工具函数
 
-工具类请在`packages/utils`目录下编写，可引用同级目录的其他文件。暂不支持引用上级目录的js文件。  
-引入的资源文件请务必使用`../assets/xxx`取上级资源目录，运行脚本时，BGI会自动将import对象转为字符串类型的地址。
+工具类请在`packages/utils`目录下编写。  
+引入的资源文件请务必使用`../assets/xxx`取上级资源目录，运行脚本时，BGI会自动将import对象转为opencv的mat对象。
 
 ```js
 import paimon from "../assets/imgs/paimon_menu.png";
-// 上面的import语句最终相当于 const paimon = "packages/assets/imgs/paimon_menu.png";
+// 上面的import语句最终相当于 const paimon = file.ReadImageMatSync("packages/assets/imgs/paimon_menu.png");
 
-async function isInMainUI() {
-  log.info(paimon);
-  const imgMat = file.readImageMatSync(paimon);
-  const result = await findImage(imgMat, 0, 0, 1920, 1080);
-  return !!result;
+function isInMainUI() {
+  const gameRegion = captureGameRegion();
+  const ro = RecognitionObject.TemplateMatch(paimon, 0, 0, 1920, 1080);
+  const result = gameRegion.find(ro);
+  return result.isExist();
 }
 
 export { isInMainUI };
