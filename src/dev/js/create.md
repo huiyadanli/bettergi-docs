@@ -108,7 +108,7 @@ export { isInMainUI };
 运行脚本前，请确保你拥有本地`node.js`环境，这是独立运行js的必要条件。  
 在根目录下，运行: 
 ```
-  node dev_deploy.js <脚本文件夹名> <BGI目录>
+  node build/dev_deploy.js <脚本文件夹名> <BGI目录>
   
   例：node build/dev_deploy.js test E:\BetterGIProject\BetterGI
 ```
