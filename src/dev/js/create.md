@@ -85,6 +85,20 @@ import paimon from "../../../packages/assets/imgs/paimon_menu.png";
 工具类请在`packages/utils`目录下编写。  
 引入的资源文件请务必使用`../assets/xxx`取上级资源目录，运行脚本时，BGI会自动将import对象转为opencv的mat对象。
 
+##### 3、导入脚本
+
+由于依赖库`packages`不会通过ESM构建进行数摇优化，仓库提供了导入脚本`dev_deploy.js`，开发者可以通过运行此脚本将自己的脚本解析复制到BGI中。  
+运行脚本前，请确保你拥有完整的仓库文件（git clone https://github.com/xxx/bettergi-scripts-list.git ），防止依赖库位置错误无法解析。  
+运行脚本前，请确保你拥有本地`node.js`环境，这是独立运行js的必要条件。  
+在根目录下，运行: 
+```
+  node dev_deploy.js <脚本文件夹名> <BGI目录>
+  
+  例：node build/dev_deploy.js test E:\BetterGIProject\BetterGI
+```
+脚本会被复制到你的BGI中，`packages`会被删除后重新导入，脚本其他文件会被覆盖导入（请确保没有数据文件，防止被覆盖），因此可能会有残留文件，需要手动清理。
+
+
 ```js
 import paimon from "../assets/imgs/paimon_menu.png";
 // 上面的import语句最终相当于 const paimon = file.ReadImageMatSync("packages/assets/imgs/paimon_menu.png");
