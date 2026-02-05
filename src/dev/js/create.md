@@ -61,7 +61,58 @@ order: 10
   - **导入：** https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import
   - **导出：** https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/export
 
- - 另外 `import()` 在ClearScript中是实验性功能且在BGI中未开启，暂不支持动态导入。
+ - 另外 
+   - `import()` 在ClearScript中是实验性功能且在BGI中未开启，暂不支持动态导入。
+   - `packages` 为工具类与公用资源文件目录，请勿将`packages`作为你的依赖文件目录。
+
+
+#### 依赖引用与编写规范
+
+
+仅针对`packages`（工具类与公用资源文件）进行以下说明：
+
+##### 1、导入依赖
+
+依赖引用时仅支持以下语法（ESM标准语法，不区分单引号与双引号）
+
+```js
+import { isInMainUI } from "../../../packages/utils/tool.js";
+import paimon from "../../../packages/assets/imgs/paimon_menu.png";
+```
+
+##### 2、编写工具函数
+
+工具类请在`packages/utils`目录下编写。  
+引入的资源文件请务必使用`../assets/xxx`取上级资源目录。  
+运行脚本时，BGI会自动将import的图片资源转为opencv的mat对象，将js与图片以外的资源转为普通文件。
+```js
+import paimon from "../assets/imgs/paimon_menu.png";
+// 上面的import语句最终相当于 const paimon = file.ReadImageMatSync("packages/assets/imgs/paimon_menu.png");
+import paimon_txt from "../assets/imgs/paimon_menu.txt";
+// 上面的import语句最终相当于 const paimon_txt = file.ReadTextSync("packages/assets/imgs/paimon_menu.txt");
+
+function isInMainUI() {
+  const gameRegion = captureGameRegion();
+  const ro = RecognitionObject.TemplateMatch(paimon, 0, 0, 1920, 1080);
+  const result = gameRegion.find(ro);
+  return result.isExist();
+}
+
+export { isInMainUI };
+```
+
+##### 3、导入脚本
+
+由于依赖库`packages`不会通过ESM构建进行数摇优化，仓库提供了导入脚本`dev_deploy.js`，开发者可以通过运行此脚本将自己的脚本解析复制到BGI中。  
+运行脚本前，请确保你拥有完整的仓库文件（git clone https://github.com/xxx/bettergi-scripts-list.git ），防止依赖库位置错误无法解析。  
+运行脚本前，请确保你拥有本地`node.js`环境，这是独立运行js的必要条件。  
+在根目录下，运行: 
+```
+  node build/dev_deploy.js <脚本文件夹名> <BGI目录>
+  
+  例：node build/dev_deploy.js test E:\BetterGIProject\BetterGI
+```
+脚本会被复制到你的BGI中，`packages`会被删除后重新导入，脚本其他文件会被覆盖导入（请确保没有数据文件，防止被覆盖），因此可能会有残留文件，需要手动清理。
 
 
 ### settings_ui
