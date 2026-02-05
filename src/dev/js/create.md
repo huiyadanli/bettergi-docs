@@ -83,7 +83,23 @@ import paimon from "../../../packages/assets/imgs/paimon_menu.png";
 ##### 2、编写工具函数
 
 工具类请在`packages/utils`目录下编写。  
-引入的资源文件请务必使用`../assets/xxx`取上级资源目录，运行脚本时，BGI会自动将import对象转为opencv的mat对象。
+引入的资源文件请务必使用`../assets/xxx`取上级资源目录。  
+运行脚本时，BGI会自动将import的图片资源转为opencv的mat对象，将js与图片以外的资源转为普通文件。
+```js
+import paimon from "../assets/imgs/paimon_menu.png";
+// 上面的import语句最终相当于 const paimon = file.ReadImageMatSync("packages/assets/imgs/paimon_menu.png");
+import paimon_txt from "../assets/imgs/paimon_menu.txt";
+// 上面的import语句最终相当于 const paimon_txt = file.ReadTextSync("packages/assets/imgs/paimon_menu.txt");
+
+function isInMainUI() {
+  const gameRegion = captureGameRegion();
+  const ro = RecognitionObject.TemplateMatch(paimon, 0, 0, 1920, 1080);
+  const result = gameRegion.find(ro);
+  return result.isExist();
+}
+
+export { isInMainUI };
+```
 
 ##### 3、导入脚本
 
@@ -97,21 +113,6 @@ import paimon from "../../../packages/assets/imgs/paimon_menu.png";
   例：node build/dev_deploy.js test E:\BetterGIProject\BetterGI
 ```
 脚本会被复制到你的BGI中，`packages`会被删除后重新导入，脚本其他文件会被覆盖导入（请确保没有数据文件，防止被覆盖），因此可能会有残留文件，需要手动清理。
-
-
-```js
-import paimon from "../assets/imgs/paimon_menu.png";
-// 上面的import语句最终相当于 const paimon = file.ReadImageMatSync("packages/assets/imgs/paimon_menu.png");
-
-function isInMainUI() {
-  const gameRegion = captureGameRegion();
-  const ro = RecognitionObject.TemplateMatch(paimon, 0, 0, 1920, 1080);
-  const result = gameRegion.find(ro);
-  return result.isExist();
-}
-
-export { isInMainUI };
-```
 
 
 ### settings_ui
