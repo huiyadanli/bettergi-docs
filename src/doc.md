@@ -29,6 +29,8 @@ order: 20
   * [自动邀约](/feats/timer/skip.html#%E8%87%AA%E5%8A%A8%E9%82%80%E7%BA%A6)
   * [半自动钓鱼](/feats/timer/fish.html)
   * [快速传送](/feats/timer/tp.html)
+  * [地图遮罩](/feats/timer/map.html)
+  * [冷却提示](/feats/timer/skill.html)
   * [自动烹饪](/feats/timer/cook.html)
 * 独立任务
   * [自动七圣召唤](/feats/task/tcg.html)
