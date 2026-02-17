@@ -39,6 +39,7 @@ order: 20
   * [自动秘境](/feats/task/domain.html)
   * [自动幽境危战](/feats/task/stygian.html)
   * [全自动钓鱼](/feats/task/fish.html)
+  * [自动地脉花](/feats/task/leyline.html)
   * [自动音游](/feats/task/music.html)
   * [分解圣遗物](/feats/autos/task/artifactSalvage.html)
 * 辅助操控
