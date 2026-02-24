@@ -142,5 +142,6 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
   - Windows 10 会在游戏窗口上加上黄色边框，Windows 11 没有。
 - WindowsGraphicsCapture（HDR）
   - 与 WindowsGraphicsCapture 相同，增加了 HDR 支持。
+  - 由于每台电脑的HDR造成的画面颜色偏差都不同，所以开启HDR并使用此截图方式的情况下，部分功能仍不可用。
   - 请仅在游戏开启了 HDR 时使用，否则会导致画面变暗。
   - 略微影响截图性能。
