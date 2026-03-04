@@ -342,10 +342,10 @@ await dispatcher.runTask(new SoloTask("AutoFishing", { "fishingTimePolicy": 0 })
   - 注意`foodName`和`foodEffectType`参数二选一，不可同时传递  
 
 只支持单次使用的Buff类食物，不支持使用时须要选角色、多次确认的食物  
-支持的食物取决于[GetGridIcons](https://www.bettergi.com/feats/task/getGridIcons.html)已训练的数据  
+支持的食物取决于[GetGridIcons](../getGridIcons.html)已训练的数据  
 支持的食物清单详见[训练集原型特征.csv](https://github.com/babalae/bettergi-libraries/blob/main/BetterGI.Assets.Model/Assets/Model/Item/items.csv)  
 
-另请关注背包界面背景对识别的干扰，如果游戏画面干扰导致识别失败，可参考[GetGridIcons](https://www.bettergi.com/feats/task/getGridIcons.html)调整并重试
+另请关注背包界面背景对识别的干扰，如果游戏画面干扰导致识别失败，可参考[GetGridIcons](../getGridIcons.html)调整并重试
 
 示例：
 
