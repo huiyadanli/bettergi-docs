@@ -221,7 +221,7 @@ export { isInMainUI };
 
 **注意：** 如果使用了```default```，则必须按照上述格式，即使仅设置一个默认项
 
-附: [Array.from()使用方法示例](https://bettergi.com/dev/js/file.html#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E7%BB%84%E5%90%88%E7%A4%BA%E4%BE%8B-%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8) (对于以上代码框内的定义，前述语句的括号内填入settings.exampleValueName即可)
+附: [Array.from()使用方法示例](./file.html#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C%E7%BB%84%E5%90%88%E7%A4%BA%E4%BE%8B-%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8) (对于以上代码框内的定义，前述语句的括号内填入settings.exampleValueName即可)
 
 - **类型为```separator```时**
 

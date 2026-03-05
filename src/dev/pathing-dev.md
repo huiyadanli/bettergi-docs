@@ -112,7 +112,7 @@ order: 23
 | `use_gadget`        |  使用小道具(<kbd>Z</kbd>)，默认会等待CD。`action_params` 填写 not_wait 则不等待，直接使用小道具 |
 
 
-## 编辑器中自定义战斗策略的教程
+## 编辑器中自定义战斗策略
 
 以下是在地图路径点编辑器中使用自定义战斗策略的教程。这个小教程的作者：`彩虹QQ人`
 
@@ -122,9 +122,9 @@ order: 23
 
 ![执行战斗策略选项卡位置](../assets/pathing/user_defined_pathing_teach_4.png)
 
-### 2.在添加战斗策略
+### 2.添加战斗策略
 
-在战斗策略管理中，增加所需要的战斗策略，点击“战斗策略管理”跳转到图6。
+在战斗策略管理中，增加所需要的战斗策略。
 
 ![战斗策略管理位置](../assets/pathing/user_defined_pathing_teach_5.png)
 
@@ -133,7 +133,7 @@ order: 23
 ![新增战斗策略管理](../assets/pathing/user_defined_pathing_teach_6.png)
 
 
-在“策略参数”一栏中填写所需的战斗策略，具体策略编辑请参照：[自动秘境 | BetterGI·更好的原神](https://bettergi.com/feats/task/domain.html#战斗策略脚本编写)
+在“策略参数”一栏中填写所需的战斗策略，具体策略编辑请参照：[自动秘境 | BetterGI·更好的原神](../feats/task/domain.html#战斗策略脚本编写)
 
 ![编辑战斗策略](../assets/pathing/user_defined_pathing_teach_7.png)
 
