@@ -45,7 +45,7 @@ highlights:
 
       - title: 自动拾取
         icon: https://img.alicdn.com/imgextra/i2/2042484851/O1CN01EKYZEL1lhoQ90bwka_!!2042484851.png
-        details: 基于 Yap 识别，可自定义黑白名单的拾取功能，不会误对话NPC
+        details: 基于 OCR 识别，可自定义黑白名单的拾取功能，不会误对话NPC
         link: /feats/timer/pick.html
 
       - title: 自动剧情
