@@ -31,7 +31,6 @@ order: 20
   * [快速传送](/feats/timer/tp.html)
   * [地图遮罩](/feats/timer/map.html)
   * [冷却提示](/feats/timer/skill.html)
-  * [自动烹饪](/feats/timer/cook.html)
 * 独立任务
   * [自动七圣召唤](/feats/task/tcg.html)
   * [自动伐木](/feats/task/felling.html)
@@ -42,6 +41,7 @@ order: 20
   * [自动地脉花](/feats/task/leyline.html)
   * [自动音游](/feats/task/music.html)
   * [分解圣遗物](/feats/autos/task/artifactSalvage.html)
+  * [自动烹饪](/feats/task/cook.html)
 * 辅助操控
   * [一键宏](/feats/macro/onem.html)
   * [那维莱特 - 转圈圈](/feats/macro/other.html#%E9%82%A3%E7%BB%B4%E8%8E%B1%E7%89%B9-%E8%BD%AC%E5%9C%88%E5%9C%88)
