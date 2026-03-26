@@ -490,6 +490,30 @@ log.info(`当前路径是否为文件夹: ${isFolder}`); // 本示例的file.isF
 })();
 ```
 
+## 文件/目录重命名方法 (0.59.1 新增)
+
+### 重命名文件或文件夹（相对于根目录） - RenamePathSync
+
+```javascript
+file.renamePathSync(oldPath, newPath)
+```
+
+**参数说明：**
+- `oldPath`: 原路径（相对路径，相对于项目根目录）
+- `newPath`: 新路径（相对路径，相对于项目根目录）
+
+**返回值：**
+- `boolean` 成功修改返回true, 未成功修改返回false
+
+**示例：**
+```javascript
+const oldPath = "assets/user_data/archive.json";
+const newPath = "assets/user_data/本地存档.json";
+
+let result = file.renamePathSync(oldPath, newPath);
+log.info(`重命名${if result ? "成功": "失败"}! \n ${oldPath} -> ${newPath}`);
+```
+
 ## 注意事项
 
 1. **路径安全**：所有路径都会被规范化和验证，确保不会访问到根目录以外的文件
