@@ -52,6 +52,12 @@ onBeforeUnmount(() => {
   transform-style: preserve-3d;
 }
 
+@media (max-width: 959px) {
+  .hero-tilt-logo {
+    margin: 0 auto;
+  }
+}
+
 .hero-tilt-logo img {
   display: block;
   width: 100%;
