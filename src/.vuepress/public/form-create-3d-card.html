@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <meta name="viewport" content="width=1400, initial-scale=1, viewport-fit=cover, minimum-scale=0.2, maximum-scale=1">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-type" content="no-siteapp">
+    <title>FormCreate new_page 提取</title>
+    <link rel="preload" href="img/right2-bgi.png" as="image">
+    <link rel="preload" href="img/right3-bgi.png" as="image">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-overflow-scrolling: touch;
+            -webkit-touch-callout: text;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            min-width: 1400px;
+            background: #fafafa;
+            color: #3d3d3d;
+            font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:visited,
+        a:hover {
+            color: inherit;
+        }
+
+        a:focus,
+        img,
+        button,
+        input,
+        textarea {
+            outline: none;
+            border: none;
+        }
+
+        img {
+            display: block;
+        }
+
+        .container {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-row {
+            flex-direction: row;
+        }
+
+        .flex-justify-between {
+            justify-content: space-between;
+        }
+
+        .flex-justify-center {
+            justify-content: center;
+        }
+
+        .align-center {
+            align-items: center;
+        }
+
+        .new_page {
+            min-height: 100vh;
+            padding-top: 50px;
+            padding-bottom: 80px;
+            position: relative;
+            box-sizing: border-box;
+            background: #fafafa;
+            transform: translateZ(0);
+        }
+
+        .new_page .animation {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background-position: 50% 50%, 50% 50%;
+            background-size: 300%, 200%;
+            background-image: repeating-linear-gradient(100deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 7%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 12%, rgb(255, 255, 255) 16%), repeating-linear-gradient(100deg, #3b82f6 10%, #a5b4fc 15%, #93c5fd 20%, #ddd6fe 25%, #60a5fa 30%);
+            -webkit-mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+            mask-image: radial-gradient(ellipse at 100% 0%, black 10%, transparent 70%);
+            filter: blur(10px) invert(100%);
+            opacity: 0.5;
+            transform: translateZ(0);
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            contain: layout style paint;
+        }
+
+        .new_page .animation::after {
+            content: " ";
+            position: absolute;
+            inset: 0;
+            background-size: 200%, 100%;
+            background-image: repeating-linear-gradient(100deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 7%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0) 12%, rgb(255, 255, 255) 16%), repeating-linear-gradient(100deg, #3b82f6 10%, #a5b4fc 15%, #93c5fd 20%, #ddd6fe 25%, #60a5fa 30%);
+            animation: animate-aurora 60s linear infinite;
+            mix-blend-mode: difference;
+            background-attachment: fixed;
+            transform: translateZ(0);
+            will-change: background-position;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            contain: layout style paint;
+        }
+
+        .new_page .title {
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 59px;
+            color: #000;
+        }
+
+        .new_page .description {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            color: #000;
+        }
+
+        .new_page .btn {
+            display: inline-flex;
+            width: 128px;
+            height: 46px;
+            background: #000;
+            border-radius: 24px;
+            font-weight: 400;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .new_page .open-btn {
+            display: inline-flex;
+            width: 128px;
+            height: 46px;
+            border: 2px solid #000;
+            border-radius: 24px;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000;
+        }
+
+        .new_page .js_3d_card {
+            transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+        }
+
+        .new_page .js_3d_card,
+        .new_page .js_3d_card img {
+            transition: all .07s linear;
+            transform-style: preserve-3d;
+        }
+
+        .new_page .js_3d_card:hover .right-layer {
+            transform: perspective(1000px) translateX(5px) translateY(5px) translateZ(30px);
+        }
+
+        .new_page .js_3d_card img {
+            user-select: none;
+            -webkit-user-drag: none;
+            pointer-events: none;
+        }
+
+        .pos {
+            position: relative;
+        }
+
+        .m-t-12 {
+            margin-top: 12px;
+        }
+
+        .m-t-54 {
+            margin-top: 54px;
+        }
+
+        .m-t-60 {
+            margin-top: 60px;
+        }
+
+        .m-l-10 {
+            margin-left: 10px;
+        }
+
+        .m-r-6 {
+            margin-right: 6px;
+        }
+
+        @keyframes animate-aurora {
+            0% {
+                background-position: 50% 50%, 50% 50%;
+            }
+
+            100% {
+                background-position: 350% 50%, 350% 50%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .new_page .animation::after {
+                animation: none;
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .new_page .animation {
+                filter: blur(5px) invert(100%);
+                opacity: 0.3;
+            }
+
+            .new_page .animation::after {
+                animation-duration: 90s;
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .new_page .animation {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="new_page">
+    <div class="animation"></div>
+    <div class="container flex flex-justify-between pos">
+        <div class="left m-t-60">
+            <div class="title m-t-12">
+                BetterGI · 更好的原神
+            </div>
+            <div class="description m-t-12">
+                BetterGI ， 一个开源且免费，基于计算机视觉技术，意图让原神变的更好的项目。
+            </div>
+            <div class="m-t-54 flex flex-row">
+                <a class="btn flex flex-justify-center align-center" target="_blank" href="https://pro.form-create.com/view/">
+                    下载
+                </a>
+                <a class="open-btn flex flex-justify-center align-center m-l-10" target="_blank" href="https://github.com/xaboy/form-create">
+                    <svg class="m-r-6" viewBox="0 0 1024 1024" width="18" height="18" aria-hidden="true"><path d="M64 512c0 195.2 124.8 361.6 300.8 422.4 22.4 6.4 19.2-9.6 19.2-22.4v-76.8c-134.4 16-140.8-73.6-150.4-89.6-19.2-32-60.8-38.4-48-54.4 32-16 64 3.2 99.2 57.6 25.6 38.4 76.8 32 105.6 25.6 6.4-22.4 19.2-44.8 35.2-60.8-144-22.4-201.6-108.8-201.6-211.2 0-48 16-96 48-131.2-22.4-60.8 0-115.2 3.2-121.6 57.6-6.4 118.4 41.6 124.8 44.8 32-9.6 70.4-12.8 112-12.8 41.6 0 80 6.4 112 12.8 12.8-9.6 67.2-48 121.6-44.8 3.2 6.4 25.6 57.6 6.4 118.4 32 38.4 48 83.2 48 131.2 0 102.4-57.6 188.8-201.6 214.4 22.4 22.4 38.4 54.4 38.4 92.8v112c0 9.6 0 19.2 16 19.2C832 876.8 960 710.4 960 512c0-246.4-201.6-448-448-448S64 265.6 64 512z" fill="#000000"></path></svg>
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <div class="right pos js_3d_card">
+            <img src="img/right2-bgi.png" style="height: 400px;" alt="BetterGI">
+            <img class="right-layer" src="img/right3-bgi.png" style="height: 330px; position: absolute; right: -30px; top: 20px;" alt="BetterGI">
+        </div>
+    </div>
+</div>
+
+<script>
+    (function () {
+        function getElementOffset(el) {
+            let top = 0;
+            let left = 0;
+            let element = el;
+
+            do {
+                top += element.offsetTop || 0;
+                left += element.offsetLeft || 0;
+                element = element.offsetParent;
+            } while (element);
+
+            return { top, left };
+        }
+
+        const element = document.querySelector(".js_3d_card");
+
+        if (!element) {
+            return;
+        }
+
+        element.onmousemove = function (event) {
+            const pos = getElementOffset(element);
+            const left = event.pageX - this.offsetWidth / 2 - pos.left;
+            const top = event.pageY - this.offsetHeight / 2 - pos.top;
+
+            this.style.transform =
+                "perspective(1000px) rotateY(" +
+                left * -0.08 +
+                "deg) rotateX(" +
+                top * 0.08 +
+                "deg)";
+        };
+
+        element.onmouseleave = function () {
+            this.style.transform = "perspective(1000px) rotateY(0deg) rotateX(0deg)";
+        };
+    })();
+</script>
+</body>
+</html>

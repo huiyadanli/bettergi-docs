@@ -2,7 +2,6 @@
 home: true
 icon: home
 title: 主页
-heroImage: https://img.alicdn.com/imgextra/i3/2042484851/O1CN01BafDLu1lhoP3xOqGQ_!!2042484851.png
 bgImageStyle:
   background-attachment: fixed
 heroText: BetterGI · 更好的原神
@@ -19,7 +18,7 @@ actions:
 highlights:
   - header: 特性与自动化功能列表
     description: 大概是最简单好用、功能最繁多的原神自动化工具了。<a href="/feat.html#已有功能列表">更多功能添加中...</a>
-    image: /assets/image/box.svg
+    image: https://img.alicdn.com/imgextra/i3/2042484851/O1CN01BafDLu1lhoP3xOqGQ_!!2042484851.png
     bgImageStyle:
       background-repeat: repeat
       background-size: initial
