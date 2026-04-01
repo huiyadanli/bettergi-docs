@@ -64,7 +64,7 @@ order: 40
 
 如图，`目标`就是你实际打开的BetterGI程序，`起始位置`就是你的BetterGI文件夹所在位置。  
 
-![属性](assets/property.png)
+![属性](./assets/property.png)
 
 有的用户这里的目录是`BetterGI/BetterGI/xxx`，有的则是`BetterGI/xxx`，这并不会影响你的使用，不同的目录的产生原因是安装方式不同所致。  
 
