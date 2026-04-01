@@ -102,7 +102,7 @@ BetterGI 启动后会自动修改 窗口化游戏优化 为关闭状态，但是
 #### ❓ 更新提示 "创建下载会话失败:Error: DFS2 metadata not loaded"
 
 如下图，出现这个提示时，表示新版本才刚刚发布，新版 BGI 的资源还未开始分发，也就是还没上传到服务器。等待作者上传好后便可以再次运行安装程序更新了。  
-![资源未上传](assets/faq/no_DSF2.png)
+![资源未上传](./assets/faq/no_DSF2.png)
 
 #### ❓ 报错提示 "Some simulated input commands were not sent successfully..." 或 "模拟键鼠消息发送失败！..."
 
