@@ -155,7 +155,7 @@ htmlMask.send(winId, "/command/stop", JSON.stringify({ reason: "完成" }));
 const winId = htmlMask.show("assets/index.html");
 
 // 发送请求并等待 HTML 响应
-var response = await htmlMask.request(winId, "/data/query", JSON.stringify({ key: "hp" }));
+const response = await htmlMask.request(winId, "/data/query", JSON.stringify({ key: "hp" }));
 log.info("HTML响应: " + response); // {"hp":100,"mp":50}
 ```
 
@@ -172,7 +172,7 @@ log.info("HTML响应: " + response); // {"hp":100,"mp":50}
 **示例**：
 ```javascript
 while (htmlMask.exists(winId)) {
-    var msg = await htmlMask.receive(winId);
+    const msg = await htmlMask.receive(winId);
     if (msg) {
         var data = JSON.parse(msg);
         log.info("收到: url={url}", data.url);
@@ -243,7 +243,7 @@ HTML 端也可以主动向 JS 发起请求并等待响应：
 ```html
 <script>
 (async function() {
-    var result = await window.htmlMask.request('/user/hello', { text: '来自HTML的问候' });
+    const result = await window.htmlMask.request('/user/hello', { text: '来自HTML的问候' });
     console.log('JS响应:', result.data);
 })();
 </script>
@@ -280,7 +280,7 @@ window.chrome.webview.postMessage(JSON.stringify({
     const winId = htmlMask.show("assets/index.html");
 
     // await 请求 HTML 并等待响应
-    var response = await htmlMask.request(winId, "/data/query", JSON.stringify({ key: "hp" }));
+    const response = await htmlMask.request(winId, "/data/query", JSON.stringify({ key: "hp" }));
     log.info("HTML响应: " + response);
 
     // 单向推送
@@ -288,9 +288,9 @@ window.chrome.webview.postMessage(JSON.stringify({
 
     // 持续接收 HTML 消息
     while (htmlMask.exists(winId)) {
-        var msg = await htmlMask.receive(winId);
+      const msg = await htmlMask.receive(winId);
         if (msg) {
-            var parsed = JSON.parse(msg);
+          const parsed = JSON.parse(msg);
             log.info("收到HTML消息: " + msg);
         }
     }
@@ -343,7 +343,7 @@ window.chrome.webview.postMessage(JSON.stringify({
 
         // 向 JS 发送请求并等待响应
         (async function() {
-            var result = await window.htmlMask.request('/user/hello', { text: '来自HTML的问候' });
+          const result = await window.htmlMask.request('/user/hello', { text: '来自HTML的问候' });
             document.getElementById('info').innerText += '\n响应: ' + JSON.stringify(result.data);
         })();
     </script>
