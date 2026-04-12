@@ -52,6 +52,12 @@ order: 40
 * `album.start` : 自动音游专辑启动
 * `album.end` : 自动音游专辑结束
 * `album.error` : 自动音游专辑错误
+* `daily.reward` : 检查每日奖励领取状态
+* `js.custom` : JS自定义事件
+* `js.error` : JS运行时错误
+* `autoeat.start` : 自动吃药启动
+* `autoeat.end` : 自动吃药结束
+* `autoeat.info` : 自动吃药信息
 
 ## QQ机器人接入webhook示例
 底下是关于如何实现QQ机器人接入  
