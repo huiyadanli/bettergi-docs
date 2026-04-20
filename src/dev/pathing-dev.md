@@ -110,6 +110,12 @@ order: 23
 | `fishing`           | 执行钓鱼(0.43.0存在)                                                                                                                                                      |           |
 | `set_time`          |  设置时间。`action_params`中填写格式：`HH:MM` 或 `HH:MM:<bool>`，bool值可以指定是否使用快速调整时间，默认是 `true`，如 `06:00:true` 表示使用快速调整时间的方式调整时间到早上六点(0.44.0存在)|
 | `use_gadget`        |  使用小道具(<kbd>Z</kbd>)，默认会等待CD。`action_params` 填写 not_wait 则不等待，直接使用小道具 |
+| `mining`           | 挖矿并拾取，支持不同角色的挖矿动作，自动识别当前队伍中的角色执行对应挖矿策略。`action_params` 填写 `disablePickupAround` 可禁用挖矿后的自动拾取。 |
+| `linia_mining`     | 莉奈娅Yolo挖矿，使用YOLO模型识别矿物并自动瞄准挖矿。`action_params` 格式：`射箭次数,大循环次数`，如 `3` 或 `3,10`。第一个参数为射箭次数（默认1），第二个参数为大循环寻矿次数（默认5）。当大循环次数小于射箭次数时，自动提升为射箭次数。 |
+| `exit_and_relogin` | 退出并重新登录原神。 |
+| `wonderland_cycle` | 进出千星奇域。 |
+| `pick_up_collect`  | 使用角色技能聚集周围材料。`action_params` 填写角色名或角色名+动作，如 `琴` 或 `琴-短E`，不填则自动识别。 |
+
 
 
 ## 编辑器中自定义战斗策略
