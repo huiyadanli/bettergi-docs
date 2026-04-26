@@ -103,18 +103,18 @@ order: 23
 | `electro_collect`   | 使用雷元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `anemo_collect`     | 使用风元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
 | `pyro_collect`      | 使用火元素力收集(合并到元素力采集)。[查看支持角色](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoPathing/Handler/ElementalCollectHandler.cs) |
-| `up_down_grab_leaf` | 上下移动视角按T前往四叶印。该动作将忽略所有移动方式和点位类型，强行把点位视作朝向点，四叶印操作会在完成朝向动作之后执行，并只基于飞行图标出现检测是否完成四叶印动作。(0.44后重置)。                                                                                                                                            |
+| `up_down_grab_leaf` | 上下移动视角按T前往四叶印。该动作将忽略所有移动方式和点位类型，强行把点位视作朝向点，四叶印操作会在完成朝向动作之后执行，并只基于飞行图标出现检测是否完成四叶印动作。(0.44后重置)。                                                                       |
 | `fight`             | 在此处直接执行自动战斗(0.36.4更新了结束方式)，此 `action` 的点位一定会按照`path`类型的点位进行执行。                                                                                                      |
 | `combat_script`     | 可以直接执行[战斗策略脚本](/feats/task/domain.html#战斗策略脚本编写)，策略脚本需要填写在 `action_params` 中。<br>当策略不指定角色名时，会直接使用当前角色执行策略脚本。<br>请注意活用战斗策略的特性：不存在队伍中的角色对应的策略也不会执行(0.36.4新增)。         |
 | `log_output`        | 在遮罩窗口输出INF级别的日志。`action_params`中填写预期的日志输出。注：在移动到目标点之前输出日志，`type = teleport` 时不支持此action。(0.40.0新增)                                                                  |           
 | `fishing`           | 执行钓鱼(0.43.0存在)                                                                                                                                                      |           |
-| `set_time`          |  设置时间。`action_params`中填写格式：`HH:MM` 或 `HH:MM:<bool>`，bool值可以指定是否使用快速调整时间，默认是 `true`，如 `06:00:true` 表示使用快速调整时间的方式调整时间到早上六点(0.44.0存在)|
-| `use_gadget`        |  使用小道具(<kbd>Z</kbd>)，默认会等待CD。`action_params` 填写 not_wait 则不等待，直接使用小道具 |
-| `mining`           | 挖矿并拾取，支持不同角色的挖矿动作，自动识别当前队伍中的角色执行对应挖矿策略。`action_params` 填写 `disablePickupAround` 可禁用挖矿后的自动拾取。 |
-| `linia_mining`     | 莉奈娅Yolo挖矿，使用YOLO模型识别矿物并自动瞄准挖矿。`action_params` 格式：`射箭次数,大循环次数`，如 `3` 或 `3,10`。第一个参数为射箭次数（默认1），第二个参数为大循环寻矿次数（默认5）。当大循环次数小于射箭次数时，自动提升为射箭次数。 |
-| `exit_and_relogin` | 退出并重新登录原神。 |
-| `wonderland_cycle` | 进出千星奇域。 |
-| `pick_up_collect`  | 使用角色技能聚集周围材料。`action_params` 填写角色名或角色名+动作，如 `琴` 或 `琴-短E`，不填则自动识别。 |
+| `set_time`          | 设置时间。`action_params`中填写格式：`HH:MM` 或 `HH:MM:<bool>`，bool值可以指定是否使用快速调整时间，默认是 `true`，如 `06:00:true` 表示使用快速调整时间的方式调整时间到早上六点(0.44.0存在)                                   |
+| `use_gadget`        | 使用小道具(<kbd>Z</kbd>)，默认会等待CD。`action_params` 填写 not_wait 则不等待，直接使用小道具                                                                                                |
+| `mining`            | 挖矿并拾取，支持不同角色的挖矿动作，自动识别当前队伍中的角色执行对应挖矿策略。`action_params` 填写 `disablePickupAround` 可禁用挖矿后的自动拾取。                                                                        |
+| `linnea_mining`     | 莉奈娅YOLO挖矿，使用YOLO模型识别矿物并自动瞄准挖矿，具体逻辑见[莉奈娅挖矿策略](#莉奈娅挖矿策略)。`action_params` 格式：`射箭次数,大循环次数`，如 `3` 或 `3,10`。第一个参数为射箭次数（默认1），第二个参数为大循环寻矿次数（默认5）。当大循环次数小于射箭次数时，自动提升为射箭次数。   |
+| `exit_and_relogin`  | 退出并重新登录原神。                                                                                                                                                          |
+| `wonderland_cycle`  | 进出千星奇域。                                                                                                                                                             |
+| `pick_up_collect`   | 使用角色技能聚集周围材料。`action_params` 填写角色名或角色名+动作，如 `琴` 或 `琴-短E`，不填则自动识别。                                                                                                   |
 
 
 
@@ -161,8 +161,19 @@ order: 23
 
 ## 附录
 
-坐标汇总json文件：
+### 坐标汇总json文件
 
 [https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json](https://github.com/babalae/better-genshin-impact/blob/main/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json)
 
+### 莉奈娅挖矿策略
 
+在执行挖矿动作时，会先打开元素视野，利用岩元素的黄色矿物提高识别率。
+识别到矿物后，按一定范围进行聚类（聚类范围即为露米砸的大致范围），
+取距离聚类中心最近的一个矿物作为目标，转动镜头进行至多7次的瞄准，
+若每次瞄准都识别到矿物，但因为识别问题导致来回横跳，会在最后一次发射一发不计入次数上限的箭矢作为兜底
+7次循环过程中若未识别到矿物，会退出瞄准状态并将刚才发生的转动偏移补偿回视角，回到初始位置，避免被误识别的目标卡死在固定视角。
+若识别不到矿物，会进行视角转动进行寻找。
+
+策略提供了射箭次数与旋转寻矿次数的参数配置，默认值分别为1,5（都为可选参数，仅填2表示射箭2次，寻矿5次）。
+若有矿脉较大，可配置为2次射箭甚至更高。
+若配置的射箭次数大于寻矿次数，会将寻矿次数赋值为射箭次数避免冲突。
