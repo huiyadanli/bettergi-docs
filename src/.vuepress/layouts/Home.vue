@@ -39,6 +39,7 @@ onBeforeUnmount(() => {
         <img
           src="https://img.alicdn.com/imgextra/i3/2042484851/O1CN01BafDLu1lhoP3xOqGQ_!!2042484851.png"
           alt="BetterGI Logo"
+          width="260"
         >
       </div>
     </template>
