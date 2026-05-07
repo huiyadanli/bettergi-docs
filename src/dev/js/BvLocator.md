@@ -7,13 +7,46 @@ date: 2026-02-24
 
 # BvLocator 类 API 文档
 
-# 类概述
+## 类概述
 
 `BvLocator` 主要用于元素定位，基于 Region 体系进行包装，提供了的元素定位、等待和交互方法。该类支持模板匹配和 OCR 两种识别方式，可用于游戏界面元素的自动识别和操作。
 
 ## 初始化方法
 
 ### 构造函数
+
+**参数说明**
+
+| 参数 | 类型 | 必填 | 描述 |
+|------|------|------|------|
+| recognitionObject | RecognitionObject | 是 | 识别对象，包含识别类型、模板图像或文本等信息 |
+| cancellationToken | CancellationToken | 是 | 取消令牌，用于取消长时间运行的操作 |
+
+**返回值**
+- 返回 `BvLocator` 实例
+
+**JavaScript 调用示例**
+
+```javascript
+// 1.初始化方法
+const token = new CancellationTokenSource().Token;
+const ro = RecognitionObject.TemplateMatch(
+    file.ReadImageMatSync("assets/paimon_menu.png")
+);
+const locator = new BvLocator(ro, token);
+
+
+// 2.推荐通过 BvPage 初始化
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/paimon_menu.png")
+    )
+);
+
+// 现在可以使用 locator 进行元素定位和操作
+const exists = await locator.isExist();
+```
 
 <details>
 <summary>查看C#实现</summary>
@@ -28,32 +61,6 @@ public BvLocator(RecognitionObject recognitionObject, CancellationToken cancella
 
 </details>
 
-**JavaScript 调用示例**
-- 也可以使用BvPage创建实例
-```javascript
-const token = new CancellationTokenSource().Token;
-const ro = RecognitionObject.TemplateMatch(
-    file.ReadImageMatSync("assets/paimon_menu.png")
-);
-
-// 创建 BvLocator 实例
-const locator = new BvLocator(ro, token);
-
-// 现在可以使用 locator 进行元素定位和操作
-const exists = await locator.IsExist();
-```
-
-**参数说明**
-
-| 参数 | 类型 | 必填 | 描述 |
-|------|------|------|------|
-| recognitionObject | RecognitionObject | 是 | 识别对象，包含识别类型、模板图像或文本等信息 |
-| cancellationToken | CancellationToken | 是 | 取消令牌，用于取消长时间运行的操作 |
-
-**返回值**
-- 返回 `BvLocator` 实例
-
-
 ## 属性
 
 | 属性 | 类型 | 描述 |
@@ -62,7 +69,6 @@ const exists = await locator.IsExist();
 | RetryAction | `Action<List<Region>>?` | 重试时执行的操作，可为 null |
 | DefaultTimeout | int | 默认超时时间，单位为毫秒，默认值为 10000 |
 | DefaultRetryInterval | int | 默认重试间隔，单位为毫秒，默认值为 250 |
-
 
 ## 基础方法
 
@@ -75,19 +81,30 @@ const exists = await locator.IsExist();
 - 类型：`List<Region>`
 - 可能取值：
   - 空列表：未找到元素
-  - 包含一个或多个 `Region` 对象的列表：找到的元素
+  - 包含一个 `Region` 对象的列表：找到的元素（模板匹配）
+  - 包含多个 `Region` 对象的列表：找到的所有元素（OCR）
 
 **使用场景**
 - 直接查找屏幕上的元素，不进行等待
 - 作为其他方法的基础，被内部调用
-- 不建议外部直接调用，应使用更高层次的方法
+- 建议使用更高层次的方法（如 `waitFor`、`click` 等）
 
 **JavaScript 调用示例**
 
 ```javascript
-const regions = await bvLocator.FindAll();
-if (regions.count > 0) {
-    log.info('找到元素:{0}个', regions.count);
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/paimon_menu.png")
+    )
+);
+
+const regions = locator.findAll();
+if (regions.Count > 0) {
+    log.info('找到元素:{0}个', regions.Count);
+    // 可以点击找到的元素
+    regions.first().click();
 } else {
     log.info('未找到元素');
 }
@@ -143,12 +160,21 @@ public List<Region> FindAll()
 
 **使用场景**
 - 快速检查元素是否存在，不需要获取具体位置信息
+- 用于条件判断，根据元素是否存在决定后续操作
 
 **JavaScript 调用示例**
 
 ```javascript
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/paimon_menu.png")
+    )
+);
+
 // 检查元素是否存在
-const exists = await bvLocator.IsExist();
+const exists = locator.isExist();
 if (exists) {
     log.info('元素存在');
 } else {
@@ -168,9 +194,9 @@ public bool IsExist()
 
 </details>
 
-## 等待方法
+## 等待元素出现或消失
 
-### WaitFor
+### WaitFor - 等待元素出现
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -184,18 +210,22 @@ public bool IsExist()
   - 抛出 `TimeoutException`：超时未找到元素
 
 **使用场景**
-- 需要等待界面元素加载完成后再进行操作
+- 需要等待元素加载完成
 
 **JavaScript 调用示例**
 
 ```javascript
-// 等待元素出现，最多等待5秒
-try {
-    const regions = await bvLocator.WaitFor(5000);
-    log.info('元素已出现:{0}个', regions.count);
-} catch (error) {
-    log.error('等待超时:{0}', error.message);
-}
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/paimon_menu.png")
+    )
+);
+
+const regions = await locator.waitFor(5000);
+log.info('元素已出现:{0}个', regions.Count);
+
 ```
 
 <details>
@@ -229,7 +259,7 @@ public async Task<List<Region>> WaitFor(int? timeout = null)
 
 </details>
 
-### TryWaitFor
+### TryWaitFor - 等待元素出现,不抛出异常
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -249,10 +279,19 @@ public async Task<List<Region>> WaitFor(int? timeout = null)
 **JavaScript 调用示例**
 
 ```javascript
-// 尝试等待元素出现，最多等待3秒
-const regions = await bvLocator.TryWaitFor(3000);
-if (regions.count > 0) {
-    log.info('元素已出现:{0}个', regions.count);
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/paimon_menu.png")
+    )
+);
+
+// 尝试等待元素出现，最多等待 3 秒
+const regions = await locator.tryWaitFor(3000);
+if (regions.Count > 0) {
+    log.info('元素已出现:{0}个', regions.Count);
+    regions.first().click();
 } else {
     log.info('元素未出现，但没有抛出异常');
 }
@@ -277,7 +316,7 @@ public async Task<List<Region>> TryWaitFor(int? timeout = null)
 
 </details>
 
-### WaitForDisappear
+### WaitForDisappear - 等待元素消失
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -292,17 +331,28 @@ public async Task<List<Region>> TryWaitFor(int? timeout = null)
 
 **使用场景**
 - 需要等待界面元素消失后再进行操作
-- 适用于异步操作场景
+- 适用于关闭弹窗、等待加载界面消失等场景
 
 **JavaScript 调用示例**
 
 ```javascript
-// 等待元素消失，最多等待5秒
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/loading_screen.png")
+    )
+);
+
+// 注意：此方法在超时会抛出 TimeoutException 异常，请使用 try-catch 捕获
+// 等待加载界面消失,最多等待 10 秒
 try {
-    await bvLocator.WaitForDisappear(5000);
-    log.info('元素已消失');
+    await locator.waitForDisappear(10000);
+    log.info('加载界面已消失,可以继续操作');
+    // 继续执行后续操作
 } catch (error) {
-    log.error('等待超时:{0}', error.message);
+    log.error('等待超时:{0}', error.Message);
+    // 超时后的处理
 }
 ```
 
@@ -336,7 +386,7 @@ public async Task WaitForDisappear(int? timeout = null)
 
 </details>
 
-### TryWaitForDisappear
+### TryWaitForDisappear - 等待元素消失,不抛出异常
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -354,9 +404,19 @@ public async Task WaitForDisappear(int? timeout = null)
 **JavaScript 调用示例**
 
 ```javascript
-// 尝试等待元素消失，最多等待3秒
-await bvLocator.TryWaitForDisappear(3000);
-log.info('尝试等待元素消失完成');
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/popup.png")
+    )
+);
+
+// 尝试等待弹窗消失，最多等待 3 秒
+await locator.tryWaitForDisappear(3000);
+log.info('尝试等待弹窗消失完成');
+// 无论弹窗是否消失,都继续执行后续操作
+await page.getByText("确认").click();
 ```
 
 <details>
@@ -378,9 +438,9 @@ public async Task TryWaitForDisappear(int? timeout = null)
 
 </details>
 
-## 交互方法
+## 以元素出现或消失为条件的点击
 
-### Click
+### Click - 等待元素出现并点击
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -400,12 +460,23 @@ public async Task TryWaitForDisappear(int? timeout = null)
 **JavaScript 调用示例**
 
 ```javascript
-// 等待元素出现并点击，最多等待5秒
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/confirm_button.png")
+    )
+);
+
+// 等待元素出现并点击，最多等待 5 秒
 try {
-    const region = await bvLocator.Click(5000);
+    const region = await locator.click(5000);
     log.info('点击成功:{0}', region);
+    // 等待点击后的响应，如等待新界面出现
+    await page.wait(500);
 } catch (error) {
-    log.error('操作失败:{0}', error.message);
+    log.error('操作失败:{0}', error.Message);
+    // 错误处理
 }
 ```
 
@@ -421,7 +492,7 @@ public async Task<Region> Click(int? timeout = null)
 
 </details>
 
-### ClickUntilDisappears
+### ClickUntilDisappears - 元素存在时持续点击，直到元素消失
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -436,17 +507,28 @@ public async Task<Region> Click(int? timeout = null)
 
 **使用场景**
 - 需要点击元素并确认操作生效（元素消失）的场景
-- 适用于需要确认操作结果的场景
+- 适用于关闭弹窗、提交操作等需要确认结果的操作
 
 **JavaScript 调用示例**
 
 ```javascript
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/close_button.png")
+    )
+);
+
 // 等待元素出现并点击，直到元素消失
 try {
-    const region = await bvLocator.ClickUntilDisappears(10000);
+    const region = await locator.clickUntilDisappears(10000);
     log.info('点击成功并确认元素消失:{0}', region);
+    // 继续执行后续操作
+    await page.wait(500);
 } catch (error) {
-    log.error('操作失败:{0}', error.message);
+    log.error('操作失败:{0}', error.Message);
+    // 错误处理，可能需要重试
 }
 ```
 
@@ -465,7 +547,7 @@ public async Task<Region> ClickUntilDisappears(int? timeout = null)
 
 </details>
 
-### DoubleClick
+### DoubleClick - 等待元素出现并双击
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -485,12 +567,23 @@ public async Task<Region> ClickUntilDisappears(int? timeout = null)
 **JavaScript 调用示例**
 
 ```javascript
-// 等待元素出现并双击，最多等待5秒
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/item_icon.png")
+    )
+);
+
+// 等待元素出现并双击，最多等待 5 秒
 try {
-    const region = await bvLocator.DoubleClick(5000);
+    const region = await locator.doubleClick(5000);
     log.info('双击成功:{0}', region);
+    // 等待双击后的响应
+    await page.wait(1000);
 } catch (error) {
-    log.error('操作失败:{0}', error.message);
+    log.error('操作失败:{0}', error.Message);
+    // 错误处理
 }
 ```
 
@@ -509,7 +602,7 @@ public async Task<Region> DoubleClick(int? timeout = null)
 
 ## 配置方法
 
-### WithRoi
+### WithRoi - 重设感兴趣区域 (ROI)
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -523,15 +616,26 @@ public async Task<Region> DoubleClick(int? timeout = null)
 **使用场景**
 - 已知元素大致位置，需要缩小搜索范围
 - 提高识别速度和准确性
+- 避免误识别其他区域的相似元素
 
 **JavaScript 调用示例**
 
 ```javascript
-// 设置感兴趣区域 (ROI)
-const rect  = new OpenCvSharp.OpenCvSharp.Rect(0,0,1920,1080);
-const updatedLocator = bvLocator.WithRoi(rect);
-// 现在可以使用 updatedLocator 进行定位
-const regions = await updatedLocator.FindAll();
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/menu_button.png")
+    )
+);
+
+// 设置感兴趣区域 (ROI)，在屏幕右下角搜索
+const rect = new OpenCvSharp.OpenCvSharp.Rect(1400, 800, 500, 280);
+const regions = locator.withRoi(rect).waitFor(5000);
+if (regions.Count > 0) {
+    log.info('在指定区域找到元素');
+    regions.first().click();
+}
 ```
 
 <details>
@@ -547,49 +651,7 @@ public BvLocator WithRoi(Rect rect)
 
 </details>
 
-### WithRoi (函数版本)
-
-**参数说明**
-| 参数 | 类型 | 必填 | 描述 |
-|------|------|------|------|
-| deltaFunc | Func<Rect, Rect> | 是 | 基于基础矩形计算 ROI 的函数 |
-
-**返回值**
-- 类型：`BvLocator`
-- 返回当前 `BvLocator` 实例，支持链式调用
-
-**使用场景**
-- 需要动态计算 ROI
-
-**JavaScript 调用示例**
-
-```javascript
-// 使用函数设置感兴趣区域
-const updatedLocator = bvLocator.WithRoi(baseRect => {
-    // 仅作为演示，四边向内缩10像素
-    baseRect.Inflate(-10, -10);
-    return  baseRect
-});
-// 现在可以使用 updatedLocator 进行定位
-const regions = await updatedLocator.FindAll();
-```
-
-<details>
-<summary>查看C#实现</summary>
-
-```csharp
-public BvLocator WithRoi(Func<Rect, Rect> deltaFunc)
-{
-    var captureAreaRect = TaskContext.Instance().SystemInfo.ScaleMax1080PCaptureRect;
-    var rect = deltaFunc(captureAreaRect);
-    RecognitionObject.RegionOfInterest = rect;
-    return this;
-}
-```
-
-</details>
-
-### WithRetryAction
+### WithRetryAction - 重试时的操作
 
 **参数说明**
 | 参数 | 类型 | 必填 | 描述 |
@@ -603,17 +665,29 @@ public BvLocator WithRoi(Func<Rect, Rect> deltaFunc)
 **使用场景**
 - 需要在重试过程中执行额外操作，如滚动屏幕、刷新界面等
 - 提高元素定位的成功率
+- 记录重试过程中的日志信息
 
 **JavaScript 调用示例**
 
 ```javascript
-// 设置重试操作
-const updatedLocator = bvLocator.WithRetryAction(regions => {
-    log.info('重试中，当前找到元素数:{0}', regions.count);
+// 通过 BvPage 创建定位器
+const page = new BvPage();
+const locator = page.Locator(
+    RecognitionObject.TemplateMatch(
+        file.ReadImageMatSync("assets/list_item.png")
+    )
+);
+
+// 设置重试操作，在每次重试时记录日志
+const updatedLocator = locator.withRetryAction(regions => {
+    log.info('重试中，当前找到元素数:{0}', regions.Count);
     // 可以在这里执行额外的操作，如滚动屏幕等
 });
 // 现在使用 updatedLocator 进行等待
-const regions = await updatedLocator.WaitFor(5000);
+const regions = await updatedLocator.waitFor(5000);
+if (regions.Count > 0) {
+    log.info('找到元素');
+}
 ```
 
 <details>
