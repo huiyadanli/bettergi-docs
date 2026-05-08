@@ -441,8 +441,8 @@ OpenCV Mat 矩阵对象，用于图像处理。
     const captureRegion = captureGameRegion();
     
     // 进行图像处理
-    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.ColorConversionCodes.BGR2GRAY);
-    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.ThresholdTypes.Binary);
+    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.OpenCvSharp.ColorConversionCodes.BGR2GRAY);
+    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.OpenCvSharp.ThresholdTypes.Binary);
     
     // 获取坐标
     const position = genshin.getPositionFromMap();
@@ -495,8 +495,8 @@ OpenCV 图像处理库的 JavaScript 接口。
     const captureRegion = captureGameRegion();
     
     // 进行图像处理
-    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.ColorConversionCodes.BGR2GRAY);
-    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.ThresholdTypes.Binary);
+    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.OpenCvSharp.ColorConversionCodes.BGR2GRAY);
+    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.OpenCvSharp.ThresholdTypes.Binary);
     
     // 模板匹配
     const template = file.readImageMatSync("assets/template.png");
