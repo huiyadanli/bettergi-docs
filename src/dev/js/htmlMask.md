@@ -106,6 +106,59 @@ if (htmlMask.exists("my-overlay")) {
 }
 ```
 
+#### setClickThrough(windowId, enabled)
+
+设置指定窗口的点击穿透模式。窗口默认处于点击穿透状态。
+
+**参数**：
+- `windowId`：字符串类型，窗口 ID
+- `enabled`：布尔类型，`true` 表示点击穿透（鼠标事件穿过窗口），`false` 表示可交互（窗口接收鼠标和键盘事件）
+
+**示例**：
+```javascript
+const winId = htmlMask.show("assets/index.html");
+
+// 关闭点击穿透，使窗口可交互
+htmlMask.setClickThrough(winId, false);
+
+// 恢复点击穿透，使窗口不再拦截鼠标事件
+htmlMask.setClickThrough(winId, true);
+```
+
+#### getClickThrough(windowId)
+
+获取指定窗口的点击穿透状态。
+
+**参数**：
+- `windowId`：字符串类型，窗口 ID
+
+**返回值**：布尔类型，`true` 表示当前处于点击穿透模式，`false` 表示可交互模式
+
+**示例**：
+```javascript
+const winId = htmlMask.show("assets/index.html");
+const isClickThrough = htmlMask.getClickThrough(winId);
+log.info("当前点击穿透状态: {isClickThrough}", isClickThrough); // true
+```
+
+#### toggleClickThrough(windowId)
+
+切换指定窗口的点击穿透模式（穿透 ↔ 可交互）。
+
+**参数**：
+- `windowId`：字符串类型，窗口 ID
+
+**示例**：
+```javascript
+const winId = htmlMask.show("assets/index.html");
+
+// 第一次切换：穿透 → 可交互
+htmlMask.toggleClickThrough(winId);
+
+// 第二次切换：可交互 → 穿透
+htmlMask.toggleClickThrough(winId);
+```
+
 ### 2. 消息通信
 
 所有消息遵循统一的 JSON 格式（根据web api格式设计）：
@@ -355,7 +408,8 @@ window.chrome.webview.postMessage(JSON.stringify({
 
 ### 窗口
 - 最多同时打开 **5** 个 HTML 遮罩窗口（打开过多窗口非常影响性能，请尽量使用数据通信的形式响应式更新内容）
-- 遮罩窗口是**透明**、**置顶**、**点击穿透**的（不可交互）
+- 遮罩窗口是**透明**、**置顶**、**默认点击穿透**的
+- 可通过 `setClickThrough` 动态切换点击穿透模式，切换为可交互模式时窗口会自动获得焦点
 
 ### 生命周期
 - JS 脚本结束时自动关闭所有遮罩窗口
@@ -376,6 +430,9 @@ window.chrome.webview.postMessage(JSON.stringify({
 | 窗口 | closeAll | - | void |
 | 窗口 | getWindowIds | - | string[] |
 | 窗口 | exists | id | bool |
+| 窗口 | setClickThrough | windowId, enabled | void |
+| 窗口 | getClickThrough | windowId | bool |
+| 窗口 | toggleClickThrough | windowId | void |
 | 通信 | send | windowId, url, jsonData | void |
 | 通信 | request | windowId, url, jsonData, timeoutMs? | string? |
 | 通信 | receive | windowId, timeoutMs? | string? |
