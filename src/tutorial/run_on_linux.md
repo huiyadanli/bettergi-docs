@@ -77,7 +77,7 @@ prefix/
 运行以下命令以安装.NET 8 进行时
 ```
 export WINEPREFIX=[你的prefix目录路径]
-set WINE [你的wine可执行文件路径]
+export WINE=[你的wine可执行文件路径]
 "$WINE" [.NET 8 运行时的路径]
 ```
 
@@ -86,7 +86,7 @@ set WINE [你的wine可执行文件路径]
 ```
 export DOTNET_SYSTEM_GLOBALIZATION_USENLS=1
 export WINEPREFIX=[你的prefix目录路径]
-set WINE [你的wine可执行文件路径]
+export WINE=[你的wine可执行文件路径]
 "$WINE" [BetterGi路径]
 ```
 
@@ -99,4 +99,3 @@ set WINE [你的wine可执行文件路径]
 点击开始
 
 最后高贵的Linux用户就能畅玩BetterGi啦！喵喵₍^. .^₎⟆
-
