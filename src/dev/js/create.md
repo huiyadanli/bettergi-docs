@@ -119,6 +119,29 @@ export { isInMainUI };
 
 用于在 BetterGI 的调度器中配置变量
 
+#### settings 持久化
+
+脚本运行时，`settings` 是当前配置组中该 JS 脚本的自定义配置对象。脚本内直接修改 `settings` 上的字段，任务结束后会自动保存回配置组文件：
+
+```txt
+User\ScriptGroup\<配置组名称>.json
+```
+
+因此，脚本可以把运行过程中产生的状态写回自定义配置，例如记录上次运行进度、下次运行参数等：
+
+```js
+settings.lastRunAt = new Date().toISOString();
+settings.nextIndex = Number(settings.nextIndex ?? 0) + 1;
+```
+
+保存时机是 **JS 脚本运行结束后**。即使脚本执行过程中抛出异常，BetterGI 也会尝试保存已经写入 `settings` 的值。
+
+::: warning
+
+该机制只适用于配置组中已有自定义配置对象的 JS 脚本。直接从脚本列表单独运行、且未在配置组中创建过自定义配置的脚本，不会因为运行时写入 `settings` 而自动新增一份配置组设置。
+
+:::
+
 ```js
 [
   {

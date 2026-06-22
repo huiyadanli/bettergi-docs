@@ -369,6 +369,7 @@ let allPaths = file.readPathSync(path);
 
 **返回值：**
 - 字符串数组（需要二次转换为JavaScript的标准数组）
+- 目录不存在或读取失败时返回空数组，不会自动创建目录
 
 **示例：**
 ```javascript
@@ -403,6 +404,73 @@ const isFolder = file.isFolder(path);
 
 log.info(`当前路径是否为文件夹: ${isFolder}`); // 本示例的file.isFlase的返回值为 false
 ```
+
+### 3. 创建目录 - createDirectory
+
+```javascript
+const ok = file.createDirectory(path);
+```
+
+**参数说明：**
+- `path`: 要创建的文件夹路径（字符串，相对于当前 JS 脚本目录）
+
+**返回值：**
+- 布尔值，创建成功或目录已存在时返回 `true`，失败时返回 `false`
+
+**示例：**
+```javascript
+const ok = file.createDirectory("data/cache");
+if (ok) {
+  log.info("目录已准备好");
+}
+```
+
+## 战斗策略目录 strategyFile
+
+`strategyFile` 用于访问 BetterGI 的战斗策略目录 `User\AutoFight`。所有路径都相对于 `User\AutoFight`，并且会进行路径安全校验，不能访问该目录之外的文件。
+
+当前 `strategyFile` 提供目录枚举和路径判断能力，适合脚本读取已安装战斗策略的目录结构、检查某个策略文件是否存在。
+
+### 1. 读取战斗策略目录 - strategyFile.readPathSync
+
+```javascript
+let paths = strategyFile.readPathSync("./");
+```
+
+**参数说明：**
+- `path`: 要读取的文件夹路径（字符串，默认为 `./`，相对于 `User\AutoFight`）
+
+**返回值：**
+- 字符串数组（需要使用 `Array.from()` 转换为 JavaScript 标准数组）
+- 目录不存在或读取失败时返回空数组，不会自动创建目录
+
+**示例：**
+```javascript
+let strategies = strategyFile.readPathSync("./");
+strategies = Array.from(strategies);
+
+for (const path of strategies) {
+  if (strategyFile.isFile(path) && path.endsWith(".txt")) {
+    log.info(`发现战斗策略: ${path}`);
+  }
+}
+```
+
+### 2. 判断战斗策略路径
+
+```javascript
+const exists = strategyFile.isExists(path);
+const isFile = strategyFile.isFile(path);
+const isFolder = strategyFile.isFolder(path);
+```
+
+**参数说明：**
+- `path`: 文件或目录路径（字符串，相对于 `User\AutoFight`）
+
+**返回值：**
+- `isExists(path)`: 路径存在时返回 `true`
+- `isFile(path)`: 路径是文件时返回 `true`
+- `isFolder(path)`: 路径是文件夹时返回 `true`
 
 ## 文件读写组合示例
 
@@ -534,7 +602,7 @@ log.info(`重命名${if result ? "成功": "失败"}! \n ${oldPath} -> ${newPath
 
 6. **目录创建**：如果文件所在目录不存在，会自动创建
 
-7. **目录读取**：```file.readPathSync(path)``` 读取到的目录数组建议使用 ```Array.from()``` 处理后再使用
+7. **目录读取**：```file.readPathSync(path)``` 和 ```strategyFile.readPathSync(path)``` 读取到的目录数组建议使用 ```Array.from()``` 处理后再使用。读取目录不会自动创建不存在的目录
 
 8. **图片保存**：
    - `WriteImageSync(path, mat)` 为同步方法，返回布尔值
