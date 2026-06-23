@@ -17,7 +17,7 @@ dispatcher.addTimer(new RealtimeTimer("AutoPick"));
 dispatcher.addTimer(new RealtimeTimer("AutoPick", { "forceInteraction": true }));
 
 // 执行自动秘境
-await dispatcher.runTask(new SoloTask("AutoDomain"));
+const domainRewards = await dispatcher.runTask(new SoloTask("AutoDomain"));
 // 执行自动战斗
 await dispatcher.runTask(new SoloTask("AutoFight"));
 // 执行自动伐木
@@ -28,7 +28,10 @@ await dispatcher.runTask(new SoloTask("AutoGeniusInvokation"));
 await dispatcher.runTask(new SoloTask("AutoFishing"));
 
 //执行自动秘境，支持传入参数
-await dispatcher.runAutoDomainTask(new AutoDomainParam());
+const rewards = await dispatcher.runAutoDomainTask(new AutoDomainParam());
+
+// 执行自动首领讨伐，支持传入参数
+const bossRewards = await dispatcher.runAutoBossTask(new AutoBossParam());
 
 // 执行自动战斗，支持传入参数
 await dispatcher.runAutoFightTask(new AutoFightParam());
@@ -56,7 +59,7 @@ await dispatcher.runAutoFightTask(new AutoFightParam());
 - 描述: 运行独立任务
 - 参数:
   - `soloTask` (`SoloTask`): 独立任务对象
-- 返回类型: `Task`
+- 返回类型: `Task<object?>`。`AutoDomain` 和 `AutoBoss` 在启用奖励识别后会返回奖励汇总对象。
 - 异常: 如果任务对象为空或任务名称未知会抛出异常
 
 ### getLinkedCancellationToken()
@@ -68,6 +71,15 @@ await dispatcher.runAutoFightTask(new AutoFightParam());
 - 参数:
   - `param` (`AutoDomainParam`): 自动秘境参数对象
   - `customCt ` (`CancellationToken`): 取消令牌（可选，默认null）
+- 返回类型: `Dictionary<string, int>`，键为奖励名称，值为累计数量。未启用奖励识别或识别为空时返回空对象。
+- 异常: 如果参数对象为空会抛出异常
+
+### runAutoBossTask()
+- 描述: 运行 独立任务-自动首领讨伐
+- 参数:
+  - `param` (`AutoBossParam`): 自动首领讨伐参数对象
+  - `customCt ` (`CancellationToken`): 取消令牌（可选，默认null）
+- 返回类型: `Dictionary<string, int>`，键为奖励名称，值为累计数量。未启用奖励识别或识别为空时返回空对象。
 - 异常: 如果参数对象为空会抛出异常
 
 ### runAutoFightTask()
@@ -131,6 +143,7 @@ await dispatcher.runAutoFightTask(new AutoFightParam());
 - **AutoWood**: 自动伐木任务，自动砍伐树木获取木材
 - **AutoFight**: 自动战斗任务，自动执行战斗操作
 - **AutoDomain**: 自动秘境任务，自动执行秘境挑战
+- **AutoBoss**: 自动首领讨伐任务，自动执行首领讨伐
 - **AutoFishing**: 自动钓鱼任务，自动执行钓鱼操作
 - **AutoGeniusInvokation**: 自动七圣召唤任务，自动执行七圣召唤对局
 
@@ -165,6 +178,7 @@ await dispatcher.runAutoFightTask(new AutoFightParam());
 
 #### 基础任务（无配置参数）
 - **AutoDomain**: 自动秘境任务
+- **AutoBoss**: 自动首领讨伐任务
 - **AutoFight**: 自动战斗任务  
 - **AutoWood**: 自动伐木任务
 
@@ -244,8 +258,8 @@ await dispatcher.runAutoFightTask(new AutoFightParam());
   try {
     // 执行自动秘境
     log.info("开始执行自动秘境");
-    await dispatcher.runTask(new SoloTask("AutoDomain"));
-    log.info("自动秘境完成");
+    const rewards = await dispatcher.runTask(new SoloTask("AutoDomain"));
+    log.info(`自动秘境完成，奖励汇总: ${JSON.stringify(rewards)}`);
     
     // 执行自动钓鱼
     log.info("开始执行自动钓鱼");
@@ -287,8 +301,8 @@ await dispatcher.runAutoFightTask(new AutoFightParam());
     log.info("实时拾取任务已启动");
     
     // 执行独立任务
-    await dispatcher.runTask(new SoloTask("AutoDomain"));
-    log.info("自动秘境完成");
+    const rewards = await dispatcher.runTask(new SoloTask("AutoDomain"));
+    log.info(`自动秘境完成，奖励汇总: ${JSON.stringify(rewards)}`);
     
     // 继续执行其他独立任务
     await dispatcher.runTask(new SoloTask("AutoFight"));
@@ -407,6 +421,7 @@ log.Info(`鸡豆花 数量: ${JSON.stringify(resultDict["鸡豆花"])}`);
   - `CondensedResinUseCount`(`int`):使用浓缩树脂刷取副本次数
   - `TransientResinUseCount`(`int`):使用须臾树脂刷取副本次数
   - `FragileResinUseCount`(`int`):使用脆弱树脂刷取副本次数
+  - `RewardRecognitionEnabled`(`bool`):是否启用奖励识别，启用后任务返回奖励名称与数量汇总。奖励识别当前仅支持 `1920x1080` 分辨率。
 - 方法:
   - `SetCombatStrategyPath（）`：**设置要使用的战斗策略**
     - 参数：
@@ -415,6 +430,42 @@ log.Info(`鸡豆花 数量: ${JSON.stringify(resultDict["鸡豆花"])}`);
   - `SetResinPriorityList()`：**设置使用树脂优先级的列表**
     - 参数：`priorities`(`string[]`)
       - `原粹树脂`|`浓缩树脂`|`须臾树脂`|`脆弱树脂` ：没有做参数校验，务必保证名称填写正确。
+
+示例：
+
+```js
+const param = new AutoDomainParam();
+param.RewardRecognitionEnabled = true;
+const rewards = await dispatcher.runAutoDomainTask(param);
+log.info(`秘境奖励汇总: ${JSON.stringify(rewards)}`);
+```
+
+### AutoBossParam 自动首领讨伐参数对象
+默认使用本体设置的参数，可以初始化之后修改。
+- 初始化之后的参数:
+  - `BossName`(`string`): 要讨伐的首领名称
+  - `StrategyName`(`string`): 战斗策略名称
+  - `CombatStrategyPath`(`string`): 实际使用的战斗策略路径
+  - `TeamName`(`string`): 讨伐前切换的队伍名称，留空则不切换
+  - `SpecifyRunCount`(`bool`): 是否指定讨伐次数
+  - `RunCount`(`int`): 指定模式下成功领取奖励的目标次数
+  - `UseTransientResin`(`bool`): 原粹不足时是否允许使用须臾树脂补充
+  - `UseFragileResin`(`bool`): 原粹不足时是否允许使用脆弱树脂补充
+  - `ReviveRetryCount`(`int`): 角色死亡后的最大重试次数
+  - `ReturnToStatueAfterEachRound`(`bool`): 每轮领奖后是否先返回七天神像
+  - `RewardRecognitionEnabled`(`bool`): 是否启用奖励识别，启用后任务返回奖励名称与数量汇总。奖励识别当前仅支持 `1920x1080` 分辨率。
+- 方法:
+  - `SetCombatStrategyPath()`：根据战斗策略名称重新计算实际策略路径，参数为空时使用本体设置。
+
+示例：
+
+```js
+const param = new AutoBossParam();
+param.BossName = "急冻树";
+param.RewardRecognitionEnabled = true;
+const rewards = await dispatcher.runAutoBossTask(param);
+log.info(`首领奖励汇总: ${JSON.stringify(rewards)}`);
+```
 
 ### AutoFightParam 自动战斗参数对象
 默认使用本体设置的参数，可以初始化之后修改，按照设置界面上的顺序列出

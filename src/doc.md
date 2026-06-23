@@ -36,6 +36,7 @@ order: 20
   * [自动伐木](/feats/task/felling.html)
   * [自动战斗](/feats/task/domain.html)
   * [自动秘境](/feats/task/domain.html)
+  * [自动首领讨伐](/feats/task/autoboss.html)
   * [自动幽境危战](/feats/task/stygian.html)
   * [全自动钓鱼](/feats/task/fish.html)
   * [自动地脉花](/feats/task/leyline.html)
