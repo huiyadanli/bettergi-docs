@@ -3,6 +3,13 @@ title: 本地远程多用户后台挂机指南
 order: 4
 ---
 
+::: warning
+注意此用法可能和 BetterGI 桌面分身功能产生冲突，会导致桌面分身功能无法使用。
+
+桌面分身本身也是一种RDP方式，如果你已掌握本地远程多用户，完全可以放弃桌面分身功能。
+:::
+
+
 [RDP Wrapper CnC](https://github.com/sebaxakerhtc/rdpwrap) 是一个开源工具，用于在 Windows 系统上启用多用户远程桌面连接（RDP），适用于 Windows 7/8/10/11 系统。
 
 ::: important

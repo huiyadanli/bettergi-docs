@@ -1,5 +1,5 @@
 ---
-title: 命令行
+title: 其他
 order: 400
 index: false
 dir:
