@@ -1,9 +1,9 @@
 ---
-title: 桌面分身界面按钮说明
+title: 桌面分身界面按钮
 order: 10
 ---
 
-这个文档观看的前提是你已经成功启动桌面分身，如果没有，前请先查看 [启动桌面分身](/feats/autos/command/session.html)
+这个文档观看的前提是你已经成功启动桌面分身，如果没有，前请先查看 [桌面分身启动](/feats/autos/command/session.html)
 
 ## 1. 标题栏按钮
 
