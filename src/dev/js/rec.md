@@ -3,528 +3,253 @@ title: 图像识别与OCR
 order: 41
 ---
 
-# 使用示例
+# 图像识别与 OCR
 
-## 截图
+本页只记录脚本引擎已暴露的 `captureGameRegion`、`RecognitionObject`、`ImageRegion`、`Region`、`Mat`、`Point2f` 和 `OpenCvSharp`。图像对象实现了 `IDisposable`，高频截图或裁剪时必须及时释放。
 
-使用全局方法 `captureGameRegion()` 就可以获取 `ImageRegion` 图像。
-
-再通过 `ImageRegion` 内自带的 `find`、`findMulti` 找图、OCR等操作
-
-⚠️请注意，当你在使用获取图像相关的接口时，务必关注**Dispose**方法的使用，如高频调用图像获取，可能会造成**内存溢出**等严重后果！
+## 截图入口
 
 ### captureGameRegion()
-- 返回类型: `ImageRegion`
-- 描述: 捕获游戏区域的图像。当游戏分辨率大于 1080P 时，返回的图像会自动缩放至 1920x1080；小于等于 1080P 时保持原始尺寸
 
-## 模板匹配
+捕获游戏区域并返回 `ImageRegion`。游戏分辨率高于 1080P 时图像会缩放至 1920x1080；不高于 1080P 时保持原尺寸。
 
-举例，模板匹配：
 ```js
-// 定义识别对象
-const paimonMenuRo = RecognitionObject.TemplateMatch(file.ReadImageMatSync("assets/paimon_menu.png"), 0, 0, 640, 216);
+const image = captureGameRegion();
+try {
+  log.info(`截图大小: ${image.width} x ${image.height}`);
+} finally {
+  image.dispose();
+}
+```
 
-/**
- * 返回主界面，这里只做demo演示
- * 实际场景下，推荐使用已经包装好了的 `genshin.returnMainUi()`
- * @returns {Promise<void>}
- */
-const returnMain = async () => {
+## 识别配置 RecognitionObject
+
+`RecognitionObject` 用于描述模板匹配、OCR 或颜色识别规则。脚本通常通过静态工厂方法创建，不需要直接构造。
+
+### 属性
+
+| 名称 | 类型 | 访问 | 说明 |
+|---|---|---|---|
+| `recognitionType` | `RecognitionTypes` | 读写 | 识别类型 |
+| `regionOfInterest` | `Rect` | 读写 | 感兴趣区域；默认值表示全图 |
+| `name` | `string` | 读写 | 规则名称 |
+| `templateImageMat` | `Mat` | 读写 | 模板图像 |
+| `templateImageGreyMat` | `Mat` | 读写 | 灰度模板缓存 |
+| `threshold` | `double` | 读写 | 模板匹配阈值 |
+| `use3Channels` | `bool` | 读写 | 是否使用三通道匹配 |
+| `templateMatchMode` | `TemplateMatchModes` | 读写 | OpenCV 模板匹配模式 |
+| `colorConversionCode` | `ColorConversionCodes` | 读写 | 颜色空间转换方式 |
+| `lowerColor` | `Scalar` | 读写 | 颜色范围下界 |
+| `upperColor` | `Scalar` | 读写 | 颜色范围上界 |
+| `allContainMatchText` | `string[]` | 读写 | OCR 结果必须包含的全部文本 |
+| `oneContainMatchText` | `string[]` | 读写 | OCR 结果至少包含其一的文本 |
+| `regexMatchText` | `string` | 读写 | OCR 正则过滤表达式 |
+
+### 工厂方法
+
+| 方法 | 参数类型 | 说明 |
+|---|---|---|
+| `templateMatch(mat)` | `mat: Mat` | 使用整张图创建模板匹配规则 |
+| `templateMatch(mat, useMask, maskColor?)` | `mat: Mat`、`useMask: bool`、`maskColor: Color` | 创建可选颜色遮罩的模板匹配规则 |
+| `templateMatch(mat, x, y, width, height)` | `mat: Mat`；坐标和尺寸为 `double` | 创建限定识别区域的模板匹配规则 |
+| `ocr(x, y, width, height)` | 坐标和尺寸为 `double` | 创建限定区域的 OCR 规则 |
+| `ocr(rect)` | `rect: Rect` | 使用矩形创建 OCR 规则 |
+| `ocrMatch(x, y, width, height, matchTexts)` | 坐标和尺寸为 `double`；`matchTexts: string[]` | 创建限定区域并匹配指定文本的 OCR 规则 |
+
+```js
+const template = file.readImageMatSync("assets/paimon_menu.png");
+const ro = RecognitionObject.templateMatch(template, 0, 0, 640, 216);
+ro.threshold = 0.8;
+```
+
+### 模板匹配示例
+
+下面通过派蒙菜单图标判断是否已经返回主界面。实际脚本需要返回主界面时，优先使用 `genshin.returnMainUi()`。
+
+```js
+const template = file.readImageMatSync("assets/paimon_menu.png");
+const paimonMenuRo = RecognitionObject.templateMatch(template, 0, 0, 640, 216);
+
+try {
   for (let i = 0; i < 5; i++) {
-    // 最多 ESC 5次
-    let captureRegion = captureGameRegion();  // 获取一张截图
-    let res = captureRegion.Find(paimonMenuRo);
-    if (res.isEmpty()) {
+    const image = captureGameRegion();
+    try {
+      const result = image.find(paimonMenuRo);
+      if (!result.isEmpty()) {
+        log.info(
+          "已到达主界面，主菜单位置({x},{y},{width},{height})，匹配得分 {score}",
+          result.x, result.y, result.width, result.height, result.matchScore
+        );
+        break;
+      }
       keyPress("ESCAPE");
-    } else {
-      log.info("已到达主界面，主菜单位置({x},{y},{h},{w})", res.x, res.y, res.width, res.Height);
-      break;
+    } finally {
+      image.dispose();
     }
     await sleep(500);
   }
+} finally {
+  template.dispose();
 }
 ```
 
-举例，模板匹配并点击，区域和鼠标联动方法见下面文档：
-```js
-  // 打开背包
-  keyPress("B");
-  await sleep(1000);
-  click(867,56);
-  await sleep(1000);
+### OCR 示例
 
-  // 吃个日落果
-  let apple = captureGameRegion().find(appleRo);
-  if (apple.isExist()) {
-      apple.click();
-      await sleep(500);
-      let confirm = captureGameRegion().find(confirmRo);
-      if (confirm.isExist()) {
-          confirm.click();
-      }
+`RecognitionObject.ocrThis` 表示对当前 `ImageRegion` 执行 OCR。`findMulti()` 返回 C# 集合，在 JS 中使用 `count` 和索引遍历。
+
+```js
+const image = captureGameRegion();
+try {
+  const results = image.findMulti(RecognitionObject.ocrThis);
+  log.info("OCR 全区域识别结果数量 {count}", results.count);
+
+  for (let i = 0; i < results.count; i++) {
+    const result = results[i];
+    log.info(
+      "OCR 结果: 位置({x},{y},{width},{height}), 文本 {text}",
+      result.x, result.y, result.width, result.height, result.text
+    );
   }
-```
-
-## OCR
-
-举例：
-```js
-// 获取一张截图
-let captureRegion = captureGameRegion();
-
-// 对整个区域进行 OCR
-let resList = captureRegion.findMulti(RecognitionObject.ocrThis);
-log.info("OCR 全区域识别结果数量 {len}", resList.count);
-for (let i = 0; i < resList.count; i++) { // 遍历的是 C# 的 List 对象，所以要用 count，而不是 length
-  let res = resList[i];
-  log.info("OCR结果:位置({x},{y},{h},{w}), 文本{text}", res.x, res.y, res.width, res.Height, res.text);
+} finally {
+  image.dispose();
 }
 ```
 
----
+## 区域对象 Region
 
-# 对象方法文档
-
-所有属性和方法，在 js 内都可以通过小写开头的驼峰使用，更加符合js的代码规范。
-
-# Region 类
-
-区域基类，用于描述一个区域，可以是一个矩形，也可以是一个点（长宽为0）。
-
-## 属性
-
-### X
-- 类型: `int`
-- 描述: 区域的 X 坐标
-
-### Y
-- 类型: `int`
-- 描述: 区域的 Y 坐标
-
-### Width
-- 类型: `int`
-- 描述: 区域的宽度
-
-### Height
-- 类型: `int`
-- 描述: 区域的高度
-
-### Top
-- 类型: `int`
-- 描述: 区域顶部位置，等同于 Y 坐标
-
-### Bottom
-- 类型: `int`
-- 描述: 区域底部位置，等于 Y + Height
-
-### Left
-- 类型: `int`
-- 描述: 区域左侧位置，等同于 X 坐标
-
-### Right
-- 类型: `int`
-- 描述: 区域右侧位置，等于 X + Width
-
-### Text
-- 类型: `string`
-- 描述: 存放 OCR 识别的结果文本
-
-## 构造函数
-
-### Region()
-- 描述: 创建一个空的区域对象
-
-### Region(int x, int y, int width, int height, Region? owner, INodeConverter? converter, DrawContent? drawContent)
-- 描述: 创建一个具有指定位置和大小的区域对象
-- 参数:
-  - `x` (`int`): X 坐标
-  - `y` (`int`): Y 坐标
-  - `width` (`int`): 宽度
-  - `height` (`int`): 高度
-  - `owner` (`Region?`): 所属区域
-  - `converter` (`INodeConverter?`): 坐标转换器
-  - `drawContent` (`DrawContent?`): 绘制内容
-
-## 方法
-
-### BackgroundClick()
-- 描述: 鼠标后台点击当前区域的中心位置
-
-### Click()
-- 描述: 鼠标点击当前区域的中心位置
-
-### ClickTo(int x, int y)
-- 描述: 鼠标点击区域内指定位置
-- 参数:
-  - `x` (`int`): X 坐标
-  - `y` (`int`): Y 坐标
-
-### Move()
-- 描述: 鼠标移动到当前区域的中心位置
-
-### MoveTo(int x, int y)
-- 描述: 鼠标移动到区域内指定位置
-- 参数:
-  - `x` (`int`): X 坐标
-  - `y` (`int`): Y 坐标
-
-### DrawSelf(string name, Pen? pen)
-- 描述: 绘制自身区域到遮罩窗口上
-- 参数:
-  - `name` (`string`): 绘制名称
-  - `pen` (`Pen?`): 绘制笔刷
-
-### Derive(int x, int y)
-- 描述: 派生一个点类型的新区域
-- 参数:
-  - `x` (`int`): X 坐标
-  - `y` (`int`): Y 坐标
-- 返回: 新的 `Region` 对象
-
-### IsEmpty()
-- 描述: 检查区域是否为空
-- 返回: `bool` 类型，表示区域是否为空
-
-### Dispose()
-- 描述: 释放区域占用的资源
-- 备注: 建议在使用完区域对象后调用此方法释放内存
-
-
-# ImageRegion 类
-
-继承自 `Region` 类，提供图像处理功能。
-
-## 属性
-
-### CacheImage
-- 类型: `SixLabors.ImageSharp.Image`
-- 描述: 获取 SixLabors.ImageSharp 格式的图像。如果需要会从 `Mat` 转换。不推荐使用，因为我也不知道怎么在JS使用它
-
-### SrcMat
-- 类型: `Mat`
-- 描述: 获取源 OpenCV Mat 矩阵。如果需要会从 `Bitmap` 转换。
-
-### CacheGreyMat
-- 类型: `Mat`
-- 描述: 获取源图像的灰度版本 Mat 矩阵。
-
-## 构造函数
-
-### ImageRegion(Mat mat, int x, int y, Region? owner, INodeConverter? converter, DrawContent? drawContent)
-- 描述: 使用 Mat 矩阵创建新的图像区域
-- 参数:
-  - `mat` (`Mat`): OpenCV Mat 矩阵
-  - `x` (`int`): X 坐标
-  - `y` (`int`): Y 坐标
-  - `owner` (`Region?`): 所属区域
-  - `converter` (`INodeConverter?`): 节点转换器
-  - `drawContent` (`DrawContent?`): 绘制内容
-
-## 方法
-
-### DeriveCrop(int x, int y, int w, int h)
-- 描述: 创建当前区域的剪裁派生
-- 参数:
-  - `x` (`int`): X 坐标
-  - `y` (`int`): Y 坐标
-  - `w` (`int`): 宽度
-  - `h` (`int`): 高度
-- 返回: 包含剪裁区域的新 `ImageRegion`
-
-### DeriveCrop(double dx, double dy, double dw, double dh)
-- 描述: 使用双精度坐标创建剪裁派生
-- 参数:
-  - `dx` (`double`): X 坐标
-  - `dy` (`double`): Y 坐标
-  - `dw` (`double`): 宽度
-  - `dh` (`double`): 高度
-- 返回: 包含剪裁区域的新 `ImageRegion`
-
-### Find(RecognitionObject ro)
-- 描述: 在区域内查找识别对象
-- 参数:
-  - `ro` (`RecognitionObject`): 识别对象参数（OCR、模板匹配等），具体看下方对应对象文档
-- 返回: 表示找到区域的 `Region`
-- 支持:
-  - 模板匹配 `RecognitionTypes.TemplateMatch`
-  - OCR 匹配 `RecognitionTypes.OcrMatch` （不推荐使用此功能）
-  - OCR 识别 `RecognitionTypes.Ocr`
-  - 颜色范围和 OCR `RecognitionTypes.ColorMatch`
-
-### FindMulti(RecognitionObject ro)
-- 描述: 查找多个识别对象实例
-- 参数:
-  - `ro` (`RecognitionObject`): 识别对象参数（OCR、模板匹配等），具体看下方对应对象文档
-- 返回: 找到的 `Region` 列表
-- 支持:
-  - 模板匹配（多个返回） `RecognitionTypes.TemplateMatch`
-  - OCR 识别（多个返回） `RecognitionTypes.Ocr`
-
-### Dispose()
-- 描述: 释放图像区域占用的资源
-- 备注: 建议在使用完图像区域对象后调用此方法释放内存
-
-  
-# RecognitionObject 类
-
-用于描述识别对象的类，支持模板匹配、颜色匹配和 OCR 文字识别等功能。
-
-## 通用属性
-
-### RecognitionType
-- 类型: `RecognitionTypes`
-- 描述: 识别类型，包括：
-  - `TemplateMatch`: 模板匹配
-  - `ColorMatch`: 颜色匹配
-  - `OcrMatch`: 文字识别并匹配
-  - `Ocr`: 仅文字识别
-
-### RegionOfInterest
-- 类型: `Rect`
-- 描述: 感兴趣的区域
-
-### Name
-- 类型: `string?`
-- 描述: 识别对象名称，可以为空
-
-### 模板匹配相关属性
-
-#### TemplateImageMat
-- 类型: `Mat?`
-- 描述: 模板匹配的对象(彩色)
-
-#### TemplateImageGreyMat
-- 类型: `Mat?`
-- 描述: 模板匹配的对象(灰色)
-
-#### Threshold
-- 类型: `double`
-- 描述: 模板匹配阈值，默认 0.8
-
-#### Use3Channels
-- 类型: `bool`
-- 描述: 是否使用 3 通道匹配，默认 false
-
-#### TemplateMatchMode
-- 类型: `TemplateMatchModes`
-- 描述: 模板匹配算法，默认 CCoeffNormed
-
-### 颜色匹配相关属性
-
-#### ColorConversionCode
-- 类型: `ColorConversionCodes`
-- 描述: 颜色匹配方式，默认为 BGR2RGB
-
-#### LowerColor
-- 类型: `Scalar`
-- 描述: 颜色范围下限
-
-#### UpperColor
-- 类型: `Scalar`
-- 描述: 颜色范围上限
-
-### OCR 相关属性
-
-#### OcrEngine
-- 类型: `OcrEngineTypes`
-- 描述: OCR 引擎类型，目前仅支持 Paddle
-
-#### AllContainMatchText
-- 类型: `List<string>`
-- 描述: 必须全部包含的匹配文本列表
-
-#### OneContainMatchText
-- 类型: `List<string>`
-- 描述: 包含其中之一的匹配文本列表
-
-#### RegexMatchText
-- 类型: `List<string>`
-- 描述: 正则表达式匹配文本列表
-
-## 方法
-
-### InitTemplate()
-- 描述: 初始化模板匹配所需的灰度图和遮罩
-- 返回: `RecognitionObject` 当前对象
-
-### TemplateMatch(Mat mat)
-- 描述: 创建模板匹配识别对象（推荐使用）
-- 参数:
-  - `mat` (`Mat`): 模板图像
-- 返回: 新的模板匹配 `RecognitionObject` 对象
-
-### TemplateMatch(Mat mat, double x, double y, double w, double h)
-- 描述: 创建带区域的模板匹配识别对象（推荐使用）
-- 参数:
-  - `mat` (`Mat`): 模板图像
-  - `x` (`double`): X 坐标
-  - `y` (`double`): Y 坐标
-  - `w` (`double`): 宽度
-  - `h` (`double`): 高度
-- 返回: 新的带区域的模板匹配 `RecognitionObject` 对象
-
-### Ocr(double x, double y, double w, double h)
-- 描述: 创建 OCR 识别对象（推荐使用）
-- 参数:
-  - `x` (`double`): X 坐标
-  - `y` (`double`): Y 坐标
-  - `w` (`double`): 宽度
-  - `h` (`double`): 高度
-- 返回: 新的OCR区域的 `RecognitionObject` 对象
-
-## Mat 类
-
-OpenCV Mat 矩阵对象，用于图像处理。
+`Region` 是识别结果和区域操作的基础对象。坐标相对于游戏捕获区域。
 
 ### 属性
 
-### Width
-- 类型: `int`
-- 描述: 图像宽度
-
-### Height
-- 类型: `int`
-- 描述: 图像高度
-
-### Channels
-- 类型: `int`
-- 描述: 图像通道数
+| 名称 | 类型 | 访问 | 说明 |
+|---|---|---|---|
+| `x`、`y` | `int` | 读写 | 左上角坐标 |
+| `width`、`height` | `int` | 读写 | 区域尺寸 |
+| `top`、`bottom`、`left`、`right` | `int` | 只读 | 区域边界 |
+| `text` | `string` | 读写 | OCR 识别文本 |
+| `matchScore` | `double?` | 读写 | 模板匹配得分；非模板匹配或未命中时为 `null` |
 
 ### 方法
 
-### Dispose()
-- 描述: 释放 Mat 对象占用的内存资源
-- 备注: 建议在使用完 Mat 对象后调用此方法释放内存
+| 方法 | 返回 | 说明 |
+|---|---|---|
+| `backgroundClick()` | `Region` | 后台点击区域中心 |
+| `click()` | `Region` | 点击区域中心 |
+| `clickTo(x, y)` | `Region` | 点击区域内相对坐标 |
+| `move()` | `Region` | 移动鼠标到中心 |
+| `moveTo(x, y)` | `Region` | 移动到区域内相对坐标 |
+| `drawSelf(name, pen?)` | `Region` | 在遮罩中绘制区域 |
+| `derive(x, y)` | `Region` | 派生偏移区域 |
+| `isEmpty()` | `bool` | 是否为空结果 |
+| `dispose()` | 无 | 释放持有的资源 |
 
-### CvtColor(ColorConversionCodes code)
-- 描述: 转换图像颜色空间
-- 参数:
-  - `code` (`ColorConversionCodes`): 颜色转换代码
-- 返回: 新的 Mat 对象
+### 区域与鼠标联动示例
 
-### Threshold(double thresh, double maxval, ThresholdTypes type)
-- 描述: 图像阈值处理
-- 参数:
-  - `thresh` (`double`): 阈值
-  - `maxval` (`double`): 最大值
-  - `type` (`ThresholdTypes`): 阈值类型
-- 返回: 新的 Mat 对象
+识别返回的 `Region` 会自动把区域坐标转换为游戏窗口坐标，因此可以直接移动或点击。`clickTo(x, y)` 和 `moveTo(x, y)` 的参数是相对于识别区域左上角的偏移。
 
-## Point2f 类
+```js
+const template = file.readImageMatSync("assets/confirm.png");
+const confirmRo = RecognitionObject.templateMatch(template);
+const image = captureGameRegion();
 
-表示二维浮点坐标点。
+try {
+  const confirm = image.find(confirmRo);
+  if (!confirm.isEmpty()) {
+    // 移动到识别区域中心，然后点击中心。
+    confirm.move();
+    await sleep(200);
+    confirm.click();
+
+    // 也可以操作区域内的相对坐标。
+    // confirm.moveTo(10, 10);
+    // confirm.clickTo(10, 10);
+  }
+} finally {
+  image.dispose();
+  template.dispose();
+}
+```
+
+## 图像区域 ImageRegion
+
+`ImageRegion` 继承 `Region`，额外持有图像数据并提供裁剪与识别能力。
 
 ### 属性
 
-### X
-- 类型: `float`
-- 描述: X 坐标
+| 名称 | 类型 | 访问 | 说明 |
+|---|---|---|---|
+| `cacheImage` | `Image` | 只读 | ImageSharp 格式缓存；不推荐脚本直接使用 |
+| `srcMat` | `Mat` | 只读 | 原始 OpenCV 图像 |
+| `cacheGreyMat` | `Mat` | 只读 | 灰度图缓存 |
 
-### Y
-- 类型: `float`
-- 描述: Y 坐标
+### 方法
 
-### 构造函数
+下表使用 `Re...Object` 作为 `RecognitionObject` 的缩写。
 
-### Point2f(float x, float y)
-- 描述: 创建指定坐标的点
-- 参数:
-  - `x` (`float`): X 坐标
-  - `y` (`float`): Y 坐标
-
-## 完整示例
-
-```js
-(async function() {
-  try {
-    // 获取游戏截图
-    const captureRegion = captureGameRegion();
-    
-    // 进行图像处理
-    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.OpenCvSharp.ColorConversionCodes.BGR2GRAY);
-    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.OpenCvSharp.ThresholdTypes.Binary);
-    
-    // 获取坐标
-    const position = genshin.getPositionFromMap();
-    log.info(`当前位置: X=${position.X}, Y=${position.Y}`);
-    
-    // 释放资源
-    grayMat.Dispose();
-    threshold.Dispose();
-    captureRegion.Dispose();
-    
-  } catch (error) {
-    log.error(`图像处理失败: ${error.message}`);
-  }
-})();
-```
-
-## OpenCvSharp 类
-
-OpenCV 图像处理库的 JavaScript 接口。
-
-### 常用常量
-
-### ColorConversionCodes
-- 描述: 颜色转换代码枚举
-- 常用值:
-  - `BGR2GRAY` - BGR转灰度
-  - `BGR2RGB` - BGR转RGB
-  - `BGR2HSV` - BGR转HSV
-
-### ThresholdTypes
-- 描述: 阈值处理类型枚举
-- 常用值:
-  - `Binary` - 二值化
-  - `BinaryInv` - 反向二值化
-  - `Trunc` - 截断
-
-### TemplateMatchModes
-- 描述: 模板匹配算法枚举
-- 常用值:
-  - `CCoeffNormed` - 归一化相关系数
-  - `CCorrNormed` - 归一化相关
-  - `SQDiffNormed` - 归一化平方差
-
-## 完整示例
+| 方法 | 参数类型 | 说明 |
+|---|---|---|
+| `deriveCrop(x, y, width, height)` | `x: int`、`y: int`、`width: int`、`height: int` | 按像素裁剪子区域 |
+| `deriveCrop(dx, dy, dw, dh)` | `dx: double`、`dy: double`、`dw: double`、`dh: double` | 将浮点像素值四舍五入后裁剪子区域 |
+| `deriveCrop(rect)` | `rect: Rect` | 按矩形裁剪子区域 |
+| `find(recognitionObject, successAction?, failAction?)` | `recognitionObject: Re...Object`；回调为 `Function` | 查找第一个结果，可传入成功和失败回调 |
+| `findMulti(recognitionObject, successAction?, failAction?)` | `recognitionObject: Re...Object`；回调为 `Function` | 查找多个结果；模板匹配结果包含 `matchScore` |
+| `dispose()` | 无 | 释放图像资源 |
 
 ```js
-(async function() {
-  try {
-    // 获取游戏截图
-    const captureRegion = captureGameRegion();
-    
-    // 进行图像处理
-    const grayMat = captureRegion.SrcMat.CvtColor(OpenCvSharp.OpenCvSharp.ColorConversionCodes.BGR2GRAY);
-    const threshold = grayMat.Threshold(127, 255, OpenCvSharp.OpenCvSharp.ThresholdTypes.Binary);
-    
-    // 模板匹配
-    const template = file.readImageMatSync("assets/template.png");
-    const recognitionObject = RecognitionObject.TemplateMatch(template);
-    const result = captureRegion.Find(recognitionObject);
-    
-    if (!result.IsEmpty()) {
-      log.info(`找到目标，位置: (${result.X}, ${result.Y})`);
-      result.Click();
-    }
-    
-    // 释放资源
-    grayMat.Dispose();
-    threshold.Dispose();
-    template.Dispose();
-    captureRegion.Dispose();
-    
-  } catch (error) {
-    log.error(`图像处理失败: ${error.message}`);
+const image = captureGameRegion();
+const template = file.readImageMatSync("assets/icon.png");
+try {
+  const ro = RecognitionObject.templateMatch(template);
+  ro.threshold = 0.8;
+  const matches = image.findMulti(ro);
+  for (const region of matches) {
+    log.info(`位置: ${region.x}, ${region.y}; 得分: ${region.matchScore}`);
   }
-})();
+} finally {
+  template.dispose();
+  image.dispose();
+}
 ```
 
-## 注意事项
+## OpenCV 类型
 
-1. **内存管理**：使用完 Mat 对象后务必调用 `Dispose()` 方法释放内存
-2. **资源释放**：ImageRegion 和 Region 对象也需要调用 `Dispose()` 方法
-3. **坐标系统**：Point2f 使用浮点坐标，精度更高
-4. **图像处理**：Mat 对象支持各种 OpenCV 图像处理操作
-5. **错误处理**：建议使用 try-catch 处理可能的异常
-6. **常量使用**：使用 OpenCvSharp 常量进行图像处理操作
+### Mat
+
+| 成员 | 类型或返回 | 说明 |
+|---|---|---|
+| `width`、`height` | `int` | 图像尺寸 |
+| `channels()` | `int` | 通道数量 |
+| `cvtColor(code)` | `Mat` | 转换颜色空间 |
+| `threshold(thresh, maxValue, type)` | `Mat` | 阈值处理 |
+| `dispose()` | 无 | 释放原生内存 |
+
+### Point2f
+
+`new Point2f(x, y)` 创建浮点坐标，公开 `x`、`y` 属性。
+
+### OpenCvSharp
+
+脚本引擎通过 `OpenCvSharp` 类型集合暴露命名空间。常用枚举包括 `ColorConversionCodes`、`ThresholdTypes` 和 `TemplateMatchModes`。
+
+```js
+const cvt = OpenCvSharp.OpenCvSharp.ColorConversionCodes;
+const thresholdTypes = OpenCvSharp.OpenCvSharp.ThresholdTypes;
+
+const image = captureGameRegion();
+let gray;
+let binary;
+try {
+  gray = image.srcMat.cvtColor(cvt.BGR2GRAY);
+  binary = gray.threshold(127, 255, thresholdTypes.Binary);
+} finally {
+  binary?.dispose();
+  gray?.dispose();
+  image.dispose();
+}
+```
+
+## 资源释放
+
+- `ImageRegion`、`Mat` 和裁剪得到的新图像均应在 `finally` 中调用 `dispose()`。
+- 不要在循环中长期保存截图、灰度图或模板匹配中间结果。
+- `findMulti()` 返回的匹配结果可直接读取；其 `matchScore` 只对模板匹配有意义。

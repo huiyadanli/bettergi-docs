@@ -45,6 +45,17 @@ public BvPage(CancellationToken cancellationToken = default)
 
 ## 基础方法
 
+### Flow - 创建链式流程
+
+- JS 调用：`page.flow()`
+- 返回类型：`BvFlow`
+- 描述：创建与当前页面和取消令牌关联的链式流程。详见 [BvFlow 链式流程](./BvFlow.md)。
+
+```js
+const page = new BvPage();
+await page.flow().waitUntilText("确认").click().run();
+```
+
 ### Screenshot - 截屏
 
 **参数说明**

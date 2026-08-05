@@ -702,3 +702,19 @@ public BvLocator WithRetryAction(Action<List<Region>>? action)
 ```
 
 </details>
+
+### 超时与重试间隔
+
+| 方法 | 参数 | 返回 | 说明 |
+|---|---|---|---|
+| `withTimeout(timeout)` | 毫秒 | `BvLocator` | 设置该定位器的默认等待超时 |
+| `withRetryInterval(retryInterval)` | 毫秒 | `BvLocator` | 设置识别重试间隔 |
+
+两种方法都会返回当前定位器，可继续链式调用：
+
+```js
+await page.getByText("确认")
+  .withTimeout(5000)
+  .withRetryInterval(200)
+  .click();
+```
