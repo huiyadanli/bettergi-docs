@@ -441,21 +441,25 @@ log.info(`秘境奖励汇总: ${JSON.stringify(rewards)}`);
 ```
 
 ### AutoBossParam 自动首领讨伐参数对象
-默认使用本体设置的参数，可以初始化之后修改。
-- 初始化之后的参数:
-  - `BossName`(`string`): 要讨伐的首领名称
-  - `StrategyName`(`string`): 战斗策略名称
-  - `CombatStrategyPath`(`string`): 实际使用的战斗策略路径
-  - `TeamName`(`string`): 讨伐前切换的队伍名称，留空则不切换
-  - `SpecifyRunCount`(`bool`): 是否指定讨伐次数
-  - `RunCount`(`int`): 指定模式下成功领取奖励的目标次数
-  - `UseTransientResin`(`bool`): 原粹不足时是否允许使用须臾树脂补充
-  - `UseFragileResin`(`bool`): 原粹不足时是否允许使用脆弱树脂补充
-  - `ReviveRetryCount`(`int`): 角色死亡后的最大重试次数
-  - `ReturnToStatueAfterEachRound`(`bool`): 每轮领奖后是否先返回七天神像
-  - `RewardRecognitionEnabled`(`bool`): 是否启用奖励识别，启用后任务返回奖励名称与数量汇总。奖励识别当前仅支持 `1920x1080` 分辨率。
-- 方法:
-  - `SetCombatStrategyPath()`：根据战斗策略名称重新计算实际策略路径，参数为空时使用本体设置。
+
+`AutoBossParam` 已作为宿主类型暴露给 JS。`new AutoBossParam()` 会读取本体当前的自动首领配置，也可以使用 `new AutoBossParam(combatStrategyPath)` 覆盖战斗策略路径。
+
+| 参数 | 类型 | 说明 |
+|---|---|---|
+| `bossName` | `string` | 要讨伐的首领名称 |
+| `strategyName` | `string` | 战斗策略名称；默认支持“根据队伍自动选择” |
+| `combatStrategyPath` | `string` | 实际使用的战斗策略文件或目录路径 |
+| `teamName` | `string` | 讨伐前切换的队伍名称；留空时不切换 |
+| `specifyRunCount` | `bool` | 是否指定成功领取奖励的次数 |
+| `runCount` | `int` | 指定次数模式下的目标次数 |
+| `useTransientResin` | `bool` | 原粹树脂不足时是否使用须臾树脂 |
+| `useFragileResin` | `bool` | 原粹树脂不足时是否使用脆弱树脂 |
+| `reviveRetryCount` | `int` | 角色死亡后回神像并重试的最大次数 |
+| `returnToStatueAfterEachRound` | `bool` | 每轮领奖后是否先返回七天神像 |
+| `rewardRecognitionEnabled` | `bool` | 是否识别并汇总奖励；当前仅支持 `1920x1080` |
+| `timeout` | `int` | 单次战斗超时，单位秒，默认 `240` |
+
+`setDefault()` 重新读取本体配置。`setCombatStrategyPath(strategyName?)` 根据策略名称重新计算实际路径；省略参数时使用本体设置的策略名称。
 
 示例：
 

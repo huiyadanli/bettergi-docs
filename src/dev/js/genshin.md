@@ -15,6 +15,10 @@ await genshin.moveMapTo(1000, 1000, '璃月');
 ```
 
 ## 基本信息
+### uid()
+- 返回类型: `Promise<int>`
+- 描述: 通过 OCR 识别当前角色 UID；识别失败返回 `0`。
+
 ### width
 - 类型: `int`
 - 描述: 游戏宽度
@@ -104,6 +108,11 @@ await genshin.tpToStatueOfTheSeven();
   - `x` (`int`): 目标X坐标
   - `y` (`int`): 目标Y坐标
   - `forceCountry` (`string?`): 强制指定移动大地图时先切换的国家，默认为null
+
+### clickMapPoint(double x, double y, string? forceCountry = null)
+- 返回类型: `Task`
+- 描述: 将目标坐标移动到大地图可点击区域后点击一次。
+- 参数: `x`、`y` 为游戏坐标；`forceCountry` 可选。
 
 ### getBigMapZoomLevel()
 - 返回类型: `double`
@@ -215,11 +224,40 @@ log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`
 ```
 ## 队伍与界面操作
 
+## 角色养成信息 characterDevelopmentTask
+
+`characterDevelopmentTask` 是脚本引擎直接暴露的识别任务对象。调用前应处于可进入角色界面的主界面。
+
+| 方法 | 返回 | 说明 |
+|---|---|---|
+| `getCharacter(characterName, categories?)` | `Promise<CharacterDevelopmentResult>` | 识别单个角色 |
+| `getMultiCharacters(characterNames, categories?)` | `Promise<CharacterDevelopmentResult[]>` | 按 JS 字符串数组依次识别多个角色 |
+
+`categories` 使用分号分隔，可选值为 `属性`、`武器`、`天赋`；省略时读取全部。未请求分类对应的字段为 `null`。
+
+| 结果属性 | 类型 | 说明 |
+|---|---|---|
+| `characterName`、`elementType` | `string` | 角色名与元素类型 |
+| `level`、`levelLimit` | `int?` | 角色等级与等级上限 |
+| `weaponName` | `string?` | 武器名称 |
+| `weaponLevel`、`weaponLevelLimit` | `int?` | 武器等级与等级上限 |
+| `attackLevel`、`skillLevel`、`burstLevel` | `int?` | 普攻、战技、爆发显示等级 |
+| `attackHasBonus`、`skillHasBonus`、`burstHasBonus` | `bool?` | 对应天赋是否显示固定等级加成 |
+
+```js
+const character = await characterDevelopmentTask.getCharacter("胡桃", "属性;武器");
+const characters = await characterDevelopmentTask.getMultiCharacters(["胡桃", "夜兰"], "天赋");
+```
+
 ### switchParty(string partyName)
 - 返回类型: `Task`
 - 描述: 切换队伍
 - 参数:
   - `partyName` (`string`): 队伍界面自定义的队伍名称
+
+### switchCharacter(string slot1 = "", string slot2 = "", string slot3 = "", string slot4 = "")
+- 返回类型: `Promise<bool>`
+- 描述: 按槽位重组当前队伍；空字符串跳过槽位，成功保存并返回主界面时为 `true`。
 
 ### clearPartyCache()
 - 返回类型: 无返回
@@ -251,11 +289,38 @@ log.info(`当前小地图坐标: X=${miniMapPosition.X}, Y=${miniMapPosition.Y}`
 - 参数:
   - `country` (`string`): 国家名称，当前只支持枫丹
 
-### goToCraftingBench(string country)
+### 合成操作
+
+#### goToCraftingBench(string country)
 - 返回类型: `Task`
-- 描述: 前往合成台
+- 描述: 前往合成台并打开合成界面，不执行合成。
 - 参数:
   - `country` (`string`): 国家名称，当前只支持枫丹、璃月。推荐使用枫丹
+
+#### goCraftResin(string country)
+- 返回类型: `Task`
+- 描述: 前往合成台并自动合成浓缩树脂。
+- 参数:
+  - `country` (`string`): 国家名称，当前只支持枫丹、璃月。推荐使用枫丹
+
+#### craftMaterial(string materialName, int quantity, string? materialType = null)
+- 返回类型: `Promise<CraftMaterialResult>`
+- 描述: 在当前已经打开的合成界面中合成指定材料；本方法不会自行前往合成台。
+- 参数:
+  - `materialName` (`string`): 目标成品材料名
+  - `quantity` (`int`): 合成数量，必须大于 `0`
+  - `materialType` (`string?`): 材料筛选类型；省略时从物品模型中读取
+
+```js
+// 只前往合成台并打开合成界面
+await genshin.goToCraftingBench("枫丹");
+
+// 当前已在合成界面，可以继续合成材料
+const result = await genshin.craftMaterial("精锻用魔矿", 10);
+
+// 或者直接前往合成台并合成浓缩树脂
+await genshin.goCraftResin("枫丹");
+```
 
 ### returnMainUi()
 - 返回类型: `Task`
