@@ -2,6 +2,8 @@
 home: true
 icon: home
 title: 主页
+description: BetterGI 是一款开源免费的原神自动化工具，提供自动采集、自动战斗、自动钓鱼、七圣召唤和键鼠脚本等功能。本页汇总下载入口、功能介绍与使用文档。
+keywords: BetterGI, BGI, 原神自动化工具, 原神脚本, 原神辅助, Genshin Impact
 bgImageStyle:
   background-attachment: fixed
 heroText: BetterGI · 更好的原神

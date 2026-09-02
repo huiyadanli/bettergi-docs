@@ -1,5 +1,7 @@
 ---
 title: 开源生态
+description: BetterGI 开源生态与社区项目列表，收录日志分析、脚本管理和其他围绕 BetterGI 构建的开源工具。
+keywords: BetterGI 开源项目, BGI 开源项目, BetterGI 生态, 原神工具开发
 icon: file-code
 order: 60
 ---

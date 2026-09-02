@@ -1,5 +1,7 @@
 ---
 title: 下载
+description: 下载最新版 BetterGI，提供 GitHub、网盘、CDN 和在线安装包等多个下载渠道，并说明安装版与便携版的区别。
+keywords: BetterGI 下载, BGI 下载, BetterGI 最新版, 原神自动化工具下载
 icon: cloud-arrow-down
 order: 30
 ---
@@ -50,7 +52,7 @@ BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b
 
 下载位置在更新日志下方：
 
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
+![BetterGI 下载文件位置示意图](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
 
 - **安装版（新在线版）** 的文件名是 `BetterGI.OnlineInst.exe`，自动选择优路线下载并安装。（当前只在本页面提供）
 - **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。

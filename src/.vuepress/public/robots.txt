@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bettergi.com/sitemap.xml

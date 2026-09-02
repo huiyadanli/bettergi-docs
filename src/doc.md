@@ -1,5 +1,7 @@
 ---
 title: 文档
+description: BetterGI 用户手册目录，汇总自动拾取、自动战斗、自动钓鱼、地图追踪、键鼠脚本、命令行和其他自动化功能的使用说明。
+keywords: BetterGI 使用文档, BGI 用户手册, BetterGI 用户手册, 原神自动化功能
 icon: book
 order: 20
 ---

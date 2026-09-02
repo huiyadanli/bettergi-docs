@@ -1,5 +1,7 @@
 ---
 title: 常见问题
+description: BetterGI 常见问题解答，涵盖软件下载、启动失败、.NET 运行时、云原神、截图方式和自动化功能异常等问题。
+keywords: BetterGI 常见问题, BGI FAQ, BetterGI FAQ, BetterGI 启动失败, 原神自动化工具
 icon: circle-question
 order: 40
 ---
@@ -32,7 +34,7 @@ BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b
 
 下载位置在更新日志下方：
 
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
+![BetterGI 下载文件位置示意图](https://img.alicdn.com/imgextra/i3/2042484851/O1CN01wOmGAH1lhoM2iZrGa_!!2042484851.png)
 
 - **安装版（新在线版）** 的文件名是 `BetterGI.OnlineInst.exe`，自动选择优路线下载并安装。（当前只在本页面提供）
 - **安装版（新离线版）** 的文件名是 `BetterGI.Install.版本号.exe`，安装速度比下面的安装版更快，且会自动更新到新版本。
@@ -47,7 +49,7 @@ BetterGI 在 Github 页面提供了多个版本，主要是<b>安装版</b>和<b
 
 提示如图：
 
-![](https://img.alicdn.com/imgextra/i3/2042484851/O1CN012MVMsp1lhoDtEX1bo_!!2042484851.jpg)
+![BetterGI 启动时缺少 .NET Desktop Runtime 的提示](https://img.alicdn.com/imgextra/i3/2042484851/O1CN012MVMsp1lhoDtEX1bo_!!2042484851.jpg)
 
 BetterGI 需要安装 .NET 8 运行时才能运行，请根据提示安装，否则无法启动软件。
 
