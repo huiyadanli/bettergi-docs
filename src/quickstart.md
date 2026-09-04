@@ -1,5 +1,7 @@
 ---
 title: 快速上手
+description: 了解 BetterGI 的系统要求、下载安装方式、首次启动和基础使用方法，适合第一次使用 BetterGI 的用户。
+keywords: BetterGI 快速上手, BGI 安装, BetterGI 安装, 原神自动化工具, 原神脚本
 icon: rocket
 order: 4
 ---
@@ -100,7 +102,7 @@ BetterGI 仅依赖于图像输入，所以支持原神各个区服、云原神�
 
 启动后，会自动激活原神窗口，等待窗口左下角刷出日志后，BetterGI 完成启动（云原神需要更改截图方式为WindowsGraphicsCapture）。
 
-![](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01VOz5j71lhoEg4qwil_!!2042484851.png)
+![BetterGI 版本下载说明](https://img.alicdn.com/imgextra/i2/2042484851/O1CN01VOz5j71lhoEg4qwil_!!2042484851.png)
 
 ## 测试功能是否正常
 

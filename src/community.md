@@ -1,5 +1,7 @@
 ---
 title: 用户社区
+description: BetterGI 用户社区入口，包含 QQ 频道、交流群、技术群和官方 B 站账号，遇到使用问题可在社区交流。
+keywords: BetterGI 社区, BGI 社区, BetterGI QQ 群, BetterGI 交流, 原神自动化社区
 icon: comments
 order: 60
 ---
@@ -41,5 +43,4 @@ order: 60
 |------------------------------------| --------- |
 | 交流群1，入群需要告知Github账号            | 894935931 |
 | 一个AI炼丹相关的群，进群需告知来意（干活群）            | [863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) |
-
 

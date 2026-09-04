@@ -47,19 +47,19 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.hero-tilt-logo {
+:global(.hero-tilt-logo) {
   width: min(52vw, 260px);
   border-radius: 16px;
   transform-style: preserve-3d;
 }
 
 @media (max-width: 959px) {
-  .hero-tilt-logo {
+  :global(.hero-tilt-logo) {
     margin: 0 auto;
   }
 }
 
-.hero-tilt-logo img {
+:global(.hero-tilt-logo img) {
   display: block;
   width: 100%;
   height: auto;
