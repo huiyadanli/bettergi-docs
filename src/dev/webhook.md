@@ -41,6 +41,9 @@ order: 40
 * `domain.start` : 自动秘境启动
 * `domain.end` : 自动秘境结束
 * `domain.retry` : 自动秘境重试
+* `leyline.start` : 自动地脉花启动
+* `leyline.end` : 自动地脉花结束
+* `leyline.info` : 自动地脉花详情
 * `task.cancel` : 任务启动
 * `task.error` : 任务错误
 * `group.start` : 配置组启动
