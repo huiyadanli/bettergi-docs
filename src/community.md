@@ -34,7 +34,7 @@ order: 60
 | 交流群10 （满，偶尔有空位）              | [1051494685](https://qm.qq.com/q/TPQtZlgraU) |
 | 交流群11 （满，偶尔有空位）              | [779233019](https://qm.qq.com/q/R920tuppwy) |
 | 交流群12                       | [1045965909](https://qm.qq.com/q/ybtosgFUZy) |
-| 交流群13                       | [1045965909](https://qm.qq.com/q/J1fiJxSBii) |
+| 交流群13                       | [761949201](https://qm.qq.com/q/J1fiJxSBii) |
 
 
 ## 技术群
