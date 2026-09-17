@@ -122,7 +122,7 @@ order: 40
 这些文件会在你选择战斗策略时出现在你的下拉列表里。
 
 #### 5.2 🃏 AutoGeniusInvokation
-此处存储的是`七圣召唤策略`，关于`七圣召唤策略`的部分请查看[自动七圣召唤](/feats/task/tcg.html)。
+此处存储的是七圣召唤的`自定义打牌策略`（`.txt`），写法请查看[自定义打牌策略](/feats/task/tcg.html#自定义打牌策略)。
 
 #### 5.3 🗺️ AutoPathing
 此处存储的是`地图追踪`的路径文件，也就是你在本地仓库订阅后，BetterGI将路径复制过来的位置，具体的`地图追踪`讲解请查看[地图追踪](/feats/autos/pathing.html)以及[地图追踪制作](/dev/pathing-dev.html)。
