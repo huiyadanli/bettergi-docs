@@ -117,9 +117,9 @@ order: 40
 ---
 
 #### 5.1 ⚔️ AutoFight
-此处存储的是BetterGI内置的、你订阅的或你编写的`战斗策略`，关于`战斗策略`的部分请查看[战斗策略脚本编写](/feats/task/domain.html#战斗策略脚本编写)。 
+此处存储的是BetterGI内置的、你订阅的或你编写的`战斗策略`（`.txt` 和 `.json` 两种格式），写法请查看[战斗策略脚本编写](/feats/task/domain.html#战斗策略脚本编写)和[JSON 战斗策略](/feats/task/domain.html#json-战斗策略)。 
 
-这些文件会在你选择战斗策略时出现在你的下拉列表里。
+这些文件会在你选择战斗策略时出现在你的下拉列表里，两种格式同名时 `.json` 优先。
 
 #### 5.2 🃏 AutoGeniusInvokation
 此处存储的是七圣召唤的`自定义打牌策略`（`.txt`），写法请查看[自定义打牌策略](/feats/task/tcg.html#自定义打牌策略)。
