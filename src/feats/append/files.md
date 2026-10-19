@@ -49,8 +49,11 @@ order: 40
       │
       ├─ 📄 avatar_macro.json  
       ├─ 📄 config.json  
-      ├─ 📄 pick_black_lists.json  
-      └─ 📄 pick_white_lists.json  
+      ├─ 📄 pick_black_lists.txt
+      ├─ 📄 pick_fuzzy_black_lists.txt
+      ├─ 📄 pick_white_lists.txt
+      ├─ 📄 pick_whitelist_mode_pick_lists.txt
+      └─ 📄 pick_whitelist_mode_do_not_pick_lists.txt
 ```
 
 下文将对这个目录结构中较重要的部分进行讲解。
@@ -154,8 +157,21 @@ order: 40
 > 📝 **说明**  
 > 由于设置项过多，这里不展开讲解，日常使用过程中一般不会用到这个文件。
 
-#### 5.10 ⚫⚪ pick_black_lists.json & pick_white_lists.json
-黑白名单配置，除软件自带的黑白名单外，你自己设置的黑白名单便存储在这里。
+#### 自动拾取名单文件
+
+当前自动拾取的用户名单以 `.txt` 格式存储在 `User` 文件夹中，每行一条记录，两种模式使用独立的文件：
+
+| 文件名 | 所属模式 | 作用 |
+| --- | --- | --- |
+| `pick_black_lists.txt` | 黑名单模式 | 精确不拾取列表，始终参与该模式的判断 |
+| `pick_fuzzy_black_lists.txt` | 黑名单模式 | 模糊不拾取列表，文本包含任一关键词时排除 |
+| `pick_white_lists.txt` | 黑名单模式 | 优先放行的拾取列表，仅在“启用拾取规则”开启时生效 |
+| `pick_whitelist_mode_pick_lists.txt` | 白名单模式 | 用户补充拾取列表，与默认拾取列表合并 |
+| `pick_whitelist_mode_do_not_pick_lists.txt` | 白名单模式 | 精确不拾取列表，仅在“启用不拾取规则”开启时从合并列表中移除 |
+
+软件自带的默认名单位于 `Assets/Config/Pick/default_pick_black_lists.json` 和 `Assets/Config/Pick/default_pick_white_lists.json`，不属于用户名单。建议通过“实时任务” → “自动拾取” → “配置规则”维护用户规则，保存后会在下一次拾取判断时刷新，无需重启。
+
+旧版使用的 `pick_black_lists.json`、`pick_white_lists.json` 不是当前自动拾取读取的用户名单文件，请勿将新版规则继续写入这些旧文件。各模式的匹配方式、开关和规则优先级见[自动拾取：黑白名单设置](/feats/timer/pick.html#黑白名单设置)。
 
 ---
 
