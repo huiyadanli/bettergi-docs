@@ -35,7 +35,8 @@ JavaScript接受`ArtifactStat`作为入参；必须对`Output`赋值一个布尔
 #### Affix类结构：  
 └─ Properties  
     ├─ `Type` : `String` 词缀类型  
-    └─ `Value` : `Number` 词缀值  
+    ├─ `Value` : `Number` 词缀值  
+    └─ `IsUnactivated` : `Boolean` 词缀是否待激活  
 
 #### Affix的Type：  
 | 值 | 含义 |
@@ -79,6 +80,12 @@ const uselessMinorAffixesCount = Array.from(artifact.MinorAffixes).reduce((prev,
 Output = (uselessMinorAffixesCount >= 2);
 ```
 
+匹配初始词条只有3个的0级圣遗物（请注意4级强化后的圣遗物不能识别初始词条数）：
+```js
+const initMinorAffixCnt = Array.from(ArtifactStat.MinorAffixes).filter(x => !x.IsUnactivated).length;
+Output = (initMinorAffixCnt == 3 && ArtifactStat.Level == 0);
+```
+
 ### 关于按套装筛选
 
 逐行扫描之前，通过利用游戏自带的筛选套装，来提高扫描效率。  
@@ -110,6 +117,10 @@ Output = (uselessMinorAffixesCount >= 2);
 Q: 是否能识别灰色的 未激活副词条（原神6.0新特性）？
 
 A: 可以。
+
+Q: 为何灰色的副词条 没有被正确识别为未激活状态？
+
+A: 请将游戏文本设置为中文再试一次。现有的方案基于文字识别，拉丁语系文字可能会换行导致识别失败。
 
 Q: 报错 `识别失败，跳过当前圣遗物："未找到主词条对应的行"` 怎么办？
 
