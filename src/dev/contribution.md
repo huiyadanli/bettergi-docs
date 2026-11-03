@@ -52,15 +52,22 @@ BetterGI 当前处于快速开发迭代阶段，有大量[Issue](https://github.
 
 可能是 Windows SDK 版本不够。使用 Visual Studio Installer 安装 `10.0.22621.0` 及以上版本的 Windows SDK，或者编辑项目文件的 `TargetFramework` 降低版本。
 
+
+  
 ### 🍬 模型训练
 
 BetterGI 当前大部分是使用的 [YOLOv8](https://github.com/ultralytics/ultralytics) 作为目标检测、分类算法。
 
+<del>
 未来会依据用途添加更多合适的算法。比如咬钩分类暂时就是一个简化的神经网络。
 
 如果你有一定的计算机基础，且有兴趣参与数据收集、清洗、打标，或者是算法优化，可以加入AI模型训练群：[863012276](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5MykSb0YDHtpU3QdJI7XDR-sbbdrqgZH&authKey=a8jOzCEnYilPZDPJV84OJnOSXw3z3xe8Jv6P5hj6f5Jq9V4TkB9V0sFWQDJe6nJK&noverify=0&group_code=863012276) 。 （纯干活群，定期会清理潜水人员）
 
 群内有很多原神相关的 idea 和训练素材。
+
+</del>
+
+已不需要更多人员参与相关模型训练
 
 #### 训练教程
 
