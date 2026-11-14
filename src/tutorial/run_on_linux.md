@@ -58,7 +58,7 @@ prefix/
 ```
 我们把wineprefix路径记录下来
 
-## 第四步：配置BetterGI运行环境
+## 第四步：配置BetterGi运行环境
 
 你需要了解BetterGi运行所需要的[系统环境](/quickstart.html#系统环境)
 
@@ -92,7 +92,7 @@ export DOTNET_ROOT=""
 ```
 
 - 如果使用的是niri之类的窗口管理器可能会遇到一些显示问题,但并不影响使用
-- 对于Arch系用户,如果安装了`dotnet-host-bin`包会导致wine和linux共用同一个`DOTNET_ROOT`导致无法启动Bettergi,补行`export DOTNET_ROOT=""`即可(已追加)
+- 对于Arch系用户,如果安装了`dotnet-host-bin`包会导致wine和linux共用同一个`DOTNET_ROOT`导致无法启动BetterGi,补行`export DOTNET_ROOT=""`即可(已追加)
 
 ## 第五步：检验成果
 
@@ -106,7 +106,7 @@ export DOTNET_ROOT=""
 
 ### 打开BGI报错,有关"UrlProtocol":
 
-BetterGI的程序要放在`WINEPREFIX`的`drive_c`里(即wine内C盘) 放外边会导致创建`UrlProtocol`失败
+BetterGi的程序要放在`WINEPREFIX`的`drive_c`里(即wine内C盘) 放外边会导致创建`UrlProtocol`失败
 
 ### 安装WebView2后浏览脚本仓库无显示
 
