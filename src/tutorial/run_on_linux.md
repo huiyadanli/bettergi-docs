@@ -11,7 +11,7 @@ order: 6
 - 客户端原神: 你可以使用steam或[an-anime-game-launcher](https://github.com/an-anime-team/an-anime-game-launcher)作为你的原神客户端
 
 ## 第一步：下载BetterGi
-- ~~因为wine并不支持webview2,所以你无法通过BetterGi的安装包安装~~
+- ~~因为wine并不支持webview2,所以你无法通过BetterGi的安装包安装~~ (现在支持了喵)
 - 去下载页面下载以7z为后缀的便携版,版本需大于0.55
 [下载BetterGi](/download.html)
 
@@ -87,10 +87,12 @@ export WINE=[你的wine可执行文件路径]
 export DOTNET_SYSTEM_GLOBALIZATION_USENLS=1
 export WINEPREFIX=[你的prefix目录路径]
 export WINE=[你的wine可执行文件路径]
+export DOTNET_ROOT=""
 "$WINE" [BetterGi路径]
 ```
 
 - 如果使用的是niri之类的窗口管理器可能会遇到一些显示问题,但并不影响使用
+- 对于Arch系用户,如果安装了`dotnet-host-bin`包会导致wine和linux共用同一个`DOTNET_ROOT`导致无法启动Bettergi,补行`export DOTNET_ROOT=""`即可(已追加)
 
 ## 第五步：检验成果
 
@@ -99,3 +101,17 @@ export WINE=[你的wine可执行文件路径]
 点击开始
 
 最后高贵的Linux用户就能畅玩BetterGi啦！喵喵₍^. .^₎⟆
+
+## 常见问题喵~
+
+### 打开BGI报错,有关"UrlProtocol":
+
+BetterGI的程序要放在`WINEPREFIX`的`drive_c`里(即wine内C盘) 放外边会导致创建`UrlProtocol`失败
+
+### 安装WebView2后浏览脚本仓库无显示
+
+打开`winecfg`,点`添加程序设置`找到`Program Files (x86)/Microsoft/EdgeWebView/Application/<版本号>/msedgewebview2.exe`,添加后将对应的`Windows 版本`设置为`Windows 8`即可
+
+### BitBlt截图模式下获取不到游戏内容
+
+关闭 `Winewayland`
